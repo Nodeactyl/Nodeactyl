@@ -49,6 +49,7 @@ function getCPU(ServerID) {
 	}).catch(console.error);
 }
 //getCPU("8fa8d709");
+
 // This is for getting a servers CPU Usage
 function getDisk(ServerID) {
     // This here is the Pterodactyl API Curl command
@@ -67,6 +68,63 @@ function getDisk(ServerID) {
 	}).catch(console.error);
 }
 //getDisk("8fa8d709");
+
+// This is for getting a servers Database amount
+function getDatabaseAmt(ServerID) {
+    // This here is the Pterodactyl API Curl command
+    return axios.get(URL + '/api/client/servers/' + ServerID, {
+		responseEncoding: 'utf8',
+		maxRedirects: 5,
+		headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+	        'Accept': 'Application/vnd.pterodactyl.v1+json',
+	    }
+	}).then(function(response) {
+		let data = { Amount: response.data.attributes.feature_limits.databases  }
+		console.log(data);
+		return data;
+	}).catch(console.error);
+}
+//getDatabaseAmt("8fa8d709");
+
+// This is for getting a servers CPU Usage
+function getAllocationAmt(ServerID) {
+    // This here is the Pterodactyl API Curl command
+    return axios.get(URL + '/api/client/servers/' + ServerID, {
+		responseEncoding: 'utf8',
+		maxRedirects: 5,
+		headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+	        'Accept': 'Application/vnd.pterodactyl.v1+json',
+	    }
+	}).then(function(response) {
+		let data = { Amount: response.data.attributes.feature_limits.allocations  }
+		console.log(data);
+		return data;
+	}).catch(console.error);
+}
+//getAllocationAmt("8fa8d709");
+
+// This is for getting a servers CPU Usage
+function getServerIDs(ServerID) {
+    // This here is the Pterodactyl API Curl command
+    return axios.get(URL + '/api/client/servers/' + ServerID, {
+		responseEncoding: 'utf8',
+		maxRedirects: 5,
+		headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+	        'Accept': 'Application/vnd.pterodactyl.v1+json',
+	    }
+	}).then(function(response) {
+		let data = { ID: response.data.attributes.identifier, UUID: response.data.attributes.uuid  }
+		console.log(data);
+		return data;
+	}).catch(console.error);
+}
+getServerIDs("8fa8d709");
 
 // This is use to get server RAM/Used RAM
 function getRAM(ServerID) {
@@ -180,13 +238,3 @@ function sendCommand(ServerID, Command) {
 //////////////////
 // TESTING AREA //
 //////////////////
-
-
-
-
-
-
-
-
-
-
