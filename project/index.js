@@ -12,7 +12,7 @@ function login(PanelURL, APIKey) {
 	//Port = PanelPort;
 	Key = APIKey;
 }
-login("https://panel.skynode.pro", "lZtZxXgsQAk5I5TDgvuOU7M2l9o0PAkLHPAbr62KyEbqhLkO");
+login("https://panel.skynode.pro", "meow");
 // This is for checking if a server is online or not
 function isOnline(ServerID) {
 	return axios.get(URL + '/api/client/servers/' + ServerID + '/utilization', {
