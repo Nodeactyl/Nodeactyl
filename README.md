@@ -12,7 +12,7 @@ OR
 npm install admin-nodeactyl
 ```
 
-##Getting started
+## Getting started
 First, follow the installation instructions, then you will need to have the following in your code based on what you need
 
 `Client-Side API`
