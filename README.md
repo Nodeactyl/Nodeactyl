@@ -48,6 +48,17 @@ Heres is the official documentation website: `https://nodeactyl.jellydev.xyz/`
 Below is some basic documentation, but please note, this page will not contain 
 the full documentation
 
+`Dont even try using this API without reading Getting Started guide.`
+
+How to get online status of a server (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.isOnline("SERVER ID HERE");
+// Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
+```
+
 
 
 .
