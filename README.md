@@ -55,10 +55,68 @@ How to get online status of a server (Used API: Client)
 const client = require('client-nodeactyl');
 client.login("PANEL URL HERE", "API KEY HERE");
 
-client.isOnline("SERVER ID HERE");
+client.isOnline("SERVER ID HERE").then(response => {
+    console.log(response);
+});
 // Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
 ```
 
+How to check is the API Key holder is the owner of a server(Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
 
+client.isOwner("SERVER ID HERE").then(response => {
+    console.log(response);
+});
+// Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
+```
 
-.
+How to get CPU Usage (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.getCPU("SERVER ID HERE").then(response => {
+    console.log(response.TotalCPU); // Logs the CPU Usage
+});
+// Returns CPU Usage in a JSON Object:
+/*
+{
+    "TotalCPU": "23%"
+}*/
+```
+
+How to get RAM Usage (Used API: Client)
+``` javascript
+const client = require('client-nodeactyl');
+client.login("SERVER ID HERE", "API KEY HERE");
+
+.client.getRAM("SERVER ID HERE").then(response => {
+    console.log(response); // Logs whole JSON Object
+    console.log(response.TotalRAM); // Logs the total ram of the server
+});
+// Returns RAM Usage in a JSON Object:
+/*
+{
+    "TotalRAM": 1024,
+     "UsedRAM": 234
+}*/
+```
+
+How to get Disk usage (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.getDisk("SERVER ID HERE").then(response => {
+    console.log(response); // Logs the whole JSON Object
+    console.log(response.TotalDisk); // Logs the total disk of the server
+});
+// Returns storage in a JSON Object
+/*
+{
+    "UsedDisk": 657
+    "TotalDisk": 10000
+}*/
+```
