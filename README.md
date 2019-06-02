@@ -12,5 +12,6 @@ npm install nodeactyl
 
 ## Documentation
 `Heres is the official documentation website: https://nodeactyl.jellydev.xyz/`
+
 Below is some basic documentation, but please note, this page will not contain 
 the full documentatio.
