@@ -4,8 +4,12 @@ While this was originally meant to work with Discord.js, it will work with any o
 
 ## Installation
 ```javascript
-// This does not work right now, will soon
+// This will be deprecated ASAP
 npm install nodeactyl
+// Soon you will have to do this
+npm install client-nodeactyl
+OR
+npm install admin-nodeactyl
 ```
 
 ##Getting started
@@ -14,12 +18,12 @@ First, follow the installation instructions, then you will need to have the foll
 `Client-Side API`
 
 ```javascript
-const client = require('nodeactyl-client.js');
+const client = require('client-nodeactyl.js');
 ```
 
 `System Admin API`
 ```javascript
-const admin = require('nodeactyl-admin.js');
+const admin = require('admin-nodeactyl.js');
 ```
 
 After deciding your API, you need to "login" to your panel/server like so:
