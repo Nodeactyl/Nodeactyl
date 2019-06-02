@@ -7,6 +7,20 @@ While this was originally meant to work with Discord.js, it will work with any o
 // This does not work right now, will soon
 npm install nodeactyl
 ```
+
+##Getting started
+First, follow the installation instructions, then you will need to have the following in your code based on what you need
+
+`Client-Side API`
+
+```javascript
+const client = require('nodeactyl-client.js');
+```
+
+`System Admin API`
+```javascript
+const admin = require('nodeactyl-admin.js');
+```
 ## What am i?
 `I am a test`
 
@@ -14,4 +28,6 @@ npm install nodeactyl
 `Heres is the official documentation website: https://nodeactyl.jellydev.xyz/`
 
 Below is some basic documentation, but please note, this page will not contain 
-the full documentatio.
+the full documentation
+
+.
