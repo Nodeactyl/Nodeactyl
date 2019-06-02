@@ -21,13 +21,29 @@ const client = require('nodeactyl-client.js');
 ```javascript
 const admin = require('nodeactyl-admin.js');
 ```
+
+After deciding your API, you need to "login" to your panel/server like so:
+
+```javascript
+const client = require('nodeactyl-client.js');
+
+client.login("PANEL URL HERE", "ACCOUNT API KEY HERE");
+```
+
+
 ## What am i?
-`I am a test`
+Nodeactyl is an API For NodeJS to communicated with the panel, you can control ANY server on your nodes with it (If you purchase a server from another host, no worry! The API works with your own server too!) . Thie library original intent was to be for discord bots, but since this is in NodeJS, it is usable in ANY type of NodeJS program You can remake your own UI for the panel, and just stick with the pterodactyl daemon, doesnt suit you? use it in socket.io and have your node/server information displayed on a webpage! The possibilitys are endless! 
+
+## How do i work?
+This API works by using the pterodactyl API (Curl requests) to the server/node, by gathering the Panel website, Account API and a server/node ID. This library depends on axios, a promise basid http/https request system, this is how nodectyl is able to send curl commands to pterodactyl. The API itself is VERY simple and i am extremely suprised that no one has even tried making one (There are probably private ones, but none are avaliable to the public).
+
 
 ## Documentation
-`Heres is the official documentation website: https://nodeactyl.jellydev.xyz/`
+Heres is the official documentation website: `https://nodeactyl.jellydev.xyz/`
 
 Below is some basic documentation, but please note, this page will not contain 
 the full documentation
+
+
 
 .
