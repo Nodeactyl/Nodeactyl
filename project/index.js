@@ -1,6 +1,6 @@
 // This gets the library we need to send curl requests to the pterodactyl panel
-//var http = require('follow-redirects').http;
 const axios = require('axios');
+//var exports = module.exports = {};
 
 // This is a required function for the API to work,
 // Must be called before using any fuction in this API
@@ -12,7 +12,8 @@ function login(PanelURL, APIKey) {
 	//Port = PanelPort;
 	Key = APIKey;
 }
-login("https://panel.skynode.pro", "meow");
+
+login("https://panel.skynode.pro", "lZtZxXgsQAk5I5TDgvuOU7M2l9o0PAkLHPAbr62KyEbqhLkO");
 // This is for checking if a server is online or not
 function isOnline(ServerID) {
 	return axios.get(URL + '/api/client/servers/' + ServerID + '/utilization', {
@@ -31,6 +32,7 @@ function isOnline(ServerID) {
 		}
 	}).catch(console.error);
 }
+
 // This is for getting a servers CPU Usage
 function getCPU(ServerID) {
     // This here is the Pterodactyl API Curl command
@@ -124,7 +126,7 @@ function getServerIDs(ServerID) {
 		return data;
 	}).catch(console.error);
 }
-getServerIDs("8fa8d709");
+//getServerIDs("8fa8d709");
 
 // This is use to get server RAM/Used RAM
 function getRAM(ServerID) {
@@ -225,6 +227,14 @@ function sendCommand(ServerID, Command) {
 }
 //sendCommand("8fa8d709", "help");
 
+////////////////////
+// EXPORTING AREA //
+////////////////////
+module.exports = {
+    login: login,
+	isOnline: isOnline
+};
+
 
 /////////////////
 // FOOTER NOTES//
@@ -238,3 +248,13 @@ function sendCommand(ServerID, Command) {
 //////////////////
 // TESTING AREA //
 //////////////////
+
+
+
+
+
+
+
+
+
+
