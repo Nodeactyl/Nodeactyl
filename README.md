@@ -120,3 +120,81 @@ client.getDisk("SERVER ID HERE").then(response => {
     "TotalDisk": 10000
 }*/
 ```
+
+How to stop a server (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.stopServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
+```
+
+How to start a server (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.startServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
+```
+
+How to get name/description of a server (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.getNames("SERVER ID HERE").then(response => {
+    console.log(response); // Logs the whole JSON Object
+});
+// Returns storage in a JSON Object
+/*
+{
+    "Name": "Super neat server (Not really)",
+    "Description": "A cool Server"
+}*/
+```
+How to get the IDs of a server
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.getDisk("SERVER ID HERE").then(response => {
+    console.log(response); // Logs the whole JSON Object
+    console.log(response.TotalDisk); // Logs the total disk of the server
+});
+// Returns storage in a JSON Object
+/*
+{
+    "ID": "86s3n93",
+    "UUID": "soidhyffiuy87trg8rhg8egvregfyiegyurgfduiegfiwhgdfiudwhgfiuw2huifregyufgwipgfugwiufgyrfguiewgfruehufhgwdg"
+}*/
+```
+
+How to get a server's allocation amount (Used API: Client)
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.getAllocationAmt("SERVER ID HERE").then(response => {
+    console.log(response); // Logs the whole JSON Object
+});
+// Returns storage in a JSON Object
+/*
+{
+    "Amount": 2
+}*/
+```
+
+How to get a server's MySQL Database amount (Used API: Client) 
+```javascript
+const client = require('client-nodeactyl');
+client.login("PANEL URL HERE", "API KEY HERE");
+
+client.getDatabaseAmt("SERVER ID HERE").then(response => {
+    console.log(response); // Logs the whole JSON Object
+});
+// Returns storage in a JSON Object
+/*
+{
+    "Amount": 1
+}*/
+```
