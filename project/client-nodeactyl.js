@@ -232,7 +232,17 @@ function sendCommand(ServerID, Command) {
 ////////////////////
 module.exports = {
     login: login,
-	isOnline: isOnline
+	isOnline: isOnline,
+	getCPU: getCPU,
+	getRAM: getRAM,
+	getDisk: getDisk
+	startServer: startServer,
+	stopServer: stopServer,
+	sendCommand: sendCommand,
+	getNames: getNames,
+	getServerIDs: getServerIDs,
+	getAllocationAmt: getAllocationAmt,
+	getDatabaseAmt: getDatabaseAmt,
 };
 
 
@@ -243,18 +253,3 @@ module.exports = {
 // For the URL, it needs to be structured like this:
 // panel.com
 // if it is set to anything other than that there could be an error
-
-
-//////////////////
-// TESTING AREA //
-//////////////////
-
-
-
-
-
-
-
-
-
-
