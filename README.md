@@ -4,11 +4,10 @@ While this was originally meant to work with Discord.js, it will work with any o
 
 ## Installation
 ```javascript
-// This will be deprecated ASAP
-npm install nodeactyl
-// Soon you will have to do this
+// This npm works, feel free to use it
 npm install client-nodeactyl
 OR
+// Working on it!
 npm install admin-nodeactyl
 ```
 
