@@ -50,6 +50,8 @@ the full documentation
 
 `Dont even try using this API without reading Getting Started guide.`
 
+## Client API
+
 How to get online status of a server (Used API: Client)
 ```javascript
 const client = require('client-nodeactyl');
@@ -197,4 +199,22 @@ client.getDatabaseAmt("SERVER ID HERE").then(response => {
 {
     "Amount": 1
 }*/
+```
+
+## Admin API
+
+How to change a servers name (Used API: Admin) 
+```javascript
+const admin = require('admin-nodeactyl');
+admin.login("PANEL URL HERE", "API KEY HERE");
+
+admin.changeName("INTERNAL SERVER ID HERE", "NEW NAME");
+```
+
+How to change a server description (Used API: Admin)
+```javascript
+const admin = require('admin-nodeactyl');
+admin.login("PANEL URL HERE", "API KEY HERE");
+
+admin.changeDescription("INTERNAL SERVER ID HERE", "NEW DESCRIPTION");
 ```
