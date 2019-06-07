@@ -13,6 +13,23 @@ function login(PanelURL, APIKey) {
 	Key = APIKey;
 }
 
+// This is used for getting a internal server id
+function getInternalID(ServerID) {
+	// This here is the Pterodactyl API Curl command
+    return axios.get(URL + '/api/client/servers/' + ServerID, {
+		responseEncoding: 'utf8',
+		maxRedirects: 5,
+		headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+	        'Accept': 'Application/vnd.pterodactyl.v1+json',
+	    }
+	}).then(function(response) {
+		let data = { ID: response.data.attributes. };
+		return data;
+	}).catch(console.error);
+}
+
 function changeName(InternalID, Name) {
 	// This here is the Pterodactyl API Curl command
     return axios(URL + '/api/application/servers/' + ServerID + '/details', {
