@@ -1,3 +1,5 @@
+*There has been issues with downloading this package, if you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init` *Proceed to fill out random stuff (not joking just do it), and you shouldnt have any issues after that*
+
 **IF YOU HAVE ANY ISSUES WITH THIS API, MY NAME IS DALTON BURCHARD, MY DISCORD IS** `Dalton Burchard#7705` **PLEASE JOIN THIS DISCORD AND TAG ME (OR PRIVATE MESSAGE TO IS OKAY).** https://discord.gg/beTDVtD
 
 `This API will now merge the client + admin together, the admin commands are here but just not docuemnted, an IDE may reveal these functions, theyre pretty self explanitory but they will be documented soon`
