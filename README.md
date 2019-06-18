@@ -9,6 +9,10 @@ npm install client-nodeactyl
 OR
 // Working on it!
 npm install admin-nodeactyl
+
+// Working on a merge
+// Everyone will soon use this npm:
+npm install nodeactyl
 ```
 
 ## Getting started
