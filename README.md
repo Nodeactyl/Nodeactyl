@@ -43,7 +43,7 @@ the full documentation
 
 `Dont even try using this API without reading Getting Started guide.`
 
-## Below is mainly clietn-sided API Usages
+## Below is mainly client-sided API Usages
 
 How to get online status of a server.
 ```javascript
@@ -54,6 +54,35 @@ Node.isOnline("SERVER ID HERE").then(response => {
     console.log(response);
 });
 // Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
+```
+
+How to get the entire server object (returns literally everything).
+```javascript
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
+
+Node.getServerInfo("SERVER ID HERE").then(response => {
+    console.log(response); // Logs whole JSON Object
+});
+/* Returns a JSON Object like so:
+   "attributes":{
+      "server_owner":true,
+      "identifier":"d3aac109",
+      "uuid":"d3aac109-e5a0-4331-b03e-3454f7e136dc",
+      "name":"Survival",
+      "description":"",
+      "limits":{
+         "memory":1024,
+         "swap":0,
+         "disk":5000,
+         "io":500,
+         "cpu":200
+      },
+      "feature_limits":{
+         "databases":5,
+         "allocations":5
+      }
+   }*/
 ```
 
 How to check if the API Key holder is the owner of a server.
@@ -73,12 +102,12 @@ const Node = require('nodeactyl');
 Node.login("PANEL URL HERE", "API KEY HERE");
 
 Node.getCPU("SERVER ID HERE").then(response => {
-    console.log(response.TotalCPU); // Logs the CPU Usage
+    console.log(response.totalCPU); // Logs the CPU Usage
 });
 // Returns CPU Usage in a JSON Object:
 /*
 {
-    "TotalCPU": "23%"
+    "totalCPU": "23%"
 }*/
 ```
 
@@ -89,13 +118,13 @@ Node.login("SERVER ID HERE", "API KEY HERE");
 
 Node.getRAM("SERVER ID HERE").then(response => {
     console.log(response); // Logs whole JSON Object
-    console.log(response.TotalRAM); // Logs the total ram of the server
+    console.log(response.totalRAM); // Logs the total ram of the server
 });
 // Returns RAM Usage in a JSON Object:
 /*
 {
-    "TotalRAM": 1024,
-     "UsedRAM": 234
+    "totalRAM": 1024,
+     "usedRAM": 234
 }*/
 ```
 
@@ -106,13 +135,13 @@ Node.login("PANEL URL HERE", "API KEY HERE");
 
 Node.getDisk("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
-    console.log(response.TotalDisk); // Logs the total disk of the server
+    console.log(response.totalDisk); // Logs the total disk of the server
 });
 // Returns storage in a JSON Object
 /*
 {
-    "UsedDisk": 657
-    "TotalDisk": 10000
+    "usedDisk": 657
+    "totalDisk": 10000
 }*/
 ```
 
@@ -143,10 +172,42 @@ Node.getNames("SERVER ID HERE").then(response => {
 // Returns storage in a JSON Object
 /*
 {
-    "Name": "Super neat server (Not really)",
-    "Description": "A cool Server"
+    "name": "Super neat server (Not really)",
+    "description": "A cool Server"
 }*/
 ```
+
+How to get a list of all servers a user has access to. **NOTE**: IF you are a admin, this will list EVERY SERVER ON THE PANEL.
+```javascript
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
+
+Node.getAllServers().then(response => {
+    console.log(response); // Logs whole JSON Object
+});
+/* RETURNS JSON LIKE THIS:
+"attributes":{
+    "server_owner":true,
+    "identifier":"d3aac109",
+    "uuid":"d3aac109-e5a0-4331-b03e-3454f7e136dc",
+     name":"Survival",
+     "description":"",
+     "limits":{
+           "memory":1024,
+           "swap":0,
+           "disk":5000,
+           "io":500,
+           "cpu":200
+        },
+    "feature_limits":{
+       "databases":5,
+       "allocations":5
+        }
+     }
+ }*/
+// (This will keep repeating)
+```
+
 How to get the IDs of a server.
 ```javascript
 const Node = require('nodeactyl');
@@ -154,13 +215,13 @@ Node.login("PANEL URL HERE", "API KEY HERE");
 
 Node.getDisk("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
-    console.log(response.TotalDisk); // Logs the total disk of the server
+    console.log(response.totalDisk); // Logs the total disk of the server
 });
 // Returns storage in a JSON Object
 /*
 {
-    "ID": "86s3n93",
-    "UUID": "soidhyffiuy87trg8rhg8egvregfyiegyurgfduiegfiwhgdfiudwhgfiuw2huifregyufgwipgfugwiufgyrfguiewgfruehufhgwdg"
+    "id": "86s3n93",
+    "uuid": "soidhyffiuy87trg8rhg8egvregfyiegyurgfduiegfiwhgdfiudwhgfiuw2huifregyufgwipgfugwiufgyrfguiewgfruehufhgwdg"
 }*/
 ```
 
@@ -175,7 +236,7 @@ Node.getAllocationAmt("SERVER ID HERE").then(response => {
 // Returns storage in a JSON Object
 /*
 {
-    "Amount": 2
+    "amount": 2
 }*/
 ```
 
@@ -190,7 +251,7 @@ Node.getDatabaseAmt("SERVER ID HERE").then(response => {
 // Returns storage in a JSON Object
 /*
 {
-    "Amount": 1
+    "amount": 1
 }*/
 ```
 
