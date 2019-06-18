@@ -1,38 +1,24 @@
-This API is written in NodeJS, i originally made this because i have a small hosting bussiness (https://serverhouse.pro) and i needed a bot that can interact with my panel. The only library that exists for it is for JDA (One might exist for python or other languages but idk). 
+This API is written in NodeJS, i originally made this because  i needed a bot that can interact with my panel. The only library that exists for it is for JDA (One might exist for python or other languages but idk). 
 
 While this was originally meant to work with Discord.js, it will work with any of NodeJS librarys, such as socket.io and more!.
 
 ## Installation
 ```javascript
-// This npm works, feel free to use it
-npm install client-nodeactyl
-OR
-// Working on it!
-npm install admin-nodeactyl
-
-// Working on a merge
-// Everyone will soon use this npm:
 npm install nodeactyl
 ```
 
 ## Getting started
-First, follow the installation instructions, then you will need to have the following in your code based on what you need
-
-`Client-Side API`
-
-```javascript
-const client = require('client-nodeactyl.js');
-```
+First, follow the installation instructions, then you will need to have the following in your code.
 
 `System Admin API`
 ```javascript
-const admin = require('admin-nodeactyl.js');
+const Node = require('nodeactyl.js');
 ```
 
-After deciding your API, you need to "login" to your panel/server like so:
+After importing the API, you need to "login" to your panel/server like so:
 
 ```javascript
-const client = require('nodeactyl-client.js');
+const Node = require('nodeactyl.js');
 
 client.login("PANEL URL HERE", "ACCOUNT API KEY HERE");
 ```
@@ -53,36 +39,36 @@ the full documentation
 
 `Dont even try using this API without reading Getting Started guide.`
 
-## Client API
+## Below is mainly clietn-sided API Usages
 
-How to get online status of a server (Used API: Client)
+How to get online status of a server.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.isOnline("SERVER ID HERE").then(response => {
+Node.isOnline("SERVER ID HERE").then(response => {
     console.log(response);
 });
 // Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
 ```
 
-How to check is the API Key holder is the owner of a server(Used API: Client)
+How to check if the API Key holder is the owner of a server.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.isOwner("SERVER ID HERE").then(response => {
+Node.isOwner("SERVER ID HERE").then(response => {
     console.log(response);
 });
 // Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
 ```
 
-How to get CPU Usage (Used API: Client)
+How to get CPU Usage.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.getCPU("SERVER ID HERE").then(response => {
+Node.getCPU("SERVER ID HERE").then(response => {
     console.log(response.TotalCPU); // Logs the CPU Usage
 });
 // Returns CPU Usage in a JSON Object:
@@ -92,12 +78,12 @@ client.getCPU("SERVER ID HERE").then(response => {
 }*/
 ```
 
-How to get RAM Usage (Used API: Client)
+How to get RAM Usage.
 ``` javascript
-const client = require('client-nodeactyl');
-client.login("SERVER ID HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("SERVER ID HERE", "API KEY HERE");
 
-.client.getRAM("SERVER ID HERE").then(response => {
+Node.getRAM("SERVER ID HERE").then(response => {
     console.log(response); // Logs whole JSON Object
     console.log(response.TotalRAM); // Logs the total ram of the server
 });
@@ -109,12 +95,12 @@ client.login("SERVER ID HERE", "API KEY HERE");
 }*/
 ```
 
-How to get Disk usage (Used API: Client)
+How to get Disk usage.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.getDisk("SERVER ID HERE").then(response => {
+Node.getDisk("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
     console.log(response.TotalDisk); // Logs the total disk of the server
 });
@@ -126,28 +112,28 @@ client.getDisk("SERVER ID HERE").then(response => {
 }*/
 ```
 
-How to stop a server (Used API: Client)
+How to stop a server.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.stopServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
+Node.stopServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
 ```
 
-How to start a server (Used API: Client)
+How to start a server.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.startServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
+Node.startServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
 ```
 
-How to get name/description of a server (Used API: Client)
+How to get name/description of a server.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.getNames("SERVER ID HERE").then(response => {
+Node.getNames("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
 });
 // Returns storage in a JSON Object
@@ -157,12 +143,12 @@ client.getNames("SERVER ID HERE").then(response => {
     "Description": "A cool Server"
 }*/
 ```
-How to get the IDs of a server
+How to get the IDs of a server.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.getDisk("SERVER ID HERE").then(response => {
+Node.getDisk("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
     console.log(response.TotalDisk); // Logs the total disk of the server
 });
@@ -174,12 +160,12 @@ client.getDisk("SERVER ID HERE").then(response => {
 }*/
 ```
 
-How to get a server's allocation amount (Used API: Client)
+How to get a server's allocation amount.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.getAllocationAmt("SERVER ID HERE").then(response => {
+Node.getAllocationAmt("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
 });
 // Returns storage in a JSON Object
@@ -189,12 +175,12 @@ client.getAllocationAmt("SERVER ID HERE").then(response => {
 }*/
 ```
 
-How to get a server's MySQL Database amount (Used API: Client) 
+How to get a server's MySQL Database amount.
 ```javascript
-const client = require('client-nodeactyl');
-client.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-client.getDatabaseAmt("SERVER ID HERE").then(response => {
+Node.getDatabaseAmt("SERVER ID HERE").then(response => {
     console.log(response); // Logs the whole JSON Object
 });
 // Returns storage in a JSON Object
@@ -204,20 +190,20 @@ client.getDatabaseAmt("SERVER ID HERE").then(response => {
 }*/
 ```
 
-## Admin API
+## These below are mainly admin related commands
 
-How to change a servers name (Used API: Admin) 
+How to change a servers name.
 ```javascript
-const admin = require('admin-nodeactyl');
-admin.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-admin.changeName("INTERNAL SERVER ID HERE", "NEW NAME");
+Node.changeName("INTERNAL SERVER ID HERE", "NEW NAME");
 ```
 
-How to change a server description (Used API: Admin)
+How to change a server description.
 ```javascript
-const admin = require('admin-nodeactyl');
-admin.login("PANEL URL HERE", "API KEY HERE");
+const Node = require('nodeactyl');
+Node.login("PANEL URL HERE", "API KEY HERE");
 
-admin.changeDescription("INTERNAL SERVER ID HERE", "NEW DESCRIPTION");
+Node.changeDescription("INTERNAL SERVER ID HERE", "NEW DESCRIPTION");
 ```
