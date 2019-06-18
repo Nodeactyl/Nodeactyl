@@ -1,0 +1,21 @@
+{
+  "name": "nodeactyl",
+  "version": "1.1.51",
+  "description": "NodeJS API For pterodactyl panel",
+  "main": "Nodeactyl.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "project"
+  ],
+  "author": "Dalton Burchard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Burchard36/Nodeactyl"
+  },
+  "homepage": "https://github.com/Burchard36/Nodeactyl",
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
