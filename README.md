@@ -1,4 +1,4 @@
-**IF YOU HAVE ANY ISSUES WITH THIS API, MY NAME IS DALTON BURCHARD, MY DISCORD IS** `Dalton Burchard#7705` **PLEASE JOIN THIS DISCORD AND TAG ME (OR PRIVATE MESSAGE TO IS OKAY).**
+**IF YOU HAVE ANY ISSUES WITH THIS API, MY NAME IS DALTON BURCHARD, MY DISCORD IS** `Dalton Burchard#7705` **PLEASE JOIN THIS DISCORD AND TAG ME (OR PRIVATE MESSAGE TO IS OKAY).** https://discord.gg/beTDVtD
 
 This API is written in NodeJS, i originally made this because  i needed a bot that can interact with my panel. The only library that exists for it is for JDA (One might exist for python or other languages but idk). 
 
