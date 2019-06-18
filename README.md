@@ -6,6 +6,8 @@ This API is written in NodeJS, i originally made this because  i needed a bot th
 
 While this was originally meant to work with Discord.js, it will work with any of NodeJS librarys, such as socket.io and more!.
 
+`Stars are very much appreciated <3, i would really appreciate if you find this project useful to please share with your frends :)`
+
 ## Installation
 ```javascript
 npm install nodeactyl
