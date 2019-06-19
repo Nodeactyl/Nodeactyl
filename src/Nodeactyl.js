@@ -639,6 +639,8 @@ module.exports = {
 	getDisk: getDisk,
 	startServer: startServer,
 	stopServer: stopServer,
+	restartServer: restartServer,
+	killServer: killServer,
 	sendCommand: sendCommand,
 	getNames: getNames,
 	getServerIDs: getServerIDs,
