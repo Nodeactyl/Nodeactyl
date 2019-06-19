@@ -55,16 +55,11 @@ the full documentation
 ## Below is mainly client-sided API Usages
 
 How to get online status of a server.
-![alt text](https://i.ibb.co/pPH2hjC/isOnline.png)
+![alt This isnt avaliable for your device](https://i.ibb.co/Q9WqpSV/isOnline.png)
 
 How to get the entire server object (returns literally everything).
+![alt This isnt avaliable for your device](https://i.ibb.co/LkbKHqR/get-Server-Info.png)
 ```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getServerInfo("SERVER ID HERE").then(response => {
-    console.log(response); // Logs whole JSON Object
-});
 /* Returns a JSON Object like so:
    "attributes":{
       "server_owner":true,
