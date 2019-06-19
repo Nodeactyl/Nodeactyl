@@ -22,19 +22,10 @@ npm install nodeactyl
 
 ## Getting started
 First, follow the installation instructions, then you will need to have the following in your code.
-
-`System Admin API`
-```javascript
-const Node = require('nodeactyl.js');
-```
+![alt Your device does not support this](https://i.ibb.co/nmcTPKs/require.png)
 
 After importing the API, you need to "login" to your panel/server like so:
-
-```javascript
-const Node = require('nodeactyl.js');
-
-client.login("PANEL URL HERE", "ACCOUNT API KEY HERE");
-```
+![alt Your device does not support this](https://i.ibb.co/MnYV7Mq/install.png)
 
 
 ## What am i?
