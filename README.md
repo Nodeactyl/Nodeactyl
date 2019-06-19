@@ -207,7 +207,7 @@ How to list all users.<br />
     }
 ```
 
-How to get user my UserID
+How to get user my UserID<br />
 ![alt Your device does not support this](https://i.ibb.co/hVmC0CT/get-User-Info.png)
 ```javascript
 /* RETURNS A JSON LIKE THIS
@@ -229,7 +229,7 @@ How to get user my UserID
   }*/
 ```
   
-How to get user by external ID.
+How to get user by external ID. <br />
 ![alt Your device does not support this](https://i.ibb.co/RCt34ry/get-User-By-External-ID.png)
 ```javascript
 /* RETURNS A JSON LIKE THIS
