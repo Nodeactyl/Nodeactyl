@@ -114,46 +114,54 @@ How to get Disk usage.<br />
 }*/
 ```
 
-How to stop a server.
+How to get name/description of a server.<br />
+![alt Your device does not support this](https://i.ibb.co/hMwF5sf/getNames.png)
 ```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.stopServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
-```
-
-How to start a server.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.startServer("SERVER ID HERE"); // You can show a full print log by calling a promise and calling response.data
-```
-
-How to get name/description of a server.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getNames("SERVER ID HERE").then(response => {
-    console.log(response); // Logs the whole JSON Object
-});
-// Returns storage in a JSON Object
-/*
+/* Returns storage in a JSON Object
 {
     "name": "Super neat server (Not really)",
     "description": "A cool Server"
 }*/
 ```
 
-How to get a list of all servers a user has access to. **NOTE**: IF you are a admin, this will list EVERY SERVER ON THE PANEL.
+How to get the IDs of a server.<br />
+![alt Your device does not support this](https://i.ibb.co/XXP8Frd/get-Server-IDs.png)
 ```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
+/* Returns storage in a JSON Object
+{
+    "id": "86s3n93",
+    "uuid": "soidhyffiuy87trg8rhg8egvregfyiegyurgfduiegfiwhgdfiudwhgfiuw2huifregyufgwipgfugwiufgyrfguiewgfruehufhgwdg"
+}*/
+```
 
-Node.getAllServers().then(response => {
-    console.log(response); // Logs whole JSON Object
-});
+How to get a server's allocation amount.<br />
+![alt Your device does not support this](https://i.ibb.co/BBpXyNJ/get-Allocation-Amt.png)
+```javascript
+/* Returns storage in a JSON Object
+{
+    "amount": 2
+}*/
+```
+
+How to get a server's MySQL Database amount. <br />
+![alt Your device does not support this](https://i.ibb.co/Z2kHBBH/get-Database-Amt.png)
+```javascript
+/* Returns storage in a JSON Object
+{
+    "amount": 1
+}*/
+```
+
+How to stop a server.<br />
+![alt Your device does not support this](https://i.ibb.co/VTDvT5q/stop-Server.png)
+
+How to start a server.<br />
+![alt Your device does not support this](https://i.ibb.co/ZGX1fBH/start-Server.png)
+
+How to get a list of all servers a user has access to. <br />
+**NOTE**: **PLEASE VIEW ** `Examples` **TO SEE THIS IN ACTION, THIS ALONE IS NOT ENOUGH TO DO WHAT YOU NEED**<br />
+![alt Your device does not support this](https://i.ibb.co/LPLQHXj/get-All-Servers.png)
+```javascript
 /* RETURNS JSON LIKE THIS:
 "attributes":{
     "server_owner":true,
@@ -175,53 +183,6 @@ Node.getAllServers().then(response => {
      }
  }*/
 // (This will keep repeating)
-```
-
-How to get the IDs of a server.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getDisk("SERVER ID HERE").then(response => {
-    console.log(response); // Logs the whole JSON Object
-    console.log(response.totalDisk); // Logs the total disk of the server
-});
-// Returns storage in a JSON Object
-/*
-{
-    "id": "86s3n93",
-    "uuid": "soidhyffiuy87trg8rhg8egvregfyiegyurgfduiegfiwhgdfiudwhgfiuw2huifregyufgwipgfugwiufgyrfguiewgfruehufhgwdg"
-}*/
-```
-
-How to get a server's allocation amount.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getAllocationAmt("SERVER ID HERE").then(response => {
-    console.log(response); // Logs the whole JSON Object
-});
-// Returns storage in a JSON Object
-/*
-{
-    "amount": 2
-}*/
-```
-
-How to get a server's MySQL Database amount.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getDatabaseAmt("SERVER ID HERE").then(response => {
-    console.log(response); // Logs the whole JSON Object
-});
-// Returns storage in a JSON Object
-/*
-{
-    "amount": 1
-}*/
 ```
 
 ## These below are mainly admin related commands
