@@ -301,6 +301,52 @@ function stopServer(ServerID) {
     });
 }
 
+//This is for starting a server
+function restartServer(ServerID) {
+
+    return axios({
+        url: URL + '/api/client/servers/' + ServerID + '/power',
+        method: 'POST',
+        followRedirect: true,
+        maxRedirects: 5,
+        headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+            'Accept': 'Application/vnd.pterodactyl.v1+json',
+        },
+        data: {
+            "signal": "restart"
+        }
+    }).then(function (response) {
+        return response.data;
+    }).catch(error => {
+        throwErrors(error);
+    });
+}
+
+//This is for starting a server
+function killServer(ServerID) {
+
+    return axios({
+        url: URL + '/api/client/servers/' + ServerID + '/power',
+        method: 'POST',
+        followRedirect: true,
+        maxRedirects: 5,
+        headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+            'Accept': 'Application/vnd.pterodactyl.v1+json',
+        },
+        data: {
+            "signal": "kill"
+        }
+    }).then(function (response) {
+        return response.data;
+    }).catch(error => {
+        throwErrors(error);
+    });
+}
+
 //This is for sending a command to a server
 function sendCommand(ServerID, Command) {
     // This here is the Pterodactyl API Curl command
