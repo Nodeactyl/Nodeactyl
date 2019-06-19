@@ -196,6 +196,27 @@ function getAllServers() {
 	}).catch(console.error);
 }
 
+//This is for startinging a server
+function startServer(ServerID) {
+	// This here is the Pterodactyl API Curl command
+    return axios(URL + '/api/client/servers/' + ServerID + '/power', {
+		method: 'post',
+		responseEncoding: 'utf8',
+		maxRedirects: 5,
+		headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+	        'Accept': 'Application/vnd.pterodactyl.v1+json',
+	    },
+		data: {
+			'signal': 'start',
+		}
+	}).then(function(response) {
+		return response.data;
+	}).catch(console.error);
+}
+//startServer("8fa8d709");
+
 //This is for stopping a server
 function stopServer(ServerID) {
 	// This here is the Pterodactyl API Curl command
@@ -217,8 +238,8 @@ function stopServer(ServerID) {
 }
 //stopServer("8fa8d709");
 
-//This is for startinging a server
-function startServer(ServerID) {
+//This is for restarting a server
+function restartServer(ServerID) {
 	// This here is the Pterodactyl API Curl command
     return axios(URL + '/api/client/servers/' + ServerID + '/power', {
 		method: 'post',
@@ -230,13 +251,34 @@ function startServer(ServerID) {
 	        'Accept': 'Application/vnd.pterodactyl.v1+json',
 	    },
 		data: {
-			'signal': 'start',
+			'signal': 'restart',
 		}
 	}).then(function(response) {
 		return response.data;
 	}).catch(console.error);
 }
-//startServer("8fa8d709");
+//restartServer("8fa8d709");
+
+//This is for killing a server
+function killServer(ServerID) {
+	// This here is the Pterodactyl API Curl command
+    return axios(URL + '/api/client/servers/' + ServerID + '/power', {
+		method: 'post',
+		responseEncoding: 'utf8',
+		maxRedirects: 5,
+		headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+	        'Accept': 'Application/vnd.pterodactyl.v1+json',
+	    },
+		data: {
+			'signal': 'kill',
+		}
+	}).then(function(response) {
+		return response.data;
+	}).catch(console.error);
+}
+//killServer("8fa8d709");
 
 //This is for sending a command to a server
 function sendCommand(ServerID, Command) {
