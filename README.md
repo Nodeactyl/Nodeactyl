@@ -4,8 +4,7 @@
 
 # Update!!
 *I will be rewriting this API, for better error handling*
-
-`This API will now merge the client + admin together, the admin commands are here but just not docuemnted, an IDE may reveal these functions, theyre pretty self explanitory but they will be documented soon`
+*^^ Guess what?* **ITS DONE**
 
 This API is written in NodeJS, i originally made this because  i needed a bot that can interact with my panel. The only library that exists for it is for JDA (One might exist for python or other languages but idk). 
 
