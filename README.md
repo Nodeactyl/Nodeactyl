@@ -54,7 +54,8 @@ the full documentation
 
 ## Below is mainly client-sided API Usages
 
-How to get online status of a server.
+
+How to get online status of a server.<br />
 ![alt This isnt avaliable for your device](https://i.ibb.co/Q9WqpSV/isOnline.png)
 
 How to get the entire server object (returns literally everything).
@@ -81,60 +82,32 @@ How to get the entire server object (returns literally everything).
    }*/
 ```
 
-How to check if the API Key holder is the owner of a server.
+How to check if the API Key holder is the owner of a server.<br />
+![alt Your device does not support this](https://i.ibb.co/Gx67pWk/isOwner.png)
+
+How to get CPU Usage.<br />
+![alt your device does not support this](https://i.ibb.co/LvhcMGL/getCPU.png)
 ```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.isOwner("SERVER ID HERE").then(response => {
-    console.log(response);
-});
-// Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
-```
-
-How to get CPU Usage.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getCPU("SERVER ID HERE").then(response => {
-    console.log(response.totalCPU); // Logs the CPU Usage
-});
-// Returns CPU Usage in a JSON Object:
-/*
+/* Returns CPU Usage in a JSON Object:
 {
     "totalCPU": "23%"
 }*/
 ```
 
-How to get RAM Usage.
+How to get RAM Usage.<br />
+![alt Your device does not support this](https://i.ibb.co/ry8fVbF/getRAM.png)
 ``` javascript
-const Node = require('nodeactyl');
-Node.login("SERVER ID HERE", "API KEY HERE");
-
-Node.getRAM("SERVER ID HERE").then(response => {
-    console.log(response); // Logs whole JSON Object
-    console.log(response.totalRAM); // Logs the total ram of the server
-});
-// Returns RAM Usage in a JSON Object:
-/*
+/* Returns RAM Usage in a JSON Object:
 {
     "totalRAM": 1024,
      "usedRAM": 234
 }*/
 ```
 
-How to get Disk usage.
+How to get Disk usage.<br />
+![alt Your device does not support this](https://i.ibb.co/3yRJ79X/getDisk.png)
 ```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.getDisk("SERVER ID HERE").then(response => {
-    console.log(response); // Logs the whole JSON Object
-    console.log(response.totalDisk); // Logs the total disk of the server
-});
-// Returns storage in a JSON Object
-/*
+/* Returns storage in a JSON Object
 {
     "usedDisk": 657
     "totalDisk": 10000
