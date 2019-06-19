@@ -16,37 +16,37 @@ function throwErrors(error) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: URL Not Found!\nURL ENTERED WAS: " + yellow + URL + red + "\nSystem will now exit." + reset);
         console.error(err.message);
         console.log(error.stack);
-        process.exit(1);
+        //process.exit(1);
     } else if (error.response.status === 403 || error.response.status === 401) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: API Key is not valid! \nCheck to see if your API Key is correct!" + reset);
         console.error(err.message);
         console.log(error.stack);
-        process.exit(1);
+        //process.exit(1);
     } else if (error.response.status === 404) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nCheck to see if your API Key is correct!" + reset);
         console.error(err.message);
         console.log(error.stack);
-        process.exit(1);
+       // process.exit(1);
     } else if (error.response.status === 410) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nUhm... Everythings gone! (error code 410)" + reset);
         console.error(err.message);
         console.log(error.stack);
-        process.exit(1);
+        //process.exit(1);
     } else if (error.response.status === 500) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nInternal server error! (This is to do with your pterodactyl server" + reset);
         console.error(err.message);
         console.log(error.stack);
-        process.exit(1);
+        //process.exit(1);
     } else if (error.response.status === 503) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nServer unavailable! (Server is either down, or in maintence mode)" + reset);
         console.error(err.message);
         console.log(error.stack);
-        process.exit(1);
+        //process.exit(1);
     } else {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nOh heh... This error is undocumented..." + reset);
         console.error(err.message);
         console.error(error);
-        process.exit(1);
+       // process.exit(1);
     }
 }
 
@@ -78,8 +78,8 @@ function isOnline(ServerID) {
         } else {
             return false;
         }
-        }).catch(error => {
-            throwErrors(error);
+    }).catch(error => {
+        throwErrors(error);
     });
 }
 
@@ -136,9 +136,9 @@ function getCPU(ServerID) {
     }).then(function (response) {
         let data = { totalCPU: response.data.attributes.cpu.current + "%" }
         return data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This is use to get server RAM/Used RAM
@@ -155,9 +155,9 @@ function getRAM(ServerID) {
     }).then(function (response) {
         let data = { totalRAM: response.data.attributes.memory.limit, usedRAM: response.data.attributes.memory.current }
         return data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This is for getting a servers CPU Usage
@@ -193,9 +193,9 @@ function getNames(ServerID) {
     }).then(function (response) {
         let data = { name: response.data.attributes.name, description: response.data.attributes.description };
         return data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This is for getting a servers CPU Usage
@@ -212,9 +212,9 @@ function getServerIDs(ServerID) {
     }).then(function (response) {
         let data = { id: response.data.attributes.identifier, uuid: response.data.attributes.uuid }
         return data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This is for getting a servers CPU Usage
@@ -231,9 +231,9 @@ function getAllocationAmt(ServerID) {
     }).then(function (response) {
         let data = { amount: response.data.attributes.feature_limits.allocations }
         return data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This is for getting a servers Database amount
@@ -250,16 +250,16 @@ function getDatabaseAmt(ServerID) {
     }).then(function (response) {
         let data = { amount: response.data.attributes.feature_limits.databases }
         return data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 //This is for starting a server
 function startServer(ServerID) {
 
     return axios({
-        url: URL + '/api/client/servers/' + ServerID+ '/power',
+        url: URL + '/api/client/servers/' + ServerID + '/power',
         method: 'POST',
         followRedirect: true,
         maxRedirects: 5,
@@ -273,9 +273,9 @@ function startServer(ServerID) {
         }
     }).then(function (response) {
         return response.data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 //This is for starting a server
@@ -364,9 +364,9 @@ function sendCommand(ServerID, Command) {
         }
     }).then(function (response) {
         return response.data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // gets all servers a user has access to 
@@ -382,9 +382,9 @@ function getAllServers() {
         }
     }).then(function (response) {
         return response.data;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 ////////////////////
 //   ADMIN  AREA  //
@@ -404,9 +404,9 @@ function getAllIDs(ServerID) {
         response.data.attributes.forEach(function (stuff) {
             return stuff.id;
         })
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This lists all users on the pterodactyl panel
@@ -662,9 +662,9 @@ function suspend(InternalID) {
         }
     }).then(function (response) {
         return response;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 //unsuspend a server
@@ -681,9 +681,9 @@ function unSuspend(InternalID) {
         }
     }).then(function (response) {
         return response;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // rebuilds a server
@@ -700,9 +700,9 @@ function rebuild(InternalID) {
         }
     }).then(function (response) {
         return response;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // to resinstall a server
@@ -719,9 +719,9 @@ function reinstall(InternalID) {
         }
     }).then(function (response) {
         return response;
-        }).catch(error => {
-            throwErrors(error);
-        });
+    }).catch(error => {
+        throwErrors(error);
+    });
 }
 
 // This deletes a server
@@ -761,6 +761,8 @@ module.exports = {
     getDatabaseAmt: getDatabaseAmt,
     startServer: startServer,
     stopServer: stopServer,
+    restartServer: restartServer,
+    killServer: killServer,
     sendCommand: sendCommand,
     getAllServers: getAllServers,
 
