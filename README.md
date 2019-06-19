@@ -55,7 +55,7 @@ the full documentation
 ## Below is mainly client-sided API Usages
 
 How to get online status of a server.
-![alt text](https://ibb.co/pPH2hjC)
+![alt text](https://i.ibb.co/pPH2hjC/isOnline.png)
 
 How to get the entire server object (returns literally everything).
 ```javascript
