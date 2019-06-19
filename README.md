@@ -181,18 +181,286 @@ How to get a list of all servers a user has access to. <br />
 
 ## These below are mainly admin related commands
 
-How to change a servers name.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
+**NOTE YOU WILL NEED A APPLICATION API KEY NOT YOUR ACCOUNT API**
 
-Node.changeName("INTERNAL SERVER ID HERE", "NEW NAME");
+How to list all users.<br />
+**NOTE:** Take a look at the getALlServers() in the /examples/ area, this works the same way
+![alt Your device does not support this](https://i.ibb.co/3S4n4YG/get-All-Users.png)
+```javascript
+/* RETURNS JSON OBJECT(S) LIKE THIS:
+    {
+      "object": "user",
+      "attributes": {
+        "id": 1,
+        "external_id": null,
+        "uuid": "c4022c6c-9bf1-4a23-bff9-519cceb38335",
+        "username": "codeco",
+        "email": "codeco@file.properties",
+        "first_name": "Rihan",
+        "last_name": "Arfan",
+        "language": "en",
+        "root_admin": true,
+        "2fa": false,
+        "created_at": "2018-03-18T15:15:17+00:00",
+        "updated_at": "2018-10-16T21:51:21+00:00"
+      }
+    }
 ```
 
-How to change a server description.
+How to get user my UserID
+![alt Your device does not support this](https://i.ibb.co/hVmC0CT/get-User-Info.png)
 ```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.changeDescription("INTERNAL SERVER ID HERE", "NEW DESCRIPTION");
+/* RETURNS A JSON LIKE THIS
+{
+  "object": "user",
+  "attributes": {
+    "id": 1,
+    "external_id": null,
+    "uuid": "c4022c6c-9bf1-4a23-bff9-519cceb38335",
+    "username": "codeco",
+    "email": "codeco@file.properties",
+    "first_name": "Rihan",
+    "last_name": "Arfan",
+    "language": "en",
+    "root_admin": true,
+    "2fa": false,
+    "created_at": "2018-03-18T15:15:17+00:00",
+    "updated_at": "2018-10-16T21:51:21+00:00"
+  }*/
 ```
+  
+How to get user by external ID.
+![alt Your device does not support this](https://i.ibb.co/RCt34ry/get-User-By-External-ID.png)
+```javascript
+/* RETURNS A JSON LIKE THIS
+{
+  "object": "user",
+  "attributes": {
+    "id": 1,
+    "external_id": null,
+    "uuid": "c4022c6c-9bf1-4a23-bff9-519cceb38335",
+    "username": "codeco",
+    "email": "codeco@file.properties",
+    "first_name": "Rihan",
+    "last_name": "Arfan",
+    "language": "en",
+    "root_admin": true,
+    "2fa": false,
+    "created_at": "2018-03-18T15:15:17+00:00",
+    "updated_at": "2018-10-16T21:51:21+00:00"
+  }
+}*/
+```
+How to create a user. <br />
+![alt Your device does not support this](https://i.ibb.co/Snx4b0y/create-User.png)
+
+How to change user account details. <br />
+![alt Your device does not support this](https://i.ibb.co/VH0RJs5/change-Account.png)
+
+How to delete an account. <br />
+![alt Your device does not support this](https://i.ibb.co/TLjx5yj/delete-Account.png)
+
+How to list all nodes. <br />
+**NOTE:** Follow example for getAlllServers() to fully use this API!<br />
+![alt Your device does not support this](https://i.ibb.co/8479xg5/get-All-Nodes.png)
+```javascript
+/* RETURNS A JSON OBJECT LIKE SO:
+    {
+      "object": "node",
+      "attributes": {
+        "id": 2,
+        "public": true,
+        "name": "Test",
+        "description": "Test",
+        "location_id": 1,
+        "fqdn": "fsn1.matthewp.io",
+        "scheme": "https",
+        "behind_proxy": false,
+        "maintenance_mode": false,
+        "memory": 4096,
+        "memory_overallocate": 0,
+        "disk": 10000,
+        "disk_overallocate": 0,
+        "upload_size": 100,
+        "daemon_listen": 2096,
+        "daemon_sftp": 2022,
+        "daemon_base": "\/tmp\/daemon-data",
+        "created_at": "2018-04-06T02:19:33+00:00",
+        "updated_at": "2018-10-28T01:13:03+00:00"
+      }
+    }*/
+```
+
+How to get Node by ID:<br />
+![alt Your device does not support this](https://i.ibb.co/rwJmMw4/getNode.png)
+```javascript
+/* RETURNS A JSON OBJECT LIKE SO:
+{
+  "object": "node",
+  "attributes": {
+    "id": 2,
+    "public": true,
+    "name": "Test",
+    "description": "Test",
+    "location_id": 1,
+    "fqdn": "fsn1.matthewp.io",
+    "scheme": "https",
+    "behind_proxy": false,
+    "maintenance_mode": false,
+    "memory": 4096,
+    "memory_overallocate": 0,
+    "disk": 10000,
+    "disk_overallocate": 0,
+    "upload_size": 100,
+    "daemon_listen": 2096,
+    "daemon_sftp": 2022,
+    "daemon_base": "\/tmp\/daemon-data",
+    "created_at": "2018-04-06T02:19:33+00:00",
+    "updated_at": "2018-10-28T01:13:03+00:00"
+  }
+}
+*/
+```
+
+How to create/edit a node:,br />
+**Seriously... you dont want a API for this. just do it manually** (Will add if requested)
+
+How to delete a node: <br />
+![alt Your device does not support this](https://i.ibb.co/nM7b6BB/delete-Node.png)
+
+How to list node allocations (Which servers have which ports, or see if ports are open):<br />
+**NOTE:** Take a look at the /examples/ for getAllServers() in order to use this API fully<br />
+![alt Your device doest not support this](https://i.ibb.co/ZhjgGy4/get-Node-Allocations.png)
+```javascript
+/* RETURNS A JSON OBJECT LIKE SO:
+{
+      "object": "allocation",
+      "attributes": {
+        "id": 3,
+        "ip": "195.201.194.74",
+        "alias": null,
+        "port": 25499,
+        "assigned": true
+      }
+    }
+*/
+```
+
+How to create/delete allocations:,br />
+**Will be added if requested**
+
+How to get every single server on the panel:<br />
+**NOTE:** Take a look at the /examples/ for getAllServers() in order to use this API fully
+![alt Your device does not support this](https://i.ibb.co/cCnpSWR/get-Every-Last-Server.png)
+```javascript
+/* RETURNS A JSON OBJECT AS SO:
+{
+      "object": "server",
+      "attributes": {
+        "id": 2,
+        "external_id": null,
+        "uuid": "47a7052b-f07e-4845-989d-e876e30960f4",
+        "identifier": "47a7052b",
+        "name": "Eat Cows",
+        "description": "",
+        "suspended": false,
+        "limits": {
+          "memory": 2048,
+          "swap": -1,
+          "disk": 10000,
+          "io": 500,
+          "cpu": 300
+        },
+        "feature_limits": {
+          "databases": 10,
+          "allocations": 0
+        },
+        "user": 1,
+        "node": 2,
+        "allocation": 3,
+        "nest": 1,
+        "egg": 4,
+        "pack": null,
+        "container": {
+          "startup_command": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+          "image": "quay.io\/pterodactyl\/core:java",
+          "installed": true,
+          "environment": {
+            "SERVER_JARFILE": "server.jar",
+            "VANILLA_VERSION": "latest",
+            "STARTUP": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+            "P_SERVER_LOCATION": "test",
+            "P_SERVER_UUID": "47a7052b-f07e-4845-989d-e876e30960f4"
+          }
+        },
+        "updated_at": "2018-11-20T14:35:00+00:00",
+        "created_at": "2018-09-29T22:50:16+00:00"
+      }
+    }
+*/
+```
+
+how to get detailed server details:<br />
+![alt Your device does not support this](https://i.ibb.co/kqRqW0R/get-All-Server-Details.png)
+```javascript
+/* RETURNS A JSON OBJECT AS SO:
+{
+  "object": "server",
+  "attributes": {
+    "id": 2,
+    "external_id": null,
+    "uuid": "47a7052b-f07e-4845-989d-e876e30960f4",
+    "identifier": "47a7052b",
+    "name": "Survival",
+    "description": "gsk;ljgkj;hgdakl;gha",
+    "suspended": false,
+    "limits": {
+      "memory": 2048,
+      "swap": -1,
+      "disk": 10000,
+      "io": 500,
+      "cpu": 300
+    },
+    "feature_limits": {
+      "databases": 10,
+      "allocations": 0
+    },
+    "user": 1,
+    "node": 2,
+    "allocation": 3,
+    "nest": 1,
+    "egg": 4,
+    "pack": null,
+    "container": {
+      "startup_command": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+      "image": "quay.io\/pterodactyl\/core:java",
+      "installed": true,
+      "environment": {
+        "SERVER_JARFILE": "server.jar",
+        "VANILLA_VERSION": "latest",
+        "STARTUP": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
+        "P_SERVER_LOCATION": "test",
+        "P_SERVER_UUID": "47a7052b-f07e-4845-989d-e876e30960f4"
+      }
+    },
+    "updated_at": "2018-11-20T02:52:37+00:00",
+    "created_at": "2018-09-29T22:50:16+00:00"
+  }
+}
+*/
+```
+
+How to Update Server Build configuration/update Startup parameters/update server details:
+**Please, save yourself the hassle and do it in the panel** (Will add upon request)
+
+How to suspend a server:<br />
+![alt Your device does not support this](https://i.ibb.co/4Sp6RZn/suspend.png)
+
+How to unsuspend a server:<br />
+![alt Your device does not support this](https://i.ibb.co/NN96wd2/unsuspend.png)
+
+How to rebuild a server:<br />
+![alt Your device does not support this](https://i.ibb.co/7JZ3jsG/rebuilds.png)
+
+How to delete a server:<br />
+![alt Your device does not support this](https://i.ibb.co/nfCHgLw/delete.png)
