@@ -55,15 +55,7 @@ the full documentation
 ## Below is mainly client-sided API Usages
 
 How to get online status of a server.
-```javascript
-const Node = require('nodeactyl');
-Node.login("PANEL URL HERE", "API KEY HERE");
-
-Node.isOnline("SERVER ID HERE").then(response => {
-    console.log(response);
-});
-// Above function can return True, False, or a full stack error (caused by wrong URL, API Key or bad connection)
-```
+![alt text](https://ibb.co/pPH2hjC)
 
 How to get the entire server object (returns literally everything).
 ```javascript
