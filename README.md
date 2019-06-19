@@ -149,6 +149,9 @@ How to stop a server.<br />
 How to start a server.<br />
 ![alt Your device does not support this](https://i.ibb.co/ZGX1fBH/start-Server.png)
 
+How to send a commands to a server.<br />
+![alt Your device does not support this](https://i.ibb.co/TBpLcq4/send-Command.png)
+
 How to get a list of all servers a user has access to. <br />
 **NOTE**: **PLEASE VIEW ** `Examples` **TO SEE THIS IN ACTION, THIS ALONE IS NOT ENOUGH TO DO WHAT YOU NEED**<br />
 ![alt Your device does not support this](https://i.ibb.co/LPLQHXj/get-All-Servers.png)
