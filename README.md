@@ -9,6 +9,8 @@
 
 This API is written in NodeJS, i originally made this because  i needed a bot that can interact with my panel. The only library that exists for it is for JDA (One might exist for python or other languages but idk). 
 
+## Extras
+
 While this was originally meant to work with Discord.js, it will work with any of NodeJS librarys, such as socket.io and more!.
 
 `Stars are very much appreciated <3, i would really appreciate if you find this project useful to please share with your frends :)`
