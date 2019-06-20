@@ -3,7 +3,7 @@ const axios = require('axios');
 // Leave me alone these are colors.
 
 let reset = "\x1b[0m";
-let underscore = "\x1b[4m";
+//let underscore = "\x1b[4m";
 
 let blue = "\x1b[34m";
 let yellow = "\x1b[33m";
@@ -18,7 +18,7 @@ function throwErrors(error) {
         console.log(error.stack);
         //process.exit(1);
     } else if (error.response.status === 403 || error.response.status === 401) {
-        let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: API Key is not valid! \nCheck to see if your API Key is correct!" + reset);
+        let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: API Key is not valid! (Or you did not specify client/application) \nCheck to see if your API Key is correct! (And wether your protocol is client or application)" + reset);
         console.error(err.message);
         console.log(error.stack);
         //process.exit(1);
@@ -56,10 +56,47 @@ function throwErrors(error) {
 
 let URL;
 let Key;
-let Port
-function login(PanelURL, APIKey) {
+let Type;
+function login(PanelURL, APIKey, type) {
     URL = PanelURL;
     Key = APIKey;
+    Type = type;;
+    if (Type.toLowerCase() === "client") {
+        return axios.get(URL + '/api/client', {
+            responseEncoding: 'utf8',
+            maxRedirects: 5,
+            headers: {
+                'Authorization': 'Bearer ' + Key,
+                'Content-Type': 'application/json',
+                'Accept': 'Application/vnd.pterodactyl.v1+json',
+            }
+        }).then(function (response) {
+            return response;
+        }).catch(error => {
+            throwErrors(error);
+        });
+    } else if (Type.toLowerCase() === "application") {
+        return axios.get(URL + '/api/application/users', {
+            responseEncoding: 'utf8',
+            maxRedirects: 5,
+            headers: {
+                'Authorization': 'Bearer ' + Key,
+                'Content-Type': 'application/json',
+                'Accept': 'Application/vnd.pterodactyl.v1+json',
+            }
+        }).then(function (response) {
+            return response;
+        }).catch(error => {
+            throwErrors(error);
+        });
+    } else {
+        let error = {
+            "response": {
+                "status": 403,
+            }
+        }
+        throwErrors(error);
+    }
 }
 
 // This is for checking if a server is online or not
@@ -787,4 +824,3 @@ module.exports = {
     deleteServer: deleteServer
 
 }
-
