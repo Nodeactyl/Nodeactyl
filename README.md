@@ -1,18 +1,11 @@
-*There has been issues with downloading this package, if you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init` *Proceed to fill out random stuff (not joking just do it), and you shouldnt have any issues after that*
+*If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`*
 
-**IF YOU HAVE ANY ISSUES WITH THIS API, MY NAME IS DALTON BURCHARD, MY DISCORD IS** `Dalton Burchard#7705` **PLEASE JOIN THIS DISCORD AND TAG ME (OR PRIVATE MESSAGE TO IS OKAY).** https://discord.gg/beTDVtD
+**IF YOU HAVE ANY ISSUES WITH THIS API, PLEASE JOIN THIS DISCORD AND TAG ME (OR PRIVATE MESSAGE TO IS OKAY).** https://discord.gg/beTDVtD
 
-# Update!!
-*I will be rewriting this API, for better error handling*
-*^^ Guess what?* **ITS DONE**
-
-This API is written in NodeJS, i originally made this because  i needed a bot that can interact with my panel. The only library that exists for it is for JDA (One might exist for python or other languages but idk). 
-
+`Stars are very much appreciated <3, i would really appreciate if you find this project useful to please share with your frends :)`
 ## Extras
 
 While this was originally meant to work with Discord.js, it will work with any of NodeJS librarys, such as socket.io and more!.
-
-`Stars are very much appreciated <3, i would really appreciate if you find this project useful to please share with your frends :)`
 
 ## Installation
 ```javascript
@@ -30,6 +23,7 @@ After importing the API, you need to "login" to your panel/server like so:<br />
 
 
 ## What am i?
+
 Nodeactyl is an API For NodeJS to communicated with the panel, you can control ANY server on your nodes with it (If you purchase a server from another host, no worry! The API works with your own server too!) . Thie library original intent was to be for discord bots, but since this is in NodeJS, it is usable in ANY type of NodeJS program You can remake your own UI for the panel, and just stick with the pterodactyl daemon, doesnt suit you? use it in socket.io and have your node/server information displayed on a webpage! The possibilitys are endless! 
 
 ## How do i work?
