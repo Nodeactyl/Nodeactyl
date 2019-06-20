@@ -2,6 +2,9 @@
 
 **IF YOU HAVE ANY ISSUES WITH THIS API, PLEASE JOIN THIS DISCORD AND ASK FOR SUPPORT.** https://discord.gg/beTDVtD
 
+## Updated
+**login() WAS RECENTLY CHANGED PLEASE VIEW NEW DOCUMENTATION**
+
 `Stars are very much appreciated <3, i would really appreciate if you find this project useful to please share with your frends :)`
 ## Extras
 
