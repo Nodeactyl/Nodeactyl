@@ -23,8 +23,10 @@ npm install nodeactyl
 First, follow the installation instructions, then you will need to have the following in your code.<br />
 ![alt Your device does not support this](https://i.ibb.co/nmcTPKs/require.png)
 
+**AS OF 1.3.0 AND AFTER THIS WAS CHANGED TO THIS!!**
 After importing the API, you need to "login" to your panel/server like so:<br />
-![alt Your device does not support this](https://i.ibb.co/MnYV7Mq/install.png)
+![alt Your device does not support this](https://https://i.ibb.co/0VHTPWf/login.png)
+<br />You need to specify wether you login() needs to be a client login or administrator login/
 
 
 ## What am i?
