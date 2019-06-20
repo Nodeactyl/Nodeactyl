@@ -1,6 +1,6 @@
 *If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`*
 
-**IF YOU HAVE ANY ISSUES WITH THIS API, PLEASE JOIN THIS DISCORD AND TAG ME (OR PRIVATE MESSAGE TO IS OKAY).** https://discord.gg/beTDVtD
+**IF YOU HAVE ANY ISSUES WITH THIS API, PLEASE JOIN THIS DISCORD AND ASK FOR SUPPORT.** https://discord.gg/beTDVtD
 
 `Stars are very much appreciated <3, i would really appreciate if you find this project useful to please share with your frends :)`
 ## Extras
