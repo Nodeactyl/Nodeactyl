@@ -25,7 +25,7 @@ First, follow the installation instructions, then you will need to have the foll
 
 **AS OF 1.3.0 AND AFTER THIS WAS CHANGED TO THIS!!**
 After importing the API, you need to "login" to your panel/server like so:<br />
-![alt Your device does not support this](https://https://i.ibb.co/0VHTPWf/login.png)
+![alt Your device does not support this](https://i.ibb.co/DY7tD6c/login.png)
 <br />You need to specify wether you login() needs to be a client login or administrator login/
 
 
