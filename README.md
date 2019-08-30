@@ -36,10 +36,7 @@ This API works by using the pterodactyl API (Curl requests) to the server/node, 
 
 
 ## Documentation
-Heres is the official documentation website: `https://nodeactyl.jellydev.xyz/`
-
-Below is some basic documentation, but please note, this page will not contain 
-the full documentation
+Below is some basic documentation until the documentation is fully complete, the WIP documentation can be viewed here: https://nodeactyl.elliotfrost.xyz.
 
 `Dont even try using this API without reading Getting Started guide.`
 
