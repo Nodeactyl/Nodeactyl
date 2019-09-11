@@ -26,7 +26,7 @@ function throwErrors(error) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nCheck to see if your API Key is correct!" + reset);
         console.error(err.message);
         console.log(error.stack);
-       // process.exit(1);
+        // process.exit(1);
     } else if (error.response.status === 410) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nUhm... Everythings gone! (error code 410)" + reset);
         console.error(err.message);
@@ -46,7 +46,7 @@ function throwErrors(error) {
         let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \nOh heh... This error is undocumented..." + reset);
         console.error(err.message);
         console.error(error);
-       // process.exit(1);
+        // process.exit(1);
     }
 }
 
@@ -527,6 +527,54 @@ function createUser(Username, Email, FirstName, LastName, Password) {
     });
 }
 
+// Creates a server
+function createServer(NameServer, IDOwner, NestID, EggID, DockerImage, Startup, Memory, Swap, Disk, io, Cpu, NumberDataBases, NumberAllocations) {
+    // This here is the Pterodactyl API Curl command
+    return axios({
+        url: URL + "/api/application/servers",
+        method: 'POST',
+        responseEncoding: 'utf8',
+        maxRedirects: 5,
+        headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+            'Accept': 'Application/vnd.pterodactyl.v1+json',
+        },
+        data: {
+            "name": NameServer,
+            "user": IDOwner,
+            "nest": NestID,
+            "egg": EggID,
+            "docker_image": DockerImage,
+            "startup": Startup,
+            "limits": {
+                "memory": Memory,
+                "swap": Swap,
+                "disk": Disk,
+                "io": io,
+                "cpu": Cpu
+            },
+            "feature_limits": {
+                "databases": NumberDataBases,
+                "allocations": NumberAllocations
+            },
+            "environment": {
+                "DL_VERSION": "1.12.2"
+            },
+            "deploy": {
+                "locations": [1],
+                "dedicated_ip": false,
+                "port_range": []
+            },
+            "start_on_completion": true
+        }
+    }).then(function (response) {
+        return response;
+    }).catch(error => {
+        throwErrors(error);
+    });
+}
+
 // Changes account details
 function changeAccount(UserID, NewUsername, NewEmail, NewFirstName, NewLastName, NewPassword) {
     // This here is the Pterodactyl API Curl command
@@ -809,6 +857,7 @@ module.exports = {
     getUserInfo: getUserInfo,
     getUserByExternalID: getUserByExternalID,
     createUser: createUser,
+    createServer: createServer,
     changeAccount: changeAccount,
     deleteAccount: deleteAccount,
     getAllNodes: getAllNodes,
