@@ -248,6 +248,13 @@ How to get user by external ID. <br />
   }
 }*/
 ```
+How to create a server. <br />
+```javascript
+Node.login("https://panel.mypanel.com", "8JvMkvdy6L632H3gFY")
+Node.createServer("NameServer", "1", "5", "15", "quay.io/pterodactyl/core:java-glibc", "java -Xms128M -Xmx 1024M -jar server.jar", "500", "0", "1024", "500", "100", "1", "2")
+// Please provide the following information in order: NameServer, IDOwner, NestID, EggID, DockerImage, Startup, Memory, Swap, Disk, io, Cpu, NumberDataBases, NumberAllocations
+```
+
 How to create a user. <br />
 ![alt Your device does not support this](https://i.ibb.co/Snx4b0y/create-User.png)
 
