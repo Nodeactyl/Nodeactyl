@@ -43,7 +43,7 @@ function throwErrors(error) {
         console.log(error.stack);
         //process.exit(1);
 	} else if (error.response.status === 429) {
-        let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \n Too Many Requests! Default rate limit is 60 requests per second. See https://github.com/pterodactyl/panel/blob/0.7-develop/app/Http/Kernel.php#L84" + reset);
+        let err = new Error(blue + "\n[Nodeactyl] : " + red + "FATAL ERROR: ! \n Too Many Requests! See https://github.com/pterodactyl/panel/blob/0.7-develop/app/Http/Kernel.php#L84" + reset);
         console.error(err.message);
         console.log(error.stack);
         //process.exit(1);
