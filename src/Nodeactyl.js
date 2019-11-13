@@ -99,6 +99,23 @@ function login(PanelURL, APIKey, type) {
     }
 }
 
+// This is for getting the raw server attributes
+function getServerAttr(ServerID) {
+    return axios.get(URL + '/api/client/servers/' + ServerID + '/utilization', {
+        responseEncoding: 'utf8',
+        maxRedirects: 5,
+        headers: {
+            'Authorization': 'Bearer ' + Key,
+            'Content-Type': 'application/json',
+            'Accept': 'Application/vnd.pterodactyl.v1+json',
+        }
+    }).then(function (response) {
+        return response.data.attributes;
+    }).catch(error => {
+        throwErrors(error);
+    });
+}
+
 // This is for checking if a server is online or not
 function isOnline(ServerID) {
     return axios.get(URL + '/api/client/servers/' + ServerID + '/utilization', {
@@ -834,6 +851,7 @@ function deleteServer(InternalID) {
 module.exports = {
     // Client imports
     login: login,
+    getServerAttr: getServerAttr,
     isOnline: isOnline,
     getServerInfo: getServerInfo,
     isOwner: isOwner,
