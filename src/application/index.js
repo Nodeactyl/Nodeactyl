@@ -1,6 +1,7 @@
 let login = require('./functions/login.js');
 let getallservers = require('./functions/getAllServers.js');
 let createserver = require('./functions/createServer.js');
+let createuser = require('./functions/createUser.js');
 
 
 let session;
@@ -39,7 +40,8 @@ let index = {
     isAuthenticated: isAuthenticated,
     login: login,
     getAllServers: getallservers,
-    createServer: createserver
+    createServer: createserver,
+    createUser: createuser
 }
 
 // Session manager for the client
