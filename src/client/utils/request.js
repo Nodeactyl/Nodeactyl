@@ -85,13 +85,7 @@ function checkError(error, request, data) {
     if (error.hasOwnProperty('response')) {
         if (error.response.hasOwnProperty('status')) {
             let status = error.response.status;
-            if (request == 'isOnline') {
-                return processStatus(request, status);
-            } else if (request == 'getServerInfo') {
-                return processStatus(request, status);
-            } else if (utilization.indexOf(request) > -1) {
-                return processStatus(request, status);
-            }
+            return processStatus(request, status);
         }
     } else {
         throw error;
