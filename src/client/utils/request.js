@@ -41,8 +41,12 @@ function sendGet(request, data) {
             return {'current': response.data.attributes.disk.current, 'limit': response.data.attributes.disk.limit}
         }
     }).catch(error => {
-        // This error is for invalid/malformed requests
-        return new Error(checkError(error, request, data));
+        let err = new Error(checkError(error, request, data));
+        if (err != undefined) {
+            return err;
+        } else {
+            throw error;
+        }
     });
 }
 
