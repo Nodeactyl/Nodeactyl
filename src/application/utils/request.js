@@ -27,6 +27,8 @@ function sendGet(request, data) {
     }).then(response => {
         if (request == 'getAllServers') {
             return response.data.data;
+        } else if (request == 'getAllUsers') {
+            return response.data;
         }
     }).catch(error => {
         // This error is for invalid/malformed requests
@@ -50,11 +52,17 @@ function sendPost(request, postData, data) {
     }).then(function (response) {
         if (request == 'createServer') {
             // If people want make it return the server object
-            return true;
+            return response.data.attributes;
+        } else if (request == 'createUser') {
+            return response.data.attributes;
         }
     }).catch(error => {
-        throw error;
-        //return new Error(checkError(error, request, data));
+        let err = new Error(checkError(error, request, data));
+        if (err != undefined) {
+            return err;
+        } else {
+            throw error;
+        }
     });
 }
 
@@ -68,6 +76,8 @@ function getURL(request, host, data) {
 function getPostURL(request, host, data) {
     if (request == 'createServer') {
         return host + "/api/application/servers";
+    } else if (request == 'createUser') {
+        return host + "/api/application/users";
     }
 }
 
@@ -75,19 +85,26 @@ function checkError(error, request, data) {
     if (error.hasOwnProperty('response')) {
         if (error.response.hasOwnProperty('status')) {
             let status = error.response.status;
-            if (request == 'getAllServers') {
-                return processStatus(request, status);
-            } 
+            return processStatus(request, status);
         }
     } else {
         throw error;
     }
 }
 
+// We seperate this in case a certain request needs an error handled
 function processStatus(request, status) {
     if (request == 'getAllServers') {
         if (status == 500) {
-
+            return 'Invalid data entered into request body.';
+        }
+    } else if (request == 'createServer') {
+        if (status == 500 || status == 422) {
+            return 'Invalid data entered into request body. ERROR CODE: ' + status;
+        }
+    } else if (request == 'createUser') {
+        if (status == 500) {
+            return 'Invalid data entered into request body.'
         }
     }
 }
