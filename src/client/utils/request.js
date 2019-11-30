@@ -28,7 +28,7 @@ function sendGet(request, data) {
         if (request == 'isOnline') {
             return response.data.attributes.state == 'on';
         } else if (request == 'getServerInfo') {
-            return response.data;
+            return response.data.attributes;
         } else if (request == 'getCPUUsage') {
             return {'current': response.data.attributes.cpu.current, 'limit':response.data.attributes.cpu.limit};
         } else if (request == 'getCPUCores') {
