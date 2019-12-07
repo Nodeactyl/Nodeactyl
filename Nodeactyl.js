@@ -1,7 +1,7 @@
 let client = require('./src/index.js').Client;
 let application = require('./src/index.js').Application;
 
-let index = {
+const index = {
     Client: client,
     Application: application,
     Api: api
@@ -12,6 +12,7 @@ function api() {
         '1.3.14';
     }
 }
+
 module.exports = index;
 
 
