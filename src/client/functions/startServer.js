@@ -8,7 +8,7 @@ let result = undefined;
  * @param {String} server Server ID to check online status of
  * @yields Boolean
  */
-function isOnline(serverID) {
+function startServer(serverID) {
     server = serverID; 
     executed = true;
     process.emit(ACTION.GET_SESSION);
@@ -34,7 +34,7 @@ function isOnline(serverID) {
 function execute(server) {
      if (server != undefined) {
         Req = Request(session.URL, session.Key);
-        Req.sendGet('isOnline', server).then(response => {
+        Req.sendPost('startServer', server, { "signal":"start"}).then(response => {
             result = response;
         }).catch(error => {
             throw error;
@@ -52,8 +52,8 @@ process.on(ACTION.RECEIVE_SESSION, function(data) {
     } 
 });
 
-isOnline.prototype.getServer = function() {
+startServer.prototype.getServer = function() {
     return this.server
 }
 
-module.exports = isOnline;
+module.exports = startServer;

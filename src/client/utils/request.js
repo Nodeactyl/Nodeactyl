@@ -28,7 +28,7 @@ function sendGet(request, data) {
         if (request == 'isOnline') {
             return response.data.attributes.state == 'on';
         } else if (request == 'getServerInfo') {
-            return response.data.attributes;
+            return response.data;
         } else if (request == 'getCPUUsage') {
             return {'current': response.data.attributes.cpu.current, 'limit':response.data.attributes.cpu.limit};
         } else if (request == 'getCPUCores') {
@@ -41,6 +41,29 @@ function sendGet(request, data) {
             return {'current': response.data.attributes.disk.current, 'limit': response.data.attributes.disk.limit}
         }
     }).catch(error => {
+        // This error is for invalid/malformed requests
+        return new Error(checkError(error, request, data));
+    });
+}
+
+function sendPost(request, data, postData) {
+    let URL = postURL(request, this.host, data);
+    return axios({
+        url: URL,
+        method: 'POST',
+        followRedirect: true,
+        maxRedirects: 5,
+        headers: {
+            'Authorization': 'Bearer ' + this.key,
+            'Content-Type': 'application/json',
+            'Accept': 'Application/vnd.pterodactyl.v1+json',
+        },
+        data: postData
+    }).then(function (response) {
+        if (request == 'startServer') {
+            return response.data;
+        }
+    }).catch(error => {
         let err = new Error(checkError(error, request, data));
         if (err != undefined) {
             return err;
@@ -50,37 +73,20 @@ function sendGet(request, data) {
     });
 }
 
-function sendPost(data, request, postData) {
-    let URL = getURL(request, this.host, data);
-    return axios({
-        url: URL + '/api/client/servers/' + ServerID + '/power',
-        method: 'POST',
-        followRedirect: true,
-        maxRedirects: 5,
-        headers: {
-            'Authorization': 'Bearer ' + Key,
-            'Content-Type': 'application/json',
-            'Accept': 'Application/vnd.pterodactyl.v1+json',
-        },
-        data: postData
-    }).then(function (response) {
-        if (request == 'startServer') {
-
-        }
-    }).catch(error => {
-        return new Error(checkError(error, request, data));
-    });
-}
-
 let utilization = ['isOnline', 'getCPUUsage', 'getRAM', 'getCPUCores',
-     'getRAMUsage', 'getServerState', 'getDiskUsage'];
+     'getRAMUsage', 'getServerState', 'getDiskUsage', 'isOwner'];
+let powerActions = ['startServer', 'stopServer', 'killServer', 'restartServer'];
 
 function getURL(request, host, data) {
     if (utilization.indexOf(request) > -1) {
         return host + '/api/client/servers/' + data + '/utilization';
     } else if (request == 'getServerInfo') {
         return host + '/api/client/servers/' + data;
-    } else if (request == 'startServer') {
+    } 
+}
+
+function postURL(request, host, data) {
+    if (powerActions.indexOf(request) > -1) {
         return host + '/api/client/servers/' + data + '/power'
     }
 }

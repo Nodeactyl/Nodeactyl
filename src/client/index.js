@@ -1,3 +1,4 @@
+process.setMaxListeners(20);
 let login = require('./functions/login.js');
 let isonline = require('./functions/isOnline.js');
 let getserverinfo = require('./functions/getServerInfo.js');
@@ -6,6 +7,10 @@ let getcpucores = require('./functions/getCPUCores.js');
 let getramusage = require('./functions/getRAMUsage.js');
 let getserverstate = require('./functions/getServerState.js');
 let getdiskusage = require('./functions/getDiskUsage.js');
+let startserver = require('./functions/startServer.js');
+let stopserver = require('./functions/stopServer.js');
+let killserver = require('./functions/killServer.js');
+let restartserver = require('./functions/restartServer.js');
 
 let session;
 let ACTION = {
@@ -49,7 +54,11 @@ let index = {
     getCPUCores: getcpucores,
     getRAMUsage:getramusage,
     getServerState: getserverstate,
-    getDiskUsage: getdiskusage
+    getDiskUsage: getdiskusage,
+    startServer: startserver,
+    stopServer: stopserver,
+    killServer: killserver,
+    restartServer: restartserver
 }
 
 // Session manager for the client
