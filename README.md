@@ -1,4 +1,4 @@
-**ANOTHER REWRITE WILL HAPPEN SO I CAN FIX UP SOME FUNCTIONS, GIVE ME TIME AND EVERYTHING WILL BE IN WORKING ORDER AGAIN!**
+**A rewrite is in progress! please view the nodeactyl-v2 branch!**
 
 *If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`
 
