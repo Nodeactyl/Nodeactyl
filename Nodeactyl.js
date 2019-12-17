@@ -1,26 +1,19 @@
-let client = require('./src/index.js').Client;
-let application = require('./src/index.js').Application;
+const app = require('./application/index.js');
 
-const index = {
-    Client: client,
-    Application: application,
-    Api: api
+function login(HOST, KEY) {
+
 }
 
-function api() {
-    this.getVersion = function() {
-        '1.3.14';
-    }
+module.exports = {
+    Application: app
 }
 
-module.exports = index;
+app.login("http://serverhouse.now.im:100", "RXecFteTovz9XE1CeMWHiVfKQ0cJEqMSJE3V1Mp0O9mWKpkc", (bool)=> {
+    console.log(bool);
+});
 
-
-
-
-
-
-
-
-
-
+app.deleteUser("3").then(response => {
+    console.log(response);
+}).catch(err => {
+    console.log(err);
+})
