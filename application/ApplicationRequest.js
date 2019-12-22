@@ -37,8 +37,8 @@ class Request {
         });
     }
 
-    postRequest = (request, data) => {
-        let URL = getUrl(request, this.host, null);
+    postRequest = (request, data, data_) => { // data_ is the d normall
+        let URL = getUrl(request, this.host, data_);
         return axios({
             url: URL,
             method: 'POST',
@@ -58,6 +58,10 @@ class Request {
                 return response.data.attributes;
             } else if (request == 'CreateNode') {
                 return response.data.attributes;
+            } else if (request == 'SuspendServer') {
+                return "Server suspended successfully";
+            } else if (request == "UnSuspendServer") {
+                return "Server unsuspended successfully";
             }
         }).catch(function (error) {
             let err = createError(request, error);
@@ -118,6 +122,8 @@ class Request {
                 return 'User deleted successfully.';
             } else if (request == 'DeleteNode') {
                 return 'Node deleted successfully';
+            } else if (request == 'DeleteServer') {
+                return "Server deleted successfully";
             }
         }).catch(function (error) {
             let err = createError(request, error);
@@ -146,6 +152,12 @@ function getUrl(request, host, data) { // _data = nullable
         return host + "/api/application/nodes/" + data;
     } else if (nodes.indexOf(request) > -1) {
         return host + "/api/application/nodes";
+    } else if (request == "SuspendServer") {
+        return host + "/api/application/servers/" + data + "/suspend";
+    } else if (request == "UnSuspendServer") {
+        return host + "/api/application/servers/" + data +"/unsuspend"
+    } else if (request == "DeleteServer") {
+        return host + "/api/application/servers/" + data;
     }
 }
 

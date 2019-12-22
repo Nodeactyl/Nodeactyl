@@ -1,4 +1,4 @@
-let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
+let req = require("../ApplicationRequest.js");
 
 /**
  * 

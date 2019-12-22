@@ -1,7 +1,7 @@
-let req = require(`${process.cwd()}\\utils\\ClientRequest.js`);
+let req = require("../ClientRequest.js");
 
 /**
- * @param {String} ServerID ID of the server to stop
+ * @param {String} ServerID ID of the server to start
  */
 function startServer(ServerID) {
     const Req = new req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);

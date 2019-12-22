@@ -1,4 +1,4 @@
-let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
+let req = require("../ApplicationRequest.js");
 
 /**
  * 
@@ -24,7 +24,7 @@ function createNode(Name, Description, LocationID, Public, FQDN, Scheme, BehindP
     let data = makeData(Name, Description, LocationID, Public, FQDN, Scheme, BehindProxy, RAM, RAMOverAllocate,
         Disk, DiskOverallocate, DaemonDir, DaemonPort, DaemonSFTPPort, MaintenceMode, MaxUploadSize);
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
-    return Req.postRequest("CreateNode", data);
+    return Req.postRequest("CreateNode", data, null);
 }
 
 function makeData(Name, Description, LocationID, Public, FQDN, Scheme, BehindProxy, RAM, RAMOverAllocate,

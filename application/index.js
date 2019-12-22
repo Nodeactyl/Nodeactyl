@@ -3,6 +3,8 @@ const axios = require('axios');
 const createuser = require("./methods/createUser.js");
 const createserver = require('./methods/createServer.js');
 const createnode = require("./methods/createNode.js");
+const suspendserver = require("./methods/suspendServer.js");
+const unsuspendserver = require("./methods/unSuspendServer.js");
 
 //GET
 const getallservers = require("./methods/getAllServers.js");
@@ -17,6 +19,7 @@ const edituser = require("./methods/updateUser.js");
 // DELETE 
 const deleteuser = require("./methods/deleteUser.js");
 const deletenode = require("./methods/deleteNode.js");
+const deleteserver = require("./methods/deleteServer.js");
 
 /**
  * 
@@ -69,13 +72,15 @@ module.exports = {
     createUser: createuser,
     createServer: createserver,
     createNode: createnode,
+    suspendServer: suspendserver,
+    unSuspendServer: unsuspendserver,
 
     // GET
     getAllServers: getallservers,
     getAllUsers: getallusers,
     getUserInfo: getuserinfo,
     getNodeInfo: getnode,
-    getAllNodes: getallservers,
+    getAllNodes: getallnodes,
 
     // PATCH
     editUser: edituser,
@@ -83,4 +88,5 @@ module.exports = {
     // DELETE
     deleteUser: deleteuser,
     deleteNode: deletenode,
+    deleteServer: deleteserver
 }

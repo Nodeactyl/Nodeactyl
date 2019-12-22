@@ -1,4 +1,4 @@
-let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
+let req = require("../ApplicationRequest.js");
 /**
  * @param {String} Version Version of the server to use
  * @param {String} NameOfServer Name of server to create
@@ -22,7 +22,7 @@ function createServer(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage
     AmountOfDatabases, AmountOfAllocations) {
     let data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations);
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
-    return Req.postRequest("CreateServer", data);
+    return Req.postRequest("CreateServer", data, null);
 }
 
 function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, 

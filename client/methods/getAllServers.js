@@ -1,4 +1,4 @@
-let req = require(`${process.cwd()}\\utils\\ClientRequest.js`);
+let req = require("../ClientRequest.js");
 
 /**
  * @yields A Array of servers a application key has access to

@@ -1,4 +1,4 @@
-let req = require(`${process.cwd()}\\utils\\ClientRequest.js`);
+let req = require("../ClientRequest.js");
 
 /**
  * @param {String} ServerID ID of the server cores of

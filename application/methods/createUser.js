@@ -1,4 +1,4 @@
-let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
+let req = require("../ApplicationRequest.js");
 
 /**
  * 
@@ -13,7 +13,7 @@ let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
 function createUser(Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
     let data = createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language);
-    return Req.postRequest('CreateUser', data);
+    return Req.postRequest('CreateUser', data, null);
 }
 
 function createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language) {

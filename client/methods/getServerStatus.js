@@ -1,7 +1,7 @@
-let req = require(`${process.cwd()}\\utils\\ClientRequest.js`);
+let req = require("../ClientRequest.js");
 
 /**
- * @param {String} ServerID of the server status to get
+ * @param {String} ServerID ID of the server status to get
  */
 function getServerStatus(ServerID) {
     const Req = new req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);
