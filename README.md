@@ -23,6 +23,13 @@ This API works by using the Pterodactyl API (REST requests) to the Server/Node, 
 
 ## Documentation
 In the past we kept our documentation on our main README.md, we have no moved to `https://app.gitbook.com/@nodeactyl/s/docs/v/v2.0.0-english/` (Big thanks to @Elliot for taking care of the documentation for Nodeactyl!)
+<<<<<<< HEAD
 
 ## Disclaimer
 We (The Nodeactyl team) Are not responsible for any damages that you cause to your Server/Node by using this API. Remember: This API can do ANYTHING (Delete Servers/Nodes at an instant is extremely easy!). It is **NOT** our fault that you let your API key be public. When asking for help do **NOT** send a full stack error. This will reveal your ENTIRE Host/Application API key in the REST Error, If someone asks you "Let me see the error" It should only be trusted sources! (Such as the Pterodactyl Team/Nodeactyl Team). You should also have your API key changed every 1-3 days to prevent issues like this.
+=======
+
+## Disclaimer
+We (The Nodeactyl team) Are not responsible for any damages that you cause to your Server/Node by using this API. Remember: This API can do ANYTHING (Delete Servers/Nodes at an instant is extremely easy!). It is **NOT** our fault that you let your API key be public. When asking for help do **NOT** send a full stack error. This will reveal your ENTIRE Host/Application API key in the REST Error, If someone asks you "Let me see the error" It should only be trusted sources! (Such as the Pterodactyl Team/Nodeactyl Team). You should also have your API key changed every 1-3 days to prevent issues like this.
+
+>>>>>>> ed0350a31b232512eaf306662f057102502cf787
