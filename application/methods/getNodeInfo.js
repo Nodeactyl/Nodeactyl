@@ -1,9 +1,12 @@
 let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
 
-function getAllServers() {
+/**
+ * 
+ * @param {String} NodeID The node ID to get the details of.
+ */
+function getNode(NodeID) {
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
-    return Req.getRequest("GetAllServers", null);
+    return Req.getRequest("GetNodeInfo", NodeID);
 }
 
-
-module.exports = getAllServers;
+module.exports= getNode;

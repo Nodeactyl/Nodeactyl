@@ -1,19 +1,17 @@
 const app = require('./application/index.js');
-
-function login(HOST, KEY) {
-
-}
+const client = require("./client/index.js");
 
 module.exports = {
-    Application: app
+    Application: app,
+    Client: client
 }
 
-app.login("http://serverhouse.now.im:100", "RXecFteTovz9XE1CeMWHiVfKQ0cJEqMSJE3V1Mp0O9mWKpkc", (bool)=> {
+client.login("http://serverhouse.now.im:100", "2LqIr34APEU8vhYO1vaB58TtIT6EG2oEZaGrV1w5SO1vJoY5", (bool)=> {
     console.log(bool);
 });
 
-app.deleteUser("3").then(response => {
-    console.log(response);
+client.sendCommand("7eca7eda", "help").then(res => {
+    console.log(res);
 }).catch(err => {
     console.log(err);
 })

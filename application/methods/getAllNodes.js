@@ -1,9 +1,8 @@
 let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
 
-function getAllServers() {
+function getAllNodes() {
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
-    return Req.getRequest("GetAllServers", null);
+    return Req.getReqest("GetAllNodes", null);
 }
 
-
-module.exports = getAllServers;
+module.exports = getAllNodes;

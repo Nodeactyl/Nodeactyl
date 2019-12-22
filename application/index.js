@@ -2,16 +2,21 @@ const axios = require('axios');
 // POST
 const createuser = require("./methods/createUser.js");
 const createserver = require('./methods/createServer.js');
+const createnode = require("./methods/createNode.js");
 
 //GET
 const getallservers = require("./methods/getAllServers.js");
 const getallusers = require("./methods/getAllUsers.js");
+const getuserinfo = require("./methods/getUserInfo.js");
+const getnode = require("./methods/getNodeInfo.js");
+const getallnodes = require("./methods/getAllNodes.js");
 
 // PATCH
 const edituser = require("./methods/updateUser.js");
 
 // DELETE 
 const deleteuser = require("./methods/deleteUser.js");
+const deletenode = require("./methods/deleteNode.js");
 
 /**
  * 
@@ -59,17 +64,23 @@ function fastLogin(HOST, KEY) {
 module.exports = {
     login: login,
     fastLogin: fastLogin,
+
     // POST
     createUser: createuser,
     createServer: createserver,
+    createNode: createnode,
 
     // GET
     getAllServers: getallservers,
     getAllUsers: getallusers,
+    getUserInfo: getuserinfo,
+    getNodeInfo: getnode,
+    getAllNodes: getallservers,
 
     // PATCH
     editUser: edituser,
 
     // DELETE
     deleteUser: deleteuser,
+    deleteNode: deletenode,
 }

@@ -1,4 +1,3 @@
-const cred = require('../index.js');
 let req = require(`${process.cwd()}\\utils\\ApplicationRequest.js`);
 
 /**
