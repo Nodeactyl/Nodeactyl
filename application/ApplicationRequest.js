@@ -29,11 +29,7 @@ class Request {
             }
         }).catch(error => {
             let err = createError(request, error);
-            if (err != undefined) {
-                return err;
-            } else {
-                return error;
-            }
+            if (err) throw err
         });
     }
 
@@ -59,22 +55,18 @@ class Request {
             } else if (request == 'CreateNode') {
                 return response.data.attributes;
             } else if (request == 'SuspendServer') {
-                return "Server suspended successfully";
-            } else if (request == "UnSuspendServer") {
-                return "Server unsuspended successfully";
+                return 'Server suspended successfully';
+            } else if ('UnSuspendServer') {
+                return 'Server unsuspended successfully';
             }
-        }).catch(function (error) {
+        }).catch(error => {
             let err = createError(request, error);
-            if (err != undefined) {
-                return err;
-            } else {
-                return error;
-            }
+            if (err) throw err
         });
     }
     // Third arg is nullable
-    patchRequest(request, data, data1) {
-        let URL = getUrl(request, this.host, data1); // _data = nullable
+    patchRequest(request, data, _data) {
+        let URL = getUrl(request, this.host, _data); // _data = nullable
         return axios({
             url: URL,
             method: 'PATCH',
@@ -93,18 +85,14 @@ class Request {
             } else if (request == 'CreateUser') {
                 return response.data.attributes;
             }
-        }).catch(function (error) {
+        }).catch(error => {
             let err = createError(request, error);
-            if (err != undefined) {
-                return err;
-            } else {
-                return error;
-            }
+            if (err) throw err
         });
     }
 
     deleteRequest(request, data) {
-        let URL = getUrl(request, this.host, data); // _data = nullable
+        let URL = getUrl(request, this.host, data);
         return axios({
             url: URL,
             method: 'DELETE',
@@ -123,15 +111,11 @@ class Request {
             } else if (request == 'DeleteNode') {
                 return 'Node deleted successfully';
             } else if (request == 'DeleteServer') {
-                return "Server deleted successfully";
+                return 'Server deleted successfully';
             }
-        }).catch(function (error) {
+        }).catch(error => {
             let err = createError(request, error);
-            if (err != undefined) {
-                return err;
-            } else {
-                return error;
-            }
+            if (err) throw err
         });
     }
 }
@@ -143,21 +127,21 @@ const nodes = ['GetAllNodes', 'CreateNode'];
 const node = ['GetNodeInfo', 'DeleteNode'];
 function getUrl(request, host, data) { // _data = nullable
     if (user.indexOf(request) > -1) {
-        return host + "/api/application/users/" + data;
+        return host + '/api/application/users/' + data;
     } else if (server.indexOf(request) > -1) {
-        return host + "/api/application/servers";
+        return host + '/api/application/servers';
     } else if (users.indexOf(request) > -1) {
-        return host + "/api/application/users";
+        return host + '/api/application/users';
     } else if (node.indexOf(request) > -1) {
-        return host + "/api/application/nodes/" + data;
+        return host + '/api/application/nodes/' + data;
     } else if (nodes.indexOf(request) > -1) {
-        return host + "/api/application/nodes";
-    } else if (request == "SuspendServer") {
-        return host + "/api/application/servers/" + data + "/suspend";
-    } else if (request == "UnSuspendServer") {
-        return host + "/api/application/servers/" + data +"/unsuspend"
-    } else if (request == "DeleteServer") {
-        return host + "/api/application/servers/" + data;
+        return host + '/api/application/nodes';
+    } else if ('SuspendServer') {
+        return host + '/api/application/servers/' + data + '/suspend';
+    } else if ('UnSuspendServer') {
+        return host + '/api/application/servers/' + data +'/unsuspend';
+    } else if ('DeleteServer') {
+        return host + '/api/application/servers/' + data;
     }
 }
 
@@ -165,11 +149,11 @@ function createError(request, err) {
     let error;
     if (request == 'CreateUser' || request == 'EditUser' || request == 'GetUserInfo') {
         if (err.response.status == 422) {
-            error = new Error("User already exists! (Or Email/Username is existing already)");
+            error = new Error('User already exists! (Or Email/Username is in use already)');
             error.status = 422;
             return error;
         } else if (err.response.status == 404) {
-            error = new Error("User does not exist!");
+            error = new Error('User does not exist!');
             error.status = 404;
             return error;
         } else {

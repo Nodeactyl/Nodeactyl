@@ -1,21 +1,21 @@
-const axios = require("axios");
+const axios = require('axios');
 
 // GET
-const getallservers = require("./methods/getAllServers.js");
-const getserverinfo = require("./methods/getServerInfo.js");
-const getserverstatus = require("./methods/getServerStatus.js");
-const isowner = require("./methods/isOwner.js");
-const getcpucores = require("./methods/getCPUCores.js");
-const getcpuusage = require("./methods/getCPUUsage.js");
-const getramusage = require("./methods/getRAMUsage.js");
-const getdiskusage = require("./methods/getDiskUsage.js");
+const getallservers = require('./methods/getAllServers.js');
+const getserverinfo = require('./methods/getServerInfo.js');
+const getserverstatus = require('./methods/getServerStatus.js');
+const isowner = require('./methods/isOwner.js');
+const getcpucores = require('./methods/getCPUCores.js');
+const getcpuusage = require('./methods/getCPUUsage.js');
+const getramusage = require('./methods/getRAMUsage.js');
+const getdiskusage = require('./methods/getDiskUsage.js');
 
 // POST
-const startserver = require("./methods/startServer.js");
-const stopserver = require("./methods/stopServer.js");
-const killserver = require("./methods/killServer.js");
-const restartserver = require("./methods/restartServer.js");
-const sendcommand = require("./methods/sendCommand.js");
+const startserver = require('./methods/startServer.js');
+const stopserver = require('./methods/stopServer.js');
+const killserver = require('./methods/killServer.js');
+const restartserver = require('./methods/restartServer.js');
+const sendcommand = require('./methods/sendCommand.js');
 
 /**
  * 
