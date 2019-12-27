@@ -1,11 +1,11 @@
-let req = require("../ClientRequest.js");
+let Req = require('../ClientRequest.js');
 
 /**
  * @param {String} ServerID ID of the server CPU Usage of
  */
 function getCPUUsage(ServerID) {
-    const Req = new req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);
-    return Req.getRequest("GetCPUUsage", ServerID);
+    const req = new Req(process.env.CLIENT_NODEACTYL_HOST, process.env.CLIENT_NODEACTYL_KEY);
+    return req.getRequest("GetCPUUsage", ServerID);
 }
 
 module.exports = getCPUUsage;
