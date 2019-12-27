@@ -56,7 +56,7 @@ class Request {
                 return response.data.attributes;
             } else if (request == 'SuspendServer') {
                 return 'Server suspended successfully';
-            } else if ('UnSuspendServer') {
+            } else if (request == 'UnSuspendServer') {
                 return 'Server unsuspended successfully';
             }
         }).catch(error => {
