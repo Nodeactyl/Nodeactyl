@@ -21,8 +21,13 @@ function createServer(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage
     StartupCmd, RAM, Swap, Disk, IO, CPU,
     AmountOfDatabases, AmountOfAllocations) {
         let data = makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage, StartupCmd, RAM, Swap, Disk, IO, CPU, AmountOfDatabases, AmountOfAllocations);
+<<<<<<< HEAD
         const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
         return Req.postRequest("CreateServer", data, null);
+=======
+        const req = new Req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+        return req.postRequest("CreateServer", data, null);
+>>>>>>> 59cb81739318b39f2fa69d3bba304dc29a6d952a
 }
 
 function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
