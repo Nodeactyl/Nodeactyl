@@ -11,9 +11,9 @@ let req = require('../ApplicationRequest.js');
  * @param {String} Language New (or old) language
  */
 function updateUser(UserID, Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
-    const req = new Req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+    const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
     let data = createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language)
-    return req.patchRequest("EditUser", data, UserID);
+    return Req.patchRequest("EditUser", data, UserID);
 }
 
 function createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language) {

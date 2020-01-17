@@ -10,9 +10,9 @@ let req = require('../ApplicationRequest.js');
  * @param {String} Language Language, Normally en/fr (2 letter languages)
  */
 function createUser(Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
-    const req = new Req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
+    const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);
     let data = createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language);
-    return req.postRequest('CreateUser', data, null);
+    return Req.postRequest('CreateUser', data, null);
 }
 
 function createData(Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
