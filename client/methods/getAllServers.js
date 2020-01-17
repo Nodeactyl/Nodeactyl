@@ -1,4 +1,4 @@
-let req = require("../ClientRequest.js");
+let req = require('../ClientRequest.js');
 
 /**
  * @yields A Array of servers a application key has access to

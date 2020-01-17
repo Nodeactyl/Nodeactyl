@@ -1,14 +1,13 @@
-let req = require("../ApplicationRequest.js");
+let req = require('../ApplicationRequest.js');
 
 /**
- * 
  * @param {String} Username Users username
  * @param {String} Password Users password
  * @param {String} Email Users email
  * @param {String} FirstName Users first name
  * @param {String} LastName Users last name
  * @param {Boolean} IsAdmin Is the user admin? (true/false)
- * @param {String} Language Language, Normal en/fr (2 letter languages)
+ * @param {String} Language Language, Normally en/fr (2 letter languages)
  */
 function createUser(Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);

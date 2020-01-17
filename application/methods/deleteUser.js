@@ -1,7 +1,6 @@
-let req = require("../ApplicationRequest.js");
+let req = require('../ApplicationRequest.js');
 
 /**
- * 
  * @param {String} UserID The user ID to delete
  */
 function deleteUser(UserID) {

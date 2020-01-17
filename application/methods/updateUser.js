@@ -1,15 +1,14 @@
-let req = require("../ApplicationRequest.js");
+let req = require('../ApplicationRequest.js');
 
 /**
- * 
  * @param {String} UserID External UserID
- * @param {String} Username New username (or old)
- * @param {String} Password New password (or old)
- * @param {String} Email New email (or old)
- * @param {String} FirstName New first name (or old)
- * @param {String} LastName New last name (or old)
- * @param {Boolean} IsAdmin Change admin rank (or keep)
- * @param {String} Language New language (or old)
+ * @param {String} Username New (or old) username
+ * @param {String} Password New (or old) password 
+ * @param {String} Email New (or old) email 
+ * @param {String} FirstName New (or old) first name
+ * @param {String} LastName New (or old) last name 
+ * @param {Boolean} IsAdmin New (or old) value for admin
+ * @param {String} Language New (or old) language
  */
 function updateUser(UserID, Username, Password, Email, FirstName, LastName, IsAdmin, Language) {
     const Req = new req(process.env.APPLICATION_NODEACTYL_HOST, process.env.APPLICATION_NODEACTYL_KEY);

@@ -1,4 +1,4 @@
-let req = require("../ClientRequest.js");
+let req = require('../ClientRequest.js');
 
 /**
  * @param {String} ServerID ID of the server RAM Usage of

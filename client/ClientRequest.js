@@ -28,18 +28,14 @@ class Request {
                 return response.data.attributes.cpu.cores;
             } else if (request == 'GetCPUUsage') {
                 return { "current": response.data.attributes.cpu.current, "limit": response.data.attributes.cpu.limit };
-            } else if (request == "GetRAMUsage") {
+            } else if (request == 'GetRAMUsage') {
                 return { "current": response.data.attributes.memory.current, "limit": response.data.attributes.memory.limit };
-            } else if (request == "GetDiskUsage") {
+            } else if (request == 'GetDiskUsage') {
                 return { "current": response.data.attributes.disk.current, "limit": response.data.attributes.disk.limit };
             }
         }).catch(error => {
             let err = createError(request, error);
-            if (err != undefined) {
-                return err;
-            } else {
-                return error;
-            }
+            if (err) throw err
         });
     }
 
@@ -56,25 +52,21 @@ class Request {
                 'Accept': 'Application/vnd.pterodactyl.v1+json',
             },
             data: data
-        }).then(function (response) {
+        }).then(response => {
             if (request == 'StartServer') {
-                return "Server started successfully";
-            }  else if (request == "StopServer") {
-                return "Server stopped successfully";
-            } else if (request == "KillServer") {
-                return "Server killed successfully";
-            } else if (request == "RestartServer") {
-                return "Server restarted successfully";
-            } else if (request == "SendCommand") {
-                return "Command send successfully";
+                return 'Server started successfully';
+            }  else if (request == 'StopServer') {
+                return 'Server stopped successfully';
+            } else if (request == 'KillServer') {
+                return 'Server killed successfully';
+            } else if (request == 'RestartServer') {
+                return 'Server restarted successfully';
+            } else if (request == 'SendCommand') {
+                return 'Command send successfully';
             }
-        }).catch(function (error) {
+        }).catch(error => {
             let err = createError(request, error);
-            if (err != undefined) {
-                return err;
-            } else {
-                return error;
-            }
+            if (err) throw err
         });
     }
 }
@@ -83,16 +75,16 @@ let utilization = ["GetServerStatus", "GetCPUCores", "GetCPUUsage", "GetRAMUsage
 let info = ["GetServerInfo", "IsOwner"];
 let powerAction = ["StartServer", "StopServer", "KillServer", "RestartServer"];
 function getUrl(request, host, data) {
-    if (request == "GetAllServers") {
-        return host + "/api/client";
+    if (request == 'GetAllServers') {
+        return host + '/api/client';
     } else if (info.indexOf(request) > -1) {
-        return host + "/api/client/servers/" + data;
+        return host + '/api/client/servers/' + data;
     } else if (utilization.indexOf(request) > -1) {
-        return host + "/api/client/servers/" + data + "/utilization"
+        return host + '/api/client/servers/' + data + '/utilization'
     } else if (powerAction.indexOf(request) > -1) {
-        return host + "/api/client/servers/" + data + "/power";
-    } else if (request == "SendCommand") {
-        return host + "/api/client/servers/" + data + "/command";
+        return host + '/api/client/servers/' + data + '/power';
+    } else if (request == 'SendCommand') {
+        return host + '/api/client/servers/' + data + '/command';
     }
 }
 

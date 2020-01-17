@@ -1,7 +1,6 @@
-let req = require("../ApplicationRequest.js");
+let req = require('../ApplicationRequest.js');
 
 /**
- * 
  * @param {String} InternalID Internal ID of the server to unsuspend
  */
 function unSuspendServer(InternalID) {

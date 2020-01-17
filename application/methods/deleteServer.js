@@ -1,4 +1,4 @@
-let req = require("../ApplicationRequest.js");
+let req = require('../ApplicationRequest.js');
 
 /**
  * 

@@ -1,7 +1,6 @@
-let req = require("../ApplicationRequest.js");
+let req = require('../ApplicationRequest.js');
 
 /**
- * 
  * @param {String} NodeID The node ID to get the details of.
  */
 function getNode(NodeID) {
