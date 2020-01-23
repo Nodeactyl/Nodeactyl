@@ -23,6 +23,10 @@ const sendcommand = require('./methods/sendCommand.js');
  * @param {String} KEY Client API key
  */
 function login(HOST, KEY, callback) {
+    
+HOST = HOST.trim()
+if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
+    
     process.env.CLIENT_NODEACTYL_HOST = HOST;
     process.env.CLIENT_NODEACTYL_KEY = KEY;
     axios.get(HOST + '/api/client', {
@@ -49,6 +53,8 @@ function login(HOST, KEY, callback) {
 }
 
 function fastLogin() {
+HOST = HOST.trim()
+if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
     process.env.CLIENT_NODEACTYL_HOST = HOST;
     process.env.CLIENT_NODEACTYL_KEY = KEY;
 }
