@@ -29,6 +29,8 @@ const deleteserver = require('./methods/deleteServer.js');
  * @param {Boolean, String} callback Returns true when login is successful
  */
 function login(HOST, KEY, callback) {
+HOST = HOST.trim()
+if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
     process.env.APPLICATION_NODEACTYL_HOST = HOST;
     process.env.APPLICATION_NODEACTYL_KEY = KEY;
     axios.get(HOST + '/api/application/users', {
@@ -61,6 +63,8 @@ function login(HOST, KEY, callback) {
  * @Warning USE THIS ONLY IF YOU KNOW YOUR CREDENTIALS ARE 100% CORRECT, OR THEY NEVER CHANGE
  */
 function fastLogin(HOST, KEY) {
+HOST = HOST.trim()
+if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
     process.env.APPLICATION_NODEACTYL_HOST = HOST;
     process.env.APPLICATION_NODEACTYL_KEY = KEY;
 }
