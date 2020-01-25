@@ -6,7 +6,7 @@ class Request {
         this.key = key;
     }
 
-    getRequest = (request, data) => {
+    getRequest(request, data) {
         let URL = getUrl(request, this.host, data);
         return axios.default.get(URL, {
             maxRedirects: 5,
@@ -33,7 +33,7 @@ class Request {
         });
     }
 
-    postRequest = (request, data, data_) => { // data_ is the d normall
+    postRequest(request, data, data_) { // data_ is the d normall
         let URL = getUrl(request, this.host, data_);
         return axios({
             url: URL,
