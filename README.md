@@ -17,7 +17,7 @@ npm install nodeactyl
 Nodeactyl is a Library for node.js to communicated with the Pterodactyl Panel,you can control *any* server on your nodes with it (If you purchase a server from another host, no worry! The API works with your own server too!). This library's originally was to be used in Discord bots, however it can be used in ny node.js project.
 
 ## How do I work?
-This library works by querying the Pterodactyl API (REST requests) using a client called [axois](https://www.npmjs.com/package/axios).
+This library works by querying the Pterodactyl API (REST requests) using a library called [axois](https://www.npmjs.com/package/axios).
 
 ## Documentation
 [In the past documentation was found in this file, however we have sinced moved to GitBook.](https://nodeactyl.elliotfrost.xyz/v/v2.0.0-english/)
