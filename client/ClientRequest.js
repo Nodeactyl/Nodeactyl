@@ -39,7 +39,7 @@ class Request {
         });
     }
 
-    postRequest = (request, data, data_) => { // data_ is normally the serverID
+    postRequest(request, data, data_) { // data_ is normally the serverID
         let URL = getUrl(request, this.host, data_);
         return axios({
             url: URL,
