@@ -148,7 +148,11 @@ function getUrl(request, host, data) { // _data = nullable
 function createError(request, err, data) {
     let error;
     if (request == 'CreateUser' || request == 'EditUser' || request == 'GetUserInfo') {
-        if (err.response.status == 422) {
+        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) == 'false') {
+            error = new Error('The provided email is not a valid.');
+            error.status = 422;
+            return error;
+        } else if (err.response.status == 422) {
             error = new Error('User already exists! (Or Email/Username is in use already)');
             error.status = 422;
             return error;
