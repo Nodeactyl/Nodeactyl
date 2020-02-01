@@ -15,7 +15,7 @@ const getnode = require('./methods/getNodeInfo.js');
 const getallnodes = require('./methods/getAllNodes.js');
 
 // PATCH
-const edituser = require('./methods/updateUser.js');
+const updateuser = require('./methods/updateUser.js');
 
 // DELETE 
 const deleteuser = require('./methods/deleteUser.js');
@@ -29,8 +29,9 @@ const deleteserver = require('./methods/deleteServer.js');
  * @param {Boolean, String} callback Returns true when login is successful
  */
 function login(HOST, KEY, callback) {
-HOST = HOST.trim()
+HOST = HOST.trim();
 if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
+
     console.log("NODEACTYL WARNING: There has been a COMPLETE rewrite of Nodeactyl, Please review our new documentation at: https://nodeactyl.elliotfrost.xyz/v/v2.0.0-english/ Alternativly if you need further assistance ask for help in our discord server: https://discordapp.com/invite/3e5uJPt");
     process.env.APPLICATION_NODEACTYL_HOST = HOST;
     process.env.APPLICATION_NODEACTYL_KEY = KEY;
@@ -64,8 +65,9 @@ if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
  * @Warning USE THIS ONLY IF YOU KNOW YOUR CREDENTIALS ARE 100% CORRECT, OR THEY NEVER CHANGE
  */
 function fastLogin(HOST, KEY) {
-HOST = HOST.trim()
+HOST = HOST.trim();
 if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
+
     console.log("NODEACTYL WARNING: There has been a COMPLETE rewrite of Nodeactyl, Please review our new documentation at: https://nodeactyl.elliotfrost.xyz/v/v2.0.0-english/ Alternativly if you need further assistance ask for help in our discord server: https://discordapp.com/invite/3e5uJPt");
     process.env.APPLICATION_NODEACTYL_HOST = HOST;
     process.env.APPLICATION_NODEACTYL_KEY = KEY;
@@ -90,7 +92,7 @@ module.exports = {
     getAllNodes: getallnodes,
 
     // PATCH
-    editUser: edituser,
+    updateUser: updateuser,
 
     // DELETE
     deleteUser: deleteuser,

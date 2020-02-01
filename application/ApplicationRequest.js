@@ -29,7 +29,7 @@ class Request {
             }
         }).catch(error => {
             let err = createError(request, error, data);
-            if (err) throw err
+            if (err) throw err;
         });
     }
 
@@ -61,7 +61,7 @@ class Request {
             }
         }).catch(error => {
             let err = createError(request, error, data);
-            if (err) throw err
+            if (err) throw err;
         });
     }
     // Third arg is nullable
@@ -87,7 +87,7 @@ class Request {
             }
         }).catch(error => {
             let err = createError(request, error, data);
-            if (err) throw err
+            if (err) throw err;
         });
     }
 
@@ -115,7 +115,7 @@ class Request {
             }
         }).catch(error => {
             let err = createError(request, error, data);
-            if (err) throw err
+            if (err) throw err;
         });
     }
 }
@@ -148,7 +148,7 @@ function getUrl(request, host, data) { // _data = nullable
 function createError(request, err, data) {
     let error;
     if (request == 'CreateUser' || request == 'EditUser' || request == 'GetUserInfo') {
-        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) == 'false') {
+        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) == false) {
             error = new Error('The provided email is not a valid.');
             error.status = 422;
             return error;
