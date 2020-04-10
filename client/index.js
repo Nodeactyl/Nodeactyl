@@ -26,7 +26,6 @@ function login(HOST, KEY, callback) {
 HOST = HOST.trim()
 if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
 
-    console.log("NODEACTYL WARNING: There has been a COMPLETE rewrite of Nodeactyl, Please review our new documentation at: https://nodeactyl.elliotfrost.xyz/v/v2.0.0-english/ Alternativly if you need further assistance ask for help in our discord server: https://discordapp.com/invite/3e5uJPt");
     process.env.CLIENT_NODEACTYL_HOST = HOST;
     process.env.CLIENT_NODEACTYL_KEY = KEY;
     axios.get(HOST + '/api/client', {
