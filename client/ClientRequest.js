@@ -13,7 +13,7 @@ class Request {
             headers: {
                 'Authorization': 'Bearer ' + this.key,
                 'Content-Type': 'application/json',
-                'Accept': 'Application/vnd.pterodactyl.v1+json',
+                'Accept': 'Application/vnd.wisp.v1+json',
             }
         }).then(response => {
             if (request == 'GetAllServers') {
@@ -49,7 +49,7 @@ class Request {
             headers: {
                 'Authorization': 'Bearer ' + this.key,
                 'Content-Type': 'application/json',
-                'Accept': 'Application/vnd.pterodactyl.v1+json',
+                'Accept': 'Application/vnd.wisp.v1+json',
             },
             data: data
         }).then(response => {

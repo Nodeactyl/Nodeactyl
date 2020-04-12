@@ -34,7 +34,7 @@ if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
         headers: {
             'Authorization': 'Bearer ' + KEY,
             'Content-Type': 'application/json',
-            'Accept': 'Application/vnd.pterodactyl.v1+json',
+            'Accept': 'Application/vnd.wisp.v1+json',
         }
     }).then(function (response) {
         if (response.status == 404) {
