@@ -26,10 +26,12 @@ class Request {
                 return response.data;
             } else if (request == 'GetAllNodes') {
                 return response.data.data;
+            } else if(request == 'GetServerInfo') {
+                return response.data.data
             }
         }).catch(error => {
-            let err = createError(request, error, data);
-            if (err) throw err;
+            let err = createError(request, error);
+            if (err) throw err
         });
     }
 
@@ -60,8 +62,8 @@ class Request {
                 return 'Server unsuspended successfully';
             }
         }).catch(error => {
-            let err = createError(request, error, data);
-            if (err) throw err;
+            let err = createError(request, error);
+            if (err) throw err
         });
     }
     // Third arg is nullable
@@ -86,8 +88,8 @@ class Request {
                 return response.data.attributes;
             }
         }).catch(error => {
-            let err = createError(request, error, data);
-            if (err) throw err;
+            let err = createError(request, error);
+            if (err) throw err
         });
     }
 
@@ -114,13 +116,13 @@ class Request {
                 return 'Server deleted successfully';
             }
         }).catch(error => {
-            let err = createError(request, error, data);
-            if (err) throw err;
+            let err = createError(request, error);
+            if (err) throw err
         });
     }
 }
 
-const server = ['CreateServer', 'GetAllServers'];
+const server = ['CreateServer', 'GetAllServers', 'GetServerInfo'];
 const users = ['CreateUser', 'GetAllUsers'];
 const user = ['EditUser', 'DeleteUser', 'GetUserInfo'];
 const nodes = ['GetAllNodes', 'CreateNode'];
@@ -142,17 +144,15 @@ function getUrl(request, host, data) { // _data = nullable
         return host + '/api/application/servers/' + data +'/unsuspend';
     } else if ('DeleteServer') {
         return host + '/api/application/servers/' + data;
+    } else if('GetServerInfo') {
+        return host + '/api/application/servers/' + data;
     }
 }
 
-function createError(request, err, data) {
+function createError(request, err) {
     let error;
     if (request == 'CreateUser' || request == 'EditUser' || request == 'GetUserInfo') {
-        if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) == false) {
-            error = new Error('The provided email is not a valid.');
-            error.status = 422;
-            return error;
-        } else if (err.response.status == 422) {
+        if (err.response.status == 422) {
             error = new Error('User already exists! (Or Email/Username is in use already)');
             error.status = 422;
             return error;
