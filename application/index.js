@@ -50,7 +50,7 @@ if(HOST.endsWith("/")) HOST = HOST.slice(0, -1);
             callback(true);
         }
     }).catch(error => {
-        if (error.status == 403) {
+        if (error.response.status == 403) {
             callback(false, 'API Key is not valid! (Application)');
         } else {
             throw error;
