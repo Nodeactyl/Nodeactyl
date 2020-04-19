@@ -20,8 +20,7 @@ Nodeactyl is a Library for node.js to communicated with the Pterodactyl Panel,yo
 This library works by querying the Pterodactyl API (REST requests) using a library called [axois](https://www.npmjs.com/package/axios).
 
 ## Documentation
-[In the past documentation was found in this file, however we have sinced moved to GitBook.](https://nodeactyl.elliotfrost.xyz/v/v2.0.0-english/)
-(Big thanks to @Elliot for taking care of the documentation for Nodeactyl!)
+https://docs.nodeactyl.xyz
 
 ## Disclaimer
 We (The Nodeactyl team) are not responsible for any damages that you cause to your servers/nodes by using this API. 
