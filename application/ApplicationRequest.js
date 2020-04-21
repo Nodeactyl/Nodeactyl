@@ -152,13 +152,13 @@ function getUrl(request, host, data) { // _data = nullable
 	else if (nodes.indexOf(request) > -1) {
 		return host + '/api/application/nodes';
 	}
-	else if ('SuspendServer') {
+	else if (request == 'SuspendServer') {
 		return host + '/api/application/servers/' + data + '/suspend';
 	}
-	else if ('UnSuspendServer') {
+	else if (request == 'UnSuspendServer') {
 		return host + '/api/application/servers/' + data + '/unsuspend';
 	}
-	else if ('DeleteServer') {
+	else if (request == 'DeleteServer') {
 		return host + '/api/application/servers/' + data;
 	}
 }
