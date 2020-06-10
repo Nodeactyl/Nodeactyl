@@ -55,6 +55,7 @@ function makeData(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,
 			'PAPER_VERSION': Version,
 			'MC_VERSION': Version,
 			'BUILD_NUMBER': Version,
+			'INSTALL_REPO': Version
 		},
 		'allocation': {
 			'default': 1,
