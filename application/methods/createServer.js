@@ -14,7 +14,7 @@ const req = require('../ApplicationRequest.js');
  * @param {Integer} CPU The amount of CPU Power the server can use (100 = 1 core);
  * @param {Integer} AmountOfDatabases The max amount of databases a server can use
  * @param {Integer} AmountOfAllocations The max amount of allocation(s) a server can us
- *
+ * 
  * @yields Object (refer to docs for schema);
  */
 function createServer(Version, NameOfServer, OwnerID, NestID, EggID, DockerImage,

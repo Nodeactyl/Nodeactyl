@@ -6,7 +6,7 @@ const createserver = require('./methods/createServer.js');
 const createnode = require('./methods/createNode.js');
 const suspendserver = require('./methods/suspendServer.js');
 const unsuspendserver = require('./methods/unSuspendServer.js');
-
+const createdatabase = require('./methods/createDatabase');
 // GET
 const getallservers = require('./methods/getAllServers.js');
 const getallusers = require('./methods/getAllUsers.js');
@@ -84,7 +84,7 @@ module.exports = {
 	createNode: createnode,
 	suspendServer: suspendserver,
 	unSuspendServer: unsuspendserver,
-
+	createDatabase: createdatabase,
 	// GET
 	getAllServers: getallservers,
 	getAllUsers: getallusers,
