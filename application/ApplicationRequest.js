@@ -170,7 +170,7 @@ function getUrl(request, host, data) { // _data = nullable
 function createError(request, err, data) {
 	let error;
 
-
+	
 	if (request == 'CreateUser' || request == 'EditUser' || request == 'GetUserInfo') {
 		if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) == false) {
 			error = new Error('The provided email is not a valid.');
