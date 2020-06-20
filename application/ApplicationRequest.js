@@ -30,6 +30,10 @@ class Request {
 			}
 			else if (request == 'GetAllNodes') {
 				return response.data.data;
+			} 
+			else if(request == 'GetAllUsersPagination') {
+				var PaginationAndUsers = Object.assign({users: response.data.data}, response.data.meta.pagination);
+				return PaginationAndUsers;
 			}
 		}).catch(error => {
 			const err = createError(request, error, data);
@@ -162,8 +166,12 @@ function getUrl(request, host, data) { // _data = nullable
 	}
 	else if (request == 'DeleteServer') {
 		return host + '/api/application/servers/' + data;
-	} else if(request == 'CreateDatabase') {
+	} 
+	else if(request == 'CreateDatabase') {
 		return host + '/api/application/servers/' + data + '/databases';
+	} 
+	else if(request == 'GetAllUsersPagination') {
+		return host + '/api/application/users?page=' + data;
 	}
 }
 
