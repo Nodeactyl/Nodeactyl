@@ -66,11 +66,12 @@ class Request {
 				return response.data.attributes;
 			}
 			else if (request == 'SuspendServer') {
-				return 'Server suspended successfully';
+				return createObjectSuccess('Server suspended successfully');
 			}
 			else if (request == 'UnSuspendServer') {
-				return 'Server unsuspended successfully';
-			} else if(request == 'CreateDatabase') {
+				return createObjectSuccess('Server unsuspended successfully');
+			}
+			else if(request == 'CreateDatabase') {
 				return response.data.attributes;
 			}
 		}).catch(error => {
@@ -122,13 +123,13 @@ class Request {
 		}).then(function(response) {
 			if (request == 'DeleteUser') {
 				// If people want make it return the server object
-				return 'User deleted successfully.';
+				return createObjectSuccess('User deleted successfully.');
 			}
 			else if (request == 'DeleteNode') {
-				return 'Node deleted successfully';
+				return createObjectSuccess('Node deleted successfully');
 			}
 			else if (request == 'DeleteServer') {
-				return 'Server deleted successfully';
+				return createObjectSuccess('Server deleted successfully');
 			}
 		}).catch(error => {
 			const err = createError(request, error, data);
@@ -175,6 +176,13 @@ function getUrl(request, host, data) { // _data = nullable
 	}
 }
 
+function createObjectSuccess(message) {
+	return {
+		"success": true,
+		"message": message,
+	}
+}
+
 function createError(request, err, data) {
 	let error;
 
@@ -198,11 +206,9 @@ function createError(request, err, data) {
 		else {
 			return err;
 		}
-
-	} else if(typeof err == "object" && err.hasOwnProperty('response')) {
+	}
+	else if(typeof err.response != "undefined" && err.response.hasOwnProperty('data')) {
 		return err.response.data.errors;
-	} else {
-		return err;
 	}
 }
 
