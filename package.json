@@ -1,6 +1,6 @@
 {
   "name": "nodeactyl",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "NodeJS API For pterodactyl panel",
   "main": "Nodeactyl.js",
   "scripts": {
