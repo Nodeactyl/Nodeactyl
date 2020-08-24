@@ -30,6 +30,10 @@ class Request {
 			}
 			else if (request == 'GetAllNodes') {
 				return response.data.data;
+			} 
+			else if(request == 'GetAllUsersPagination') {
+				var PaginationAndUsers = Object.assign({users: response.data.data}, response.data.meta.pagination);
+				return PaginationAndUsers;
 			}
 		}).catch(error => {
 			const err = createError(request, error, data);
@@ -62,10 +66,13 @@ class Request {
 				return response.data.attributes;
 			}
 			else if (request == 'SuspendServer') {
-				return 'Server suspended successfully';
+				return createObjectSuccess('Server suspended successfully');
 			}
 			else if (request == 'UnSuspendServer') {
-				return 'Server unsuspended successfully';
+				return createObjectSuccess('Server unsuspended successfully');
+			}
+			else if(request == 'CreateDatabase') {
+				return response.data.attributes;
 			}
 		}).catch(error => {
 			const err = createError(request, error, data);
@@ -116,13 +123,13 @@ class Request {
 		}).then(function(response) {
 			if (request == 'DeleteUser') {
 				// If people want make it return the server object
-				return 'User deleted successfully.';
+				return createObjectSuccess('User deleted successfully.');
 			}
 			else if (request == 'DeleteNode') {
-				return 'Node deleted successfully';
+				return createObjectSuccess('Node deleted successfully');
 			}
 			else if (request == 'DeleteServer') {
-				return 'Server deleted successfully';
+				return createObjectSuccess('Server deleted successfully');
 			}
 		}).catch(error => {
 			const err = createError(request, error, data);
@@ -160,11 +167,26 @@ function getUrl(request, host, data) { // _data = nullable
 	}
 	else if (request == 'DeleteServer') {
 		return host + '/api/application/servers/' + data;
+	} 
+	else if(request == 'CreateDatabase') {
+		return host + '/api/application/servers/' + data + '/databases';
+	} 
+	else if(request == 'GetAllUsersPagination') {
+		return host + '/api/application/users?page=' + data;
+	}
+}
+
+function createObjectSuccess(message) {
+	return {
+		"success": true,
+		"message": message,
 	}
 }
 
 function createError(request, err, data) {
 	let error;
+
+	
 	if (request == 'CreateUser' || request == 'EditUser' || request == 'GetUserInfo') {
 		if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) == false) {
 			error = new Error('The provided email is not a valid.');
@@ -184,6 +206,9 @@ function createError(request, err, data) {
 		else {
 			return err;
 		}
+	}
+	else if(typeof err.response != "undefined" && err.response.hasOwnProperty('data')) {
+		return err.response.data.errors;
 	}
 }
 
