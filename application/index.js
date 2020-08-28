@@ -30,6 +30,8 @@ const deleteserver = require('./methods/deleteServer.js');
  * @param {Boolean, String} callback Returns true when login is successful
  */
 function login(HOST, KEY, callback) {
+	if(!callback) throw new Error("No callback was provided. Use method fastLogin instead.");
+	
 	HOST = HOST.trim();
 	if(HOST.endsWith('/')) HOST = HOST.slice(0, -1);
 
