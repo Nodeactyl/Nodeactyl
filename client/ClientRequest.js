@@ -23,7 +23,7 @@ class Request {
 				return response.data;
 			}
 			else if (request == 'GetServerStatus') {
-				return response.data.attributes.state;
+				return response.data.attributes.current_state;
 			}
 			else if (request == 'IsOwner') {
 				return response.data.attributes.server_owner;
@@ -32,13 +32,13 @@ class Request {
 				return response.data.attributes.cpu.cores;
 			}
 			else if (request == 'GetCPUUsage') {
-				return { 'current': response.data.attributes.cpu.current, 'limit': response.data.attributes.cpu.limit };
+				return { 'current': response.data.attributes.resources.cpu_absolute };
 			}
 			else if (request == 'GetRAMUsage') {
-				return { 'current': response.data.attributes.memory.current, 'limit': response.data.attributes.memory.limit };
+				return { 'current': response.data.attributes.resources.memory_bytes };
 			}
 			else if (request == 'GetDiskUsage') {
-				return { 'current': response.data.attributes.disk.current, 'limit': response.data.attributes.disk.limit };
+				return { 'current': response.data.attributes.resources.disk_bytes };
 			}
 		}).catch(error => {
 			const err = createError(request, error);
@@ -93,7 +93,7 @@ function getUrl(request, host, data) {
 		return host + '/api/client/servers/' + data;
 	}
 	else if (utilization.indexOf(request) > -1) {
-		return host + '/api/client/servers/' + data + '/utilization';
+		return host + '/api/client/servers/' + data + '/resources';
 	}
 	else if (powerAction.indexOf(request) > -1) {
 		return host + '/api/client/servers/' + data + '/power';
