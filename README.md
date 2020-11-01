@@ -1,4 +1,6 @@
-# Nodeactyl: 100% remastered
+# Nodeactyl Recoded for PteroactylPanel V1
+
+* Do note this API will not work for anything below v1, if you wish to use the v7 API refer to [link to be announced]
 
 *If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`
 
