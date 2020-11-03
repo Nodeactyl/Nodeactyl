@@ -49,12 +49,33 @@ class Client {
         return new Promise((res, rej) => {
             Methods.getAccountDetails(this.hostUrl, this.apiKey).then((response) => {
                 return res(response.data.attributes);
-            }).catch((err) => {
-                rej(err.status);
-            });
+            }).catch(err => rej(this.processError(err)));
         });
     }
 
+    /**
+     * Gets the permissions that this associated host and key have
+     *
+     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
+     *
+     * @returns {Promise<unknown>}
+     */
+    getAccountPermissions() {
+        return new Promise((res, rej) => {
+            Methods.getAccountPermissions(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets a Server's information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values
+     *
+     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
     getServerDetails(serverId) {
         return new Promise((res, rej) => {
             Methods.getServerDetails(this.hostUrl, this.apiKey, serverId).then((response) => {
@@ -64,6 +85,7 @@ class Client {
     }
 
     /**
+     * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
      *
      * @returns {Promise<unknown>}
      */
@@ -71,9 +93,7 @@ class Client {
         return new Promise((res, rej) => {
             Methods.getAllServers(this.hostUrl, this.apiKey).then((response) => {
                 return res(response.data);
-            }).catch((err) => {
-                return rej(err.status);
-            })
+            }).catch(err => rej(this.processError(err)));
         })
     }
 
@@ -91,12 +111,87 @@ class Client {
         return new Promise((res, rej) => {
             Methods.getServerPage(this.hostUrl, this.apiKey, pageNum).then((response) => {
                 return res(response.data.data);
-            }).catch((err) => {
-                return rej(err.status);
-            });
+            }).catch(err => rej(this.processError(err)));
         });
     }
 
+    /**
+     * Starts a server if the host and api key have permission
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    startServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.startServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Stops a server if the host and api key have permission
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    stopServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.stopServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Restarts a server if the host and api key have permission
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    restartServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.restartServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Kills a server if the host and api key have permission
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    killServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.killServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * sends a command to a server if the host and api key have permission
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * all this ever gave me was a 504 error though so idk lol
+     *
+     * @param serverId
+     * @param command
+     * @returns {Promise<Boolean>}
+     */
+    sendServerCommand(serverId, command) {
+        return new Promise((res, rej) => {
+            Methods.sendServerCommand(this.hostUrl, this.apiKey, serverId, command).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
 
     /**
      * Gets a list of API keys that this assigned host and key have available to them
@@ -109,9 +204,7 @@ class Client {
         return new Promise((res, rej) => {
             Methods.getApiKeys(this.hostUrl, this.apiKey).then((response) => {
                 return res(response.data.data);
-            }).catch((err) => {
-                return rej(err.status);
-            })
+            }).catch(err => rej(this.processError(err)));
         })
     }
 
@@ -131,9 +224,7 @@ class Client {
         return new Promise((res, rej) => {
             Methods.createApiKey(this.hostUrl, this.apiKey, description, allowedIps).then((response) => {
                 return res(response.data);
-            }).catch((err) => {
-                return rej(err.status);
-            });
+            }).catch(err => rej(this.processError(err)));
         });
     }
 
@@ -151,7 +242,7 @@ class Client {
      */
     deleteApiKey(keyId) {
         return new Promise((res, rej) => {
-            Methods.deleteApiKey(this.hostUrl, this.apiKey, keyId).then((response) => {
+            Methods.deleteApiKey(this.hostUrl, this.apiKey, keyId).then(() => {
                 return res(true);
             }).catch(err => rej(this.processError(err)));
         });
@@ -166,23 +257,37 @@ class Client {
      *
      * @param newEmail
      * @param currentPassword
-     * @returns {Promise<unknown>}
+     * @returns {Promise<Boolean>}
      */
     updateEmail(newEmail, currentPassword) {
         return new Promise((res, rej) => {
-            Methods.updateEmail(this.hostUrl, this.apiKey, newEmail, currentPassword).then((response) => {
+            Methods.updateEmail(this.hostUrl, this.apiKey, newEmail, currentPassword).then(() => {
                 return res(true);
             }).catch(err => rej(this.processError(err)));
         });
     }
 
+    /**
+     * Updates the password for the specified host and api key
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
+     *
+     *
+     * @param newPassword
+     * @param currentPassword
+     * @returns {Promise<Boolean>}
+     */
     updatePassword(newPassword, currentPassword) {
         return new Promise((res, rej) => {
-            Methods.updatePassword(this.hostUrl, this.apiKey, newPassword, currentPassword).then((response => {
+            Methods.updatePassword(this.hostUrl, this.apiKey, newPassword, currentPassword).then(() => {
                 return res(true);
-            })).catch(err => rej(this.processError(err)));
+            }).catch(err => rej(this.processError(err)));
         });
     }
+
+
 }
 
 module.exports = Client;

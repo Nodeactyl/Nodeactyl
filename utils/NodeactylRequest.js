@@ -82,6 +82,10 @@ class NodeactylRequest {
                 return "api/client/account";
             }
 
+            case ClientRequest.GET_ACCOUNT_PERMISSIONS: {
+                return "api/client/permissions";
+            }
+
             case ClientRequest.GET_ALL_SERVERS: {
                 return "api/client?page=1";
             }
@@ -107,18 +111,29 @@ class NodeactylRequest {
             }
         }
 
+        let isPowerAction = (this.endpoint.startsWith(ClientRequest.START_SERVER_META)) || (this.endpoint.startsWith(ClientRequest.STOP_SERVER_META))
+                            || (this.endpoint.startsWith(ClientRequest.RESTART_SERVER_META)) || (this.endpoint.startsWith(ClientRequest.KILL_SERVER_META));
+
         if (this.endpoint.startsWith(ClientRequest.GET_ALL_SERVERS)) {
             let str = this.endpoint.split(":");
             if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_SERVER_PAGE, splitting enum did not add up to a length of 2. (You need to contact a developer)");
             return `api/client/?page=${str[1]}`;
         } else if (this.endpoint.startsWith(ClientRequest.DELETE_API_KEY_META)) {
             let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_SERVER_PAGE, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_API_KEY, splitting enum did not add up to a length of 2. (You need to contact a developer)");
             return `api/client/account/api-keys/${str[1]}`;
         } else if (this.endpoint.startsWith(ClientRequest.GET_SERVER_INFO_META)) {
             let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_SERVER_PAGE, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_SERVER_INFO, splitting enum did not add up to a length of 2. (You need to contact a developer)");
             return `api/client/servers/${str[1]}`
+        } else if (isPowerAction) {
+            let str = this.endpoint.split(":");
+            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using a typoeof POWER_ACTION, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+            return `api/client/servers/${str[1]}/power`;
+        } else if (this.endpoint.startsWith(ClientRequest.SEND_SERVER_COMMAND_META)) {
+            let str = this.endpoint.split(":");
+            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using SEND_SERVER_COMAND, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+            return `api/client/servers/${str[1]}/command`;
         }
     }
 
