@@ -179,7 +179,6 @@ class Client {
      * sends a command to a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * all this ever gave me was a 504 error though so idk lol
      *
      * @param serverId
      * @param command
@@ -189,6 +188,159 @@ class Client {
         return new Promise((res, rej) => {
             Methods.sendServerCommand(this.hostUrl, this.apiKey, serverId, command).then((response) => {
                 return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * gets a servers current memory/cpu/disk usages as bytes
+     *
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
+    getServerUsages(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getServerUsages(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets the Console WebSocket instance for a server
+     * you will ne to establish your own socket connection for now
+     * (try socket.io)
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
+    getConsoleWebSocket(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getConsoleWebSocket(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Renames the target server
+     *
+     * @param serverId
+     * @param newName
+     * @returns {Promise<Boolean>}
+     */
+    renameServer(serverId, newName) {
+        return new Promise((res, rej) => {
+            Methods.renameServer(this.hostUrl, this.apiKey, serverId, newName).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * ReInstalls a target server
+     *
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    reInstallServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.reInstallServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Lists what backups a server has
+     *
+     * @param serverId
+     * @returns {Promise<Array>}
+     */
+    listServerBackups(serverId) {
+        return new Promise((res, rej) => {
+            Methods.listServerBackups(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Creates a backup for a specified server
+     *
+     * This will send a error code 924 when trying to create 2 backups within a 10 minute time frame
+     * Stay tuned for what error this returns when the max amount of backups have been created
+     *
+     * @param serverId
+     * @returns {Promise<Object>}
+     */
+    createServerBackup(serverId) {
+        return new Promise((res, rej) => {
+            Methods.createServerBackup(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets details about a specified server backups
+     *
+     * @param serverId
+     * @param backupId
+     * @returns {Promise<Object>}
+     */
+    getBackupDetails(serverId, backupId) {
+        return new Promise((res, rej) => {
+            Methods.getBackupDetails(this.hostUrl, this.apiKey, serverId, backupId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets a clickable URL to download your server backup
+     *
+     * @param serverId
+     * @param backupId
+     * @returns {Promise<Object>}
+     */
+    getBackupDownload(serverId, backupId) {
+        return new Promise((res, rej) => {
+            Methods.getBackupDownload(this.hostUrl, this.apiKey, serverId, backupId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Deletes a specified backup
+     *
+     * @param serverId
+     * @param backupId
+     * @returns {Promise<Boolean>}
+     */
+    deleteBackup(serverId, backupId) {
+        return new Promise((res, rej) => {
+            Methods.deleteBackupDownload(this.hostUrl, this.apiKey, serverId, backupId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    getSubUsers(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getSubUsers(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    createSubUser(serverId, email, permissions) {
+        return new Promise((res, rej) => {
+            Methods.createSubUser(this.hostUrl, this.apiKey, serverId, email, permissions).then((response) => {
+                return res(response.data.attributes);
             }).catch(err => rej(this.processError(err)));
         });
     }

@@ -111,29 +111,81 @@ class NodeactylRequest {
             }
         }
 
-        let isPowerAction = (this.endpoint.startsWith(ClientRequest.START_SERVER_META)) || (this.endpoint.startsWith(ClientRequest.STOP_SERVER_META))
-                            || (this.endpoint.startsWith(ClientRequest.RESTART_SERVER_META)) || (this.endpoint.startsWith(ClientRequest.KILL_SERVER_META));
+        let str = this.endpoint.split(":");
+        let request = str[0];
+        if (request === undefined || request === "") throw new Error("Could not find request when splitting enum. (Contact a developer)");
 
-        if (this.endpoint.startsWith(ClientRequest.GET_ALL_SERVERS)) {
-            let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_SERVER_PAGE, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+        let isPowerAction = (request === ClientRequest.START_SERVER_META) || request === ClientRequest.STOP_SERVER_META
+            || request === ClientRequest.RESTART_SERVER_META || request === ClientRequest.KILL_SERVER_META;
+
+
+        if (request === ClientRequest.GET_ALL_SERVERS) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_SERVERS (contact a developer)");
             return `api/client/?page=${str[1]}`;
-        } else if (this.endpoint.startsWith(ClientRequest.DELETE_API_KEY_META)) {
-            let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_API_KEY, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+
+        } else if (request === ClientRequest.DELETE_API_KEY_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_API_KEY (contact a developer)");
             return `api/client/account/api-keys/${str[1]}`;
-        } else if (this.endpoint.startsWith(ClientRequest.GET_SERVER_INFO_META)) {
-            let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using GET_SERVER_INFO, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+
+        } else if (request === ClientRequest.GET_SERVER_INFO_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_INFO (contact a developer)");
             return `api/client/servers/${str[1]}`
+
         } else if (isPowerAction) {
-            let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using a typoeof POWER_ACTION, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using typeof POWER_ACTION (contact a developer)");
             return `api/client/servers/${str[1]}/power`;
-        } else if (this.endpoint.startsWith(ClientRequest.SEND_SERVER_COMMAND_META)) {
-            let str = this.endpoint.split(":");
-            if (str.length !== 2) throw new Error("Error with NodeactylAPI when using SEND_SERVER_COMAND, splitting enum did not add up to a length of 2. (You need to contact a developer)");
+
+        } else if (request === ClientRequest.SEND_SERVER_COMMAND_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using SEND_SERVER_COMMAND (contact a developer)");
             return `api/client/servers/${str[1]}/command`;
+
+        } else if (request === ClientRequest.GET_SERVER_USAGES_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_USAGES (contact a developer)");
+            return `api/client/servers/${str[1]}/resources`;
+
+        } else if (request === ClientRequest.GET_CONSOLE_WEBSOCKET_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when usingGET_CONSOLE_WEBSOCKET (contact a developer)");
+            return `api/client/servers/${str[1]}/websocket`;
+
+        } else if (request === ClientRequest.RENAME_SERVER_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using RENAME_SERVER (contact a developer)");
+            return `api/client/servers/${str[1]}/settings/rename`;
+
+        } else if (request === ClientRequest.REINSTALL_SERVER_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using REINSTALL_SERVER (contact a developer)");
+            return `api/client/servers/${str[1]}/settings/reinstall`;
+
+        } else if (request === ClientRequest.LIST_BACKUPS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using LIST_BACKUPS (contact a developer)");
+            return `api/client/servers/${str[1]}/backups`;
+
+        } else if (request === ClientRequest.CREATE_BACKUP_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using CREATE_BACKUP (contact a developer)");
+            return `api/client/servers/${str[1]}/backups`;
+
+        } else if (request === ClientRequest.GET_SERVER_BACKUP_META) {
+            if (str[1] === "" || str[1] === undefined || str[2] === "" || str[2] === undefined)
+                throw new Error("Could not split enum to a length of 2 when using GET_SERVER_BACKUP (contact a developer)");
+            return `api/client/servers/${str[1]}/backups/${str[2]}`;
+
+        } else if (request === ClientRequest.GET_SERVER_BACKUP_DOWNLOAD_META) {
+            if (str[1] === "" || str[1] === undefined || str[2] === "" || str[2] === undefined)
+                throw new Error("Could not split enum to a length of 2 when using GET_SERVER_BACKUP_DOWNLOAD (contact a developer)");
+            return `api/client/servers/${str[1]}/backups/${str[2]}/download`;
+
+        } else if (request === ClientRequest.DELETE_SERVER_BACKUP_META) {
+            if (str[1] === "" || str[1] === undefined || str[2] === "" || str[2] === undefined)
+                throw new Error("Could not split enum to a length of 2 when using DELETE_SERVER_BACKUP (contact a developer)");
+            return `api/client/servers/${str[1]}/backups/${str[2]}`;
+
+        } else if (request === ClientRequest.GET_SUBUSERS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SUBUSERS (contact a developer)");
+            return `api/client/servers/${str[1]}/users`;
+
+        } else if (request === ClientRequest.CREATE_SUBUSER_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SUBUSERS (contact a developer)");
+            return `api/client/servers/${str[1]}/users`;
+
         }
     }
 

@@ -56,6 +56,64 @@ exports.sendServerCommand = (host, key, serverId, command) => {
     return req.executePost(ClientRequest.SEND_SERVER_COMMAND(serverId), data);
 };
 
+exports.getConsoleWebSocket = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_CONSOLE_WEBSOCKET(serverId));
+};
+
+exports.renameServer = (host, key, serverId, name) => {
+    let data = { name: name };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ClientRequest.RENAME_SERVER(serverId), data);
+};
+
+exports.reInstallServer = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ClientRequest.REINSTALL_SERVER(serverId), undefined);
+};
+
+exports.listServerBackups = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.LIST_BACKUPS(serverId));
+};
+
+exports.createServerBackup = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ClientRequest.CREATE_BACKUP(serverId), undefined);
+};
+
+exports.getBackupDetails = (host, key, serverId, backupId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_SERVER_BACKUP(serverId, backupId));
+};
+
+exports.getBackupDownload = (host, key, serverId, backupId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_SERVER_BACKUP_DOWNLOAD(serverId, backupId));
+};
+
+exports.deleteBackupDownload = (host, key, serverId, backupId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ClientRequest.DELETE_SERVER_BACKUP(serverId, backupId));
+};
+
+exports.getSubUsers = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_SUBUSERS(serverId));
+};
+
+exports.createSubUser = (host, key, serverId, subUserEmail, subUserPermissions) => {
+    if (subUserPermissions === undefined) subUserPermissions = [];
+    let data = { email: subUserEmail, permissions: subUserPermissions };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ClientRequest.CREATE_SUBUSER(serverId), data);
+};
+
+exports.getServerUsages = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_SERVER_USAGES(serverId));
+};
+
 exports.getApiKeys = (host, key) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ClientRequest.GET_API_KEYS);
