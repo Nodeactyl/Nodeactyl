@@ -2,7 +2,7 @@
 
 *If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`
 
-[**If you're having any issues, join the Discord and ask for support. https://discord.gg/beTDVtD**](https://discord.gg/beTDVtD)
+If you're having any issues, [join the Discord](https://discord.gg/HvQ4JTqCvs)  and ask for support.
 
 Stars are very much appreciated <3 
 I would really appreciate if you find this project useful to please share with your frends :smiley:
