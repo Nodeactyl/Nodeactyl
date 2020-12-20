@@ -1,5 +1,14 @@
 module.exports = {
 
+    GET_ALL_SERVERS: "APPLICATION_GET_ALL_SERVERS",
+    GET_SERVER_INFO_META: "APPLICATION_GET_SERVER_INFO",
+
+    /**
+     * @return {string}
+     */
+    GET_SERVER_INFO(serverId) {
+        return `APPLICATION_GET_SERVER_INFO:${serverId}`;
+    },
     /**
      * @return {string}
      */

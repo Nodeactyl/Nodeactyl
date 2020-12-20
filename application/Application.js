@@ -39,6 +39,32 @@ class Application {
     }
 
     /**
+     * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
+     *
+     * @returns {Promise<unknown>}
+     */
+    getAllServers() {
+        return new Promise((res, rej) => {
+            Methods.getServers(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets a info of a server from your panel
+     *
+     * @returns {Promise<unknown>}
+     */
+    getServerDetails(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getServerDetails(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Suspend a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
