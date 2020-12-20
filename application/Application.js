@@ -68,6 +68,21 @@ class Application {
         });
     }
 
+    /**
+     * Reinstall a server if the host and api key have permission
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    reinstallServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.reinstallServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
 
 }
 

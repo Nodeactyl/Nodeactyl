@@ -13,6 +13,13 @@ module.exports = {
     UNSUSPEND_SERVER(serverId) {
         return `APPLICATION_UNSUSPEND_SERVER:${serverId}`
     },
-    UNSUSPEND_SERVER_META: "APPLICATION_UNSUSPEND_SERVER"
+    UNSUSPEND_SERVER_META: "APPLICATION_UNSUSPEND_SERVER",
+    /**
+     * @return {string}
+     */
+    REINSTALL_SERVER(serverId) {
+        return `APPLICATION_REINSTALL_SERVER:${serverId}`
+    },
+    REINSTALL_SERVER_META: "APPLICATION_REINSTALL_SERVER"
 
 };

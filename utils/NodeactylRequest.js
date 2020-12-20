@@ -196,6 +196,10 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.UNSUSPEND_SERVER_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UNSUSPEND_SERVER (contact a developer)");
             return `api/application/servers/${str[1]}/unsuspend`;
+
+        } else if (request === ApplicationRequest.REINSTALL_SERVER_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using REINSTALL_SERVER (contact a developer)");
+            return `api/application/servers/${str[1]}/reinstall`;
         }
     }
 
