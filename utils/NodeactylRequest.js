@@ -204,15 +204,17 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.REINSTALL_SERVER_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using REINSTALL_SERVER (contact a developer)");
             return `api/application/servers/${str[1]}/reinstall`;
-        }
-        else if (request === ApplicationRequest.GET_ALL_SERVERS) {
+
+        } else if (request === ApplicationRequest.GET_ALL_SERVERS) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_SERVERS (contact a developer)");
             return `api/application/servers`;
 
-        }
-        else if (request === ApplicationRequest.GET_SERVER_INFO_META) {
+        } else if (request === ApplicationRequest.GET_SERVER_INFO_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_INFO_META (contact a developer)");
             return `api/application/servers/${str[1]}`;
+
+        } else if (request === ApplicationRequest.CREATE_USER_META) {
+            return `api/application/users`;
 
         }
     }

@@ -1,6 +1,17 @@
 const NodeactylRequest = require('../../utils/NodeactylRequest.js');
 const ApplicationRequest = require('../../utils/ApplicationRequest');
 
+exports.createUser = (host, key, Email, Username, FirstName, LastName) => {
+    let data = {
+        email: Email,
+        username: Username,
+        first_name: FirstName,
+        last_name: LastName
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_USER, data);
+};
+
 exports.getServers = (host, key,) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_ALL_SERVERS);

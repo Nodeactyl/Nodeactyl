@@ -39,6 +39,23 @@ class Application {
     }
 
     /**
+     * Creates a user
+     *
+     * @param {String} Username Users username
+     * @param {String} Email Users email
+     * @param {String} FirstName Users first name
+     * @param {String} LastName Users last name
+     * @returns {Promise<unknown>}
+     */
+    createUser(Email,Username,FirstName,LastName) {
+        return new Promise((res, rej) => {
+            Methods.createUser(this.hostUrl, this.apiKey, Email,Username,FirstName,LastName).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
      *
      * @returns {Promise<unknown>}
