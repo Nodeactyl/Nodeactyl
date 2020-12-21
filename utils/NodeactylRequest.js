@@ -216,6 +216,9 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.CREATE_USER_META) {
             return `api/application/users`;
 
+        } else if (request === ApplicationRequest.CREATE_SERVER_META) {
+            return `api/application/servers`;
+
         }
     }
 

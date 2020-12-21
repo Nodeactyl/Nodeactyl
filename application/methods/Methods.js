@@ -12,6 +12,57 @@ exports.createUser = (host, key, Email, Username, FirstName, LastName) => {
     return req.executePost(ApplicationRequest.CREATE_USER, data);
 };
 
+exports.createServer = (host, key, Version, NameOfServer, OwnerID, EggID, DockerImage,
+                        StartupCmd, RAM, Swap, Disk, IO, CPU,
+                        AmountOfDatabases, AmountOfBackups, AmountOfAllocations) => {
+
+    let data = {
+        'name': NameOfServer,
+        'user': OwnerID,
+        'egg': EggID,
+        'docker_image': DockerImage,
+        'startup': StartupCmd,
+        'limits': {
+            'memory': RAM,
+            'swap': Swap,
+            'disk': Disk,
+            'io': IO,
+            'cpu': CPU,
+        },
+        'feature_limits': {
+            'databases': AmountOfDatabases,
+            'allocations': AmountOfAllocations,
+            'backups': AmountOfBackups
+        },
+        'environment': {
+            'DL_VERSION': Version,
+            'SERVER_JARFILE': 'server.jar',
+            'VANILLA_VERSION': Version,
+            'BUNGEE_VERSION': Version,
+            'MINECRAFT_VERSION': Version,
+            'MC_VERSION': Version,
+            'BUILD_NUMBER': Version,
+            'INSTALL_REPO': Version,
+            'STARTUP_CMD': 'npm install --unsafe-perm',
+            'SECOND_CMD': 'node index.js',
+        },
+        'allocation': {
+            'default': 1,
+            'additional': [],
+        },
+        'deploy': {
+            'locations': [1],
+            'dedicated_ip': false,
+            'port_range': [],
+        },
+        'start_on_completion': true,
+        'skip_scripts': false,
+        'oom_disabled': true,
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_SERVER, data);
+};
+
 exports.getServers = (host, key,) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_ALL_SERVERS);

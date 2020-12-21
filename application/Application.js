@@ -56,6 +56,37 @@ class Application {
     }
 
     /**
+     * Creates a server
+     *
+     * @param {String} Version Version of the server to use
+     * @param {String} NameOfServer Name of server to create
+     * @param {Integer} OwnerID User ID of who should own this server
+     * @param {Integer} EggID Egg ID to use when installing the server
+     * @param {String} DockerImage The image to use from Docker
+     * @param {String} StartupCmd The command to use when starting this server (AKA JVM Arguments)
+     * @param {Integer} RAM The amount of RAM the server has
+     * @param {Integer} Swap The amount of Swap the server has
+     * @param {Integer} Disk The amount of Storage the server has
+     * @param {Integer} IO Set this to 500 please. (Even if you know what it is leave it alone)
+     * @param {Integer} CPU The amount of CPU Power the server can use (100 = 1 core);
+     * @param {Integer} AmountOfDatabases The max amount of databases a server can use
+     * @param {Integer} AmountOfBackups The max backups you can hold
+     * @param {Integer} AmountOfAllocations The max amount of allocation(s) a server can us
+     * @returns {Promise<unknown>}
+     */
+    createServer(Version, NameOfServer, OwnerID, EggID, DockerImage,
+               StartupCmd, RAM, Swap, Disk, IO, CPU,
+               AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
+        return new Promise((res, rej) => {
+            Methods.createServer(this.hostUrl, this.apiKey, Version, NameOfServer, OwnerID, EggID, DockerImage,
+                StartupCmd, RAM, Swap, Disk, IO, CPU,
+                AmountOfDatabases, AmountOfBackups, AmountOfAllocations).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
      *
      * @returns {Promise<unknown>}
