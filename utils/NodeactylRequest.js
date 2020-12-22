@@ -58,6 +58,18 @@ class NodeactylRequest {
             maxRedirects: 5,
             headers: this.getHeaders(),
             data: providedData
+        }).catch(err => console.log(err))
+    }
+
+    executePatch(request, providedData) {
+        this.endpoint = request;
+        return axios.default({
+            url: this.trimUrl(),
+            method: "PATCH",
+            followRedirects: true,
+            maxRedirects: 5,
+            headers: this.getHeaders(),
+            data: providedData
         })
     }
 
@@ -112,7 +124,11 @@ class NodeactylRequest {
             }
 
             case ApplicationRequest.GET_ALL_SERVERS: {
-                return `api/application/servers`
+                return `api/application/servers?page=1`
+            }
+
+            case ApplicationRequest.GET_ALL_USERS: {
+                return `api/application/servers?page=1`
             }
 
         }
@@ -123,7 +139,6 @@ class NodeactylRequest {
 
         let isPowerAction = (request === ClientRequest.START_SERVER_META) || request === ClientRequest.STOP_SERVER_META
             || request === ClientRequest.RESTART_SERVER_META || request === ClientRequest.KILL_SERVER_META;
-
 
         if (request === ClientRequest.GET_ALL_SERVERS) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_SERVERS (contact a developer)");
@@ -207,11 +222,23 @@ class NodeactylRequest {
 
         } else if (request === ApplicationRequest.GET_ALL_SERVERS) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_SERVERS (contact a developer)");
-            return `api/application/servers`;
+            return `api/application/servers?page=${str[1]}`;
+
+        } else if (request === ApplicationRequest.UPDATE_SERVER_DETAILS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_SERVER_DETAILS (contact a developer)");
+            return `api/application/servers/${str[1]}/details`;
+
+        } else if (request === ApplicationRequest.UPDATE_SERVER_BUILD_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_SERVER_DETAILS (contact a developer)");
+            return `api/application/servers/${str[1]}/build`;
 
         } else if (request === ApplicationRequest.GET_SERVER_INFO_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_INFO_META (contact a developer)");
             return `api/application/servers/${str[1]}`;
+
+        } else if (request === ApplicationRequest.GET_ALL_USERS) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_USERS (contact a developer)");
+            return `api/application/users?page=${str[1]}`;
 
         } else if (request === ApplicationRequest.CREATE_USER_META) {
             return `api/application/users`;
@@ -219,6 +246,13 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.CREATE_SERVER_META) {
             return `api/application/servers`;
 
+        } else if (request === ApplicationRequest.GET_USER_INFO_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_USER_INFO (contact a developer)");
+            return `api/application/users/${str[1]}`;
+
+        } else if (request === ApplicationRequest.UPDATE_USER_DETAILS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_USER_DETAILS (contact a developer)");
+            return `api/application/users/${str[1]}`;
         }
     }
 

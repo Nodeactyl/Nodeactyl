@@ -39,6 +39,50 @@ class Application {
     }
 
     /**
+     * Gets a list of users from your panel
+     *
+     * @returns {Promise<unknown>}
+     * $param {Integer} Page number
+     */
+    getAllUsers() {
+        return new Promise((res, rej) => {
+            Methods.getUsers(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets details of a user
+     *
+     * @returns {Promise<unknown>}
+     * $param {Integer} userId
+     */
+    getUserDetails(userId) {
+        return new Promise((res, rej) => {
+            Methods.getUser(this.hostUrl, this.apiKey, userId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets users by a specified page number
+     *
+     * This will return an empty array if the specified page was invalid.
+     *
+     * @param pageNum
+     * @returns {Promise<unknown>}
+     */
+    getUserPage(pageNum) {
+        return new Promise((res, rej) => {
+            Methods.getUserPage(this.hostUrl, this.apiKey, pageNum).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
      * Creates a user
      *
      * @param {String} Username Users username
@@ -53,6 +97,27 @@ class Application {
                 return res(response.data);
             }).catch(err => rej(this.processError(err)));
         })
+    }
+
+    /**
+     * UpdateUserDetails
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param {Integer} userId
+     * @param {String} Email
+     * @param {String} Username
+     * @param {String} FirstName
+     * @param {String} LastName
+     * @param {String} Language
+     * @param {String} Password
+     * @returns {Promise<Boolean>}
+     */
+    updateUserDetails(userId, Email, Username, FirstName, LastName, Language, Password) {
+        return new Promise((res, rej) => {
+            Methods.updateUserDetails(this.hostUrl, this.apiKey, userId, Email, Username, FirstName, LastName, Language, Password).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
     }
 
     /**
@@ -100,8 +165,25 @@ class Application {
     }
 
     /**
+     * Gets servers by a specified page number
+     *
+     * This will return an empty array if the specified page was invalid.
+     *
+     * @param {Integer} pageNum
+     * @returns {Promise<unknown>}
+     */
+    getServerPage(pageNum) {
+        return new Promise((res, rej) => {
+            Methods.getServerPage(this.hostUrl, this.apiKey, pageNum).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
      * Gets a info of a server from your panel
      *
+     * @param {Integer} serverId
      * @returns {Promise<unknown>}
      */
     getServerDetails(serverId) {
@@ -116,7 +198,7 @@ class Application {
      * Suspend a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {Integer} serverId
      * @returns {Promise<Boolean>}
      */
     suspendServer(serverId) {
@@ -131,7 +213,7 @@ class Application {
      * Unsuspend a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {Integer} serverId
      * @returns {Promise<Boolean>}
      */
     unsuspendServer(serverId) {
@@ -146,12 +228,56 @@ class Application {
      * Reinstall a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {Integer} serverId
      * @returns {Promise<Boolean>}
      */
     reinstallServer(serverId) {
         return new Promise((res, rej) => {
             Methods.reinstallServer(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * UpdateServerDetails
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param {Integer} serverId
+     * @param {String} Name
+     * @param {Integer} userId
+     * @param {Integer} externalId
+     * @param {String} Description
+     * @returns {Promise<Boolean>}
+     */
+    updateServerDetails(serverId, Name, userId, externalId, Description) {
+        return new Promise((res, rej) => {
+            Methods.updateServerDetails(this.hostUrl, this.apiKey, serverId, Name, userId, externalId, Description).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * UpdateServerBuild
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     *
+     * @param {Integer} serverId
+     * @param {Integer} AllocationID
+     * @param {Integer} RAM
+     * @param {Integer} Swap
+     * @param {Integer} IO
+     * @param {Integer} CPU
+     * @param {Integer} Disk
+     * @param {Integer} Threads
+     * @param {Integer} AmountOfDatabases
+     * @param {Integer} AmountOfBackups
+     * @param {Integer} AmountOfAllocations
+     * @returns {Promise<Boolean>}
+     */
+    updateServerBuild(serverId, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
+        return new Promise((res, rej) => {
+            Methods.updateServerBuild(this.hostUrl, this.apiKey, serverId, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations).then((response) => {
                 return res(true);
             }).catch(err => rej(this.processError(err)));
         });
