@@ -152,6 +152,28 @@ class Application {
     }
 
     /**
+     * Creates a server
+     *
+     * @param {Integer} OwnerID User ID of who should own this server
+     * @param {Integer} EggID Egg ID to use when installing the server
+     * @param {Integer} RAM The amount of RAM the server has
+     * @param {Integer} Disk The amount of Storage the server has
+     * @param {Integer} CPU The amount of CPU Power the server can use (100 = 1 core);
+     * @returns {Promise<unknown>}
+     */
+    createSimpleServer(OwnerID, EggID, RAM, Disk, CPU) {
+        return new Promise(async (res, rej) => {
+            let nest;
+            await Methods.getNest(this.hostUrl, this.apiKey, EggID).then(res => nest = res);
+            Methods.createServer(this.hostUrl, this.apiKey, "latest", "Server", OwnerID, EggID, nest.data.attributes.docker_image,
+                nest.data.attributes.startup, RAM, 0, Disk, 500, CPU,
+                2, 7, 1).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
      *
      * @returns {Promise<unknown>}
