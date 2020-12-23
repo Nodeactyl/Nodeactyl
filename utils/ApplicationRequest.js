@@ -32,6 +32,13 @@ module.exports = {
     /**
      * @return {string}
      */
+    DELETE_USER(userId) {
+        return `APPLICATION_DELETE_USER:${userId}`
+    },
+    DELETE_USER_META: "APPLICATION_DELETE_USER",
+    /**
+     * @return {string}
+     */
     GET_SERVER_INFO(serverId) {
         return `APPLICATION_GET_SERVER_INFO:${serverId}`;
     },
@@ -75,7 +82,14 @@ module.exports = {
     UPDATE_SERVER_BUILD(serverId) {
         return `APPLICATION_UPDATE_SERVER_BUILD:${serverId}`
     },
-    UPDATE_SERVER_BUILD_META: "APPLICATION_UPDATE_SERVER_BUILD"
+    UPDATE_SERVER_BUILD_META: "APPLICATION_UPDATE_SERVER_BUILD",
+    /**
+     * @return {string}
+     */
+    DELETE_SERVER(serverId) {
+        return `APPLICATION_DELETE_SERVER:${serverId}`
+    },
+    DELETE_SERVER_META: "APPLICATION_DELETE_SERVER"
 
 
 };

@@ -253,7 +253,16 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.UPDATE_USER_DETAILS_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_USER_DETAILS (contact a developer)");
             return `api/application/users/${str[1]}`;
+
+        } else if (request === ApplicationRequest.DELETE_USER_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_USER (contact a developer)");
+            return `api/application/users/${str[1]}`;
+
+        } else if (request === ApplicationRequest.DELETE_SERVER_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_SERVER (contact a developer)");
+            return `api/application/servers/${str[1]}`;
         }
+
     }
 
     /**

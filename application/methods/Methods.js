@@ -16,6 +16,11 @@ exports.getUserPage = (host, key, page) => {
     return req.executeGet(ApplicationRequest.GET_USER_PAGE(page));
 }
 
+exports.deleteUser = (host, key, userId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ApplicationRequest.DELETE_USER(userId));
+}
+
 exports.createUser = (host, key, Email, Username, FirstName, LastName) => {
     let data = {
         email: Email,
@@ -155,3 +160,8 @@ exports.updateServerBuild = (host, key, serverId, AllocationID, RAM, Swap, IO, C
     let req = new NodeactylRequest(host, key);
     return req.executePatch(ApplicationRequest.UPDATE_SERVER_BUILD(serverId), data);
 };
+
+exports.deleteServer = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ApplicationRequest.DELETE_SERVER(serverId));
+}

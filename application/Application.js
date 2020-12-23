@@ -195,6 +195,26 @@ class Application {
     }
 
     /**
+     * Deletes a specified user
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
+     *
+     * @param userId
+     * @returns {Promise<Boolean>}
+     */
+    deleteUser(userId) {
+        return new Promise((res, rej) => {
+            Methods.deleteUser(this.hostUrl, this.apiKey, userId).then(() => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
      * Suspend a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
@@ -278,6 +298,26 @@ class Application {
     updateServerBuild(serverId, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
         return new Promise((res, rej) => {
             Methods.updateServerBuild(this.hostUrl, this.apiKey, serverId, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Deletes a specified server
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
+     *
+     * @param serverId
+     * @returns {Promise<Boolean>}
+     */
+    deleteServer(serverId) {
+        return new Promise((res, rej) => {
+            Methods.deleteServer(this.hostUrl, this.apiKey, serverId).then(() => {
                 return res(true);
             }).catch(err => rej(this.processError(err)));
         });
