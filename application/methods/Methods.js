@@ -165,3 +165,8 @@ exports.deleteServer = (host, key, serverId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeDelete(ApplicationRequest.DELETE_SERVER(serverId));
 }
+
+exports.getNest = (host, key, nestId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_NEST_INFO(nestId));
+};

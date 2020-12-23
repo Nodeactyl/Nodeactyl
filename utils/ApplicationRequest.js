@@ -10,6 +10,7 @@ module.exports = {
 
     CREATE_SERVER_META: "APPLICATION_CREATE_SERVER",
     CREATE_SERVER: "APPLICATION_CREATE_SERVER",
+
     /**
      * @return {string}
      */
@@ -89,7 +90,14 @@ module.exports = {
     DELETE_SERVER(serverId) {
         return `APPLICATION_DELETE_SERVER:${serverId}`
     },
-    DELETE_SERVER_META: "APPLICATION_DELETE_SERVER"
+    DELETE_SERVER_META: "APPLICATION_DELETE_SERVER",
+    /**
+     * @return {string}
+     */
+    GET_NEST_INFO(nestId) {
+        return `APPLICATION_GET_NEST_INFO:${nestId}`
+    },
+    GET_NEST_INFO_META: "APPLICATION_GET_NEST_INFO",
 
 
 };

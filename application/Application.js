@@ -323,6 +323,20 @@ class Application {
         });
     }
 
+    /**
+     * Gets details of a nest
+     *
+     * @returns {Promise<unknown>}
+     * $param {Integer} nestId
+     */
+    getNestDetails(nestId) {
+        return new Promise((res, rej) => {
+            Methods.getNest(this.hostUrl, this.apiKey, nestId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
 
 }
 

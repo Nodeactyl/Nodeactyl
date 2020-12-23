@@ -261,6 +261,10 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.DELETE_SERVER_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_SERVER (contact a developer)");
             return `api/application/servers/${str[1]}`;
+
+        } else if (request === ApplicationRequest.GET_NEST_INFO_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_SERVER (contact a developer)");
+            return `api/application/nests/1/eggs/${str[1]}`;
         }
 
     }
