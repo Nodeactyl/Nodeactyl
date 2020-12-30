@@ -159,15 +159,18 @@ class Application {
      * @param {Integer} RAM The amount of RAM the server has
      * @param {Integer} Disk The amount of Storage the server has
      * @param {Integer} CPU The amount of CPU Power the server can use (100 = 1 core);
+     * @param {Integer} AmountOfDatabases The max amount of databases a server can use
+     * @param {Integer} AmountOfBackups The max backups you can hold
+     * @param {Integer} AmountOfAllocations The max amount of allocation(s) a server can us
      * @returns {Promise<unknown>}
      */
-    createSimpleServer(OwnerID, EggID, RAM, Disk, CPU) {
+    createSimpleServer(OwnerID, EggID, RAM, Disk, CPU, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
         return new Promise(async (res, rej) => {
             let nest;
             await Methods.getNest(this.hostUrl, this.apiKey, EggID).then(res => nest = res);
             Methods.createServer(this.hostUrl, this.apiKey, "latest", "Server", OwnerID, EggID, nest.data.attributes.docker_image,
                 nest.data.attributes.startup, RAM, 0, Disk, 500, CPU,
-                2, 7, 1).then((response) => {
+                AmountOfDatabases, AmountOfBackups, AmountOfAllocations).then((response) => {
                 return res(response.data);
             }).catch(err => rej(this.processError(err)));
         })
