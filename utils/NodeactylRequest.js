@@ -128,7 +128,7 @@ class NodeactylRequest {
             }
 
             case ApplicationRequest.GET_ALL_USERS: {
-                return `api/application/servers?page=1`
+                return `api/application/users?page=1`
             }
 
         }
