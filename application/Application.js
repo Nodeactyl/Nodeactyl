@@ -67,6 +67,48 @@ class Application {
     }
 
     /**
+     * Gets details of a user by username
+     *
+     * @returns {Promise<unknown>}
+     * $param {String} username
+     */
+    getUserByUsername(username) {
+        return new Promise(async (res, rej) => {
+            await Methods.getUsers(this.hostUrl, this.apiKey).then(async (response) => {
+                let user = false;
+                let pages = response.data.meta.pagination.total_pages
+                for (let i = 1; i === pages; i++) {
+                    await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
+                        user = page.data.data.find(d => d.attributes.username = username)
+                    }).catch(err => rej(this.processError(err)));
+                }
+                return res(user);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets details of a user
+     *
+     * @returns {Promise<unknown>}
+     * $param {String} email
+     */
+    getUserByEmail(email) {
+        return new Promise(async (res, rej) => {
+            await Methods.getUsers(this.hostUrl, this.apiKey).then(async (response) => {
+                let user = false;
+                let pages = response.data.meta.pagination.total_pages
+                for (let i = 1; i === pages; i++) {
+                    await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
+                        user = page.data.data.find(d => d.attributes.email = email)
+                    }).catch(err => rej(this.processError(err)));
+                }
+                return res(user);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Gets users by a specified page number
      *
      * This will return an empty array if the specified page was invalid.
