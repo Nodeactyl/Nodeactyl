@@ -35,6 +35,10 @@ class Request {
 				var PaginationAndUsers = Object.assign({users: response.data.data}, response.data.meta.pagination);
 				return PaginationAndUsers;
 			}
+			else if(request == 'GetAllServersPagination') {
+				var PaginationAndServers = Object.assign({servers: response.data.data}, response.data.meta.pagination);
+				return PaginationAndServers;
+			}
 		}).catch(error => {
 			const err = createError(request, error, data);
 			if (err) throw err;
