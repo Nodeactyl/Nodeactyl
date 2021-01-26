@@ -26,9 +26,9 @@ class Application {
      */
     getErrorCode(err) {
         err = err.message;
-        let str1 = err.charAt(err.length - 1);
+        let str1 = err.charAt(err.length - 3);
         let str2 = err.charAt(err.length - 2);
-        let str3 = err.charAt(err.length - 3);
+        let str3 = err.charAt(err.length - 1);
 
         let num = str1 + str2 + str3;
         try {
