@@ -1,2 +1,0 @@
-# \[OLD\] Admin Functions
-
