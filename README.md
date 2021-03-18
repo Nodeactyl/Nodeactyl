@@ -1,30 +1,22 @@
-# Nodeactyl: 100% remastered
+# \[OLD\] Welcome
 
-*If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type* `npm init -y`
+{% hint style="warning" %}
+NODEACTYL DOES NOT YET FULLY SUPPORT V1
 
-If you're having any issues, [join the Discord](https://discord.gg/HvQ4JTqCvs)  and ask for support.
+The nodeactyl code for pterodactyl v1 has been released in a seperate library called `nodeactyl-beta` while the final changes are made before final release. The docs have not yet been updated to reflect the changes made in v1, so to use, you will either need to look through the library code or ask for assistance in the discord.
 
-Stars are very much appreciated <3 
-I would really appreciate if you find this project useful to please share with your frends :smiley:
+For updates regarding the v1 update, join the discord below and run `?rank Panel v1 Update` in `#bot-commands`
+{% endhint %}
 
-## Installation
-```
-npm install nodeactyl
-```
+Welcome to the nodeactyl docs, here we will show you all the ins and outs of nodeactyl and how to properly use it. If you have any questions, please [join our discord ](https://discord.gg/HvQ4JTqCvs)where we can assist you.
 
-## What am I?
+{% page-ref page="./" %}
 
-Nodeactyl is a Library for node.js to communicated with the Pterodactyl Panel,you can control *any* server on your nodes with it (If you purchase a server from another host, no worry! The API works with your own server too!). This library's originally was to be used in Discord bots, however it can be used in ny node.js project.
+{% page-ref page="main/frequently-asked-questions.md" %}
 
-## How do I work?
-This library works by querying the Pterodactyl API (REST requests) using a library called [axios](https://www.npmjs.com/package/axios).
+{% page-ref page="main/getting-started.md" %}
 
-## Documentation
-https://docs.nodeactyl.xyz
+{% page-ref page="main/client-functions/" %}
 
-## Disclaimer
-We (The Nodeactyl team) are not responsible for any damages that you cause to your servers/nodes by using this API. 
+{% page-ref page="main/admin-functions/" %}
 
-Remember: This API can potentially be dangerous with the ability to Delete Servers/Nodes at an instant is extremely easy! 
-
-It is *not* our fault if your API key is revealed to the public. When asking for help please do **not** send the full stack error. This will reveal your ENTIRE Host/Application API key in the request, if someone asks you to show them the error it should only be trusted sources! (Such as the Pterodactyl Team/Nodeactyl Team). You should also have your API key changed every 1-3 days to prevent issues like this.
