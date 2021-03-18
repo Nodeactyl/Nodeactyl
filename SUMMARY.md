@@ -8,7 +8,7 @@
 
 * [Start Server](client/startserver.md)
 
-## Admin Functions <a id="admin"></a>
+## Admin Functions <a id="application"></a>
 
-* [Create Server](admin/create-server.md)
+* [Create Server](application/create-server.md)
 
