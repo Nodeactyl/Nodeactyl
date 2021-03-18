@@ -71,10 +71,6 @@ The amount of backups you want the server to be able to make
 {% api-method-parameter name="Allocations" type="integer" required=true %}
  The amount of allocations you want the server to be able to assign
 {% endapi-method-parameter %}
-
-{% api-method-parameter name="Extra Parameter" type="string" required=true %}
-Extra Parameter in case docs change in future, ignore.
-{% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
 

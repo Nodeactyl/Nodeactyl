@@ -2,6 +2,10 @@
 
 ## 2.0.0 - TBA
 
+{% hint style="danger" %}
+Date is to be announced, the v1 code is still on nodeactyl-beta
+{% endhint %}
+
 ### Changed
 
 * Added v1 Docs

@@ -43,5 +43,9 @@
 
 ## Client Functions <a id="client"></a>
 
-* [Create Server](client/create-server.md)
+* [Untitled](client/untitled.md)
+
+## Admin Functions
+
+* [Create Server](admin-functions/create-server.md)
 
