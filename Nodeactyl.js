@@ -1,7 +1,7 @@
-const app = require('./application/index.js');
-const client = require('./client/index.js');
+const ClientAPI = require('./client/Client.js');
+const ApplicationAPI = require('./application/Application.js');
 
 module.exports = {
-	Application: app,
-	Client: client,
+    NodeactylClient: ClientAPI,
+    NodeactylApplication: ApplicationAPI
 };

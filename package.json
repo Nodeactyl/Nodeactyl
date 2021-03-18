@@ -1,21 +1,19 @@
 {
   "name": "nodeactyl",
-  "version": "2.0.4",
-  "description": "NodeJS API For pterodactyl panel",
-  "main": "Nodeactyl.js",
+  "version": "3.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www"
   },
-  "keywords": [
-    "project"
-  ],
-  "author": "Dalton Burchard",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Burchard36/Nodeactyl"
-  },
-  "homepage": "https://github.com/Burchard36/Nodeactyl",
   "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
+  },
+  "devDependencies": {
     "axios": "^0.21.1"
   }
 }
