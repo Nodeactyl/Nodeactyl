@@ -6,7 +6,7 @@
 
 ## Client Functions <a id="client"></a>
 
-* [Untitled](client/untitled.md)
+* [Start Server](client/startserver.md)
 
 ## Admin Functions <a id="admin"></a>
 
