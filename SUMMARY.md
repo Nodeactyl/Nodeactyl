@@ -1,51 +1,46 @@
 # Table of contents
 
 * [\[OLD\] Welcome](README.md)
+* [Welcome](welcome.md)
 * [Change Log](change-log.md)
-
-## Main Docs <a id="main"></a>
-
-* [\[OLD\] Frequently Asked Questions](main/frequently-asked-questions.md)
-* [\[OLD\] Getting Started](main/getting-started.md)
-* [\[OLD\] Client Functions](main/client-functions/README.md)
-  * [getAllServers\(\)](main/client-functions/getallservers.md)
-  * [killServer\(\)](main/client-functions/killserver.md)
-  * [stopServer\(\)](main/client-functions/stopserver.md)
-  * [startServer\(\)](main/client-functions/startserver.md)
-  * [restartServer\(\)](main/client-functions/restartserver.md)
-  * [sendCommand\(\)](main/client-functions/sendcommand.md)
-  * [getServerStatus\(\)](main/client-functions/getserverstatus.md)
-  * [getServerInfo\(\)](main/client-functions/getserverinfo.md)
-  * [isOwner\(\)](main/client-functions/isowner.md)
-  * [getCPUCores\(\)](main/client-functions/getcpucores.md)
-  * [getCPUUsage](main/client-functions/getcpuusage.md)
-  * [getRAMUsage\(\)](main/client-functions/getramusage.md)
-  * [getDiskUsage\(\)](main/client-functions/getdiskusage.md)
-* [\[OLD\] Admin Functions](main/admin-functions/README.md)
-  * [updateUser\(\)](main/admin-functions/updateuser.md)
-  * [getUserInfo\(\)](main/admin-functions/getuserinfo.md)
-  * [getNodeInfo\(\)](main/admin-functions/untitled.md)
-  * [getAllNodes\(\)](main/admin-functions/getallnodes.md)
-  * [getAllServers\(\)](main/admin-functions/getallservers.md)
-  * [getAllUsers\(\)](main/admin-functions/getallusers.md)
-  * [deleteServer\(\)](main/admin-functions/deleteserver.md)
-  * [deleteUser\(\)](main/admin-functions/deleteuser.md)
-  * [deleteNode\(\)](main/admin-functions/deletenode.md)
-  * [createNode\(\)](main/admin-functions/createnode.md)
-  * [createUser\(\)](main/admin-functions/createuser.md)
-  * [createServer\(\)](main/admin-functions/createserver.md)
-  * [suspendServer\(\)](main/admin-functions/suspendserver.md)
-  * [unSuspendServer\(\)](main/admin-functions/unsuspendserver.md)
-
----
-
-* [Discord Support Server](https://discord.com/HvQ4JTqCvs)
+* [Discord Support Server](https://discord.com/invite/HvQ4JTqCvs)
+* [\[OLD\] Getting Started](getting-started.md)
+* [\[OLD\] Client Functions](client-functions/README.md)
+  * [getAllServers\(\)](client-functions/getallservers.md)
+  * [killServer\(\)](client-functions/killserver.md)
+  * [stopServer\(\)](client-functions/stopserver.md)
+  * [startServer\(\)](client-functions/startserver.md)
+  * [restartServer\(\)](client-functions/restartserver.md)
+  * [sendCommand\(\)](client-functions/sendcommand.md)
+  * [getServerStatus\(\)](client-functions/getserverstatus.md)
+  * [getServerInfo\(\)](client-functions/getserverinfo.md)
+  * [isOwner\(\)](client-functions/isowner.md)
+  * [getCPUCores\(\)](client-functions/getcpucores.md)
+  * [getCPUUsage](client-functions/getcpuusage.md)
+  * [getRAMUsage\(\)](client-functions/getramusage.md)
+  * [getDiskUsage\(\)](client-functions/getdiskusage.md)
+* [\[OLD\] Admin Functions](admin-functions-1/README.md)
+  * [getUserInfo\(\)](admin-functions-1/getuserinfo.md)
+  * [getNodeInfo\(\)](admin-functions-1/untitled.md)
+  * [getAllNodes\(\)](admin-functions-1/getallnodes/README.md)
+    * [updateUser\(\)](admin-functions-1/getallnodes/updateuser.md)
+  * [getAllServers\(\)](admin-functions-1/getallservers.md)
+  * [getAllUsers\(\)](admin-functions-1/getallusers.md)
+  * [deleteServer\(\)](admin-functions-1/deleteserver.md)
+  * [deleteUser\(\)](admin-functions-1/deleteuser.md)
+  * [deleteNode\(\)](admin-functions-1/deletenode.md)
+  * [createNode\(\)](admin-functions-1/createnode.md)
+  * [createUser\(\)](admin-functions-1/createuser.md)
+  * [createServer\(\)](admin-functions-1/createserver.md)
+  * [suspendServer\(\)](admin-functions-1/suspendserver.md)
+  * [unSuspendServer\(\)](admin-functions-1/unsuspendserver.md)
+* [\[OLD\] Frequently Asked Questions](frequently-asked-questions.md)
 
 ## Client Functions <a id="client"></a>
 
 * [Untitled](client/untitled.md)
 
-## Admin Functions
+## Admin Functions <a id="admin"></a>
 
-* [Create Server](admin-functions/create-server.md)
+* [Create Server](admin/create-server.md)
 

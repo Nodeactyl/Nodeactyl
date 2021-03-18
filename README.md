@@ -12,11 +12,11 @@ Welcome to the nodeactyl docs, here we will show you all the ins and outs of nod
 
 {% page-ref page="./" %}
 
-{% page-ref page="main/frequently-asked-questions.md" %}
+{% page-ref page="frequently-asked-questions.md" %}
 
-{% page-ref page="main/getting-started.md" %}
+{% page-ref page="getting-started.md" %}
 
-{% page-ref page="main/client-functions/" %}
+{% page-ref page="client-functions/" %}
 
-{% page-ref page="main/admin-functions/" %}
+{% page-ref page="admin-functions-1/" %}
 
