@@ -3,6 +3,7 @@
 * [Welcome](README.md)
 * [Getting Started](getting-started.md)
 * [Change Log](change-log.md)
+* [Frequently Asked Questions](frequently-asked-questions.md)
 * [Discord Support Server](https://discord.com/invite/HvQ4JTqCvs)
 
 ## Client Functions <a id="client"></a>
