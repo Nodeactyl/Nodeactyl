@@ -4,8 +4,8 @@
 
 ## Main Docs <a id="main"></a>
 
-* [Frequently Asked Questions](main/frequently-asked-questions.md)
 * [Getting Started](main/getting-started.md)
+* [Frequently Asked Questions](main/frequently-asked-questions.md)
 * [Client Functions](main/client-functions/README.md)
   * [getAllServers\(\)](main/client-functions/getallservers.md)
   * [killServer\(\)](main/client-functions/killserver.md)
