@@ -161,6 +161,18 @@ exports.updateServerBuild = (host, key, serverId, AllocationID, RAM, Swap, IO, C
     return req.executePatch(ApplicationRequest.UPDATE_SERVER_BUILD(serverId), data);
 };
 
+exports.updateServerStartup = (host, key, serverId, startupCmd, environment, egg, dockerImage, skipScripts) => {
+    let data = {
+        "startup": startupCmd,
+        "environment": environment,
+        "egg": egg,
+        "image": dockerImage,
+        "skip_scripts": skipScripts
+    }
+    let req = new NodeactylRequest(host, key);
+    return req.executePatch(ApplicationRequest.UPDATE_SERVER_STARTUP(serverId), data);
+}
+
 exports.deleteServer = (host, key, serverId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeDelete(ApplicationRequest.DELETE_SERVER(serverId));

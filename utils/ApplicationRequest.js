@@ -87,6 +87,13 @@ module.exports = {
     /**
      * @return {string}
      */
+    UPDATE_SERVER_STARTUP(serverId) {
+        return `APPLICATION_UPDATE_SERVER_STARTUP:${serverId}`;
+    },
+    UPDATE_SERVER_STARTUP_META: "APPLICATION_UPDATE_SERVER_STARTUP",
+    /**
+     * @return {string}
+     */
     DELETE_SERVER(serverId) {
         return `APPLICATION_DELETE_SERVER:${serverId}`
     },

@@ -371,6 +371,27 @@ class Application {
     }
 
     /**
+     * UpdateServerStartup
+     *
+     * This update the startup details for a specified server
+     *
+     * @param serverId ID of serer
+     * @param StartupCmd new startup command to use for this server
+     * @param Environment The environment object for this server to use
+     * @param Egg Egg ID for this serer to use
+     * @param DockerImage Docker Image for this serer
+     * @param SkipScripts Do you want to skip scripts? (have no idea what this is)
+     * @returns {Promise<unknown>}
+     */
+    updateServerStartup(serverId, StartupCmd, Environment, Egg, DockerImage, SkipScripts) {
+        return new Promise((res, rej) => {
+            Methods.updateServerStartup(this.hostUrl, this.apiKey, serverId, StartupCmd, Version, Egg, DockerImage, SkipScripts).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Deletes a specified server
      *
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
