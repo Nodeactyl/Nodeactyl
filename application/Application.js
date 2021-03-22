@@ -385,7 +385,7 @@ class Application {
      */
     updateServerStartup(serverId, StartupCmd, Environment, Egg, DockerImage, SkipScripts) {
         return new Promise((res, rej) => {
-            Methods.updateServerStartup(this.hostUrl, this.apiKey, serverId, StartupCmd, Version, Egg, DockerImage, SkipScripts).then((response) => {
+            Methods.updateServerStartup(this.hostUrl, this.apiKey, serverId, StartupCmd, Environment, Egg, DockerImage, SkipScripts).then((response) => {
                 return res(true);
             }).catch(err => rej(this.processError(err)));
         })
