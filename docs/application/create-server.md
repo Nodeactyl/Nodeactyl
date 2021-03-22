@@ -69,7 +69,7 @@ The amount of backups you want the server to be able to make
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="Allocations" type="integer" required=true %}
- The amount of allocations you want the server to be able to assign
+The amount of allocations you want the server to be able to assign
 {% endapi-method-parameter %}
 {% endapi-method-query-parameters %}
 {% endapi-method-request %}
@@ -80,7 +80,7 @@ The amount of backups you want the server to be able to make
 
 {% endapi-method-response-example-description %}
 
-```
+```text
 {    "name": "Cake's name",    "recipe": "Cake's recipe name",    "cake": "Binary cake"}
 ```
 {% endapi-method-response-example %}
@@ -90,7 +90,7 @@ The amount of backups you want the server to be able to make
 Could not find a cake matching this query.
 {% endapi-method-response-example-description %}
 
-```
+```text
 {    "message": "Ain't no cake like that."}
 ```
 {% endapi-method-response-example %}
