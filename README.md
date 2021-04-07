@@ -22,7 +22,7 @@ This library works by querying the Pterodactyl API \(REST requests\) using a lib
 
 ## Documentation
 
-[https://docs.nodeactyl.xyz](https://docs.nodeactyl.xyz)
+[https://docs.nodeactyl.dev](https://docs.nodeactyl.dev)
 
 ## Disclaimer
 
