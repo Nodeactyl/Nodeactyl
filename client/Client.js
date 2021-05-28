@@ -85,6 +85,20 @@ class Client {
     }
 
     /**
+     * Gets a server's status, so whether it is running, starting or powered off
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
+     getServerStatus(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getServerStatus(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data.attributes.current_state);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
      *
      * @returns {Promise<unknown>}
