@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Welcome](README.md)
+* [Introduction](README.md)
+* [Welcome](welcome.md)
 * [Getting Started](getting-started.md)
 * [Change Log](change-log.md)
 * [Frequently Asked Questions](frequently-asked-questions.md)
