@@ -152,6 +152,10 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_INFO (contact a developer)");
             return `api/client/servers/${str[1]}`
 
+        } else if (request === ClientRequest.GET_SERVER_STATUS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_INFO (contact a developer)");
+            return `api/client/servers/${str[1]}/resources`
+
         } else if (isPowerAction) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using typeof POWER_ACTION (contact a developer)");
             return `api/client/servers/${str[1]}/power`;

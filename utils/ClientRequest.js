@@ -9,6 +9,13 @@ module.exports = {
     GET_SERVER_INFO(serverId) {
         return `CLIENT_GET_SERVER_INFO:${serverId}`;
     },
+    GET_SERVER_STATUS_META: "CLIENT_GET_SERVER_STATUS",
+    /**
+     * @return {string}
+     */
+    GET_SERVER_STATUS(serverId) {
+        return `CLIENT_GET_SERVER_STATUS:${serverId}`;
+    },
     GET_ALL_SERVERS: "CLIENT_GET_ALL_SERVERS",
     /**
      * @return {string}
