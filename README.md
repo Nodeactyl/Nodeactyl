@@ -14,7 +14,7 @@ npm install nodeactyl
 
 ## What am I?
 
-Nodeactyl is a Library for node.js to communicated with the Pterodactyl Panel,you can control _any_ server on your nodes with it \(If you purchase a server from another host, no worry! The API works with your own server too!\). This library's originally was to be used in Discord bots, however it can be used in ny node.js project.
+Nodeactyl is a Library for node.js to communicated with the Pterodactyl Panel,you can control _any_ server on your nodes with it \(If you purchase a server from another host, no worry! The API works with your own server too!\). This library's originally was to be used in Discord bots, however it can be used in any node.js project.
 
 ## How do I work?
 
