@@ -1,10 +1,34 @@
-# Welcome
+# Nodeactyl: 100% remastered
 
-{% hint style="warning" %}
-PTERODACTYL V1 SUPPORT
+_If you have issues with downloading this package, and you come accross "package.json" not found, open a cmd.exe in the startup bar of your PC and then type_ `npm init -y`
 
-The nodeactyl code for pterodactyl v1 has been released in a seperate library called `nodeactyl-beta` while the final changes are made before final release. The docs are currently being updated to reflect the changes made in v1, so to use, you will either need to look through the library code or ask for assistance in the discord.
+If you're having any issues, [join the Discord](https://discord.gg/HvQ4JTqCvs) and ask for support.
 
-For updates regarding the v1 update, join the discord below and run `?rank Panel v1 Update` in `#bot-commands`
-{% endhint %}
+Stars are very much appreciated &lt;3 I would really appreciate if you find this project useful to please share with your frends :smiley:
+
+## Installation
+
+```text
+npm install nodeactyl
+```
+
+## What am I?
+
+Nodeactyl is a Library for node.js to communicated with the Pterodactyl Panel,you can control _any_ server on your nodes with it \(If you purchase a server from another host, no worry! The API works with your own server too!\). This library's originally was to be used in Discord bots, however it can be used in any node.js project.
+
+## How do I work?
+
+This library works by querying the Pterodactyl API \(REST requests\) using a library called [axios](https://www.npmjs.com/package/axios).
+
+## Documentation
+
+[https://docs.nodeactyl.dev](https://docs.nodeactyl.dev)
+
+## Disclaimer
+
+We \(The Nodeactyl team\) are not responsible for any damages that you cause to your servers/nodes by using this API.
+
+Remember: This API can potentially be dangerous with the ability to Delete Servers/Nodes at an instant is extremely easy!
+
+It is _not_ our fault if your API key is revealed to the public. When asking for help please do **not** send the full stack error. This will reveal your ENTIRE Host/Application API key in the request, if someone asks you to show them the error it should only be trusted sources! \(Such as the Pterodactyl Team/Nodeactyl Team\). You should also have your API key changed every 1-3 days to prevent issues like this.
 
