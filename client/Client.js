@@ -90,7 +90,7 @@ class Client {
      * @param serverId
      * @returns {Promise<unknown>}
      */
-     getServerFiles(serverId) {
+    getServerFiles(serverId) {
         return new Promise((res, rej) => {
             Methods.getServerFiles(this.hostUrl, this.apiKey, serverId).then((response) => {
                 return res(response.data);
@@ -104,10 +104,24 @@ class Client {
      * @param serverId
      * @returns {Promise<unknown>}
      */
-     getFileContents(serverId, fileName) {
+    getFileContents(serverId, fileName) {
         return new Promise((res, rej) => {
             Methods.getFileContents(this.hostUrl, this.apiKey, serverId, fileName).then((response) => {
                 return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets the temporary download link of a file from a specified server
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
+    getFileDownloadLink(serverId, fileName) {
+        return new Promise((res, rej) => {
+            Methods.getFileDownloadLink(this.hostUrl, this.apiKey, serverId, fileName).then((response) => {
+                return res(response.data.attributes.url);
             }).catch(err => rej(this.processError(err)));
         })
     }

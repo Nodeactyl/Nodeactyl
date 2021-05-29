@@ -26,6 +26,11 @@ exports.getFileContents = (host, key, serverId, fileName) => {
     return req.executeGet(ClientRequest.GET_FILE_CONTENTS(serverId, fileName));
 };
 
+exports.getFileDownloadLink = (host, key, serverId, fileName) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_FILE_DOWNLOAD_LINK(serverId, fileName));
+};
+
 exports.getServerStatus = (host, key, serverId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ClientRequest.GET_SERVER_STATUS(serverId));

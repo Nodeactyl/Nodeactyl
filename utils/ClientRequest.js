@@ -23,6 +23,13 @@ module.exports = {
     GET_FILE_CONTENTS(serverId, fileName) {
         return `CLIENT_GET_FILE_CONTENTS:${serverId}:${fileName}`;
     },
+    GET_FILE_DOWNLOAD_LINK_META: "CLIENT_GET_FILE_DOWNLOAD_LINK",
+    /**
+     * @return {string}
+     */
+    GET_FILE_DOWNLOAD_LINK(serverId, fileName) {
+        return `CLIENT_GET_FILE_DOWNLOAD_LINK:${serverId}:${fileName}`;
+    },
     GET_SERVER_STATUS_META: "CLIENT_GET_SERVER_STATUS",
     /**
      * @return {string}
