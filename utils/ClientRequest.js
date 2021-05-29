@@ -13,8 +13,15 @@ module.exports = {
     /**
      * @return {string}
      */
-     GET_SERVER_FILES(serverId) {
+    GET_SERVER_FILES(serverId) {
         return `CLIENT_GET_SERVER_FILES:${serverId}`;
+    },
+    GET_FILE_CONTENTS_META: "CLIENT_GET_FILE_CONTENTS",
+    /**
+     * @return {string}
+     */
+    GET_FILE_CONTENTS(serverId, fileName) {
+        return `CLIENT_GET_FILE_CONTENTS:${serverId}:${fileName}`;
     },
     GET_SERVER_STATUS_META: "CLIENT_GET_SERVER_STATUS",
     /**

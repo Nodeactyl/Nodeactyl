@@ -156,6 +156,10 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_FILES (contact a developer)");
             return `api/client/servers/${str[1]}/files/list`
 
+        } else if (request === ClientRequest.GET_FILE_CONTENTS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_FILE_CONTENTS (contact a developer)");
+            return `api/client/servers/${str[1]}/files/contents?file=${str[2]}`
+
         } else if (request === ClientRequest.GET_SERVER_STATUS_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_STATUS (contact a developer)");
             return `api/client/servers/${str[1]}/resources`
