@@ -85,6 +85,20 @@ class Client {
     }
 
     /**
+     * Gets a server's file list
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
+     getServerFiles(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getServerFiles(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Gets a server's status, so whether it is running, starting or powered off
      *
      * @param serverId

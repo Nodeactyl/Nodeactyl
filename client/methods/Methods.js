@@ -16,6 +16,11 @@ exports.getServerDetails = (host, key, serverId) => {
     return req.executeGet(ClientRequest.GET_SERVER_INFO(serverId));
 };
 
+exports.getServerFiles = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_SERVER_FILES(serverId));
+};
+
 exports.getServerStatus = (host, key, serverId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ClientRequest.GET_SERVER_STATUS(serverId));
