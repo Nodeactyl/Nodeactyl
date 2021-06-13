@@ -24,13 +24,13 @@ declare class Application {
 
   getAllUsers(): Promise<unknown>;
 
-  getUserDetails(userId: any): Promise<unknown>;
+  getUserDetails(userId: Interger): Promise<unknown>;
 
-  getUserByUsername(username: any): Promise<unknown>;
+  getUserByUsername(username: String): Promise<unknown>;
 
-  getUserByEmail(email: any): Promise<unknown>;
+  getUserByEmail(email: String): Promise<unknown>;
 
-  getUserPage(pageNum: any): Promise<unknown>;
+  getUserPage(pageNum: Interger): Promise<unknown>;
 
   createUser(
     Email: String,
@@ -83,7 +83,7 @@ declare class Application {
 
   getServerDetails(serverId: Interger): Promise<unknown>;
 
-  deleteUser(userId: any): Promise<Boolean>;
+  deleteUser(userId: Interger): Promise<Boolean>;
 
   suspendServer(serverId: Interger): Promise<Boolean>;
 
@@ -114,11 +114,11 @@ declare class Application {
   ): Promise<Boolean>;
 
   updateServerStartup(
-    serverId: any,
-    StartupCmd: any,
+    serverId: Interger,
+    StartupCmd: String,
     Environment: any,
     Egg: Interger,
-    DockerImage: any,
+    DockerImage: String,
     SkipScripts: any
   ): Promise<unknown>;
 
