@@ -1,3 +1,6 @@
+// There is no Interger in Typescript so it has been classed as a number but the Interger is still expected. 
+type Interger = number;
+
 declare class Client {
   hostUrl: any;
   apiKey: any;
@@ -19,60 +22,60 @@ declare class Client {
     length?: any;
   }): number | undefined;
 
-  getAccountDetails(): Promise<unknown>;
+  getAccountDetails(): Promise<Object>;
 
   getAccountPermissions(): Promise<unknown>;
 
-  getServerDetails(serverId: any): Promise<unknown>;
+  getServerDetails(serverId: Interger): Promise<unknown>;
 
-  getServerStatus(serverId: any): Promise<unknown>;
+  getServerStatus(serverId: Interger): Promise<unknown>;
 
   getAllServers(): Promise<unknown>;
 
-  getServerPage(pageNum: any): Promise<unknown>;
+  getServerPage(pageNum: Intergery): Promise<unknown>;
 
-  startServer(serverId: any): Promise<unknown>;
+  startServer(serverId: Interger): Promise<Boolean>;
 
-  stopServer(serverId: any): Promise<unknown>;
+  stopServer(serverId: Interger): Promise<Boolean>;
 
-  restartServer(serverId: any): Promise<unknown>;
+  restartServer(serverId: Interger): Promise<Boolean>;
 
-  killServer(serverId: any): Promise<unknown>;
+  killServer(serverId: Interger): Promise<Boolean>;
 
-  sendServerCommand(serverId: any, command: any): Promise<unknown>;
+  sendServerCommand(serverId: Interger, command: any): Promise<Boolean>;
 
-  getServerUsages(serverId: any): Promise<unknown>;
+  getServerUsages(serverId: Interger): Promise<unknown>;
 
-  getConsoleWebSocket(serverId: any): Promise<unknown>;
+  getConsoleWebSocket(serverId: Interger): Promise<unknown>;
 
-  renameServer(serverId: any, newName: any): Promise<unknown>;
+  renameServer(serverId: Interger, newName: String): Promise<Boolean>;
 
-  reInstallServer(serverId: any): Promise<unknown>;
+  reInstallServer(serverId: Interger): Promise<Boolean>;
 
-  listServerBackups(serverId: any): Promise<unknown>;
+  listServerBackups(serverId: Interger): Promise<Array>;
 
-  createServerBackup(serverId: any): Promise<unknown>;
+  createServerBackup(serverId: Interger): Promise<Object>;
 
-  getBackupDetails(serverId: any, backupId: any): Promise<unknown>;
+  getBackupDetails(serverId: Interger, backupId: Interger): Promise<Object>;
 
-  getBackupDownload(serverId: any, backupId: any): Promise<unknown>;
+  getBackupDownload(serverId: Interger, backupId: Interger): Promise<Object>;
 
-  deleteBackup(serverId: any, backupId: any): Promise<unknown>;
+  deleteBackup(serverId: Interger, backupId: Interger): Promise<Boolean>;
 
-  getSubUsers(serverId: any): Promise<unknown>;
+  getSubUsers(serverId: Interger): Promise<unknown>;
 
-  createSubUser(serverId: any, email: any, permissions: any): Promise<unknown>;
+  createSubUser(serverId: Interger, email: String, permissions: any): Promise<unknown>;
 
   getApiKeys(): Promise<unknown>;
 
   createApiKey(
-    description: any,
-    allowedIps: never[] | undefined
+    description: String,
+    allowedIps: any
   ): Promise<unknown>;
 
-  deleteApiKey(keyId: any): Promise<unknown>;
+  deleteApiKey(keyId: Interger): Promise<Boolean>;
 
-  updateEmail(newEmail: any, currentPassword: any): Promise<unknown>;
+  updateEmail(newEmail: String, currentPassword: String): Promise<Boolean>;
 
-  updatePassword(newPassword: any, currentPassword: any): Promise<unknown>;
+  updatePassword(newPassword: String, currentPassword: String): Promise<Boolean>;
 }
