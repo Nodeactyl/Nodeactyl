@@ -2,8 +2,8 @@
 type Interger = number;
 
 declare class Application {
-  hostUrl: URL;
-  apiKey: String;
+  hostUrl: any;
+  apiKey: any;
 
   constructor(host: URL, key: String);
   processError(err: { status: undefined; statusCode: undefined }):
