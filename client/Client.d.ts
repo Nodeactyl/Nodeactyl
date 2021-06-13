@@ -5,7 +5,7 @@ declare class Client {
   hostUrl: any;
   apiKey: any;
 
-  constructor(host: any, key: any);
+  constructor(host: URL, key: String);
   processError(err: { status: undefined; statusCode: undefined }):
     | number
     | {
