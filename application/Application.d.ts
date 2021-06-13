@@ -1,8 +1,11 @@
-declare class Application {
-  hostUrl: any;
-  apiKey: any;
+// There is no Interger in Typescript so it has been classed as a number but the Interger is still expected. 
+type Interger = number;
 
-  constructor(host: any, key: any);
+declare class Application {
+  hostUrl: URL;
+  apiKey: String;
+
+  constructor(host: URL, key: String);
   processError(err: { status: undefined; statusCode: undefined }):
     | number
     | {
@@ -30,96 +33,96 @@ declare class Application {
   getUserPage(pageNum: any): Promise<unknown>;
 
   createUser(
-    Email: any,
-    Username: any,
-    FirstName: any,
-    LastName: any
+    Email: String,
+    Username: String,
+    FirstName: String,
+    LastName: String
   ): Promise<unknown>;
 
   updateUserDetails(
-    userId: any,
-    Email: any,
-    Username: any,
-    FirstName: any,
-    LastName: any,
-    Language: any,
-    Password: any
-  ): Promise<unknown>;
+    userId: Interger,
+    Email: String,
+    Username: String,
+    FirstName: String,
+    LastName: String,
+    Language: String,
+    Password: String
+  ): Promise<Boolean>;
 
   createServer(
-    Version: any,
-    NameOfServer: any,
-    OwnerID: any,
-    EggID: any,
-    DockerImage: any,
-    StartupCmd: any,
-    RAM: any,
-    Swap: any,
-    Disk: any,
-    IO: any,
-    CPU: any,
-    AmountOfDatabases: any,
-    AmountOfBackups: any,
-    AmountOfAllocations: any
+    Version: String,
+    NameOfServer: String,
+    OwnerID: Interger,
+    EggID: Interger,
+    DockerImage: String,
+    StartupCmd: String,
+    RAM: Interger,
+    Swap: Interger,
+    Disk: Interger,
+    IO: Interger,
+    CPU: Interger,
+    AmountOfDatabases: Interger,
+    AmountOfBackups: Interger,
+    AmountOfAllocations: Interger
   ): Promise<unknown>;
 
   createSimpleServer(
-    OwnerID: any,
-    EggID: any,
-    RAM: any,
-    Disk: any,
-    CPU: any,
-    AmountOfDatabases: any,
-    AmountOfBackups: any,
-    AmountOfAllocations: any
+    OwnerID: Interger,
+    EggID: Interger,
+    RAM: Interger,
+    Disk: Interger,
+    CPU: Interger,
+    AmountOfDatabases: Interger,
+    AmountOfBackups: Interger,
+    AmountOfAllocations: Interger
   ): Promise<unknown>;
 
   getAllServers(): Promise<unknown>;
 
-  getServerPage(pageNum: any): Promise<unknown>;
+  getServerPage(pageNum: Interger): Promise<unknown>;
 
-  getServerDetails(serverId: any): Promise<unknown>;
+  getServerDetails(serverId: Interger): Promise<unknown>;
 
-  deleteUser(userId: any): Promise<unknown>;
+  deleteUser(userId: any): Promise<Boolean>;
 
-  suspendServer(serverId: any): Promise<unknown>;
+  suspendServer(serverId: Interger): Promise<Boolean>;
 
-  unsuspendServer(serverId: any): Promise<unknown>;
+  unsuspendServer(serverId: Interger): Promise<Boolean>;
 
-  reinstallServer(serverId: any): Promise<unknown>;
+  reinstallServer(serverId: Interger): Promise<Boolean>;
 
   updateServerDetails(
-    serverId: any,
-    Name: any,
-    userId: any,
-    externalId: any,
-    Description: any
-  ): Promise<unknown>;
+    serverId: Interger,
+    Name: String,
+    userId: Interger,
+    externalId: Interger,
+    Description: String
+  ): Promise<Boolean>;
 
   updateServerBuild(
-    serverId: any,
-    AllocationID: any,
-    RAM: any,
-    Swap: any,
-    IO: any,
-    CPU: any,
-    Disk: any,
-    Threads: any,
-    AmountOfDatabases: any,
-    AmountOfBackups: any,
-    AmountOfAllocations: any
-  ): Promise<unknown>;
+    serverId: Interger,
+    AllocationID: Interger,
+    RAM: Interger,
+    Swap: Interger,
+    IO: Interger,
+    CPU: Interger,
+    Disk: Interger,
+    Threads: Interger,
+    AmountOfDatabases: Interger,
+    AmountOfBackups: Interger,
+    AmountOfAllocations: Interger
+  ): Promise<Boolean>;
 
   updateServerStartup(
     serverId: any,
     StartupCmd: any,
     Environment: any,
-    Egg: any,
+    Egg: Interger,
     DockerImage: any,
     SkipScripts: any
   ): Promise<unknown>;
 
-  deleteServer(serverId: any): Promise<unknown>;
+  deleteServer(serverId: Interger): Promise<Boolean>;
 
-  getNestDetails(nestId: any): Promise<unknown>;
+  getNestDetails(nestId: Interger): Promise<unknown>;
 }
