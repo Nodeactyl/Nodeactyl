@@ -2,26 +2,11 @@
 type Interger = number;
 
 declare class Client {
-  hostUrl: any;
-  apiKey: any;
+  hostUrl: String;
+  apiKey: String;
 
   constructor(host: URL, key: String);
-  processError(err: { status: undefined; statusCode: undefined }):
-    | number
-    | {
-        status: undefined;
-        statusCode: undefined;
-      }
-    | undefined;
-
-  getErrorCode(err: {
-    status?: undefined;
-    statusCode?: undefined;
-    message?: any;
-    charAt?: any;
-    length?: any;
-  }): number | undefined;
-
+  
   getAccountDetails(): Promise<Object>;
 
   getAccountPermissions(): Promise<unknown>;

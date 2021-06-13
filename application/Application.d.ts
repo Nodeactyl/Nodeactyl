@@ -2,26 +2,11 @@
 type Interger = number;
 
 declare class Application {
-  hostUrl: any;
-  apiKey: any;
+  hostUrl: String;
+  apiKey: String;
 
   constructor(host: URL, key: String);
-  processError(err: { status: undefined; statusCode: undefined }):
-    | number
-    | {
-        status: undefined;
-        statusCode: undefined;
-      }
-    | undefined;
-
-  getErrorCode(err: {
-    status?: undefined;
-    statusCode?: undefined;
-    message?: any;
-    charAt?: any;
-    length?: any;
-  }): number | undefined;
-
+ 
   getAllUsers(): Promise<unknown>;
 
   getUserDetails(userId: Interger): Promise<unknown>;
