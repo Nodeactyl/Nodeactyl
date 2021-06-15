@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {},
   "main": "Nodeactyl.js",
-  "types": "/client/Client.d.ts, /application/Application.d.ts",
+  "types": "/typings.d.ts",
   "dependencies": {
     "axios": "^0.21.1"
   }
