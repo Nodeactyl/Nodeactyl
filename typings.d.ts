@@ -342,7 +342,7 @@ declare module "nodeactyl" {
       Environment: any,
       Egg: interger,
       DockerImage: string,
-      SkipScripts: any
+      SkipScripts: boolean
     ): Promise<unknown>;
 
     deleteServer(serverId: interger): Promise<boolean>;
