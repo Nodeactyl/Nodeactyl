@@ -2,7 +2,7 @@
 type interger = number;
 
 declare module "nodeactyl" {
-  export class Client {
+  export class NodeactylClient {
     hostUrl: string;
     apiKey: string;
 
@@ -239,7 +239,7 @@ declare module "nodeactyl" {
       currentPassword: string
     ): Promise<boolean>;
   }
-  export class Application {
+  export class NodeactylApplication {
     hostUrl: string;
     apiKey: string;
 
