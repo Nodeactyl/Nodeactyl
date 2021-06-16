@@ -1,0 +1,16 @@
+{
+  "name": "nodeactyl.ts",
+  "version": "0.0.1",
+  "private": "false",
+  "main": "index.js",
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.3.2"
+  }
+}
