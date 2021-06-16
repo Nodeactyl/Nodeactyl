@@ -2,7 +2,7 @@
 
 <p>
   <a>
-    <img src="https://cdn.discordapp.com/attachments/754460402729091212/854819777835171850/image0.jpg" height="512px">
+    <img href="" src="https://cdn.discordapp.com/attachments/754460402729091212/854819777835171850/image0.jpg" height="512px">
   </a>
 </p>
 
