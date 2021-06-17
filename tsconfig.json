@@ -6,6 +6,7 @@
         "lib": ["ES2020"],
 
         "strict": true,
+        "declaration": true,
         "removeComments": true,
         "strictNullChecks": true,
         "noImplicitReturns": true,
@@ -14,6 +15,6 @@
         "esModuleInterop": true,
         "forceConsistentCasingInFileNames": true
     },
-    "include": ["src/**/*.ts", "typings.d.ts"],
+    "include": ["src/**/**/*.ts"],
     "exclude": ["dist", "node_modules"]
 }
