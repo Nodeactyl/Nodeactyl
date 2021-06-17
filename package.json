@@ -4,8 +4,7 @@
   "private": "false",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && tsc",
-    "test": "tsTest.sh"
+    "build": "rimraf dist && tsc"
   },
   "license": "MIT",
   "dependencies": {
