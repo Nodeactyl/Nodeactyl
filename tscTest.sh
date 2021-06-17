@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TYPE_ERRORS="$(tsc --project ./tsconfig.json)"
 
 if [[ -n $TYPE_ERRORS ]]; then

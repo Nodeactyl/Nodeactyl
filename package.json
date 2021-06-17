@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && tsc",
-    "test": "./src/tsTest.sh"
+    "test": "tsTest.sh"
   },
   "license": "MIT",
   "dependencies": {
