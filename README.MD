@@ -37,6 +37,12 @@ npm run build
 
 ---
 
+## 📖 Documentation (coming soon)
+
+The full documentation will be released once nodeactyl.ts is finished and everything is documented.
+
+---
+
 ## ✨ Contributers
 
 Here are the people that make nodeactyl possible and keep the code working!
