@@ -3,10 +3,15 @@
   "version": "0.0.1",
   "private": "false",
   "main": "dist/index.js",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc"
   },
-  "license": "MIT",
   "dependencies": {
     "axios": "^0.21.1"
   },
