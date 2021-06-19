@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class nodeactyl {
+class Nodeactyl {
     host: string;
     key: string;
 
@@ -9,37 +9,24 @@ class nodeactyl {
         this.key = key;
     }
 
-    request(type: 'GET' | 'PUT' | 'POST' | 'DELETE', request: any) {
-        if (type == 'GET') {
-            return axios.get(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        } else if (type == 'PUT') {
-            return axios.put(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        } else if (type == 'POST') {
-            return axios.post(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        } else if (type == 'DELETE') {
-            return axios.delete(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        }
+    private getHeaders() {
+        return {
+            Authorization: 'Bearer ' + this.key,
+            'Content-Type': 'application/json',
+            Accept: 'Application/vnd.pterodactyl.v1+json',
+        };
+    }
+
+    public request(method: 'GET' | 'PUT' | 'POST' | 'DELETE', data: any) {
+        this.host = this.host.trim();
+
+        return axios(this.host, {
+            headers: this.getHeaders(),
+            maxRedirects: 5,
+            method,
+            data,
+        });
     }
 }
 
-function trimedUrl() {}
-
-function getHeaders() {
-    return {
-        Authorization: 'Bearer ' + this.apiKey,
-        'Content-Type': 'application/json',
-        Accept: 'Application/vnd.pterodactyl.v1+json',
-    };
-}
+export default Nodeactyl;
