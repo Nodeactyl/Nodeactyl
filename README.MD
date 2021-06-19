@@ -49,6 +49,10 @@ Here are the people that make nodeactyl possible and keep the code working!
 
 ![Contributors Display](https://badges.pufler.dev/contributors/Burchard36/Nodeactyl?size=50&padding=5&bots=true)
 
+Would you like to see your github profile pic here?
+
+Simply open a pull request and improve or create code that makes Nodeactyl better!
+
 ---
 ## 🚨 Disclaimer
 
