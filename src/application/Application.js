@@ -42,7 +42,7 @@ class NodeactylApplication {
      * Gets a list of users from your panel
      *
      * @returns {Promise<unknown>}
-     * $param {Integer} Page number
+     * @param {Integer} Page number
      */
     getAllUsers() {
         return new Promise((res, rej) => {
@@ -56,7 +56,7 @@ class NodeactylApplication {
      * Gets details of a user
      *
      * @returns {Promise<unknown>}
-     * $param {Integer} userId
+     * @param {Integer} userId
      */
     getUserDetails(userId) {
         return new Promise((res, rej) => {
@@ -70,7 +70,7 @@ class NodeactylApplication {
      * Gets details of a user by username
      *
      * @returns {Promise<unknown>}
-     * $param {String} username
+     * @param {String} username
      */
     getUserByUsername(username) {
         return new Promise(async (res, rej) => {
@@ -91,7 +91,7 @@ class NodeactylApplication {
      * Gets details of a user
      *
      * @returns {Promise<unknown>}
-     * $param {String} email
+     * @param {String} email
      */
     getUserByEmail(email) {
         return new Promise(async (res, rej) => {
@@ -415,7 +415,7 @@ class NodeactylApplication {
      * Gets details of a nest
      *
      * @returns {Promise<unknown>}
-     * $param {Integer} nestId
+     * @param {Integer} nestId
      */
     getNestDetails(nestId) {
         return new Promise((res, rej) => {
