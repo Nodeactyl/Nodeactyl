@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class Nodeactyl {
+class Axios {
     host: string;
     key: string;
 
@@ -17,10 +17,10 @@ class Nodeactyl {
         };
     }
 
-    public request(method: 'GET' | 'PUT' | 'POST' | 'DELETE', data: any) {
-        this.host = this.host.trim();
+    public request(method: 'GET' | 'PUT' | 'POST' | 'DELETE', cmdUrl: string, data: string | null) {
+        const URL = this.host.trim() + cmdUrl;
 
-        return axios(this.host, {
+        return axios(URL, {
             headers: this.getHeaders(),
             maxRedirects: 5,
             method,
@@ -29,4 +29,4 @@ class Nodeactyl {
     }
 }
 
-export default Nodeactyl;
+export default Axios;
