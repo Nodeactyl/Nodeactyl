@@ -4,43 +4,26 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-class nodeactyl {
+class Axios {
     constructor(host, key) {
         this.host = host;
         this.key = key;
     }
-    request(type, request) {
-        if (type == 'GET') {
-            return axios_1.default.get(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        }
-        else if (type == 'PUT') {
-            return axios_1.default.put(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        }
-        else if (type == 'POST') {
-            return axios_1.default.post(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        }
-        else if (type == 'DELETE') {
-            return axios_1.default.delete(trimedUrl(), {
-                maxRedirects: 5,
-                headers: getHeaders(),
-            });
-        }
+    getHeaders() {
+        return {
+            Authorization: 'Bearer ' + this.key,
+            'Content-Type': 'application/json',
+            Accept: 'Application/vnd.pterodactyl.v1+json',
+        };
+    }
+    request(method, cmdUrl, data) {
+        const URL = this.host.trim() + cmdUrl;
+        return axios_1.default(URL, {
+            headers: this.getHeaders(),
+            maxRedirects: 5,
+            method,
+            data,
+        });
     }
 }
-function trimedUrl() { }
-function getHeaders() {
-    return {
-        Authorization: 'Bearer ' + this.apiKey,
-        'Content-Type': 'application/json',
-        Accept: 'Application/vnd.pterodactyl.v1+json',
-    };
-}
+exports.default = Axios;
