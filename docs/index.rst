@@ -12,11 +12,8 @@ Welcome!
 
    application
 
-
-
 Key Pages
 ==================
 
-* :ref:`gettingstarted`
 * :ref:`modindex`
 * :ref:`search`

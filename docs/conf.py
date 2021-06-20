@@ -52,3 +52,9 @@ html_static_path = ['_static']
 js_source_path = '../src'
 primary_domain = 'js'
 jsdoc_config_path = 'jsdocs.json'
+
+html_logo = '../logo.png'
+html_theme_options = {
+    'logo_only': True,
+    'display_version': False,
+}
