@@ -11,9 +11,9 @@ export default class Axios {
 
     private getHeaders() {
         return {
-            Authorization: 'Bearer ' + this.key,
+            'Authorization': 'Bearer ' + this.key,
             'Content-Type': 'application/json',
-            Accept: 'Application/vnd.pterodactyl.v1+json',
+            'Accept': 'Application/vnd.pterodactyl.v1+json',
         };
     }
 
