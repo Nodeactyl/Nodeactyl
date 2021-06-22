@@ -36,9 +36,8 @@ export default class Axios {
         return axios(URL, {
             headers: this.getHeaders(),
             maxRedirects: 5,
-            method,
-            data,
+            method: method,
+            data: data,
         });
     }
 }
-
