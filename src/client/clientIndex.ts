@@ -1,4 +1,7 @@
-class Client {
+import * as methods from "../methods/client";
+
+ 
+class NodeactylClient {
     hostUrl: string;
     apiKey: string;
 
@@ -8,4 +11,5 @@ class Client {
         this.apiKey = key;
     }
 }
-export default Client;
+export default NodeactylClient;
+

@@ -1,4 +1,4 @@
-class App {
+class NodeactylApp {
     hostUrl: string;
     apiKey: string;
 
@@ -8,4 +8,5 @@ class App {
         this.apiKey = key;
     }
 }
-export default App;
+
+export default NodeactylApp;

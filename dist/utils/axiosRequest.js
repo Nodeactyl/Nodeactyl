@@ -16,8 +16,15 @@ class Axios {
             Accept: 'Application/vnd.pterodactyl.v1+json',
         };
     }
+    trimUrl() {
+        let lastChar = this.host.charAt(this.host.length - 1);
+        if (lastChar !== '/') {
+            this.host = this.host + '/';
+        }
+        return this.host;
+    }
     request(method, cmdUrl, data) {
-        const URL = this.host.trim() + cmdUrl;
+        const URL = this.trimUrl() + cmdUrl;
         return axios_1.default(URL, {
             headers: this.getHeaders(),
             maxRedirects: 5,
