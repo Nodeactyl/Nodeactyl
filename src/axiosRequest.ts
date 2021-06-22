@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-class Axios {
+export default class Axios {
     host: string;
     key: string;
 
@@ -17,8 +17,21 @@ class Axios {
         };
     }
 
-    public request(method: 'GET' | 'PUT' | 'POST' | 'DELETE', cmdUrl: string, data: string | null) {
-        const URL = this.host.trim() + cmdUrl;
+    private trimUrl() {
+        let lastChar = this.host.charAt(this.host.length - 1);
+        if (lastChar !== '/') {
+            this.host = this.host + '/';
+        }
+
+        return this.host;
+    }
+
+    public request(
+        method: 'GET' | 'PUT' | 'POST' | 'DELETE',
+        cmdUrl: string,
+        data: string | null,
+    ) {
+        const URL = this.trimUrl() + cmdUrl;
 
         return axios(URL, {
             headers: this.getHeaders(),
@@ -29,4 +42,3 @@ class Axios {
     }
 }
 
-export default Axios;
