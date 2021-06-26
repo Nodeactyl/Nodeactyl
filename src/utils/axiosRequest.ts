@@ -27,7 +27,7 @@ export default class Axios {
     }
 
     public request(
-        method: 'GET' | 'PUT' | 'POST' | 'DELETE',
+        method: 'GET' | 'PUT' | 'POST' | 'DELETE' | 'PATCH',
         cmdUrl: string,
         data: string | null,
     ) {

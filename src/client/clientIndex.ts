@@ -1,7 +1,9 @@
 import * as methods from "../methods/client";
+import Axios from "../utils/axiosRequest";
+
 
  
-class NodeactylClient {
+export default class NodeactylClient {
     hostUrl: string;
     apiKey: string;
 
@@ -10,6 +12,11 @@ class NodeactylClient {
         this.hostUrl = host;
         this.apiKey = key;
     }
+
+   
 }
-export default NodeactylClient;
+
+
+
+
 

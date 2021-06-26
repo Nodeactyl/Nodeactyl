@@ -4,5 +4,5 @@ export default class Axios {
     constructor(host: string, key: string);
     private getHeaders;
     private trimUrl;
-    request(method: 'GET' | 'PUT' | 'POST' | 'DELETE', cmdUrl: string, data: string | null): import("axios").AxiosPromise<any>;
+    request(method: 'GET' | 'PUT' | 'POST' | 'DELETE' | 'PATCH', cmdUrl: string, data: string | null): import("axios").AxiosPromise<any>;
 }
