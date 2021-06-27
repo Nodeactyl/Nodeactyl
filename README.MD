@@ -35,7 +35,7 @@ npm i nodeactyl
 
 ## 📖 Documentation (coming soon)
 
-The full documentation will be released once nodeactyl.ts is finished and everything is documented.
+The full documentation will be released once its finished and everything is documented.
 
 ---
 
