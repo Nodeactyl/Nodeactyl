@@ -79,7 +79,7 @@ class NodeactylApplication {
                 let pages = response.data.meta.pagination.total_pages
                 for (let i = 1; i === pages; i++) {
                     await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
-                        user = page.data.data.find(d => d.attributes.username == username)
+                        user = page.data.data.find(d => d.attributes.username === username)
                     }).catch(err => rej(this.processError(err)));
                 }
                 return res(user);
@@ -100,7 +100,7 @@ class NodeactylApplication {
                 let pages = response.data.meta.pagination.total_pages
                 for (let i = 1; i === pages; i++) {
                     await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
-                        user = page.data.data.find(d => d.attributes.email == email)
+                        user = page.data.data.find(d => d.attributes.email === email)
                     }).catch(err => rej(this.processError(err)));
                 }
                 return res(user);
