@@ -2,10 +2,10 @@ name: ci
 on:
   push:
     branches:
-      - main
+      - typescript
   pull_request:
     branches:
-      - main
+      - typescript
 
 jobs:
 
