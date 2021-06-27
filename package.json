@@ -1,10 +1,53 @@
 {
-  "name": "nodeactyl",
-  "version": "3.0.0",
-  "private": false,
-  "scripts": {},
-  "main": "Nodeactyl.js",
-  "dependencies": {
-    "axios": "^0.21.1"
-  }
+    "name": "nodeactyl.ts",
+    "version": "0.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "test": "node dist/tests/app.test.js && node dist/tests/client.test.js",
+        "build": "rimraf dist && tsc",
+        "lint:check": "eslint . --ext .ts",
+        "lint": "npm run lint:check -- --fix",
+        "_format": "prettier **/**/**/*.{ts,json,md}",
+        "format": "npm run _format -- --write",
+        "format:check": "npm run _format -- --list-different"
+    },
+    "lint-staged": {
+        "*.ts": [
+            "eslint --fix"
+        ],
+        "*.{ts,json,md}": [
+            "prettier --write"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged -v"
+        }
+    },
+    "license": "MIT",
+    "files": [
+        "dist",
+        "LICENSE",
+        "README.md"
+    ],
+    "devDependencies": {
+        "@types/jest": "^26.0.23",
+        "@types/node": "^15.3.1",
+        "@typescript-eslint/eslint-plugin": "^4.24.0",
+        "@typescript-eslint/parser": "^4.24.0",
+        "eslint": "^7.26.0",
+        "eslint-config-prettier": "^8.3.0",
+        "husky": "^4.3.8",
+        "jest": "^27.0.5",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.3.0",
+        "rimraf": "^3.0.2",
+        "typedoc": "^0.21.2",
+        "typescript": "^4.2.4"
+    },
+    "dependencies": {
+        "axios": "^0.21.1"
+    }
 }
