@@ -1,6 +1,6 @@
 const Methods = require("./methods/Methods.js");
 
-class NodeactylClient {
+class Client {
 
     /**
      * Main class constructor

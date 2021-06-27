@@ -1,6 +1,6 @@
 const Methods = require("./methods/Methods.js");
 
-class NodeactylApplication {
+class Application {
 
     /**
      * Main class constructor
