@@ -54,6 +54,7 @@ Would you like to see your github profile pic here?
 Simply open a pull request and improve or create code that makes Nodeactyl better!
 
 ---
+
 ## 🚨 Disclaimer
 
 We \(The Nodeactyl team & contributers\) are not responsible for any damages that you cause to your servers/nodes by using this API.
