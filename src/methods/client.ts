@@ -51,13 +51,13 @@ export const updatePassword = (
     confirmNewPassword?: string,
     confimation?: boolean,
 ) => {
-    let data = {
+    const data = {
         current_password: password,
         password: newPassword,
         password_confirmation: confirmNewPassword,
     };
     if (confimation == false) {
-        let data = {
+        const data = {
             current_password: password,
             password: newPassword,
             password_confirmation: newPassword,
@@ -73,14 +73,13 @@ export const listApiKeys = (host: string, key: string) => {
     return axios.request('GET', 'api/client/account/api-keys', null);
 };
 
-
 export const createApikey = (
     host: string,
     key: string,
     description: string,
     ips?: Array<string>,
 ) => {
-    let data = { description: description, allowed_ips: ips };
+    const data = { description: description, allowed_ips: ips };
     const axios = new Axios(host, key);
     return axios.request('POST', 'api/client/account/api-keys', `${data}`);
 };
