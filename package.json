@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "private": false,
   "scripts": {},
-  "main": "Nodeactyl.js",
+  "main": "src/Nodeactyl.js",
   "dependencies": {
     "axios": "^0.21.1"
   }
