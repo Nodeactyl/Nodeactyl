@@ -6,11 +6,13 @@
   </a>
 </p>
 
-[![GitHub Issues](https://img.shields.io/github/issues/Burchard36/Nodeactyl.svg?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl/issues)
-[![Updated Badge](https://badges.pufler.dev/updated/Burchard36/Nodeactyl?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl/)
-[![Current Version](https://img.shields.io/badge/version-0.0.1-red.svg?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl)
+[![GitHub Issues](https://img.shields.io/github/issues/Nodeactyl/Nodeactyl.svg?style=for-the-badge)](https://github.com/Nodeactyl/Nodeactyl/issues)
+[![CI](https://img.shields.io/github/workflow/status/Nodeactyl/Nodeactyl/ci/typescript?style=for-the-badge)](https://github.com/Nodeactyl/Nodeactyl/actions/workflows/ci.yaml)
+[![Updated Badge](https://img.shields.io/github/last-commit/Nodeactyl/Nodeactyl/typescript?label=Updated%20&style=for-the-badge)](https://github.com/Nodeactyl/Nodeactyl/commits/typescript)
+[![Current Version](https://img.shields.io/badge/version-0.0.1-red.svg?style=for-the-badge)](https://github.com/Nodeactyl/Nodeactyl/tree/typescript)
 [![prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 [![Support Server](https://img.shields.io/discord/560595384028758048.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/HvQ4JTqCvs)
+
 
 ---
 
