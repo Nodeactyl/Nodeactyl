@@ -77,7 +77,7 @@ class Application {
             await Methods.getUsers(this.hostUrl, this.apiKey).then(async (response) => {
                 let user = false;
                 let pages = response.data.meta.pagination.total_pages
-                for (let i = 1; i === pages; i++) {
+                for (let i = 1; i !== pages; i++) {
                     await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
                         user = page.data.data.find(d => d.attributes.username === username)
                     }).catch(err => rej(this.processError(err)));
@@ -98,7 +98,7 @@ class Application {
             await Methods.getUsers(this.hostUrl, this.apiKey).then(async (response) => {
                 let user = false;
                 let pages = response.data.meta.pagination.total_pages
-                for (let i = 1; i === pages; i++) {
+                for (let i = 1; i !== pages; i++) {
                     await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
                         user = page.data.data.find(d => d.attributes.email === email)
                     }).catch(err => rej(this.processError(err)));
