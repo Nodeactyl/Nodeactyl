@@ -71,9 +71,13 @@ class Client {
     /**
      * Gets a Server's information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values
      *
+<<<<<<< HEAD
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getServerDetails(serverId) {
@@ -87,7 +91,11 @@ class Client {
     /**
      * Gets a server's status, so whether it is running, starting or powered off
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
      getServerStatus(serverId) {
@@ -99,7 +107,7 @@ class Client {
     }
 
     /**
-     * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
+     * Gets a list of servers from your panel, currently this only get the first page
      *
      * @returns {Promise<unknown>}
      */
@@ -114,11 +122,15 @@ class Client {
     /**
      * Gets a server by a specified page number
      *
+<<<<<<< HEAD
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * This will return an empty array if the specified page was invalid.
      *
      * @param pageNum
+=======
+     * @param {Integer} pageNum Page number
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getServerPage(pageNum) {
@@ -130,10 +142,13 @@ class Client {
     }
 
     /**
-     * Starts a server if the host and api key have permission
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * Starts a server
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     startServer(serverId) {
@@ -145,10 +160,13 @@ class Client {
     }
 
     /**
-     * Stops a server if the host and api key have permission
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * Stops a server
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     stopServer(serverId) {
@@ -160,10 +178,13 @@ class Client {
     }
 
     /**
-     * Restarts a server if the host and api key have permission
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * Restarts a server
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     restartServer(serverId) {
@@ -175,10 +196,13 @@ class Client {
     }
 
     /**
-     * Kills a server if the host and api key have permission
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * Kills a server
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     killServer(serverId) {
@@ -190,12 +214,15 @@ class Client {
     }
 
     /**
-     * sends a command to a server if the host and api key have permission
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * Sends a command to a server
      *
-     *
+<<<<<<< HEAD
      * @param serverId
      * @param command
+=======
+     * @param {String} serverId Server Id
+     * @param {String} command Server Command
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     sendServerCommand(serverId, command) {
@@ -207,10 +234,14 @@ class Client {
     }
 
     /**
-     * gets a servers current memory/cpu/disk usages as bytes
+     * Gets a servers current memory/cpu/disk usages as bytes
      *
+<<<<<<< HEAD
      *
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getServerUsages(serverId) {
@@ -223,10 +254,14 @@ class Client {
 
     /**
      * Gets the Console WebSocket instance for a server
-     * you will ne to establish your own socket connection for now
+     * you will need to establish your own socket connection for now
      * (try socket.io)
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getConsoleWebSocket(serverId) {
@@ -240,8 +275,13 @@ class Client {
     /**
      * Renames the target server
      *
+<<<<<<< HEAD
      * @param serverId
      * @param newName
+=======
+     * @param {String} serverId Server Id
+     * @param {String} newName New Name of Server
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     renameServer(serverId, newName) {
@@ -255,8 +295,12 @@ class Client {
     /**
      * ReInstalls a target server
      *
+<<<<<<< HEAD
      *
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     reInstallServer(serverId) {
@@ -270,7 +314,11 @@ class Client {
     /**
      * Lists what backups a server has
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Array>}
      */
     listServerBackups(serverId) {
@@ -285,9 +333,12 @@ class Client {
      * Creates a backup for a specified server
      *
      * This will send a error code 924 when trying to create 2 backups within a 10 minute time frame
-     * Stay tuned for what error this returns when the max amount of backups have been created
      *
+<<<<<<< HEAD
      * @param serverId
+=======
+     * @param {String} serverId Server Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Object>}
      */
     createServerBackup(serverId) {
@@ -301,8 +352,13 @@ class Client {
     /**
      * Gets details about a specified server backups
      *
+<<<<<<< HEAD
      * @param serverId
      * @param backupId
+=======
+     * @param {String} serverId Server Id
+     * @param {Integer} backupId Backup Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Object>}
      */
     getBackupDetails(serverId, backupId) {
@@ -316,8 +372,13 @@ class Client {
     /**
      * Gets a clickable URL to download your server backup
      *
+<<<<<<< HEAD
      * @param serverId
      * @param backupId
+=======
+     * @param {String} serverId Server Id
+     * @param {Integer} backupId Backup Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Object>}
      */
     getBackupDownload(serverId, backupId) {
@@ -331,8 +392,13 @@ class Client {
     /**
      * Deletes a specified backup
      *
+<<<<<<< HEAD
      * @param serverId
      * @param backupId
+=======
+     * @param {String} serverId Server Id
+     * @param {Integer} backupId Backup Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     deleteBackup(serverId, backupId) {
@@ -343,6 +409,15 @@ class Client {
         });
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Get subusers of a server
+     *
+     * @param {String} serverId Server Id
+     * @returns {Promise<unknown>}
+     */
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
     getSubUsers(serverId) {
         return new Promise((res, rej) => {
             Methods.getSubUsers(this.hostUrl, this.apiKey, serverId).then((response) => {
@@ -351,6 +426,17 @@ class Client {
         })
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * Create subuser on a server
+     *
+     * @param {String} serverId Server Id
+     * @param {String} email Email
+     * @param {Array} permissions Array of Permissions
+     * @returns {Promise<unknown>}
+     */
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
     createSubUser(serverId, email, permissions) {
         return new Promise((res, rej) => {
             Methods.createSubUser(this.hostUrl, this.apiKey, serverId, email, permissions).then((response) => {
@@ -375,14 +461,19 @@ class Client {
     }
 
     /**
-     * Creates an API key with specified host and api key. tbh this feels pretty useless as the key i received from this request gave me a 403, i will not provide support for this command.
-     * REPEAT: WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
+     * Creates an API key with specified host and api key.
+     * WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
      * Make sure to read that previous line ^
      *
+<<<<<<< HEAD
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param description
      * @param allowedIps
+=======
+     * @param {String} description
+     * @param {Array} allowedIps
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     createApiKey(description, allowedIps) {
@@ -397,6 +488,7 @@ class Client {
     /**
      * Deletes a specified API key. Only use the API key identifier provided to you on the panel
      *
+<<<<<<< HEAD
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
      * the provided API key was non existing.
@@ -404,6 +496,9 @@ class Client {
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param keyId
+=======
+     * @param {Integer} keyId Key Id
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     deleteApiKey(keyId) {
@@ -417,12 +512,17 @@ class Client {
     /**
      * Updates the email for the specified host and API key
      *
+<<<<<<< HEAD
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param newEmail
      * @param currentPassword
+=======
+     * @param {String} newEmail New Email
+     * @param {String} currentPassword Current Password
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     updateEmail(newEmail, currentPassword) {
@@ -436,6 +536,7 @@ class Client {
     /**
      * Updates the password for the specified host and api key
      *
+<<<<<<< HEAD
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
@@ -444,6 +545,11 @@ class Client {
      * @param newPassword
      * @param currentPassword
      * @returns {Promise<Boolean>}
+=======
+     * @returns {Promise<Boolean>}
+     * @param {String} newPassword New Password
+     * @param {String} currentPassword Current Password
+>>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      */
     updatePassword(newPassword, currentPassword) {
         return new Promise((res, rej) => {

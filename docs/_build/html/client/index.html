@@ -1,0 +1,829 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Client &mdash; Nodeactyl Docs  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Application" href="../application/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../application/index.html">Application</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Client</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#account">Account</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getaccountdetails">getAccountDetails()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getaccountpermissions">getAccountPermissions()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updateemail">updateEmail()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updatepassword">updatePassword()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-server-details">Get Server Details</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getserverdetails">getServerDetails()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getserverstatus">getServerStatus()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getallservers">getAllServers()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getserverpage">getServerPage()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getserverusages">getServerUsages()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getconsolewebsocket">getConsoleWebSocket()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getsubusers">getSubUsers()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getapikeys">getApiKeys()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#server-actions">Server Actions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#startserver">startServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#restartserver">restartServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stopserver">stopServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#killserver">killServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sendservercommand">sendServerCommand()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renameserver">renameServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reinstallserver">reInstallServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createsubuser">createSubUser()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createapikey">createApiKey()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleteapikey">deleteApiKey()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#server-backups">Server Backups</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#listserverbackups">listServerBackups()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createserverbackup">createServerBackup()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getbackupdetails">getBackupDetails()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getbackupdownload">getBackupDownload()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nodeactyl Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Client</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/client/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="client">
+<h1>Client<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="js class">
+<dt class="sig sig-object js" id="Client">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> – Where your panel is hosted (EG: http(s)://panel.host.net/)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="account">
+<h2>Account<a class="headerlink" href="#account" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getaccountdetails">
+<h3>getAccountDetails()<a class="headerlink" href="#getaccountdetails" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getAccountDetails">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getAccountDetails</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAccountDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the account details associated with this.hostUrl and this.hostKey</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Promise.&lt;Object&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getaccountpermissions">
+<h3>getAccountPermissions()<a class="headerlink" href="#getaccountpermissions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getAccountPermissions">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getAccountPermissions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAccountPermissions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the permissions that this associated host and key have</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="updateemail">
+<h3>updateEmail()<a class="headerlink" href="#updateemail" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.updateEmail">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">updateEmail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">newEmail</span></em>, <em class="sig-param"><span class="pre">currentPassword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.updateEmail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the email for the specified host and API key</p>
+<p>By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>newEmail</strong> (<em>String</em>) – </p></li>
+<li><p><strong>currentPassword</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="updatepassword">
+<h3>updatePassword()<a class="headerlink" href="#updatepassword" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.updatePassword">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">updatePassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">newPassword</span></em>, <em class="sig-param"><span class="pre">currentPassword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.updatePassword" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the password for the specified host and api key</p>
+<p>By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>newPassword</strong> (<em>String</em>) – </p></li>
+<li><p><strong>currentPassword</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="get-server-details">
+<h2>Get Server Details<a class="headerlink" href="#get-server-details" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getserverdetails">
+<h3>getServerDetails()<a class="headerlink" href="#getserverdetails" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getServerDetails">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a Server’s information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getserverstatus">
+<h3>getServerStatus()<a class="headerlink" href="#getserverstatus" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getServerStatus">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a server’s status, so whether it is running, starting or powered off</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getallservers">
+<h3>getAllServers()<a class="headerlink" href="#getallservers" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getAllServers">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getAllServers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAllServers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getserverpage">
+<h3>getServerPage()<a class="headerlink" href="#getserverpage" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getServerPage">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerPage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a server by a specified page number</p>
+<p>This will return an empty array if the specified page was invalid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pageNum</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getserverusages">
+<h3>getServerUsages()<a class="headerlink" href="#getserverusages" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getServerUsages">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerUsages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerUsages" title="Permalink to this definition">¶</a></dt>
+<dd><p>gets a servers current memory/cpu/disk usages as bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getconsolewebsocket">
+<h3>getConsoleWebSocket()<a class="headerlink" href="#getconsolewebsocket" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getConsoleWebSocket">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getConsoleWebSocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getConsoleWebSocket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the Console WebSocket instance for a server
+you will ne to establish your own socket connection for now
+(try socket.io)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getsubusers">
+<h3>getSubUsers()<a class="headerlink" href="#getsubusers" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getSubUsers">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getSubUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getSubUsers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get subusers of a server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getapikeys">
+<h3>getApiKeys()<a class="headerlink" href="#getapikeys" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getApiKeys">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getApiKeys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getApiKeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a list of API keys that this assigned host and key have available to them</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="server-actions">
+<h2>Server Actions<a class="headerlink" href="#server-actions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="startserver">
+<h3>startServer()<a class="headerlink" href="#startserver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.startServer">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">startServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.startServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a server if the host and api key have permission
+By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="restartserver">
+<h3>restartServer()<a class="headerlink" href="#restartserver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.restartServer">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">restartServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.restartServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restarts a server if the host and api key have permission
+By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="stopserver">
+<h3>stopServer()<a class="headerlink" href="#stopserver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.stopServer">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">stopServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.stopServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops a server if the host and api key have permission
+By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="killserver">
+<h3>killServer()<a class="headerlink" href="#killserver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.killServer">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">killServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.killServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Kills a server if the host and api key have permission
+By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="sendservercommand">
+<h3>sendServerCommand()<a class="headerlink" href="#sendservercommand" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.sendServerCommand">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">sendServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.sendServerCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>sends a command to a server if the host and api key have permission
+By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+<li><p><strong>command</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="renameserver">
+<h3>renameServer()<a class="headerlink" href="#renameserver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.renameServer">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">renameServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">newName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.renameServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Renames the target server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+<li><p><strong>newName</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="reinstallserver">
+<h3>reInstallServer()<a class="headerlink" href="#reinstallserver" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.reInstallServer">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">reInstallServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.reInstallServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>ReInstalls a target server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="createsubuser">
+<h3>createSubUser()<a class="headerlink" href="#createsubuser" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.createSubUser">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">createSubUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">email</span></em>, <em class="sig-param"><span class="pre">permissions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.createSubUser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create subuser on a server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+<li><p><strong>email</strong> (<em>String</em>) – </p></li>
+<li><p><strong>permissions</strong> (<em>Array</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="createapikey">
+<h3>createApiKey()<a class="headerlink" href="#createapikey" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.createApiKey">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">createApiKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">description</span></em>, <em class="sig-param"><span class="pre">allowedIps</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.createApiKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an API key with specified host and api key. tbh this feels pretty useless as the key i received from this request gave me a 403, i will not provide support for this command.
+REPEAT: WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
+Make sure to read that previous line ^</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>description</strong> (<em>String</em>) – </p></li>
+<li><p><strong>allowedIps</strong> (<em>Array</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;unknown&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="deleteapikey">
+<h3>deleteApiKey()<a class="headerlink" href="#deleteapikey" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.deleteApiKey">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">deleteApiKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">keyId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.deleteApiKey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes a specified API key. Only use the API key identifier provided to you on the panel</p>
+<p>By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”
+However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+the provided API key was non existing.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>keyId</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Boolean&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="server-backups">
+<h2>Server Backups<a class="headerlink" href="#server-backups" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="listserverbackups">
+<h3>listServerBackups()<a class="headerlink" href="#listserverbackups" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.listServerBackups">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">listServerBackups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.listServerBackups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists what backups a server has</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Array&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="createserverbackup">
+<h3>createServerBackup()<a class="headerlink" href="#createserverbackup" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.createServerBackup">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">createServerBackup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.createServerBackup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a backup for a specified server</p>
+<p>This will send a error code 924 when trying to create 2 backups within a 10 minute time frame
+Stay tuned for what error this returns when the max amount of backups have been created</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Object&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getbackupdetails">
+<h3>getBackupDetails()<a class="headerlink" href="#getbackupdetails" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getBackupDetails">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getBackupDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">backupId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getBackupDetails" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets details about a specified server backups</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+<li><p><strong>backupId</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Object&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="getbackupdownload">
+<h3>getBackupDownload()<a class="headerlink" href="#getbackupdownload" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><dl class="js function">
+<dt class="sig sig-object js" id="Client.getBackupDownload">
+<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getBackupDownload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">backupId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getBackupDownload" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a clickable URL to download your server backup</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverId</strong> (<em>String</em>) – </p></li>
+<li><p><strong>backupId</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise.&lt;Object&gt;</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../application/index.html" class="btn btn-neutral float-left" title="Application" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jelly#6161.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
