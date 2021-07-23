@@ -1,0 +1,310 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Application &mdash; Nodeactyl Docs  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Client" href="client.html" />
+    <link rel="prev" title="Welcome!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create">Create</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#createuser">createUser()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createserver">createServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#createsimpleserver">createSimpleServer()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#update">Update</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#updateuserdetails">updateUserDetails()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updateserverdetails">updateServerDetails()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updateserverbuild">updateServerBuild()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#updateserverstartup">updateServerStartup()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#delete">Delete</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#deleteserver">deleteServer()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deleteuser">deleteUser()</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#fetch">Fetch</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getallusers">getAllUsers()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getuserdetails">getUserDetails()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getuserbyusername">getUserByUsername()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getuserbyemail">getUserByEmail()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getuserpage">getUserPage()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">Client</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Nodeactyl Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Application</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/application.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application">
+<h1>Application<a class="headerlink" href="#application" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="js class">
+<dt class="sig sig-object js" id="Application">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Application</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application" title="Permalink to this definition">¶</a></dt>
+<dd><p>Main class constructor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> – Where your panel is hosted (EG: http(s)://panel.host.net/)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="create">
+<h2>Create<a class="headerlink" href="#create" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="createuser">
+<h3>createUser()<a class="headerlink" href="#createuser" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="createserver">
+<h3>createServer()<a class="headerlink" href="#createserver" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="createsimpleserver">
+<h3>createSimpleServer()<a class="headerlink" href="#createsimpleserver" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="update">
+<h2>Update<a class="headerlink" href="#update" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="updateuserdetails">
+<h3>updateUserDetails()<a class="headerlink" href="#updateuserdetails" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="updateserverdetails">
+<h3>updateServerDetails()<a class="headerlink" href="#updateserverdetails" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="updateserverbuild">
+<h3>updateServerBuild()<a class="headerlink" href="#updateserverbuild" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="updateserverstartup">
+<h3>updateServerStartup()<a class="headerlink" href="#updateserverstartup" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="delete">
+<h2>Delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="deleteserver">
+<h3>deleteServer()<a class="headerlink" href="#deleteserver" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="deleteuser">
+<h3>deleteUser()<a class="headerlink" href="#deleteuser" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="fetch">
+<h2>Fetch<a class="headerlink" href="#fetch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="getallusers">
+<h3>getAllUsers()<a class="headerlink" href="#getallusers" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="getuserdetails">
+<h3>getUserDetails()<a class="headerlink" href="#getuserdetails" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="getuserbyusername">
+<h3>getUserByUsername()<a class="headerlink" href="#getuserbyusername" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="getuserbyemail">
+<h3>getUserByEmail()<a class="headerlink" href="#getuserbyemail" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="getuserpage">
+<h3>getUserPage()<a class="headerlink" href="#getuserpage" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="client.html" class="btn btn-neutral float-right" title="Client" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jelly#6161.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
