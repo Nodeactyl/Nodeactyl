@@ -3,7 +3,6 @@ const Methods = require("./methods/Methods.js");
 class Client {
 
     /**
-     * Main class constructor
      * @param host Where your panel is hosted (EG: http(s)://panel.host.net/)
      * @param key
      */
@@ -41,7 +40,6 @@ class Client {
     /**
      * Gets the account details associated with this.hostUrl and this.hostKey
      *
-     * @param test
      * @returns {Promise<Object>}
      */
     getAccountDetails() {
@@ -55,7 +53,6 @@ class Client {
     /**
      * Gets the permissions that this associated host and key have
      *
-     * @param test
      * @returns {Promise<unknown>}
      */
     getAccountPermissions() {
@@ -69,7 +66,7 @@ class Client {
     /**
      * Gets a Server's information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<unknown>}
      */
     getServerDetails(serverId) {
@@ -83,7 +80,7 @@ class Client {
     /**
      * Gets a server's status, so whether it is running, starting or powered off
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<unknown>}
      */
      getServerStatus(serverId) {
@@ -112,7 +109,7 @@ class Client {
      *
      * This will return an empty array if the specified page was invalid.
      *
-     * @param pageNum
+     * @param {Integer} pageNum
      * @returns {Promise<unknown>}
      */
     getServerPage(pageNum) {
@@ -127,7 +124,7 @@ class Client {
      * Starts a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Boolean>}
      */
     startServer(serverId) {
@@ -142,7 +139,7 @@ class Client {
      * Stops a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Boolean>}
      */
     stopServer(serverId) {
@@ -157,7 +154,7 @@ class Client {
      * Restarts a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Boolean>}
      */
     restartServer(serverId) {
@@ -172,7 +169,7 @@ class Client {
      * Kills a server if the host and api key have permission
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Boolean>}
      */
     killServer(serverId) {
@@ -188,8 +185,8 @@ class Client {
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      *
-     * @param serverId
-     * @param command
+     * @param {String} serverId
+     * @param {String} command
      * @returns {Promise<Boolean>}
      */
     sendServerCommand(serverId, command) {
@@ -204,7 +201,7 @@ class Client {
      * gets a servers current memory/cpu/disk usages as bytes
      *
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<unknown>}
      */
     getServerUsages(serverId) {
@@ -220,7 +217,7 @@ class Client {
      * you will ne to establish your own socket connection for now
      * (try socket.io)
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<unknown>}
      */
     getConsoleWebSocket(serverId) {
@@ -234,8 +231,8 @@ class Client {
     /**
      * Renames the target server
      *
-     * @param serverId
-     * @param newName
+     * @param {String} serverId
+     * @param {String} newName
      * @returns {Promise<Boolean>}
      */
     renameServer(serverId, newName) {
@@ -250,7 +247,7 @@ class Client {
      * ReInstalls a target server
      *
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Boolean>}
      */
     reInstallServer(serverId) {
@@ -264,7 +261,7 @@ class Client {
     /**
      * Lists what backups a server has
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Array>}
      */
     listServerBackups(serverId) {
@@ -281,7 +278,7 @@ class Client {
      * This will send a error code 924 when trying to create 2 backups within a 10 minute time frame
      * Stay tuned for what error this returns when the max amount of backups have been created
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<Object>}
      */
     createServerBackup(serverId) {
@@ -295,8 +292,8 @@ class Client {
     /**
      * Gets details about a specified server backups
      *
-     * @param serverId
-     * @param backupId
+     * @param {String} serverId
+     * @param {Integer} backupId
      * @returns {Promise<Object>}
      */
     getBackupDetails(serverId, backupId) {
@@ -310,8 +307,8 @@ class Client {
     /**
      * Gets a clickable URL to download your server backup
      *
-     * @param serverId
-     * @param backupId
+     * @param {String} serverId
+     * @param {Integer} backupId
      * @returns {Promise<Object>}
      */
     getBackupDownload(serverId, backupId) {
@@ -325,8 +322,8 @@ class Client {
     /**
      * Deletes a specified backup
      *
-     * @param serverId
-     * @param backupId
+     * @param {String} serverId
+     * @param {Integer} backupId
      * @returns {Promise<Boolean>}
      */
     deleteBackup(serverId, backupId) {
@@ -340,7 +337,7 @@ class Client {
     /**
      * Get subusers of a server
      *
-     * @param serverId
+     * @param {String} serverId
      * @returns {Promise<unknown>}
      */
     getSubUsers(serverId) {
@@ -354,9 +351,9 @@ class Client {
     /**
      * Create subuser on a server
      *
-     * @param serverId
-     * @param email
-     * @param permissions
+     * @param {String} serverId
+     * @param {String} email
+     * @param {[String]} permissions
      * @returns {Promise<unknown>}
      */
     createSubUser(serverId, email, permissions) {
@@ -370,7 +367,6 @@ class Client {
     /**
      * Gets a list of API keys that this assigned host and key have available to them
      *
-     * @param test
      * @returns {Promise<unknown>}
      */
     getApiKeys() {
@@ -386,8 +382,8 @@ class Client {
      * REPEAT: WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
      * Make sure to read that previous line ^
      *
-     * @param description
-     * @param allowedIps
+     * @param {String} description
+     * @param {[String]} allowedIps
      * @returns {Promise<unknown>}
      */
     createApiKey(description, allowedIps) {
@@ -406,7 +402,7 @@ class Client {
      * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
      * the provided API key was non existing.
      *
-     * @param keyId
+     * @param {Integer} keyId
      * @returns {Promise<Boolean>}
      */
     deleteApiKey(keyId) {
@@ -422,8 +418,8 @@ class Client {
      *
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * @param newEmail
-     * @param currentPassword
+     * @param {String} newEmail
+     * @param {String} currentPassword
      * @returns {Promise<Boolean>}
      */
     updateEmail(newEmail, currentPassword) {
@@ -440,8 +436,8 @@ class Client {
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * @returns {Promise<Boolean>}
-     * @param newPassword
-     * @param currentPassword
+     * @param {String} newPassword
+     * @param {String} currentPassword
      */
     updatePassword(newPassword, currentPassword) {
         return new Promise((res, rej) => {
