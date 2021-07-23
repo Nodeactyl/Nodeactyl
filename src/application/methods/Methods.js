@@ -96,6 +96,11 @@ exports.createServer = (host, key, Version, NameOfServer, OwnerID, EggID, Docker
     return req.executePost(ApplicationRequest.CREATE_SERVER, data);
 };
 
+exports.createRawServer = (host, key, data) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_SERVER, data);
+}
+
 exports.getServers = (host, key,) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_ALL_SERVERS);

@@ -194,6 +194,19 @@ class Application {
     }
 
     /**
+     * Creates a server using a raw JSON object
+     * @param object
+     * @returns {Promise<unknown>}
+     */
+    createRawServer(object) {
+        return new Promise((res, rej) => {
+            Methods.createRawServer(this.hostUrl, this.apiKey, object).then((response) => {
+                return res(response.data);
+            }).catch((err => rej(this.processError(err))));
+        });
+    }
+
+    /**
      * Creates a server
      *
      * @param {Integer} OwnerID User ID of who should own this server
