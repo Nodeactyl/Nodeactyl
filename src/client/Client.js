@@ -41,8 +41,7 @@ class Client {
     /**
      * Gets the account details associated with this.hostUrl and this.hostKey
      *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
+     * @param test
      * @returns {Promise<Object>}
      */
     getAccountDetails() {
@@ -56,8 +55,7 @@ class Client {
     /**
      * Gets the permissions that this associated host and key have
      *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
+     * @param test
      * @returns {Promise<unknown>}
      */
     getAccountPermissions() {
@@ -70,8 +68,6 @@ class Client {
 
     /**
      * Gets a Server's information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param serverId
      * @returns {Promise<unknown>}
@@ -113,8 +109,6 @@ class Client {
 
     /**
      * Gets a server by a specified page number
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * This will return an empty array if the specified page was invalid.
      *
@@ -343,6 +337,12 @@ class Client {
         });
     }
 
+    /**
+     * Get subusers of a server
+     *
+     * @param serverId
+     * @returns {Promise<unknown>}
+     */
     getSubUsers(serverId) {
         return new Promise((res, rej) => {
             Methods.getSubUsers(this.hostUrl, this.apiKey, serverId).then((response) => {
@@ -351,6 +351,14 @@ class Client {
         })
     }
 
+    /**
+     * Create subuser on a server
+     *
+     * @param serverId
+     * @param email
+     * @param permissions
+     * @returns {Promise<unknown>}
+     */
     createSubUser(serverId, email, permissions) {
         return new Promise((res, rej) => {
             Methods.createSubUser(this.hostUrl, this.apiKey, serverId, email, permissions).then((response) => {
@@ -362,8 +370,7 @@ class Client {
     /**
      * Gets a list of API keys that this assigned host and key have available to them
      *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
+     * @param test
      * @returns {Promise<unknown>}
      */
     getApiKeys() {
@@ -378,8 +385,6 @@ class Client {
      * Creates an API key with specified host and api key. tbh this feels pretty useless as the key i received from this request gave me a 403, i will not provide support for this command.
      * REPEAT: WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
      * Make sure to read that previous line ^
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param description
      * @param allowedIps
@@ -401,8 +406,6 @@ class Client {
      * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
      * the provided API key was non existing.
      *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
      * @param keyId
      * @returns {Promise<Boolean>}
      */
@@ -418,8 +421,6 @@ class Client {
      * Updates the email for the specified host and API key
      *
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param newEmail
      * @param currentPassword
@@ -438,12 +439,9 @@ class Client {
      *
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     *
+     * @returns {Promise<Boolean>}
      * @param newPassword
      * @param currentPassword
-     * @returns {Promise<Boolean>}
      */
     updatePassword(newPassword, currentPassword) {
         return new Promise((res, rej) => {

@@ -11,11 +11,5 @@ Welcome!
    :caption: Contents:
    :includehidden:
 
-   application
-   client
-
-Key Pages
-==================
-
-* :ref:`modindex`
-* :ref:`search`
+   application/index
+   client/index
