@@ -236,12 +236,7 @@ class Client {
     /**
      * Gets a servers current memory/cpu/disk usages as bytes
      *
-<<<<<<< HEAD
-     *
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getServerUsages(serverId) {
@@ -257,11 +252,7 @@ class Client {
      * you will need to establish your own socket connection for now
      * (try socket.io)
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getConsoleWebSocket(serverId) {
@@ -275,13 +266,8 @@ class Client {
     /**
      * Renames the target server
      *
-<<<<<<< HEAD
-     * @param serverId
-     * @param newName
-=======
      * @param {String} serverId Server Id
      * @param {String} newName New Name of Server
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     renameServer(serverId, newName) {
@@ -295,12 +281,7 @@ class Client {
     /**
      * ReInstalls a target server
      *
-<<<<<<< HEAD
-     *
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     reInstallServer(serverId) {
@@ -314,11 +295,7 @@ class Client {
     /**
      * Lists what backups a server has
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Array>}
      */
     listServerBackups(serverId) {
@@ -334,11 +311,7 @@ class Client {
      *
      * This will send a error code 924 when trying to create 2 backups within a 10 minute time frame
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Object>}
      */
     createServerBackup(serverId) {
@@ -352,13 +325,8 @@ class Client {
     /**
      * Gets details about a specified server backups
      *
-<<<<<<< HEAD
-     * @param serverId
-     * @param backupId
-=======
      * @param {String} serverId Server Id
      * @param {Integer} backupId Backup Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Object>}
      */
     getBackupDetails(serverId, backupId) {
@@ -372,13 +340,8 @@ class Client {
     /**
      * Gets a clickable URL to download your server backup
      *
-<<<<<<< HEAD
-     * @param serverId
-     * @param backupId
-=======
      * @param {String} serverId Server Id
      * @param {Integer} backupId Backup Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Object>}
      */
     getBackupDownload(serverId, backupId) {
@@ -392,13 +355,8 @@ class Client {
     /**
      * Deletes a specified backup
      *
-<<<<<<< HEAD
-     * @param serverId
-     * @param backupId
-=======
      * @param {String} serverId Server Id
      * @param {Integer} backupId Backup Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     deleteBackup(serverId, backupId) {
@@ -409,15 +367,12 @@ class Client {
         });
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Get subusers of a server
      *
      * @param {String} serverId Server Id
      * @returns {Promise<unknown>}
      */
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
     getSubUsers(serverId) {
         return new Promise((res, rej) => {
             Methods.getSubUsers(this.hostUrl, this.apiKey, serverId).then((response) => {
@@ -426,8 +381,6 @@ class Client {
         })
     }
 
-<<<<<<< HEAD
-=======
     /**
      * Create subuser on a server
      *
@@ -436,7 +389,6 @@ class Client {
      * @param {Array} permissions Array of Permissions
      * @returns {Promise<unknown>}
      */
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
     createSubUser(serverId, email, permissions) {
         return new Promise((res, rej) => {
             Methods.createSubUser(this.hostUrl, this.apiKey, serverId, email, permissions).then((response) => {
@@ -465,15 +417,8 @@ class Client {
      * WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
      * Make sure to read that previous line ^
      *
-<<<<<<< HEAD
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     * @param description
-     * @param allowedIps
-=======
      * @param {String} description
      * @param {Array} allowedIps
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     createApiKey(description, allowedIps) {
@@ -488,17 +433,7 @@ class Client {
     /**
      * Deletes a specified API key. Only use the API key identifier provided to you on the panel
      *
-<<<<<<< HEAD
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
-     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
-     * the provided API key was non existing.
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     * @param keyId
-=======
      * @param {Integer} keyId Key Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     deleteApiKey(keyId) {
@@ -512,17 +447,8 @@ class Client {
     /**
      * Updates the email for the specified host and API key
      *
-<<<<<<< HEAD
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     * @param newEmail
-     * @param currentPassword
-=======
      * @param {String} newEmail New Email
      * @param {String} currentPassword Current Password
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     updateEmail(newEmail, currentPassword) {
@@ -536,20 +462,9 @@ class Client {
     /**
      * Updates the password for the specified host and api key
      *
-<<<<<<< HEAD
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
-     *
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     *
-     * @param newPassword
-     * @param currentPassword
-     * @returns {Promise<Boolean>}
-=======
      * @returns {Promise<Boolean>}
      * @param {String} newPassword New Password
      * @param {String} currentPassword Current Password
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      */
     updatePassword(newPassword, currentPassword) {
         return new Promise((res, rej) => {
