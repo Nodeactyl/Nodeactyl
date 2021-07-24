@@ -164,6 +164,7 @@ class Application {
 
     /**
      * Creates a server
+     * @deprecated
      *
      * @param {String} Version Version of the server to use
      * @param {String} NameOfServer Name of server to create
@@ -184,6 +185,7 @@ class Application {
     createServer(Version, NameOfServer, OwnerID, EggID, DockerImage,
                StartupCmd, RAM, Swap, Disk, IO, CPU,
                AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
+        console.log("\x1b[31m" + "createServer() is deprecated, please use createRawServer() or use the ServerBuilder!")
         return new Promise((res, rej) => {
             Methods.createServer(this.hostUrl, this.apiKey, Version, NameOfServer, OwnerID, EggID, DockerImage,
                 StartupCmd, RAM, Swap, Disk, IO, CPU,
@@ -208,6 +210,7 @@ class Application {
 
     /**
      * Creates a server
+     * @deprecated
      *
      * @param {Integer} OwnerID User ID of who should own this server
      * @param {Integer} EggID Egg ID to use when installing the server
@@ -220,6 +223,7 @@ class Application {
      * @returns {Promise<unknown>}
      */
     createSimpleServer(OwnerID, EggID, RAM, Disk, CPU, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
+        console.log("\x1b[31m" + "createSimpleServer() is deprecated, please use createRawServer() or use the ServerBuilder!")
         return new Promise(async (res, rej) => {
             let nest;
             await Methods.getNest(this.hostUrl, this.apiKey, EggID).then(res => nest = res);
