@@ -13,3 +13,4 @@ Welcome!
 
    application/index
    client/index
+   builder/index

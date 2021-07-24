@@ -71,13 +71,7 @@ class Client {
     /**
      * Gets a Server's information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values
      *
-<<<<<<< HEAD
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getServerDetails(serverId) {
@@ -91,11 +85,7 @@ class Client {
     /**
      * Gets a server's status, so whether it is running, starting or powered off
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
      getServerStatus(serverId) {
@@ -122,15 +112,7 @@ class Client {
     /**
      * Gets a server by a specified page number
      *
-<<<<<<< HEAD
-     * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
-     *
-     * This will return an empty array if the specified page was invalid.
-     *
-     * @param pageNum
-=======
      * @param {Integer} pageNum Page number
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<unknown>}
      */
     getServerPage(pageNum) {
@@ -144,11 +126,7 @@ class Client {
     /**
      * Starts a server
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     startServer(serverId) {
@@ -162,11 +140,7 @@ class Client {
     /**
      * Stops a server
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     stopServer(serverId) {
@@ -180,11 +154,7 @@ class Client {
     /**
      * Restarts a server
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     restartServer(serverId) {
@@ -198,11 +168,7 @@ class Client {
     /**
      * Kills a server
      *
-<<<<<<< HEAD
-     * @param serverId
-=======
      * @param {String} serverId Server Id
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     killServer(serverId) {
@@ -216,13 +182,8 @@ class Client {
     /**
      * Sends a command to a server
      *
-<<<<<<< HEAD
-     * @param serverId
-     * @param command
-=======
      * @param {String} serverId Server Id
      * @param {String} command Server Command
->>>>>>> ee46a26640e51bbbd92b57a572413a8eb7d7f33c
      * @returns {Promise<Boolean>}
      */
     sendServerCommand(serverId, command) {

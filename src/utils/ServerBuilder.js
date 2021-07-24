@@ -3,7 +3,7 @@ class ServerBuilder {
     /**
      * Object = server JSON data, leave blank if you dont have
      * and object and just want to use ServerBuilder
-     * @param object
+     * @param {Object} object
      */
     constructor(object = null) {
         this.default = {
@@ -54,7 +54,7 @@ class ServerBuilder {
 
     /**
      * Sets the entire Server JSON object
-     * @param json
+     * @param {JSON} json
      */
     setJson(json) {
         this.object = json;
@@ -64,7 +64,7 @@ class ServerBuilder {
      * Creates the server directly from this class using your NodeactylApplication instance
      * Make sure to login to the Application before passing it through this function!
      *
-     * @param applicationInstance Your NodeactylApplication instance
+     * @param {Object} applicationInstance Your NodeactylApplication instance
      * @returns {Promise}
      */
     createServer(applicationInstance) {
@@ -73,7 +73,7 @@ class ServerBuilder {
 
     /**
      * Sets the servers name
-     * @param serverName
+     * @param {String} serverName
      */
     setServerName(serverName) {
         this.object.name = serverName;
@@ -81,7 +81,7 @@ class ServerBuilder {
 
     /**
      * Sets the owners ID
-     * @param ownerId
+     * @param {Integer} ownerId
      */
     setServerOwner(ownerId) {
         this.object.user = ownerId;
@@ -92,7 +92,7 @@ class ServerBuilder {
      *
      * By default this is 1
      *
-     * @param eggId
+     * @param {Integer} eggId
      */
     setServerEgg(eggId) {
         this.object.egg = eggId;
@@ -103,7 +103,7 @@ class ServerBuilder {
      *
      * By default this is set to Java
      *
-     * @param dockerImage
+     * @param {String} dockerImage
      */
     setServerDockerImage(dockerImage) {
         this.object.docker_image = dockerImage;
@@ -114,7 +114,7 @@ class ServerBuilder {
      *
      * By default this is set to "java -Xms128M -Xmx128M -jar server.jar"
      *
-     * @param startupCmd
+     * @param {String} startupCmd
      */
     setServerStartup(startupCmd) {
         this.object.startup = startupCmd;
@@ -123,7 +123,7 @@ class ServerBuilder {
     /**
      * If you want to set all server limits at one time, you can make a JSON object and insert it here
      *
-     * @param json
+     * @param {JSON} json
      */
     setServerLimitsJson(json) {
         this.object.limits = json;
@@ -131,7 +131,7 @@ class ServerBuilder {
 
     /**
      * Max amount of RAM this server can have in MB
-     * @param ram
+     * @param {Integer} ram
      */
     setServerRAM(ram) {
         this.object.limits.memory = ram;
@@ -139,7 +139,7 @@ class ServerBuilder {
 
     /**
      * Max amount of swam this server can have in MB
-     * @param swap
+     * @param {Integer} swap
      */
     setServerSwap(swap) {
         this.object.limits.swap = swap;
@@ -147,7 +147,7 @@ class ServerBuilder {
 
     /**
      * Sets the IO for this server to use in MB (Prolly shouldnt change this)
-     * @param io
+     * @param {Integer} io
      */
     setServerIO(io) {
         this.object.limits.io = io;
@@ -155,7 +155,7 @@ class ServerBuilder {
 
     /**
      * Sets the max amount of CPU usage for this server, 100 = 1 core 200 = 2 cores etc etc
-     * @param cpu
+     * @param {Integer} cpu
      */
     setServerCPU(cpu) {
         this.object.limits.cpu = cpu;
@@ -163,7 +163,7 @@ class ServerBuilder {
 
     /**
      * If you want to set all feature limits at one time, insert a JSON object here
-     * @param json
+     * @param {JSON} json
      */
     setServerFeatureLimitsJson(json) {
         this.object.feature_limits = json;
@@ -171,7 +171,7 @@ class ServerBuilder {
 
     /**
      * Sets the amount of databases this server is allowed to have
-     * @param databaseLimit
+     * @param {Integer} databaseLimit
      */
     setServerDatabaseLimit(databaseLimit) {
         this.object.feature_limits.databases = databaseLimit;
@@ -179,7 +179,7 @@ class ServerBuilder {
 
     /**
      * Sets the allocation limit of this server
-     * @param allocationLimit
+     * @param {Integer} allocationLimit
      */
     setServerAllocationLimit(allocationLimit) {
         this.object.feature_limits.allocations = allocationLimit;
@@ -187,7 +187,7 @@ class ServerBuilder {
 
     /**
      * Sets the max amount of backups this server is allowed to have
-     * @param backupLimit
+     * @param {Integer} backupLimit
      */
     setServerBackupLimit(backupLimit) {
         this.object.feature_limits.backups = backupLimit;
@@ -195,7 +195,7 @@ class ServerBuilder {
 
     /**
      * If want all env variables set at once, insert a JSON object here
-     * @param json
+     * @param {JSON} json
      */
     setServerEnvironmentJson(json) {
         this.object.environment = json;
@@ -207,7 +207,7 @@ class ServerBuilder {
      *
      * By default these are all set to "LATEST"
      *
-     * @param version
+     * @param {String} version
      */
     setServerEnvironmentVersion(version) {
         this.object.environment.DL_VERSION = version;
@@ -222,7 +222,7 @@ class ServerBuilder {
     /**
      * If your using a NodeJS egg, set the startup command here
      * otherwise dont use this
-     * @param command
+     * @param {String} command
      */
     setServerNodeJSStartupCommand(command) {
         this.object.environment.STARTUP_CMD = command;
@@ -230,7 +230,7 @@ class ServerBuilder {
 
     /**
      * If you want allocations set at once, insert your json data here
-     * @param json
+     * @param {JSON} json
      */
     setServerAllocationJson(json) {
         this.object.allocation = json;
@@ -241,7 +241,7 @@ class ServerBuilder {
      *
      * By default this is 1
      *
-     * @param allocationId
+     * @param {Integer} allocationId
      */
     setServerDefaultAllocation(allocationId) {
         this.object.allocation.default = allocationId;
@@ -252,7 +252,7 @@ class ServerBuilder {
      *
      * By default this is an empty array []
      *
-     * @param allocations
+     * @param {Array} allocations
      */
     setServerAdditionalAllocations(allocations) {
         this.object.allocation.additional = allocations;
@@ -260,7 +260,7 @@ class ServerBuilder {
 
     /**
      * If you want to set server deploy data at once, insert json object here
-     * @param json
+     * @param {JSON} json
      */
     setServerDeployJson(json) {
         this.object.deploy = json;
@@ -272,7 +272,7 @@ class ServerBuilder {
      * MUST BE AN ARRAY
      * By default this is set to [1]
      *
-     * @param locations
+     * @param {Array} locations
      */
     setServerDeployLocations(locations) {
         this.object.deploy.locations = locations;
@@ -283,7 +283,7 @@ class ServerBuilder {
      *
      * By default this is false
      *
-     * @param yesOrNo
+     * @param {Boolean} yesOrNo
      */
     setServerUsesDedicatedIp(yesOrNo) {
         this.object.deploy.dedicated_ip = yesOrNo;
@@ -294,7 +294,7 @@ class ServerBuilder {
      *
      * By default this value is empty []
      *
-     * @param portRange
+     * @param {Array} portRange
      */
     setServerPortRange(portRange) {
         this.object.deploy.port_range = portRange;
@@ -305,7 +305,7 @@ class ServerBuilder {
      *
      * By default this is set at true
      *
-     * @param yesOrNo
+     * @param {Boolean} yesOrNo
      */
     setServerStartsWhenCompleted(yesOrNo) {
         this.object.start_on_completion = yesOrNo;
@@ -316,7 +316,7 @@ class ServerBuilder {
      *
      * By default this value is set as false
      *
-     * @param yesOrNo
+     * @param {Boolean} yesOrNo
      */
     setServerSkipScripts(yesOrNo) {
         this.object.skip_scripts = yesOrNo;
@@ -327,7 +327,7 @@ class ServerBuilder {
      *
      * By default this value is set as true
      *
-     * @param isDisabled
+     * @param {Boolean} isDisabled
      */
     setServerOOMDisabled(isDisabled) {
         this.object.oom_disabled = isDisabled;

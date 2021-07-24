@@ -30,7 +30,7 @@ updatePassword()
 ----------------
     .. js:autofunction:: Client#updatePassword
 
-Get Server Details
+Server Details
 ==================
 
 getServerDetails()

@@ -1,0 +1,637 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Builder &mdash; Nodeactyl Docs  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Client" href="../client/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../application/index.html">Application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../client/index.html">Client</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Builder</a><ul class="simple">
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Nodeactyl Docs</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Builder</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/builder/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="builder">
+<h1>Builder<a class="headerlink" href="#builder" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<dl class="js class">
+<dt class="sig sig-object js" id="ServerBuilder">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">ServerBuilder</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">object=null</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder" title="Permalink to this definition">¶</a></dt>
+<dd><p>Object = server JSON data, leave blank if you dont have
+and object and just want to use ServerBuilder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>object</strong> (<em>Object</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.createServer">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">createServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">applicationInstance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.createServer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates the server directly from this class using your NodeactylApplication instance
+Make sure to login to the Application before passing it through this function!</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>applicationInstance</strong> (<em>Object</em>) – Your NodeactylApplication instance</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p><strong>Promise</strong> –</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.getServerObject">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">getServerObject</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.getServerObject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the servers JSON object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setJson">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">json</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the entire Server JSON object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> (<em>JSON</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerAdditionalAllocations">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerAdditionalAllocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">allocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerAdditionalAllocations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows you to add multiple allocations to this serer</p>
+<p>By default this is an empty array []</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allocations</strong> (<em>Array</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerAllocationJson">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerAllocationJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">json</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerAllocationJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>If you want allocations set at once, insert your json data here</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> (<em>JSON</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerAllocationLimit">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerAllocationLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">allocationLimit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerAllocationLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the allocation limit of this server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allocationLimit</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerBackupLimit">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerBackupLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">backupLimit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerBackupLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the max amount of backups this server is allowed to have</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>backupLimit</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerCPU">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerCPU</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">cpu</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerCPU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the max amount of CPU usage for this server, 100 = 1 core 200 = 2 cores etc etc</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cpu</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerDatabaseLimit">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerDatabaseLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">databaseLimit</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerDatabaseLimit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the amount of databases this server is allowed to have</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>databaseLimit</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerDefaultAllocation">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerDefaultAllocation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">allocationId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerDefaultAllocation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the default servers allocation</p>
+<p>By default this is 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>allocationId</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerDeployJson">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerDeployJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">json</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerDeployJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>If you want to set server deploy data at once, insert json object here</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> (<em>JSON</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerDeployLocations">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerDeployLocations</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">locations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerDeployLocations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the locations of where to deploy this to</p>
+<p>MUST BE AN ARRAY
+By default this is set to [1]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>locations</strong> (<em>Array</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerDockerImage">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerDockerImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">dockerImage</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerDockerImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the servers docker image to use</p>
+<p>By default this is set to Java</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dockerImage</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerEgg">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerEgg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">eggId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerEgg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the servers egg to use</p>
+<p>By default this is 1</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>eggId</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerEnvironmentJson">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerEnvironmentJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">json</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerEnvironmentJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>If want all env variables set at once, insert a JSON object here</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> (<em>JSON</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerEnvironmentVersion">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerEnvironmentVersion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">version</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerEnvironmentVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the environment version number, do note this doesnt work with all eggs, if you
+want and egg added it must be public and on github (or any git provider)!</p>
+<p>By default these are all set to “LATEST”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>version</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerFeatureLimitsJson">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerFeatureLimitsJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">json</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerFeatureLimitsJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>If you want to set all feature limits at one time, insert a JSON object here</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> (<em>JSON</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerIO">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">io</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerIO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the IO for this server to use in MB (Prolly shouldnt change this)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>io</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerLimitsJson">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerLimitsJson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">json</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerLimitsJson" title="Permalink to this definition">¶</a></dt>
+<dd><p>If you want to set all server limits at one time, you can make a JSON object and insert it here</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>json</strong> (<em>JSON</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerName">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerName</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the servers name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>serverName</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerNodeJSStartupCommand">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerNodeJSStartupCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerNodeJSStartupCommand" title="Permalink to this definition">¶</a></dt>
+<dd><p>If your using a NodeJS egg, set the startup command here
+otherwise dont use this</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerOOMDisabled">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerOOMDisabled</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">isDisabled</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerOOMDisabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets wether or not you want OOM disabled</p>
+<p>By default this value is set as true</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>isDisabled</strong> (<em>Boolean</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerOwner">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerOwner</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ownerId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerOwner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the owners ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ownerId</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerPortRange">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerPortRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">portRange</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerPortRange" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a range of ports that this server can use</p>
+<p>By default this value is empty []</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>portRange</strong> (<em>Array</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerRAM">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerRAM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">ram</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerRAM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Max amount of RAM this server can have in MB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ram</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerSkipScripts">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerSkipScripts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">yesOrNo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerSkipScripts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets wether or not this server should skip scripts</p>
+<p>By default this value is set as false</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yesOrNo</strong> (<em>Boolean</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerStartsWhenCompleted">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerStartsWhenCompleted</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">yesOrNo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerStartsWhenCompleted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets wether or not you want this server to start when it has finished creating</p>
+<p>By default this is set at true</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yesOrNo</strong> (<em>Boolean</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerStartup">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerStartup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">startupCmd</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerStartup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the servers startup comand to use</p>
+<p>By default this is set to “java -Xms128M -Xmx128M -jar server.jar”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>startupCmd</strong> (<em>String</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerSwap">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerSwap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">swap</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerSwap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Max amount of swam this server can have in MB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>swap</strong> (<em>Integer</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="js function">
+<dt class="sig sig-object js" id="ServerBuilder.setServerUsesDedicatedIp">
+<span class="sig-prename descclassname"><span class="pre">ServerBuilder.</span></span><span class="sig-name descname"><span class="pre">setServerUsesDedicatedIp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">yesOrNo</span></em><span class="sig-paren">)</span><a class="headerlink" href="#ServerBuilder.setServerUsesDedicatedIp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets wether or not this server should get its own dedicated IP</p>
+<p>By default this is false</p>
+<dl class="field-list simple">
+<dt class="field-odd">Arguments</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>yesOrNo</strong> (<em>Boolean</em>) – </p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../client/index.html" class="btn btn-neutral float-left" title="Client" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Jelly#6161.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

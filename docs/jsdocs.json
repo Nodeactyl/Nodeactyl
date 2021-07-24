@@ -1,5 +1,5 @@
 {
     "source": {
-        "include": ["../src/application/Application.js", "../src/client/Client.js"]
+        "include": ["../src/application/Application.js", "../src/client/Client.js", "../src/utils/ServerBuilder.js"]
     }
 }
