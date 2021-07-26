@@ -65,3 +65,4 @@ typings/
 
 
 .idea/
+docs/_build/*
