@@ -15,116 +15,116 @@ Account
 
 getAccountDetails()
 -------------------
-    .. js:autofunction:: Client#getAccountDetails
+    .. js:autofunction:: NodeactylClient#getAccountDetails
 
 
 getAccountPermissions()
 -----------------------
-    .. js:autofunction:: Client#getAccountPermissions
+    .. js:autofunction:: NodeactylClient#getAccountPermissions
 
 updateEmail()
 -------------
-    .. js:autofunction:: Client#updateEmail
+    .. js:autofunction:: NodeactylClient#updateEmail
 
 updatePassword()
 ----------------
-    .. js:autofunction:: Client#updatePassword
+    .. js:autofunction:: NodeactylClient#updatePassword
 
 Server Details
 ==================
 
 getServerDetails()
 -------------------
-    .. js:autofunction:: Client#getServerDetails
+    .. js:autofunction:: NodeactylClient#getServerDetails
 
 getServerStatus()
 -----------------
-    .. js:autofunction:: Client#getServerStatus
+    .. js:autofunction:: NodeactylClient#getServerStatus
 
 getAllServers()
 ---------------
-    .. js:autofunction:: Client#getAllServers
+    .. js:autofunction:: NodeactylClient#getAllServers
 
 getServerPage()
 ---------------
-    .. js:autofunction:: Client#getServerPage
+    .. js:autofunction:: NodeactylClient#getServerPage
 
 getServerUsages()
 -----------------
-    .. js:autofunction:: Client#getServerUsages
+    .. js:autofunction:: NodeactylClient#getServerUsages
 
 getConsoleWebSocket()
 ---------------------
-    .. js:autofunction:: Client#getConsoleWebSocket
+    .. js:autofunction:: NodeactylClient#getConsoleWebSocket
 
 getSubUsers()
 -------------
-    .. js:autofunction:: Client#getSubUsers
+    .. js:autofunction:: NodeactylClient#getSubUsers
 
 getApiKeys()
 ------------
-    .. js:autofunction:: Client#getApiKeys
+    .. js:autofunction:: NodeactylClient#getApiKeys
 
 Server Actions
 ==============
 
 startServer()
 -------------
-    .. js:autofunction:: Client#startServer
+    .. js:autofunction:: NodeactylClient#startServer
 
 restartServer()
 ---------------
-    .. js:autofunction:: Client#restartServer
+    .. js:autofunction:: NodeactylClient#restartServer
 
 stopServer()
 ------------
-    .. js:autofunction:: Client#stopServer
+    .. js:autofunction:: NodeactylClient#stopServer
 
 killServer()
 ------------
-    .. js:autofunction:: Client#killServer
+    .. js:autofunction:: NodeactylClient#killServer
 
 sendServerCommand()
 -------------------
-    .. js:autofunction:: Client#sendServerCommand
+    .. js:autofunction:: NodeactylClient#sendServerCommand
 
 renameServer()
 --------------
-    .. js:autofunction:: Client#renameServer
+    .. js:autofunction:: NodeactylClient#renameServer
 
 reInstallServer()
 -----------------
-    .. js:autofunction:: Client#reInstallServer
+    .. js:autofunction:: NodeactylClient#reInstallServer
 
 createSubUser()
 ---------------
-    .. js:autofunction:: Client#createSubUser
+    .. js:autofunction:: NodeactylClient#createSubUser
 
 createApiKey()
 --------------
-    .. js:autofunction:: Client#createApiKey
+    .. js:autofunction:: NodeactylClient#createApiKey
 
 deleteApiKey()
 --------------
-    .. js:autofunction:: Client#deleteApiKey
+    .. js:autofunction:: NodeactylClient#deleteApiKey
 
 Server Backups
 ==============
 
 listServerBackups()
 -------------------
-    .. js:autofunction:: Client#listServerBackups
+    .. js:autofunction:: NodeactylClient#listServerBackups
 
 createServerBackup()
 --------------------
-    .. js:autofunction:: Client#createServerBackup
+    .. js:autofunction:: NodeactylClient#createServerBackup
 
 getBackupDetails()
 ------------------
-    .. js:autofunction:: Client#getBackupDetails
+    .. js:autofunction:: NodeactylClient#getBackupDetails
 
 getBackupDownload()
 -------------------
-    .. js:autofunction:: Client#getBackupDownload
+    .. js:autofunction:: NodeactylClient#getBackupDownload
 
 

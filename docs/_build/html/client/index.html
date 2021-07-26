@@ -204,8 +204,8 @@
 <div class="toctree-wrapper compound">
 </div>
 <dl class="js class">
-<dt class="sig sig-object js" id="Client">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">NodeactylClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient" title="Permalink to this definition">¶</a></dt>
 <dd><p>Main class constructor</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -222,8 +222,8 @@
 <h3>getAccountDetails()<a class="headerlink" href="#getaccountdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getAccountDetails">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getAccountDetails</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAccountDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getAccountDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getAccountDetails</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getAccountDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the account details associated with this.hostUrl and this.hostKey</p>
 <p>MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!</p>
 <dl class="field-list simple">
@@ -239,8 +239,8 @@
 <h3>getAccountPermissions()<a class="headerlink" href="#getaccountpermissions" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getAccountPermissions">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getAccountPermissions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAccountPermissions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getAccountPermissions">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getAccountPermissions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getAccountPermissions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the permissions that this associated host and key have</p>
 <p>MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!</p>
 <dl class="field-list simple">
@@ -256,8 +256,8 @@
 <h3>updateEmail()<a class="headerlink" href="#updateemail" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.updateEmail">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">updateEmail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">newEmail</span></em>, <em class="sig-param"><span class="pre">currentPassword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.updateEmail" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.updateEmail">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">updateEmail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">newEmail</span></em>, <em class="sig-param"><span class="pre">currentPassword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.updateEmail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the email for the specified host and API key</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -278,8 +278,8 @@
 <h3>updatePassword()<a class="headerlink" href="#updatepassword" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.updatePassword">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">updatePassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">newPassword</span></em>, <em class="sig-param"><span class="pre">currentPassword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.updatePassword" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.updatePassword">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">updatePassword</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">newPassword</span></em>, <em class="sig-param"><span class="pre">currentPassword</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.updatePassword" title="Permalink to this definition">¶</a></dt>
 <dd><p>Updates the password for the specified host and api key</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -303,8 +303,8 @@
 <h3>getServerDetails()<a class="headerlink" href="#getserverdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getServerDetails">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getServerDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getServerDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a Server’s information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -324,8 +324,8 @@
 <h3>getServerStatus()<a class="headerlink" href="#getserverstatus" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getServerStatus">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerStatus" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getServerStatus">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getServerStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getServerStatus" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a server’s status, so whether it is running, starting or powered off</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -345,8 +345,8 @@
 <h3>getAllServers()<a class="headerlink" href="#getallservers" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getAllServers">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getAllServers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getAllServers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getAllServers">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getAllServers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getAllServers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a list of servers from your panel, currently this only get the first page</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -361,8 +361,8 @@
 <h3>getServerPage()<a class="headerlink" href="#getserverpage" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getServerPage">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerPage" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getServerPage">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getServerPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getServerPage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a server by a specified page number</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -382,8 +382,8 @@
 <h3>getServerUsages()<a class="headerlink" href="#getserverusages" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getServerUsages">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getServerUsages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getServerUsages" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getServerUsages">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getServerUsages</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getServerUsages" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a servers current memory/cpu/disk usages as bytes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -403,8 +403,8 @@
 <h3>getConsoleWebSocket()<a class="headerlink" href="#getconsolewebsocket" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getConsoleWebSocket">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getConsoleWebSocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getConsoleWebSocket" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getConsoleWebSocket">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getConsoleWebSocket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getConsoleWebSocket" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets the Console WebSocket instance for a server
 you will need to establish your own socket connection for now
 (try socket.io)</p>
@@ -426,8 +426,8 @@ you will need to establish your own socket connection for now
 <h3>getSubUsers()<a class="headerlink" href="#getsubusers" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getSubUsers">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getSubUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getSubUsers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getSubUsers">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getSubUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getSubUsers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get subusers of a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -447,8 +447,8 @@ you will need to establish your own socket connection for now
 <h3>getApiKeys()<a class="headerlink" href="#getapikeys" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getApiKeys">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getApiKeys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Client.getApiKeys" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getApiKeys">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getApiKeys</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getApiKeys" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a list of API keys that this assigned host and key have available to them</p>
 <p>MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!</p>
 <dl class="field-list simple">
@@ -467,8 +467,8 @@ you will need to establish your own socket connection for now
 <h3>startServer()<a class="headerlink" href="#startserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.startServer">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">startServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.startServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.startServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">startServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.startServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Starts a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -488,8 +488,8 @@ you will need to establish your own socket connection for now
 <h3>restartServer()<a class="headerlink" href="#restartserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.restartServer">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">restartServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.restartServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.restartServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">restartServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.restartServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Restarts a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -509,8 +509,8 @@ you will need to establish your own socket connection for now
 <h3>stopServer()<a class="headerlink" href="#stopserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.stopServer">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">stopServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.stopServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.stopServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">stopServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.stopServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stops a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -530,8 +530,8 @@ you will need to establish your own socket connection for now
 <h3>killServer()<a class="headerlink" href="#killserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.killServer">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">killServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.killServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.killServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">killServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.killServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Kills a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -551,8 +551,8 @@ you will need to establish your own socket connection for now
 <h3>sendServerCommand()<a class="headerlink" href="#sendservercommand" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.sendServerCommand">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">sendServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.sendServerCommand" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.sendServerCommand">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">sendServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">command</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.sendServerCommand" title="Permalink to this definition">¶</a></dt>
 <dd><p>Sends a command to a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -573,8 +573,8 @@ you will need to establish your own socket connection for now
 <h3>renameServer()<a class="headerlink" href="#renameserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.renameServer">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">renameServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">newName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.renameServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.renameServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">renameServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">newName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.renameServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Renames the target server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -595,8 +595,8 @@ you will need to establish your own socket connection for now
 <h3>reInstallServer()<a class="headerlink" href="#reinstallserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.reInstallServer">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">reInstallServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.reInstallServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.reInstallServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">reInstallServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.reInstallServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>ReInstalls a target server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -616,8 +616,8 @@ you will need to establish your own socket connection for now
 <h3>createSubUser()<a class="headerlink" href="#createsubuser" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.createSubUser">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">createSubUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">email</span></em>, <em class="sig-param"><span class="pre">permissions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.createSubUser" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.createSubUser">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">createSubUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">email</span></em>, <em class="sig-param"><span class="pre">permissions</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.createSubUser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create subuser on a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -639,8 +639,8 @@ you will need to establish your own socket connection for now
 <h3>createApiKey()<a class="headerlink" href="#createapikey" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.createApiKey">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">createApiKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">description</span></em>, <em class="sig-param"><span class="pre">allowedIps</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.createApiKey" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.createApiKey">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">createApiKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">description</span></em>, <em class="sig-param"><span class="pre">allowedIps</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.createApiKey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates an API key with specified host and api key.
 WILL NOT PROVIDE SUPPORT FOR THIS COMMAND!!!!!!
 Make sure to read that previous line ^</p>
@@ -663,8 +663,8 @@ Make sure to read that previous line ^</p>
 <h3>deleteApiKey()<a class="headerlink" href="#deleteapikey" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.deleteApiKey">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">deleteApiKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">keyId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.deleteApiKey" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.deleteApiKey">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">deleteApiKey</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">keyId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.deleteApiKey" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a specified API key. Only use the API key identifier provided to you on the panel</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -687,8 +687,8 @@ Make sure to read that previous line ^</p>
 <h3>listServerBackups()<a class="headerlink" href="#listserverbackups" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.listServerBackups">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">listServerBackups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.listServerBackups" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.listServerBackups">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">listServerBackups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.listServerBackups" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists what backups a server has</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -708,8 +708,8 @@ Make sure to read that previous line ^</p>
 <h3>createServerBackup()<a class="headerlink" href="#createserverbackup" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.createServerBackup">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">createServerBackup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.createServerBackup" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.createServerBackup">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">createServerBackup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.createServerBackup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a backup for a specified server</p>
 <p>This will send a error code 924 when trying to create 2 backups within a 10 minute time frame</p>
 <dl class="field-list simple">
@@ -730,8 +730,8 @@ Make sure to read that previous line ^</p>
 <h3>getBackupDetails()<a class="headerlink" href="#getbackupdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getBackupDetails">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getBackupDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">backupId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getBackupDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getBackupDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getBackupDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">backupId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getBackupDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets details about a specified server backups</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -752,8 +752,8 @@ Make sure to read that previous line ^</p>
 <h3>getBackupDownload()<a class="headerlink" href="#getbackupdownload" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Client.getBackupDownload">
-<span class="sig-prename descclassname"><span class="pre">Client.</span></span><span class="sig-name descname"><span class="pre">getBackupDownload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">backupId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Client.getBackupDownload" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylClient.getBackupDownload">
+<span class="sig-prename descclassname"><span class="pre">NodeactylClient.</span></span><span class="sig-name descname"><span class="pre">getBackupDownload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">backupId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylClient.getBackupDownload" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a clickable URL to download your server backup</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>

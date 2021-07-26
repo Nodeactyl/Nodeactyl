@@ -7,7 +7,7 @@ Application
    :caption: Contents:
 
 
-.. js:autoclass:: Application
+.. js:autoclass:: NodeactylApplication
 
 
 Create
@@ -15,96 +15,96 @@ Create
 
 createUser()
 ------------
-    .. js:autofunction:: Application#createUser
+    .. js:autofunction:: NodeactylApplication#createUser
 
 createServer()
 --------------
-    .. js:autofunction:: Application#createServer
+    .. js:autofunction:: NodeactylApplication#createServer
 
 createSimpleServer()
 --------------------
-    .. js:autofunction:: Application#createSimpleServer
+    .. js:autofunction:: NodeactylApplication#createSimpleServer
 
 Update
 ======
 
 updateUserDetails()
 -------------------
-    .. js:autofunction:: Application#updateUserDetails
+    .. js:autofunction:: NodeactylApplication#updateUserDetails
 
 updateServerDetails()
 ---------------------
-    .. js:autofunction:: Application#updateServerDetails
+    .. js:autofunction:: NodeactylApplication#updateServerDetails
 
 updateServerBuild()
 -------------------
-    .. js:autofunction:: Application#updateServerBuild
+    .. js:autofunction:: NodeactylApplication#updateServerBuild
 
 updateServerStartup()
 ---------------------
-    .. js:autofunction:: Application#updateServerStartup
+    .. js:autofunction:: NodeactylApplication#updateServerStartup
 
 suspendServer()
 ---------------
-    .. js:autofunction:: Application#suspendServer
+    .. js:autofunction:: NodeactylApplication#suspendServer
 
 unsuspendServer()
 -----------------
-    .. js:autofunction:: Application#unsuspendServer
+    .. js:autofunction:: NodeactylApplication#unsuspendServer
 
 reinstallServer()
 -----------------
-    .. js:autofunction:: Application#reinstallServer
+    .. js:autofunction:: NodeactylApplication#reinstallServer
 
 Delete
 ======
 
 deleteServer()
 --------------
-    .. js:autofunction:: Application#deleteServer
+    .. js:autofunction:: NodeactylApplication#deleteServer
 
 deleteUser()
 ------------
-    .. js:autofunction:: Application#deleteUser
+    .. js:autofunction:: NodeactylApplication#deleteUser
 
 Fetch
 =====
 
 getAllUsers()
 -------------
-    .. js:autofunction:: Application#getAllUsers
+    .. js:autofunction:: NodeactylApplication#getAllUsers
 
 getAllServers()
 ---------------
-    .. js:autofunction:: Application#getAllServers
+    .. js:autofunction:: NodeactylApplication#getAllServers
 
 getUserDetails()
 ----------------
-    .. js:autofunction:: Application#getUserDetails
+    .. js:autofunction:: NodeactylApplication#getUserDetails
 
 getServerDetails()
 ------------------
-    .. js:autofunction:: Application#getServerDetails
+    .. js:autofunction:: NodeactylApplication#getServerDetails
 
 getUserByUsername()
 -------------------
-    .. js:autofunction:: Application#getUserByUsername
+    .. js:autofunction:: NodeactylApplication#getUserByUsername
 
 getUserByEmail()
 ----------------
-    .. js:autofunction:: Application#getUserByEmail
+    .. js:autofunction:: NodeactylApplication#getUserByEmail
 
 getUserPage()
 -------------
-    .. js:autofunction:: Application#getUserPage
+    .. js:autofunction:: NodeactylApplication#getUserPage
 
 getServerPage()
 ---------------
-    .. js:autofunction:: Application#getServerPage
+    .. js:autofunction:: NodeactylApplication#getServerPage
 
 getNestDetails()
 ----------------
-    .. js:autofunction:: Application#getNestDetails
+    .. js:autofunction:: NodeactylApplication#getNestDetails
 
 
 

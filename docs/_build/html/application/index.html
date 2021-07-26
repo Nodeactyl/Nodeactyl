@@ -199,8 +199,8 @@
 <div class="toctree-wrapper compound">
 </div>
 <dl class="js class">
-<dt class="sig sig-object js" id="Application">
-<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">Application</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication">
+<em class="property"><span class="pre">class</span> </em><span class="sig-name descname"><span class="pre">NodeactylApplication</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">host</span></em>, <em class="sig-param"><span class="pre">key</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication" title="Permalink to this definition">¶</a></dt>
 <dd><p>Main class constructor</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -217,8 +217,8 @@
 <h3>createUser()<a class="headerlink" href="#createuser" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.createUser">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">createUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Username</span></em>, <em class="sig-param"><span class="pre">Email</span></em>, <em class="sig-param"><span class="pre">FirstName</span></em>, <em class="sig-param"><span class="pre">LastName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.createUser" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.createUser">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">createUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Username</span></em>, <em class="sig-param"><span class="pre">Email</span></em>, <em class="sig-param"><span class="pre">FirstName</span></em>, <em class="sig-param"><span class="pre">LastName</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.createUser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Creates a user</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -241,9 +241,13 @@
 <h3>createServer()<a class="headerlink" href="#createserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.createServer">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">createServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Version</span></em>, <em class="sig-param"><span class="pre">NameOfServer</span></em>, <em class="sig-param"><span class="pre">OwnerID</span></em>, <em class="sig-param"><span class="pre">EggID</span></em>, <em class="sig-param"><span class="pre">DockerImage</span></em>, <em class="sig-param"><span class="pre">StartupCmd</span></em>, <em class="sig-param"><span class="pre">RAM</span></em>, <em class="sig-param"><span class="pre">Swap</span></em>, <em class="sig-param"><span class="pre">Disk</span></em>, <em class="sig-param"><span class="pre">IO</span></em>, <em class="sig-param"><span class="pre">CPU</span></em>, <em class="sig-param"><span class="pre">AmountOfDatabases</span></em>, <em class="sig-param"><span class="pre">AmountOfBackups</span></em>, <em class="sig-param"><span class="pre">AmountOfAllocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.createServer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a server</p>
+<dt class="sig sig-object js" id="NodeactylApplication.createServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">createServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Version</span></em>, <em class="sig-param"><span class="pre">NameOfServer</span></em>, <em class="sig-param"><span class="pre">OwnerID</span></em>, <em class="sig-param"><span class="pre">EggID</span></em>, <em class="sig-param"><span class="pre">DockerImage</span></em>, <em class="sig-param"><span class="pre">StartupCmd</span></em>, <em class="sig-param"><span class="pre">RAM</span></em>, <em class="sig-param"><span class="pre">Swap</span></em>, <em class="sig-param"><span class="pre">Disk</span></em>, <em class="sig-param"><span class="pre">IO</span></em>, <em class="sig-param"><span class="pre">CPU</span></em>, <em class="sig-param"><span class="pre">AmountOfDatabases</span></em>, <em class="sig-param"><span class="pre">AmountOfBackups</span></em>, <em class="sig-param"><span class="pre">AmountOfAllocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.createServer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deprecated.</p>
+</div>
+<p>Creates a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
 <dd class="field-odd"><ul class="simple">
@@ -275,9 +279,13 @@
 <h3>createSimpleServer()<a class="headerlink" href="#createsimpleserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.createSimpleServer">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">createSimpleServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">OwnerID</span></em>, <em class="sig-param"><span class="pre">EggID</span></em>, <em class="sig-param"><span class="pre">RAM</span></em>, <em class="sig-param"><span class="pre">Disk</span></em>, <em class="sig-param"><span class="pre">CPU</span></em>, <em class="sig-param"><span class="pre">AmountOfDatabases</span></em>, <em class="sig-param"><span class="pre">AmountOfBackups</span></em>, <em class="sig-param"><span class="pre">AmountOfAllocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.createSimpleServer" title="Permalink to this definition">¶</a></dt>
-<dd><p>Creates a server</p>
+<dt class="sig sig-object js" id="NodeactylApplication.createSimpleServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">createSimpleServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">OwnerID</span></em>, <em class="sig-param"><span class="pre">EggID</span></em>, <em class="sig-param"><span class="pre">RAM</span></em>, <em class="sig-param"><span class="pre">Disk</span></em>, <em class="sig-param"><span class="pre">CPU</span></em>, <em class="sig-param"><span class="pre">AmountOfDatabases</span></em>, <em class="sig-param"><span class="pre">AmountOfBackups</span></em>, <em class="sig-param"><span class="pre">AmountOfAllocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.createSimpleServer" title="Permalink to this definition">¶</a></dt>
+<dd><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Deprecated.</p>
+</div>
+<p>Creates a server</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
 <dd class="field-odd"><ul class="simple">
@@ -306,8 +314,8 @@
 <h3>updateUserDetails()<a class="headerlink" href="#updateuserdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.updateUserDetails">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">updateUserDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">userId</span></em>, <em class="sig-param"><span class="pre">Email</span></em>, <em class="sig-param"><span class="pre">Username</span></em>, <em class="sig-param"><span class="pre">FirstName</span></em>, <em class="sig-param"><span class="pre">LastName</span></em>, <em class="sig-param"><span class="pre">Language</span></em>, <em class="sig-param"><span class="pre">Password</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.updateUserDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.updateUserDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">updateUserDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">userId</span></em>, <em class="sig-param"><span class="pre">Email</span></em>, <em class="sig-param"><span class="pre">Username</span></em>, <em class="sig-param"><span class="pre">FirstName</span></em>, <em class="sig-param"><span class="pre">LastName</span></em>, <em class="sig-param"><span class="pre">Language</span></em>, <em class="sig-param"><span class="pre">Password</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.updateUserDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>UpdateUserDetails
 By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
 <dl class="field-list simple">
@@ -334,8 +342,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>updateServerDetails()<a class="headerlink" href="#updateserverdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.updateServerDetails">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">updateServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">Name</span></em>, <em class="sig-param"><span class="pre">userId</span></em>, <em class="sig-param"><span class="pre">externalId</span></em>, <em class="sig-param"><span class="pre">Description</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.updateServerDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.updateServerDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">updateServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">Name</span></em>, <em class="sig-param"><span class="pre">userId</span></em>, <em class="sig-param"><span class="pre">externalId</span></em>, <em class="sig-param"><span class="pre">Description</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.updateServerDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>UpdateServerDetails
 By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
 <dl class="field-list simple">
@@ -360,8 +368,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>updateServerBuild()<a class="headerlink" href="#updateserverbuild" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.updateServerBuild">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">updateServerBuild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">AllocationID</span></em>, <em class="sig-param"><span class="pre">RAM</span></em>, <em class="sig-param"><span class="pre">Swap</span></em>, <em class="sig-param"><span class="pre">IO</span></em>, <em class="sig-param"><span class="pre">CPU</span></em>, <em class="sig-param"><span class="pre">Disk</span></em>, <em class="sig-param"><span class="pre">Threads</span></em>, <em class="sig-param"><span class="pre">AmountOfDatabases</span></em>, <em class="sig-param"><span class="pre">AmountOfBackups</span></em>, <em class="sig-param"><span class="pre">AmountOfAllocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.updateServerBuild" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.updateServerBuild">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">updateServerBuild</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">AllocationID</span></em>, <em class="sig-param"><span class="pre">RAM</span></em>, <em class="sig-param"><span class="pre">Swap</span></em>, <em class="sig-param"><span class="pre">IO</span></em>, <em class="sig-param"><span class="pre">CPU</span></em>, <em class="sig-param"><span class="pre">Disk</span></em>, <em class="sig-param"><span class="pre">Threads</span></em>, <em class="sig-param"><span class="pre">AmountOfDatabases</span></em>, <em class="sig-param"><span class="pre">AmountOfBackups</span></em>, <em class="sig-param"><span class="pre">AmountOfAllocations</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.updateServerBuild" title="Permalink to this definition">¶</a></dt>
 <dd><p>UpdateServerBuild
 By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
 <dl class="field-list simple">
@@ -392,8 +400,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>updateServerStartup()<a class="headerlink" href="#updateserverstartup" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.updateServerStartup">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">updateServerStartup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">StartupCmd</span></em>, <em class="sig-param"><span class="pre">Environment</span></em>, <em class="sig-param"><span class="pre">Egg</span></em>, <em class="sig-param"><span class="pre">DockerImage</span></em>, <em class="sig-param"><span class="pre">SkipScripts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.updateServerStartup" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.updateServerStartup">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">updateServerStartup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em>, <em class="sig-param"><span class="pre">StartupCmd</span></em>, <em class="sig-param"><span class="pre">Environment</span></em>, <em class="sig-param"><span class="pre">Egg</span></em>, <em class="sig-param"><span class="pre">DockerImage</span></em>, <em class="sig-param"><span class="pre">SkipScripts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.updateServerStartup" title="Permalink to this definition">¶</a></dt>
 <dd><p>UpdateServerStartup</p>
 <p>This update the startup details for a specified server</p>
 <dl class="field-list simple">
@@ -419,8 +427,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>suspendServer()<a class="headerlink" href="#suspendserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.suspendServer">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">suspendServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.suspendServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.suspendServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">suspendServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.suspendServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Suspend a server if the host and api key have permission
 By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
 <dl class="field-list simple">
@@ -441,8 +449,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>unsuspendServer()<a class="headerlink" href="#unsuspendserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.unsuspendServer">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">unsuspendServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.unsuspendServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.unsuspendServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">unsuspendServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.unsuspendServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Unsuspend a server if the host and api key have permission
 By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
 <dl class="field-list simple">
@@ -463,8 +471,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>reinstallServer()<a class="headerlink" href="#reinstallserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.reinstallServer">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">reinstallServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.reinstallServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.reinstallServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">reinstallServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.reinstallServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reinstall a server if the host and api key have permission
 By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”</p>
 <dl class="field-list simple">
@@ -488,8 +496,8 @@ By default Pterodactyl API returns a empty string on success (“”), i altered
 <h3>deleteServer()<a class="headerlink" href="#deleteserver" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.deleteServer">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">deleteServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.deleteServer" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.deleteServer">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">deleteServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.deleteServer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a specified server</p>
 <p>By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”
 However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
@@ -508,8 +516,8 @@ the provided API key was non existing.</p>
 <h3>deleteUser()<a class="headerlink" href="#deleteuser" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.deleteUser">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">deleteUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">userId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.deleteUser" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.deleteUser">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">deleteUser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">userId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.deleteUser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Deletes a specified user</p>
 <p>By default Pterodactyl API returns a empty string on success (“”), i altered the response to make it a boolean value of “true”
 However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
@@ -531,8 +539,8 @@ the provided API key was non existing.</p>
 <h3>getAllUsers()<a class="headerlink" href="#getallusers" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getAllUsers">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getAllUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getAllUsers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getAllUsers">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getAllUsers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">Page</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getAllUsers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a list of users from your panel</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -552,8 +560,8 @@ the provided API key was non existing.</p>
 <h3>getAllServers()<a class="headerlink" href="#getallservers" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getAllServers">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getAllServers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Application.getAllServers" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getAllServers">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getAllServers</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getAllServers" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -568,8 +576,8 @@ the provided API key was non existing.</p>
 <h3>getUserDetails()<a class="headerlink" href="#getuserdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getUserDetails">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getUserDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">userId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getUserDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getUserDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getUserDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">userId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getUserDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets details of a user</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -589,8 +597,8 @@ the provided API key was non existing.</p>
 <h3>getServerDetails()<a class="headerlink" href="#getserverdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getServerDetails">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getServerDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getServerDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getServerDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">serverId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getServerDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a info of a server from your panel</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -610,8 +618,8 @@ the provided API key was non existing.</p>
 <h3>getUserByUsername()<a class="headerlink" href="#getuserbyusername" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getUserByUsername">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getUserByUsername</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">username</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getUserByUsername" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getUserByUsername">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getUserByUsername</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">username</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getUserByUsername" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets details of a user by username</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -631,8 +639,8 @@ the provided API key was non existing.</p>
 <h3>getUserByEmail()<a class="headerlink" href="#getuserbyemail" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getUserByEmail">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getUserByEmail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">email</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getUserByEmail" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getUserByEmail">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getUserByEmail</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">email</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getUserByEmail" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets details of a user</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
@@ -652,8 +660,8 @@ the provided API key was non existing.</p>
 <h3>getUserPage()<a class="headerlink" href="#getuserpage" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getUserPage">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getUserPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getUserPage" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getUserPage">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getUserPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getUserPage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets users by a specified page number</p>
 <p>This will return an empty array if the specified page was invalid.</p>
 <dl class="field-list simple">
@@ -669,8 +677,8 @@ the provided API key was non existing.</p>
 <h3>getServerPage()<a class="headerlink" href="#getserverpage" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getServerPage">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getServerPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getServerPage" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getServerPage">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getServerPage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">pageNum</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getServerPage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets servers by a specified page number</p>
 <p>This will return an empty array if the specified page was invalid.</p>
 <dl class="field-list simple">
@@ -691,8 +699,8 @@ the provided API key was non existing.</p>
 <h3>getNestDetails()<a class="headerlink" href="#getnestdetails" title="Permalink to this headline">¶</a></h3>
 <blockquote>
 <div><dl class="js function">
-<dt class="sig sig-object js" id="Application.getNestDetails">
-<span class="sig-prename descclassname"><span class="pre">Application.</span></span><span class="sig-name descname"><span class="pre">getNestDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nestId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Application.getNestDetails" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object js" id="NodeactylApplication.getNestDetails">
+<span class="sig-prename descclassname"><span class="pre">NodeactylApplication.</span></span><span class="sig-name descname"><span class="pre">getNestDetails</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">nestId</span></em><span class="sig-paren">)</span><a class="headerlink" href="#NodeactylApplication.getNestDetails" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets details of a nest</p>
 <dl class="field-list simple">
 <dt class="field-odd">Arguments</dt>
