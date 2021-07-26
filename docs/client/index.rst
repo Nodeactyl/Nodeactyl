@@ -7,7 +7,7 @@ Client
    :caption: Contents:
 
 
-.. js:autoclass:: Client
+.. js:autoclass:: NodeactylClient
 
 
 Account

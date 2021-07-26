@@ -1,6 +1,6 @@
 const Methods = require("./methods/Methods.js");
 
-class Application {
+class NodeactylApplication {
 
     /**
      * Main class constructor
@@ -445,4 +445,4 @@ class Application {
 
 }
 
-module.exports = Application;
+module.exports = NodeactylApplication;

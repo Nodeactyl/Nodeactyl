@@ -7,7 +7,7 @@ Application
    :caption: Contents:
 
 
-.. js:autoclass:: Application
+.. js:autoclass:: NodeactylApplication
 
 
 Create
