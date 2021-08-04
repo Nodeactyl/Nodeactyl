@@ -41,7 +41,7 @@ class NodeactylApplication {
     /**
      * Gets a list of users from your panel
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      * @param {Integer} Page number
      */
     getAllUsers() {
@@ -55,7 +55,7 @@ class NodeactylApplication {
     /**
      * Gets details of a user
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      * @param {Integer} userId
      */
     getUserDetails(userId) {
@@ -69,7 +69,7 @@ class NodeactylApplication {
     /**
      * Gets details of a user by username
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      * @param {String} username
      */
     getUserByUsername(username) {
@@ -90,7 +90,7 @@ class NodeactylApplication {
     /**
      * Gets details of a user
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      * @param {String} email
      */
     getUserByEmail(email) {
@@ -114,7 +114,7 @@ class NodeactylApplication {
      * This will return an empty array if the specified page was invalid.
      *
      * @param pageNum
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getUserPage(pageNum) {
         return new Promise((res, rej) => {
@@ -131,7 +131,7 @@ class NodeactylApplication {
      * @param {String} Email Users email
      * @param {String} FirstName Users first name
      * @param {String} LastName Users last name
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     createUser(Email,Username,FirstName,LastName) {
         return new Promise((res, rej) => {
@@ -142,7 +142,7 @@ class NodeactylApplication {
     }
 
     /**
-     * UpdateUserDetails
+     * # UpdateUserDetails
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * @param {Integer} userId
@@ -152,7 +152,7 @@ class NodeactylApplication {
      * @param {String} LastName
      * @param {String} Language
      * @param {String} Password
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     updateUserDetails(userId, Email, Username, FirstName, LastName, Language, Password) {
         return new Promise((res, rej) => {
@@ -180,7 +180,7 @@ class NodeactylApplication {
      * @param {Integer} AmountOfDatabases The max amount of databases a server can use
      * @param {Integer} AmountOfBackups The max backups you can hold
      * @param {Integer} AmountOfAllocations The max amount of allocation(s) a server can us
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     createServer(Version, NameOfServer, OwnerID, EggID, DockerImage,
                StartupCmd, RAM, Swap, Disk, IO, CPU,
@@ -198,7 +198,7 @@ class NodeactylApplication {
     /**
      * Creates a server using a raw JSON object
      * @param object
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     createRawServer(object) {
         return new Promise((res, rej) => {
@@ -220,7 +220,7 @@ class NodeactylApplication {
      * @param {Integer} AmountOfDatabases The max amount of databases a server can use
      * @param {Integer} AmountOfBackups The max backups you can hold
      * @param {Integer} AmountOfAllocations The max amount of allocation(s) a server can us
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     createSimpleServer(OwnerID, EggID, RAM, Disk, CPU, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
         console.log("\x1b[31m" + "createSimpleServer() is deprecated, please use createRawServer() or use the ServerBuilder!")
@@ -238,7 +238,7 @@ class NodeactylApplication {
     /**
      * Gets a list of servers from your panel, currently this only get the first page but i will add support for grabbing ALL pages with this methods
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getAllServers() {
         return new Promise((res, rej) => {
@@ -254,7 +254,7 @@ class NodeactylApplication {
      * This will return an empty array if the specified page was invalid.
      *
      * @param {Integer} pageNum
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getServerPage(pageNum) {
         return new Promise((res, rej) => {
@@ -268,7 +268,7 @@ class NodeactylApplication {
      * Gets a info of a server from your panel
      *
      * @param {Integer} serverId
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getServerDetails(serverId) {
         return new Promise((res, rej) => {
@@ -288,7 +288,7 @@ class NodeactylApplication {
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param userId
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     deleteUser(userId) {
         return new Promise((res, rej) => {
@@ -303,7 +303,7 @@ class NodeactylApplication {
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * @param {Integer} serverId
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     suspendServer(serverId) {
         return new Promise((res, rej) => {
@@ -318,7 +318,7 @@ class NodeactylApplication {
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * @param {Integer} serverId
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     unsuspendServer(serverId) {
         return new Promise((res, rej) => {
@@ -333,7 +333,7 @@ class NodeactylApplication {
      * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
      *
      * @param {Integer} serverId
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     reinstallServer(serverId) {
         return new Promise((res, rej) => {
@@ -352,7 +352,7 @@ class NodeactylApplication {
      * @param {Integer} userId
      * @param {Integer} externalId
      * @param {String} Description
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     updateServerDetails(serverId, Name, userId, externalId, Description) {
         return new Promise((res, rej) => {
@@ -377,7 +377,7 @@ class NodeactylApplication {
      * @param {Integer} AmountOfDatabases
      * @param {Integer} AmountOfBackups
      * @param {Integer} AmountOfAllocations
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     updateServerBuild(serverId, AllocationID, RAM, Swap, IO, CPU, Disk, Threads, AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
         return new Promise((res, rej) => {
@@ -398,7 +398,7 @@ class NodeactylApplication {
      * @param Egg Egg ID for this serer to use
      * @param DockerImage Docker Image for this serer
      * @param SkipScripts Do you want to skip scripts? (have no idea what this is)
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     updateServerStartup(serverId, StartupCmd, Environment, Egg, DockerImage, SkipScripts) {
         return new Promise((res, rej) => {
@@ -418,7 +418,7 @@ class NodeactylApplication {
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
      * @param serverId
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     deleteServer(serverId) {
         return new Promise((res, rej) => {
@@ -431,7 +431,7 @@ class NodeactylApplication {
     /**
      * Gets details of a nest
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      * @param {Integer} nestId
      */
     getNestDetails(nestId) {

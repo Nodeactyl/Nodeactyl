@@ -43,7 +43,7 @@ class NodeactylClient {
      *
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
-     * @returns {Promise<Object>}
+     * @returns {Promise}
      */
     getAccountDetails() {
         return new Promise((res, rej) => {
@@ -58,7 +58,7 @@ class NodeactylClient {
      *
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getAccountPermissions() {
         return new Promise((res, rej) => {
@@ -72,7 +72,7 @@ class NodeactylClient {
      * Gets a Server's information NOTE: This does not return any live resource usages such as CPU, memory or RAM, but it will show the max limits of these values
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getServerDetails(serverId) {
         return new Promise((res, rej) => {
@@ -86,7 +86,7 @@ class NodeactylClient {
      * Gets a server's status, so whether it is running, starting or powered off
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
      getServerStatus(serverId) {
         return new Promise((res, rej) => {
@@ -99,7 +99,7 @@ class NodeactylClient {
     /**
      * Gets a list of servers from your panel, currently this only get the first page
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getAllServers() {
         return new Promise((res, rej) => {
@@ -113,7 +113,7 @@ class NodeactylClient {
      * Gets a server by a specified page number
      *
      * @param {Integer} pageNum Page number
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getServerPage(pageNum) {
         return new Promise((res, rej) => {
@@ -127,7 +127,7 @@ class NodeactylClient {
      * Starts a server
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     startServer(serverId) {
         return new Promise((res, rej) => {
@@ -141,7 +141,7 @@ class NodeactylClient {
      * Stops a server
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     stopServer(serverId) {
         return new Promise((res, rej) => {
@@ -155,7 +155,7 @@ class NodeactylClient {
      * Restarts a server
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     restartServer(serverId) {
         return new Promise((res, rej) => {
@@ -169,7 +169,7 @@ class NodeactylClient {
      * Kills a server
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     killServer(serverId) {
         return new Promise((res, rej) => {
@@ -184,7 +184,7 @@ class NodeactylClient {
      *
      * @param {String} serverId Server Id
      * @param {String} command Server Command
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     sendServerCommand(serverId, command) {
         return new Promise((res, rej) => {
@@ -198,7 +198,7 @@ class NodeactylClient {
      * Gets a servers current memory/cpu/disk usages as bytes
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getServerUsages(serverId) {
         return new Promise((res, rej) => {
@@ -214,7 +214,7 @@ class NodeactylClient {
      * (try socket.io)
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getConsoleWebSocket(serverId) {
         return new Promise((res, rej) => {
@@ -229,7 +229,7 @@ class NodeactylClient {
      *
      * @param {String} serverId Server Id
      * @param {String} newName New Name of Server
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     renameServer(serverId, newName) {
         return new Promise((res, rej) => {
@@ -243,7 +243,7 @@ class NodeactylClient {
      * ReInstalls a target server
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     reInstallServer(serverId) {
         return new Promise((res, rej) => {
@@ -257,7 +257,7 @@ class NodeactylClient {
      * Lists what backups a server has
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Array>}
+     * @returns {Promise}
      */
     listServerBackups(serverId) {
         return new Promise((res, rej) => {
@@ -273,7 +273,7 @@ class NodeactylClient {
      * This will send a error code 924 when trying to create 2 backups within a 10 minute time frame
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<Object>}
+     * @returns {Promise}
      */
     createServerBackup(serverId) {
         return new Promise((res, rej) => {
@@ -288,7 +288,7 @@ class NodeactylClient {
      *
      * @param {String} serverId Server Id
      * @param {Integer} backupId Backup Id
-     * @returns {Promise<Object>}
+     * @returns {Promise}
      */
     getBackupDetails(serverId, backupId) {
         return new Promise((res, rej) => {
@@ -303,7 +303,7 @@ class NodeactylClient {
      *
      * @param {String} serverId Server Id
      * @param {Integer} backupId Backup Id
-     * @returns {Promise<Object>}
+     * @returns {Promise}
      */
     getBackupDownload(serverId, backupId) {
         return new Promise((res, rej) => {
@@ -318,7 +318,7 @@ class NodeactylClient {
      *
      * @param {String} serverId Server Id
      * @param {Integer} backupId Backup Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     deleteBackup(serverId, backupId) {
         return new Promise((res, rej) => {
@@ -332,7 +332,7 @@ class NodeactylClient {
      * Get subusers of a server
      *
      * @param {String} serverId Server Id
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getSubUsers(serverId) {
         return new Promise((res, rej) => {
@@ -348,7 +348,7 @@ class NodeactylClient {
      * @param {String} serverId Server Id
      * @param {String} email Email
      * @param {Array} permissions Array of Permissions
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     createSubUser(serverId, email, permissions) {
         return new Promise((res, rej) => {
@@ -363,7 +363,7 @@ class NodeactylClient {
      *
      * MUST USE ClientAPI Key!!! Application API Keys NO LONGER WORK with ANY Pterodactyl version 1 and above!
      *
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     getApiKeys() {
         return new Promise((res, rej) => {
@@ -380,7 +380,7 @@ class NodeactylClient {
      *
      * @param {String} description
      * @param {Array} allowedIps
-     * @returns {Promise<unknown>}
+     * @returns {Promise}
      */
     createApiKey(description, allowedIps) {
         if (allowedIps === undefined) allowedIps = [];
@@ -395,7 +395,7 @@ class NodeactylClient {
      * Deletes a specified API key. Only use the API key identifier provided to you on the panel
      *
      * @param {Integer} keyId Key Id
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     deleteApiKey(keyId) {
         return new Promise((res, rej) => {
@@ -410,7 +410,7 @@ class NodeactylClient {
      *
      * @param {String} newEmail New Email
      * @param {String} currentPassword Current Password
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      */
     updateEmail(newEmail, currentPassword) {
         return new Promise((res, rej) => {
@@ -423,7 +423,7 @@ class NodeactylClient {
     /**
      * Updates the password for the specified host and api key
      *
-     * @returns {Promise<Boolean>}
+     * @returns {Promise}
      * @param {String} newPassword New Password
      * @param {String} currentPassword Current Password
      */

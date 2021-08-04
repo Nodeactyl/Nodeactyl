@@ -1,0 +1,19 @@
+{
+  "name": "NodeactylDocs",
+  "version": "0.0.1",
+  "main": "index.js",
+  "authors": {
+    "name": "Jelly#6161",
+    "email": "Jellybob2016@outlook.com"
+  },
+  "repository": "https://github.com/Nodeactyl/Nodeactyl/Nodeactyl",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-autodoc": "^0.1.7"
+  }
+}

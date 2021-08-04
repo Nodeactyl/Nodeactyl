@@ -335,7 +335,7 @@ class ServerBuilder {
 
     /**
      * Returns the servers JSON object
-     * @returns {*|{allocation: {default: number, additional: []}, egg: number, start_on_completion: boolean, oom_disabled: boolean, deploy: {dedicated_ip: boolean, port_range: [], locations: [number]}, environment: {DL_VERSION: string, STARTUP_CMD: string, BUILD_NUMBER: string, INSTALL_REPO: string, MINECRAFT_VERSION: string, VANILLA_VERSION: string, SERVER_JARFILE: string, SECOND_CMD: string, BUNGEE_VERSION: string, MC_VERSION: string}, startup: string, feature_limits: {databases: number, allocations: number, backups: number}, name: string, user: null, limits: {disk: number, memory: number, swap: number, io: number, cpu: number}, docker_image: string, skip_scripts: boolean}}
+     * @returns {Promise}
      */
     getServerObject() {
         return this.object;
