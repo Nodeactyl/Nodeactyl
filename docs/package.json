@@ -8,8 +8,8 @@
   },
   "repository": "https://github.com/Nodeactyl/Nodeactyl/Nodeactyl",
   "scripts": {
-    "docs:dev": "vuepress dev src",
-    "docs:build": "vuepress build src"
+    "docs:dev": "vuepress dev",
+    "docs:build": "vuepress build"
   },
   "license": "MIT",
   "devDependencies": {

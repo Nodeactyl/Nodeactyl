@@ -1,0 +1,29 @@
+export const data = {
+  "key": "v-d05f044c",
+  "path": "/api/server-builder.html",
+  "title": "Server Builder",
+  "lang": "en-US",
+  "frontmatter": {
+    "lang": "en-US"
+  },
+  "excerpt": "",
+  "headers": [],
+  "filePathRelative": "api/server-builder.md",
+  "git": {
+    "updatedTime": null,
+    "contributors": []
+  }
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
+}
