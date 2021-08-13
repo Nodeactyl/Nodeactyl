@@ -12,6 +12,6 @@
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
-    "vuepress": "^1.8.2"
+    "vuepress@next": "^"
   }
 }
