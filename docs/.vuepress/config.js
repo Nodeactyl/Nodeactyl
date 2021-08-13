@@ -2,6 +2,7 @@ const { description } = require('../../package')
 
 module.exports = {
   lang: 'en-GB', // this will be set as the lang attribute on <html>
+  base: '/Nodeactyl/',
   title: 'Nodeactyl Docs',
   description: 'API Wrapper built for the pterodactyl panel',
   themeConfig: {
