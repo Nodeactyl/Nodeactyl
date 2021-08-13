@@ -6,7 +6,7 @@
     "name": "Jelly#6161",
     "email": "Jellybob2016@outlook.com"
   },
-  "repository": "https://github.com/Nodeactyl/Nodeactyl/Nodeactyl",
+  "repository": "https://github.com/Nodeactyl/Nodeactyl/",
   "scripts": {
     "docs:dev": "vuepress dev",
     "docs:build": "vuepress build"
