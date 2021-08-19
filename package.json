@@ -3,14 +3,11 @@
   "version": "3.1.0",
   "private": false,
   "scripts": {
-    "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "main": "src/Nodeactyl.js",
   "dependencies": {
     "axios": "^0.21.1"
-  },
-  "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.8.2"
   }
 }
