@@ -3,8 +3,8 @@
   "version": "3.1.0",
   "private": false,
   "scripts": {
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:dev": "vuepress dev",
+    "docs:build": "vuepress build"
   },
   "main": "src/Nodeactyl.js",
   "dependencies": {
