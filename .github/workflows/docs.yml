@@ -23,14 +23,11 @@ jobs:
           # choose node.js version to use
           node-version: '14'
 
-      # install dependencies
-      - name: Install dependencies
-        run: npm i docs
-
       # run build script
-      - name: Build VuePress site
+      - name: Install dependencies and Build VuePress site
         run: |
           cd docs
+          npm install
           npm run docs:build
 
       # please check out the docs of the workflow for more details
