@@ -66,5 +66,5 @@ typings/
 
 .idea/
 docs/_build/*
-.vuepress/.cache/
-.vuepress/.temp/
+.vuepress/.cache/*
+.vuepress/.temp/*

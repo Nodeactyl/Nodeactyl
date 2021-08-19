@@ -5,6 +5,7 @@ module.exports = {
   base: '/Nodeactyl/',
   title: 'Nodeactyl Docs',
   description: 'API Wrapper built for the pterodactyl panel',
+  dest: '.vuepress/dist',
   themeConfig: {
     repo: 'https://github.com/Nodeactyl/Nodeactyl',
     editLinks: false,
