@@ -10,12 +10,12 @@ export const data = {
   "headers": [],
   "filePathRelative": "api/application.md",
   "git": {
-    "updatedTime": 1628070978000,
+    "updatedTime": 1629382985000,
     "contributors": [
       {
         "name": "Jelly",
         "email": "Jellybob2016@outlook.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   }

@@ -6,3 +6,5 @@ lang: en-US
 
 /autodoc ../src/application/Application.js
 
+/class Test
+
