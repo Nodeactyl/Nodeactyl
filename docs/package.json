@@ -8,11 +8,11 @@
   },
   "repository": "https://github.com/Nodeactyl/Nodeactyl/",
   "scripts": {
-    "docs:dev": "vuepress dev",
-    "docs:build": "vuepress build"
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "vuepress": "^2.0.0-beta.23",
     "vuepress-plugin-autodoc": "^0.1.7"
   }
