@@ -29,20 +29,13 @@ export const data = {
   "headers": [],
   "filePathRelative": "index.md",
   "git": {
-    "updatedTime": null,
-    "contributors": []
+    "updatedTime": 1628070978000,
+    "contributors": [
+      {
+        "name": "Jelly",
+        "email": "Jellybob2016@outlook.com",
+        "commits": 1
+      }
+    ]
   }
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

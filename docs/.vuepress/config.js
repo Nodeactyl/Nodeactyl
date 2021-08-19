@@ -56,7 +56,6 @@ module.exports = {
    * Apply plugins，ref：https://v1.vuepress.vuejs.org/zh/plugin/
    */
   plugins: [
-    'autodoc',
-    '@vuepress/last-updated'
+    'autodoc'
   ]
 }
