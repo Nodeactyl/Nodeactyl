@@ -8,6 +8,9 @@ module.exports = {
     GET_ALL_SERVERS: "APPLICATION_GET_ALL_SERVERS",
     GET_SERVER_INFO_META: "APPLICATION_GET_SERVER_INFO",
 
+    GET_ALL_NODES: "APPLICATION_GET_ALL_NODES",
+    GET_NODES_INFO_META: "APPLICATION_GET_NODES_INFO",
+
     CREATE_SERVER_META: "APPLICATION_CREATE_SERVER",
     CREATE_SERVER: "APPLICATION_CREATE_SERVER",
 
@@ -48,6 +51,12 @@ module.exports = {
      */
     GET_SERVER_PAGE(pageNum) {
         return `APPLICATION_GET_ALL_SERVERS:${pageNum}`;
+    },
+    /**
+     * @return {string}
+     */
+    GET_NODES_INFO(NodeID) {
+        return `APPLICATION_GET_NODES_INFO:${NodeID}`;
     },
     /**
      * @return {string}
@@ -105,6 +114,5 @@ module.exports = {
         return `APPLICATION_GET_NEST_INFO:${nestId}`
     },
     GET_NEST_INFO_META: "APPLICATION_GET_NEST_INFO",
-
 
 };

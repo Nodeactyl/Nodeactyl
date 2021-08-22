@@ -105,7 +105,14 @@ exports.getServers = (host, key,) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_ALL_SERVERS);
 };
-
+exports.getAllNodes = (host, key,) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_ALL_NODES);
+};
+exports.getNodeInfo = (host, key, NodeID) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_NODES_INFO(NodeID))
+}
 exports.getServerPage = (host, key, page) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_SERVER_PAGE(page));

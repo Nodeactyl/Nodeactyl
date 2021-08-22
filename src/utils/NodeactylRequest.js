@@ -130,7 +130,9 @@ class NodeactylRequest {
             case ApplicationRequest.GET_ALL_USERS: {
                 return `api/application/users?page=1`
             }
-
+            case ApplicationRequest.GET_ALL_NODES: {
+                return `api/application/nodes`
+            }
         }
 
         let str = this.endpoint.split(":");
@@ -272,6 +274,13 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.UPDATE_SERVER_STARTUP_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_SERVER_STARUP (contact a developer)");
             return `api/application/servers/${str[1]}/startup`;
+        } else if (request === ApplicationRequest.GET_ALL_NODES) {
+            return `api/application/nodes`;
+
+        } else if (request === ApplicationRequest.GET_NODES_INFO_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_NODES_INFO_META (contact a developer)");
+            return `api/application/nodes/${str[1]}`;
+
         }
 
     }

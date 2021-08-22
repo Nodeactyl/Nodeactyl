@@ -248,6 +248,13 @@ class NodeactylApplication {
         })
     }
 
+    getAllNodes() {
+        return new Promise((res, rej) => {
+            Methods.getAllNodes(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
     /**
      * Gets servers by a specified page number
      *
@@ -264,6 +271,13 @@ class NodeactylApplication {
         });
     }
 
+    getNodeInfo(NodeID) {
+        return new Promise((res, rej) => {
+            Methods.getNodeInfo(this.hostUrl, this.apiKey, NodeID).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
     /**
      * Gets a info of a server from your panel
      *
