@@ -122,8 +122,8 @@ class NodeactylApplication {
     /**
      * Creates a user
      *
-     * @param {String} Username Users username
      * @param {String} Email Users email
+     * @param {String} Username Users username
      * @param {String} FirstName Users first name
      * @param {String} LastName Users last name
      * @returns {Promise}
