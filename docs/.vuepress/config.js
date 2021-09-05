@@ -1,6 +1,6 @@
 module.exports = {
   lang: 'en-GB',
-  base: '/Nodeactyl/',
+  base: '/',
   title: 'Nodeactyl Docs',
   description: 'API Wrapper built for the pterodactyl panel',
   dest: '.vuepress/dist',
