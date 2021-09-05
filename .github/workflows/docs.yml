@@ -39,6 +39,7 @@ jobs:
           target_branch: docs
           # deploy the default output dir of VuePress
           build_dir: docs/.vuepress/dist
+          fqdn: docs.nodeactyl.dev
         env:
           # @see https://docs.github.com/en/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
