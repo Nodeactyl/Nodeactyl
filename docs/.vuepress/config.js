@@ -9,7 +9,9 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
   ],
-
+  markdown: {
+    lineNumbers: true
+  },
   themeConfig: {
     repo: 'https://github.com/Nodeactyl/Nodeactyl',
     editLinks: false,
@@ -36,8 +38,8 @@ module.exports = {
           title: 'API Reference',
           collapsable: false,
           children: [
-            'application',
             'client',
+            'application',
             'server-builder'
           ]
         },
@@ -48,8 +50,6 @@ module.exports = {
           collapsable: false,
           children: [
             'quick-start',
-            'using-application',
-            'using-client',
             'creating-servers'
           ]
         },

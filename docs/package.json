@@ -7,7 +7,7 @@
     "name": "Jelly#6161",
     "email": ""
   },
-  "repository": "https://github.com/Nodeactyl/Nodeactyl//Nodeactyl Docs",
+  "repository": "https://github.com/Nodeactyl/Nodeactyl/",
   "scripts": {
     "docs:dev": "vuepress dev",
     "docs:build": "vuepress build"
@@ -16,6 +16,8 @@
   "devDependencies": {
     "vuepress": "^1.5.3",
     "vuepress-plugin-autodoc": "^0.1.7",
-    "@vuepress/plugin-search": ""
+    "@vuepress/plugin-search": "^1.8.2",
+    "@vuepress/plugin-back-to-top": "^1.8.2",
+    "@vuepress/plugin-medium-zoom": "^1.8.2"
   }
 }
