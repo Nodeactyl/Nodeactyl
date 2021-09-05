@@ -19,11 +19,6 @@ class NodeactylClient {
         return err;
     }
 
-    /**
-     * When errors get thrown from pterodactyl, sometimes they have the error code at the very end of the error message. This method basically tries to retrive thos
-     * @param err
-     * @returns {number}
-     */
     getErrorCode(err) {
         err = err.message;
         let str1 = err.charAt(err.length - 1);

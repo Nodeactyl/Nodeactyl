@@ -4,4 +4,4 @@ lang: en-US
 
 # Application
 
-/autodoc ../src/application/Application.js
+/autodoc ../src/application/Application.js NodeactylApplication

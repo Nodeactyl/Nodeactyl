@@ -1,19 +1,21 @@
 {
   "name": "NodeactylDocs",
   "version": "0.0.1",
+  "description": "",
   "main": "index.js",
   "authors": {
     "name": "Jelly#6161",
-    "email": "Jellybob2016@outlook.com"
+    "email": ""
   },
-  "repository": "https://github.com/Nodeactyl/Nodeactyl/",
-  "license": "MIT",
+  "repository": "https://github.com/Nodeactyl/Nodeactyl//Nodeactyl Docs",
   "scripts": {
     "docs:dev": "vuepress dev",
     "docs:build": "vuepress build"
   },
+  "license": "MIT",
   "devDependencies": {
-    "vuepress": "2.0.0-beta.23",
-    "vuepress-plugin-autodoc": "^0.1.7"
+    "vuepress": "^1.5.3",
+    "vuepress-plugin-autodoc": "^0.1.7",
+    "@vuepress/plugin-search": ""
   }
 }

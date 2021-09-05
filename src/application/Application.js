@@ -19,11 +19,6 @@ class NodeactylApplication {
         return err;
     }
 
-    /**
-     * When errors get thrown from pterodactyl, sometimes they have the error code at the very end of the error message. This method basically tries to retrive thos
-     * @param err
-     * @returns {number}
-     */
     getErrorCode(err) {
         err = err.message;
         let str1 = err.charAt(err.length - 1);
@@ -142,8 +137,7 @@ class NodeactylApplication {
     }
 
     /**
-     * # UpdateUserDetails
-     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * Updates a users details
      *
      * @param {Integer} userId
      * @param {String} Email
@@ -163,7 +157,7 @@ class NodeactylApplication {
     }
 
     /**
-     * Creates a server
+     * Creates a server !! DEPRECATED !!
      * @deprecated
      *
      * @param {String} Version Version of the server to use
