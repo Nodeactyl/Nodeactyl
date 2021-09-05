@@ -68,3 +68,4 @@ typings/
 docs/_build/*
 .vuepress/.cache/*
 .vuepress/.temp/*
+.vuepress/dist/*
