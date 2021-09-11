@@ -1,14 +1,7 @@
 <div align="center">
 
-<p>
-  <a>
-    <img href="" src="https://cdn.discordapp.com/attachments/754460402729091212/858820070418808842/image0.jpg" height="auto">
-  </a>
-</p>
-
 [![GitHub Issues](https://img.shields.io/github/issues/Burchard36/Nodeactyl.svg?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl/issues)
-[![Updated Badge](https://badges.pufler.dev/updated/Burchard36/Nodeactyl?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl/)
-[![Current Version](https://img.shields.io/badge/version-3.0.3-green.svg?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl)
+[![Current Version](https://img.shields.io/github/package-json/v/Nodeactyl/Nodeactyl?style=for-the-badge)](https://github.com/Burchard36/Nodeactyl)
 [![Support Server](https://img.shields.io/discord/560595384028758048.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/HvQ4JTqCvs)
 
 ---
