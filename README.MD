@@ -43,7 +43,9 @@ The full docs can be found [here](https://docs.nodeactyl.dev)
 
 Here are the people that make nodeactyl possible and keep the code working!
 
-![Contributors Display](https://badges.pufler.dev/contributors/Burchard36/Nodeactyl?size=50&padding=5&bots=true)
+<a href="https://github.com/nodeactyl/nodeactyl/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=nodeactyl/nodeactyl" />
+</a>
 
 Would you like to see your github profile pic here?
 
