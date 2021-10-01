@@ -494,6 +494,23 @@ class NodeactylApplication {
         })
     }
 
+    /**
+     * Updates the short or long location details
+     *
+     * @param {Integer} locationId
+     * @param {String} short Identifier for the location Ex: GB
+     * @param {String} long Descrption for the location Ex: London Datacenter
+     * @returns {Promise}
+     */
+    updateLocationDetails(locationId, short, long) {
+        return new Promise((res, rej) => {
+            Methods.updateLocationDetails(this.hostUrl, this.apiKey, locationId, short, long).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+
 }
 
 module.exports = NodeactylApplication;

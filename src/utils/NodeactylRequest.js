@@ -287,6 +287,10 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.CREATE_LOCATION_META) {
             return `api/application/locations`;
 
+        } else if (request === ApplicationRequest.UPDATE_LOCATION_DETAILS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_LOCATION_DETAILS (contact a developer)");
+            return `api/application/locations/${str[1]}`;
+
         }
 
     }

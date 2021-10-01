@@ -122,6 +122,12 @@ module.exports = {
     GET_LOCATION_INFO(locationId) {
         return `APPLICATION_GET_LOCATION_INFO:${locationId}`;
     },
-
+    /**
+     * @return {string}
+     */
+    UPDATE_LOCATION_DETAILS(locationId) {
+        return `APPLICATION_UPDATE_LOCATION_DETAILS:${locationId}`
+    },
+    UPDATE_LOCATION_DETAILS_META: "APPLICATION_UPDATE_LOCATION_DETAILS",
 
 };

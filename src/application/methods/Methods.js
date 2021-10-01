@@ -211,3 +211,12 @@ exports.createLocation = (host, key, short, long) => {
     let req = new NodeactylRequest(host, key);
     return req.executePost(ApplicationRequest.CREATE_LOCATION, data);
 };
+
+exports.updateLocationDetails = (host, key, locationId, short, long) => {
+    let data = {
+        'short': short,
+        'long': long,
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePatch(ApplicationRequest.UPDATE_LOCATION_DETAILS(locationId), data);
+};
