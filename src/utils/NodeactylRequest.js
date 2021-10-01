@@ -280,7 +280,11 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_LOCATIONS (contact a developer)");
             return `api/application/locations?page=${str[1]}`;
 
-        }
+          } else if (request === ApplicationRequest.GET_LOCATION_INFO_META) {
+              if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_LOCATION_INFO_META (contact a developer)");
+              return `api/application/locations/${str[1]}`;
+
+          }
 
     }
 

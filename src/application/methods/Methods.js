@@ -197,3 +197,8 @@ exports.getLocationPage = (host, key, page) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_LOCATION_PAGE(page));
 }
+
+exports.getLocationDetails = (host, key, locationId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_LOCATION_INFO(locationId));
+};

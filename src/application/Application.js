@@ -450,7 +450,7 @@ class NodeactylApplication {
     }
 
     /**
-     * Gets servers by a specified page number
+     * Gets locations by a specified page number
      *
      * This will return an empty array if the specified page was invalid.
      *
@@ -463,6 +463,20 @@ class NodeactylApplication {
                 return res(response.data.data);
             }).catch(err => rej(this.processError(err)));
         });
+    }
+
+    /**
+     * Gets a info of a location from your panel
+     *
+     * @param {Integer} locationId
+     * @returns {Promise}
+     */
+    getLocationDetails(locationId) {
+        return new Promise((res, rej) => {
+            Methods.getLocationDetails(this.hostUrl, this.apiKey, locationId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        })
     }
 
 }

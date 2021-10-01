@@ -12,6 +12,7 @@ module.exports = {
     CREATE_SERVER: "APPLICATION_CREATE_SERVER",
 
     GET_ALL_LOCATIONS: "APPLICATION_GET_ALL_LOCATIONS",
+    GET_LOCATION_INFO_META: "APPLICATION_GET_LOCATION_INFO",
 
     /**
      * @return {string}
@@ -112,6 +113,12 @@ module.exports = {
      */
     GET_LOCATION_PAGE(pageNum) {
         return `APPLICATION_GET_ALL_LOCATIONS:${pageNum}`
+    },
+    /**
+     * @return {string}
+     */
+    GET_LOCATION_INFO(locationId) {
+        return `APPLICATION_GET_LOCATION_INFO:${locationId}`;
     },
 
 
