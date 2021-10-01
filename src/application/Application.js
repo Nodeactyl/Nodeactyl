@@ -510,6 +510,24 @@ class NodeactylApplication {
         });
     }
 
+    /**
+     * Deletes a specified location
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param locationId
+     * @returns {Promise}
+     */
+    deleteLocation(locationId) {
+        return new Promise((res, rej) => {
+            Methods.deleteLocation(this.hostUrl, this.apiKey, locationId).then(() => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
 
 }
 

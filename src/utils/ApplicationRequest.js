@@ -129,5 +129,11 @@ module.exports = {
         return `APPLICATION_UPDATE_LOCATION_DETAILS:${locationId}`
     },
     UPDATE_LOCATION_DETAILS_META: "APPLICATION_UPDATE_LOCATION_DETAILS",
-
+    /**
+     * @return {string}
+     */
+    DELETE_LOCATION(locationId) {
+        return `APPLICATION_DELETE_LOCATION:${locationId}`
+    },
+    DELETE_LOCATION_META: "APPLICATION_DELETE_LOCATION",
 };

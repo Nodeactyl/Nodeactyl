@@ -220,3 +220,8 @@ exports.updateLocationDetails = (host, key, locationId, short, long) => {
     let req = new NodeactylRequest(host, key);
     return req.executePatch(ApplicationRequest.UPDATE_LOCATION_DETAILS(locationId), data);
 };
+
+exports.deleteLocation = (host, key, locationId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ApplicationRequest.DELETE_LOCATION(locationId));
+}
