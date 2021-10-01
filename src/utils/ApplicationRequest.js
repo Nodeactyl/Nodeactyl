@@ -11,6 +11,8 @@ module.exports = {
     CREATE_SERVER_META: "APPLICATION_CREATE_SERVER",
     CREATE_SERVER: "APPLICATION_CREATE_SERVER",
 
+    GET_ALL_LOCATIONS: "APPLICATION_GET_ALL_LOCATIONS",
+
     /**
      * @return {string}
      */
@@ -105,6 +107,12 @@ module.exports = {
         return `APPLICATION_GET_NEST_INFO:${nestId}`
     },
     GET_NEST_INFO_META: "APPLICATION_GET_NEST_INFO",
+    /**
+     * @return {string}
+     */
+    GET_LOCATION_PAGE(pageNum) {
+        return `APPLICATION_GET_ALL_LOCATIONS:${pageNum}`
+    },
 
 
 };

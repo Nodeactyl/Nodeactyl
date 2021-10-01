@@ -436,6 +436,34 @@ class NodeactylApplication {
         })
     }
 
+    /**
+     * Get all locations from your panel
+     *
+     * @returns {Promise}
+     */
+    getAllLocations() {
+        return new Promise((res, rej) => {
+            Methods.getLocations(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets servers by a specified page number
+     *
+     * This will return an empty array if the specified page was invalid.
+     *
+     * @param {Integer} pageNum
+     * @returns {Promise}
+     */
+    getLocationPage(pageNum) {
+        return new Promise((res, rej) => {
+            Methods.getLocationPage(this.hostUrl, this.apiKey, pageNum).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
 
 }
 
