@@ -187,3 +187,13 @@ exports.getNest = (host, key, nestId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_NEST_INFO(nestId));
 };
+
+exports.getLocations = (host, key,) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_ALL_LOCATIONS);
+};
+
+exports.getLocationPage = (host, key, page) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_LOCATION_PAGE(page));
+}
