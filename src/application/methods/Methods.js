@@ -202,3 +202,12 @@ exports.getLocationDetails = (host, key, locationId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_LOCATION_INFO(locationId));
 };
+
+exports.createLocation = (host, key, short, long) => {
+    let data = {
+        'short': short,
+        'long': long,
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_LOCATION, data);
+};

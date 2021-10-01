@@ -479,6 +479,21 @@ class NodeactylApplication {
         })
     }
 
+    /**
+     * Creates a new location
+     *
+     * @param {String} short Identifier for the location Ex: GB
+     * @param {String} long Descrption for the location Ex: London Datacenter
+     * @returns {Promise}
+     */
+    createLocation(short, long) {
+        return new Promise((res, rej) => {
+            Methods.createLocation(this.hostUrl, this.apiKey, short, long).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
 }
 
 module.exports = NodeactylApplication;
