@@ -131,6 +131,10 @@ class NodeactylRequest {
                 return `api/application/users?page=1`
             }
 
+            case ApplicationRequest.GET_ALL_LOCATIONS: {
+                return `api/application/locations?page=1`
+            }
+
         }
 
         let str = this.endpoint.split(":");
@@ -272,6 +276,25 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.UPDATE_SERVER_STARTUP_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_SERVER_STARUP (contact a developer)");
             return `api/application/servers/${str[1]}/startup`;
+        } else if (request === ApplicationRequest.GET_ALL_LOCATIONS) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_LOCATIONS (contact a developer)");
+            return `api/application/locations?page=${str[1]}`;
+
+        } else if (request === ApplicationRequest.GET_LOCATION_INFO_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_LOCATION_INFO_META (contact a developer)");
+            return `api/application/locations/${str[1]}`;
+
+        } else if (request === ApplicationRequest.CREATE_LOCATION_META) {
+            return `api/application/locations`;
+
+        } else if (request === ApplicationRequest.UPDATE_LOCATION_DETAILS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_LOCATION_DETAILS (contact a developer)");
+            return `api/application/locations/${str[1]}`;
+
+        } else if (request === ApplicationRequest.DELETE_LOCATION_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_LOCATION (contact a developer)");
+            return `api/application/locations/${str[1]}`;
+
         }
 
     }

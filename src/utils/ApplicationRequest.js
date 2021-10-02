@@ -11,6 +11,11 @@ module.exports = {
     CREATE_SERVER_META: "APPLICATION_CREATE_SERVER",
     CREATE_SERVER: "APPLICATION_CREATE_SERVER",
 
+    GET_ALL_LOCATIONS: "APPLICATION_GET_ALL_LOCATIONS",
+    GET_LOCATION_INFO_META: "APPLICATION_GET_LOCATION_INFO",
+    CREATE_LOCATION_META: "APPLICATION_CREATE_LOCATION",
+    CREATE_LOCATION: "APPLICATION_CREATE_LOCATION",
+
     /**
      * @return {string}
      */
@@ -105,6 +110,30 @@ module.exports = {
         return `APPLICATION_GET_NEST_INFO:${nestId}`
     },
     GET_NEST_INFO_META: "APPLICATION_GET_NEST_INFO",
-
-
+    /**
+     * @return {string}
+     */
+    GET_LOCATION_PAGE(pageNum) {
+        return `APPLICATION_GET_ALL_LOCATIONS:${pageNum}`
+    },
+    /**
+     * @return {string}
+     */
+    GET_LOCATION_INFO(locationId) {
+        return `APPLICATION_GET_LOCATION_INFO:${locationId}`;
+    },
+    /**
+     * @return {string}
+     */
+    UPDATE_LOCATION_DETAILS(locationId) {
+        return `APPLICATION_UPDATE_LOCATION_DETAILS:${locationId}`
+    },
+    UPDATE_LOCATION_DETAILS_META: "APPLICATION_UPDATE_LOCATION_DETAILS",
+    /**
+     * @return {string}
+     */
+    DELETE_LOCATION(locationId) {
+        return `APPLICATION_DELETE_LOCATION:${locationId}`
+    },
+    DELETE_LOCATION_META: "APPLICATION_DELETE_LOCATION",
 };

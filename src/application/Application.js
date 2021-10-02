@@ -436,6 +436,98 @@ class NodeactylApplication {
         })
     }
 
+    /**
+     * Get all locations from your panel
+     *
+     * @returns {Promise}
+     */
+    getAllLocations() {
+        return new Promise((res, rej) => {
+            Methods.getLocations(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets locations by a specified page number
+     *
+     * This will return an empty array if the specified page was invalid.
+     *
+     * @param {Integer} pageNum
+     * @returns {Promise}
+     */
+    getLocationPage(pageNum) {
+        return new Promise((res, rej) => {
+            Methods.getLocationPage(this.hostUrl, this.apiKey, pageNum).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets a info of a location from your panel
+     *
+     * @param {Integer} locationId
+     * @returns {Promise}
+     */
+    getLocationDetails(locationId) {
+        return new Promise((res, rej) => {
+            Methods.getLocationDetails(this.hostUrl, this.apiKey, locationId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Creates a new location
+     *
+     * @param {String} short Identifier for the location Ex: GB
+     * @param {String} long Descrption for the location Ex: London Datacenter
+     * @returns {Promise}
+     */
+    createLocation(short, long) {
+        return new Promise((res, rej) => {
+            Methods.createLocation(this.hostUrl, this.apiKey, short, long).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Updates the short or long location details
+     *
+     * @param {Integer} locationId
+     * @param {String} short Identifier for the location Ex: GB
+     * @param {String} long Descrption for the location Ex: London Datacenter
+     * @returns {Promise}
+     */
+    updateLocationDetails(locationId, short, long) {
+        return new Promise((res, rej) => {
+            Methods.updateLocationDetails(this.hostUrl, this.apiKey, locationId, short, long).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Deletes a specified location
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param locationId
+     * @returns {Promise}
+     */
+    deleteLocation(locationId) {
+        return new Promise((res, rej) => {
+            Methods.deleteLocation(this.hostUrl, this.apiKey, locationId).then(() => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
 
 }
 

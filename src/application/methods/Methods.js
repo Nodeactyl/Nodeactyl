@@ -187,3 +187,41 @@ exports.getNest = (host, key, nestId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeGet(ApplicationRequest.GET_NEST_INFO(nestId));
 };
+
+exports.getLocations = (host, key,) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_ALL_LOCATIONS);
+};
+
+exports.getLocationPage = (host, key, page) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_LOCATION_PAGE(page));
+}
+
+exports.getLocationDetails = (host, key, locationId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_LOCATION_INFO(locationId));
+};
+
+exports.createLocation = (host, key, short, long) => {
+    let data = {
+        'short': short,
+        'long': long,
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_LOCATION, data);
+};
+
+exports.updateLocationDetails = (host, key, locationId, short, long) => {
+    let data = {
+        'short': short,
+        'long': long,
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePatch(ApplicationRequest.UPDATE_LOCATION_DETAILS(locationId), data);
+};
+
+exports.deleteLocation = (host, key, locationId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ApplicationRequest.DELETE_LOCATION(locationId));
+}
