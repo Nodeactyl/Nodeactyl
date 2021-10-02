@@ -4,7 +4,7 @@
   "private": false,
   "main": "src/Nodeactyl.js",
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.22.0"
   },
   "devDependencies": {
     "jsdocs": ""
