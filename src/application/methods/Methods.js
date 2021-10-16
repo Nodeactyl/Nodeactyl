@@ -291,3 +291,22 @@ exports.deleteNode = (host, key, nodeId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeDelete(ApplicationRequest.DELETE_NODE(nodeId));
 };
+
+exports.getNodeAllocations = (host, key, nodeId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_NODE_ALLOCACTIONS(nodeId));
+};
+
+exports.createNodeAllocations = (host, key, nodeId, ip, ports) => {
+    let data = {
+      "ip": ip,
+      "ports": ports
+    }
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_NODE_ALLOCACTIONS(nodeId), data);
+};
+
+exports.deleteNodeAllocation = (host, key, nodeId, allocationId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ApplicationRequest.DELETE_NODE_ALLOCATION(nodeId, allocationId));
+};

@@ -653,6 +653,59 @@ class NodeactylApplication {
         });
     }
 
+    /**
+     * Gets the allocations of given node
+     *
+     * @param {Integer} nodeId
+     * @returns {Promise}
+     */
+    getNodeAllocations(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.getNodeAllocations(this.hostUrl, this.apiKey, nodeId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Create allocations on given node
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param {Integer} nodeId the id of the node to add allocations to
+     * @param {String} ip the ip of the allocation as a string Ex: "127.0.0.1"
+     * @param {Array} ports an array of ports as strings Ex: ["25565", "25575"]
+     * @returns {Promise}
+     */
+    createNodeAllocations(nodeId, ip, ports) {
+        return new Promise((res, rej) => {
+            Methods.createNodeAllocations(this.hostUrl, this.apiKey, nodeId, ip, ports).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Deletes a specified node allocation
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param {String} nodeId the id of the node to delete the allocation on
+     * @param {String} allocationId the id of the allocation to delete
+     * @returns {Promise}
+     */
+    deleteNodeAllocation(nodeId, allocationId) {
+        return new Promise((res, rej) => {
+            Methods.deleteNodeAllocation(this.hostUrl, this.apiKey, nodeId, allocationId).then(() => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
 }
 
 module.exports = NodeactylApplication;

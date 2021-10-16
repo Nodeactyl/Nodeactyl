@@ -18,7 +18,6 @@ module.exports = {
 
     GET_ALL_NODES: "APPLICATION_GET_ALL_NODES",
     GET_NODE_INFO_META: "APPLICATION_GET_NODE_INFO",
-    GET_NODE_CONFIG_META: "APPLICATION_GET_NODE_CONFIG",
     CREATE_NODE_META: "APPLICATION_CREATE_NODE",
     CREATE_NODE: "APPLICATION_CREATE_NODE",
 
@@ -160,6 +159,7 @@ module.exports = {
     GET_NODE_CONFIG(nodeId) {
         return `APPLICATION_GET_NODE_CONFIG:${nodeId}`;
     },
+    GET_NODE_CONFIG_META: "APPLICATION_GET_NODE_CONFIG",
     /**
      * @return {string}
      */
@@ -174,4 +174,25 @@ module.exports = {
         return `APPLICATION_DELETE_NODE:${nodeId}`
     },
     DELETE_NODE_META: "APPLICATION_DELETE_NODE",
+    /**
+     * @return {string}
+     */
+    GET_NODE_ALLOCACTIONS(nodeId) {
+        return `APPLICATION_GET_NODE_ALLOCATIONS:${nodeId}`;
+    },
+    GET_NODE_ALLOCACTIONS_META: "APPLICATION_GET_NODE_ALLOCATIONS",
+    /**
+     * @return {string}
+     */
+    CREATE_NODE_ALLOCACTIONS(nodeId) {
+        return `APPLICATION_CREATE_NODE_ALLOCATIONS:${nodeId}`;
+    },
+    CREATE_NODE_ALLOCACTIONS_META: "APPLICATION_CREATE_NODE_ALLOCATIONS",
+    /**
+     * @return {string}
+     */
+    DELETE_NODE_ALLOCATION(nodeId, allocationId) {
+        return `APPLICATION_DELETE_NODE_ALLOCATION:${nodeId}:${allocationId}`
+    },
+    DELETE_NODE_ALLOCATION_META: "APPLICATION_DELETE_NODE_ALLOCATION",
 };

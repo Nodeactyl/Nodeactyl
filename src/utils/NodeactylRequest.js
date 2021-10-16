@@ -322,6 +322,18 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_NODE (contact a developer)");
             return `api/application/nodes/${str[1]}`;
 
+        } else if (request === ApplicationRequest.GET_NODE_ALLOCACTIONS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_NODE (contact a developer)");
+            return `api/application/nodes/${str[1]}/allocations`;
+
+        } else if (request === ApplicationRequest.CREATE_NODE_ALLOCACTIONS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_NODE (contact a developer)");
+            return `api/application/nodes/${str[1]}/allocations`;
+
+        } else if (request === ApplicationRequest.DELETE_NODE_ALLOCATION_META) {
+            if (str[1] === "" || str[1] === undefined || str[2] === "" || str[2] === undefined) throw new Error("Could not split enum to a length of 3 when using DELETE_NODE_ALLOCATION_META (contact a developer)");
+            return `api/application/nodes/${str[1]}/allocations/${str[2]}`;
+
         }
 
     }
