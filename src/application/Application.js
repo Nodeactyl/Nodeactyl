@@ -560,7 +560,7 @@ class NodeactylApplication {
     /**
      * Gets info of a node from your panel
      *
-     * @param {Integer} nodeId
+     * @param {Integer} nodeId the id oftthe node to get the details of
      * @returns {Promise}
      */
     getNodeDetails(nodeId) {
@@ -574,7 +574,7 @@ class NodeactylApplication {
     /**
      * Gets the configuration of given node
      *
-     * @param {Integer} nodeId
+     * @param {Integer} nodeId the id of the node to get the config for
      * @returns {Promise}
      */
     getNodeConfig(nodeId) {
@@ -606,7 +606,7 @@ class NodeactylApplication {
     /**
      * Updates the details of the given node
      *
-     * @param {String} nodeId id of the node to update
+     * @param {Integer} nodeId id of the node to update
      * @param {String} name name of the node
      * @param {String} description description of the node
      * @param {String} locationId id of the location this node belongs to
@@ -642,7 +642,7 @@ class NodeactylApplication {
      * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
      * the provided API key was non existing.
      *
-     * @param nodeId
+     * @param {Integer} nodeId the id of the node to delete
      * @returns {Promise}
      */
     deleteNode(nodeId) {
@@ -656,7 +656,7 @@ class NodeactylApplication {
     /**
      * Gets the allocations of given node
      *
-     * @param {Integer} nodeId
+     * @param {Integer} nodeId the id of the node to get the allocations of
      * @returns {Promise}
      */
     getNodeAllocations(nodeId) {
@@ -694,8 +694,8 @@ class NodeactylApplication {
      * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
      * the provided API key was non existing.
      *
-     * @param {String} nodeId the id of the node to delete the allocation on
-     * @param {String} allocationId the id of the allocation to delete
+     * @param {Integer} nodeId the id of the node to delete the allocation on
+     * @param {Integer} allocationId the id of the allocation to delete
      * @returns {Promise}
      */
     deleteNodeAllocation(nodeId, allocationId) {
