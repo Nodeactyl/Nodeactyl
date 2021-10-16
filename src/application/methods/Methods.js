@@ -226,6 +226,22 @@ exports.deleteLocation = (host, key, locationId) => {
     return req.executeDelete(ApplicationRequest.DELETE_LOCATION(locationId));
 }
 
+exports.getNodes = (host, key,) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_ALL_NODES);
+};
+
+exports.getNodePage = (host, key, page) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_NODE_PAGE(page));
+}
+
+exports.getNodeDetails = (host, key, nodeId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_NODE_INFO(nodeId));
+};
+
+
 exports.createNode = (host, key, name, locationId, fqdn, memory, disk) => {
     let data = {
       "name": name,

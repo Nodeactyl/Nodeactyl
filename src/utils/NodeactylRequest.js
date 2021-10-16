@@ -135,6 +135,10 @@ class NodeactylRequest {
                 return `api/application/locations?page=1`
             }
 
+            case ApplicationRequest.GET_ALL_NODES: {
+                return `api/application/nodes?page=1`
+            }
+
         }
 
         let str = this.endpoint.split(":");
@@ -295,8 +299,17 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_LOCATION (contact a developer)");
             return `api/application/locations/${str[1]}`;
 
+        } else if (request === ApplicationRequest.GET_ALL_NODES) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_ALL_NODES (contact a developer)");
+            return `api/application/nodes?page=${str[1]}`;
+
+        } else if (request === ApplicationRequest.GET_NODE_INFO_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_NODE_INFO_META (contact a developer)");
+            return `api/application/nodes/${str[1]}`;
+
         } else if (request === ApplicationRequest.CREATE_NODE_META) {
             return `api/application/nodes`;
+
         }
 
     }

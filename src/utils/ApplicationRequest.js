@@ -16,6 +16,8 @@ module.exports = {
     CREATE_LOCATION_META: "APPLICATION_CREATE_LOCATION",
     CREATE_LOCATION: "APPLICATION_CREATE_LOCATION",
 
+    GET_ALL_NODES: "APPLICATION_GET_ALL_NODES",
+    GET_NODE_INFO_META: "APPLICATION_GET_NODE_INFO",
     CREATE_NODE_META: "APPLICATION_CREATE_NODE",
     CREATE_NODE: "APPLICATION_CREATE_NODE",
 
@@ -139,4 +141,16 @@ module.exports = {
         return `APPLICATION_DELETE_LOCATION:${locationId}`
     },
     DELETE_LOCATION_META: "APPLICATION_DELETE_LOCATION",
+    /**
+     * @return {string}
+     */
+    GET_NODE_PAGE(pageNum) {
+        return `APPLICATION_GET_ALL_NODES:${pageNum}`
+    },
+    /**
+     * @return {string}
+     */
+    GET_NODE_INFO(locationId) {
+        return `APPLICATION_GET_NODE_INFO:${locationId}`;
+    },
 };

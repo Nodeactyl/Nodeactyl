@@ -529,6 +529,49 @@ class NodeactylApplication {
     }
 
     /**
+     * Get all nodes from your panel
+     *
+     * @returns {Promise}
+     */
+    getAllNodes() {
+        return new Promise((res, rej) => {
+            Methods.getNodes(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets nodes by a specified page number
+     *
+     * This will return an empty array if the specified page was invalid.
+     *
+     * @param {Integer} pageNum
+     * @returns {Promise}
+     */
+    getNodePage(pageNum) {
+        return new Promise((res, rej) => {
+            Methods.getNodePage(this.hostUrl, this.apiKey, pageNum).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets info of a node from your panel
+     *
+     * @param {Integer} nodeId
+     * @returns {Promise}
+     */
+    getNodeDetails(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.getNodeDetails(this.hostUrl, this.apiKey, nodeId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Creates a new node
      *
      * @param {String} name name of the new node
