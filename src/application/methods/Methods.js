@@ -225,3 +225,21 @@ exports.deleteLocation = (host, key, locationId) => {
     let req = new NodeactylRequest(host, key);
     return req.executeDelete(ApplicationRequest.DELETE_LOCATION(locationId));
 }
+
+exports.createNode = (host, key, name, locationId, fqdn, memory, disk) => {
+    let data = {
+      "name": name,
+      "location_id": locationId,
+      "fqdn": fqdn,
+      "scheme": "https",
+      "memory": memory,
+      "memory_overallocate": 0,
+      "disk": disk,
+      "disk_overallocate": 0,
+      "upload_size": 100,
+      "daemon_sftp": 2022,
+      "daemon_listen": 8080
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePost(ApplicationRequest.CREATE_NODE, data);
+};

@@ -528,6 +528,23 @@ class NodeactylApplication {
         });
     }
 
+    /**
+     * Creates a new node
+     *
+     * @param {String} name name of the new node
+     * @param {Integer} locationId the id of the location to assign to this node
+     * @param {String} fqdn the Fully Qualified Domain Name (or IP) for this node
+     * @param {Integer} memory the amount of memory/ram this node has
+     * @param {Integer} disk The amount of storage this node has
+     * @returns {Promise}
+     */
+    createNode(name, locationId, fqdn, memory, disk) {
+        return new Promise((res, rej) => {
+            Methods.createNode(this.hostUrl, this.apiKey, name, locationId, fqdn, memory, disk).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
 
 }
 
