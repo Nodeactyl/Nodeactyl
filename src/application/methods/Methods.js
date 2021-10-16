@@ -241,7 +241,6 @@ exports.getNodeDetails = (host, key, nodeId) => {
     return req.executeGet(ApplicationRequest.GET_NODE_INFO(nodeId));
 };
 
-
 exports.createNode = (host, key, name, locationId, fqdn, memory, disk) => {
     let data = {
       "name": name,
@@ -258,4 +257,27 @@ exports.createNode = (host, key, name, locationId, fqdn, memory, disk) => {
     };
     let req = new NodeactylRequest(host, key);
     return req.executePost(ApplicationRequest.CREATE_NODE, data);
+};
+
+exports.updateNodeDetails = (host, key, nodeId, name, description, locationId, fqdn, scheme,
+                             behindProxy, maintenanceMode, memory, memoryOver, disk,
+                             diskOver, uploadSize, daemonSftp, daemonListen) => {
+    let data = {
+      "name":  name,
+      "description": description,
+      "location_id": locationId,
+      "fqdn": fqdn,
+      "scheme": scheme,
+      "behind_proxy": behindProxy,
+      "maintenance_mode": maintenanceMode,
+      "memory": memory,
+      "memory_overallocate": memoryOver,
+      "disk": disk,
+      "disk_overallocate": diskOver,
+      "upload_size": uploadSize,
+      "daemon_sftp": daemonSftp,
+      "daemon_listen": daemonListen
+    };
+    let req = new NodeactylRequest(host, key);
+    return req.executePatch(ApplicationRequest.UPDATE_NODE_DETAILS(nodeId), data);
 };

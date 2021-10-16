@@ -153,4 +153,11 @@ module.exports = {
     GET_NODE_INFO(locationId) {
         return `APPLICATION_GET_NODE_INFO:${locationId}`;
     },
+    /**
+     * @return {string}
+     */
+    UPDATE_NODE_DETAILS(nodeId) {
+        return `APPLICATION_UPDATE_NODE_DETAILS:${nodeId}`
+    },
+    UPDATE_NODE_DETAILS_META: "APPLICATION_UPDATE_NODE_DETAILS",
 };

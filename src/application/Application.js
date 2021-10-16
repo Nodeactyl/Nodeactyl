@@ -589,6 +589,38 @@ class NodeactylApplication {
         })
     }
 
+    /**
+     * Updates the details of the given node
+     *
+     * @param {String} nodeId id of the node to update
+     * @param {String} name name of the node
+     * @param {String} description description of the node
+     * @param {String} locationId id of the location this node belongs to
+     * @param {String} fqdn Fully Qualified Domain Name for node
+     * @param {String} scheme scheme for node
+     * @param {Boolean} behindProxy whether or not node is behind proxy like cloudflare
+     * @param {Boolean} maintenanceMode whether or not the node is under maintenance
+     * @param {Integer} memory memory of node
+     * @param {Integer} memoryOver % of memory allowed to go over limit
+     * @param {Integer} disk disk space of the node
+     * @param {Integer} diskOver % of disk allowed to go over limit
+     * @param {Integer} uploadSize max uploadSize, usually 100
+     * @param {Integer} daemonSftp port for sftp
+     * @param {Integer} daemonListen port for daemon to listen on
+     * @returns {Promise}
+     */
+    updateNodeDetails(nodeId, name, description, locationId, fqdn, scheme,
+                      behindProxy, maintenanceMode, memory, memoryOver, disk,
+                      diskOver, uploadSize, daemonSftp, daemonListen) {
+        return new Promise((res, rej) => {
+            Methods.updateNodeDetails(this.hostUrl, this.apiKey, nodeId, name, description, locationId, fqdn, scheme,
+                                         behindProxy, maintenanceMode, memory, memoryOver, disk,
+                                         diskOver, uploadSize, daemonSftp, daemonListen).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
 }
 
 module.exports = NodeactylApplication;
