@@ -281,3 +281,8 @@ exports.updateNodeDetails = (host, key, nodeId, name, description, locationId, f
     let req = new NodeactylRequest(host, key);
     return req.executePatch(ApplicationRequest.UPDATE_NODE_DETAILS(nodeId), data);
 };
+
+exports.deleteNode = (host, key, nodeId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeDelete(ApplicationRequest.DELETE_NODE(nodeId));
+};

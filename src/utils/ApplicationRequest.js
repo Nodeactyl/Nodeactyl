@@ -160,4 +160,11 @@ module.exports = {
         return `APPLICATION_UPDATE_NODE_DETAILS:${nodeId}`
     },
     UPDATE_NODE_DETAILS_META: "APPLICATION_UPDATE_NODE_DETAILS",
+    /**
+     * @return {string}
+     */
+    DELETE_NODE(nodeId) {
+        return `APPLICATION_DELETE_NODE:${nodeId}`
+    },
+    DELETE_NODE_META: "APPLICATION_DELETE_NODE",
 };
