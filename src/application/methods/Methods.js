@@ -241,6 +241,11 @@ exports.getNodeDetails = (host, key, nodeId) => {
     return req.executeGet(ApplicationRequest.GET_NODE_INFO(nodeId));
 };
 
+exports.getNodeConfig = (host, key, nodeId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_NODE_CONFIG(nodeId));
+};
+
 exports.createNode = (host, key, name, locationId, fqdn, memory, disk) => {
     let data = {
       "name": name,

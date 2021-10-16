@@ -572,6 +572,20 @@ class NodeactylApplication {
     }
 
     /**
+     * Gets the configuration of given node
+     *
+     * @param {Integer} nodeId
+     * @returns {Promise}
+     */
+    getNodeConfig(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.getNodeConfig(this.hostUrl, this.apiKey, nodeId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
      * Creates a new node
      *
      * @param {String} name name of the new node

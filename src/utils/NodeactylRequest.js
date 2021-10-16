@@ -307,6 +307,10 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_NODE_INFO_META (contact a developer)");
             return `api/application/nodes/${str[1]}`;
 
+        } else if (request === ApplicationRequest.GET_NODE_CONFIG_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_NODE_CONFIG_META (contact a developer)");
+            return `api/application/nodes/${str[1]}/configuration`;
+
         } else if (request === ApplicationRequest.CREATE_NODE_META) {
             return `api/application/nodes`;
 

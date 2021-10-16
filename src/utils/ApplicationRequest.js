@@ -18,6 +18,7 @@ module.exports = {
 
     GET_ALL_NODES: "APPLICATION_GET_ALL_NODES",
     GET_NODE_INFO_META: "APPLICATION_GET_NODE_INFO",
+    GET_NODE_CONFIG_META: "APPLICATION_GET_NODE_CONFIG",
     CREATE_NODE_META: "APPLICATION_CREATE_NODE",
     CREATE_NODE: "APPLICATION_CREATE_NODE",
 
@@ -150,8 +151,14 @@ module.exports = {
     /**
      * @return {string}
      */
-    GET_NODE_INFO(locationId) {
-        return `APPLICATION_GET_NODE_INFO:${locationId}`;
+    GET_NODE_INFO(nodeId) {
+        return `APPLICATION_GET_NODE_INFO:${nodeId}`;
+    },
+    /**
+     * @return {string}
+     */
+    GET_NODE_CONFIG(nodeId) {
+        return `APPLICATION_GET_NODE_CONFIG:${nodeId}`;
     },
     /**
      * @return {string}
