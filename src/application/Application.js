@@ -528,6 +528,183 @@ class NodeactylApplication {
         });
     }
 
+    /**
+     * Get all nodes from your panel
+     *
+     * @returns {Promise}
+     */
+    getAllNodes() {
+        return new Promise((res, rej) => {
+            Methods.getNodes(this.hostUrl, this.apiKey).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets nodes by a specified page number
+     *
+     * This will return an empty array if the specified page was invalid.
+     *
+     * @param {Integer} pageNum
+     * @returns {Promise}
+     */
+    getNodePage(pageNum) {
+        return new Promise((res, rej) => {
+            Methods.getNodePage(this.hostUrl, this.apiKey, pageNum).then((response) => {
+                return res(response.data.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets info of a node from your panel
+     *
+     * @param {Integer} nodeId the id oftthe node to get the details of
+     * @returns {Promise}
+     */
+    getNodeDetails(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.getNodeDetails(this.hostUrl, this.apiKey, nodeId).then((response) => {
+                return res(response.data.attributes);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets the configuration of given node
+     *
+     * @param {Integer} nodeId the id of the node to get the config for
+     * @returns {Promise}
+     */
+    getNodeConfig(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.getNodeConfig(this.hostUrl, this.apiKey, nodeId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Creates a new node
+     *
+     * @param {String} name name of the new node
+     * @param {Integer} locationId the id of the location to assign to this node
+     * @param {String} fqdn the Fully Qualified Domain Name (or IP) for this node
+     * @param {Integer} memory the amount of memory/ram this node has
+     * @param {Integer} disk The amount of storage this node has
+     * @returns {Promise}
+     */
+    createNode(name, locationId, fqdn, memory, disk) {
+        return new Promise((res, rej) => {
+            Methods.createNode(this.hostUrl, this.apiKey, name, locationId, fqdn, memory, disk).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Updates the details of the given node
+     *
+     * @param {Integer} nodeId id of the node to update
+     * @param {String} name name of the node
+     * @param {String} description description of the node
+     * @param {String} locationId id of the location this node belongs to
+     * @param {String} fqdn Fully Qualified Domain Name for node
+     * @param {String} scheme scheme for node
+     * @param {Boolean} behindProxy whether or not node is behind proxy like cloudflare
+     * @param {Boolean} maintenanceMode whether or not the node is under maintenance
+     * @param {Integer} memory memory of node
+     * @param {Integer} memoryOver % of memory allowed to go over limit
+     * @param {Integer} disk disk space of the node
+     * @param {Integer} diskOver % of disk allowed to go over limit
+     * @param {Integer} uploadSize max uploadSize, usually 100
+     * @param {Integer} daemonSftp port for sftp
+     * @param {Integer} daemonListen port for daemon to listen on
+     * @returns {Promise}
+     */
+    updateNodeDetails(nodeId, name, description, locationId, fqdn, scheme,
+                      behindProxy, maintenanceMode, memory, memoryOver, disk,
+                      diskOver, uploadSize, daemonSftp, daemonListen) {
+        return new Promise((res, rej) => {
+            Methods.updateNodeDetails(this.hostUrl, this.apiKey, nodeId, name, description, locationId, fqdn, scheme,
+                                         behindProxy, maintenanceMode, memory, memoryOver, disk,
+                                         diskOver, uploadSize, daemonSftp, daemonListen).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Deletes a specified node
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param {Integer} nodeId the id of the node to delete
+     * @returns {Promise}
+     */
+    deleteNode(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.deleteNode(this.hostUrl, this.apiKey, nodeId).then(() => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Gets the allocations of given node
+     *
+     * @param {Integer} nodeId the id of the node to get the allocations of
+     * @returns {Promise}
+     */
+    getNodeAllocations(nodeId) {
+        return new Promise((res, rej) => {
+            Methods.getNodeAllocations(this.hostUrl, this.apiKey, nodeId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Create allocations on given node
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param {Integer} nodeId the id of the node to add allocations to
+     * @param {String} ip the ip of the allocation as a string Ex: "127.0.0.1"
+     * @param {Array} ports an array of ports as strings Ex: ["25565", "25575"]
+     * @returns {Promise}
+     */
+    createNodeAllocations(nodeId, ip, ports) {
+        return new Promise((res, rej) => {
+            Methods.createNodeAllocations(this.hostUrl, this.apiKey, nodeId, ip, ports).then((response) => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Deletes a specified node allocation
+     *
+     * By default Pterodactyl API returns a empty string on success (""), i altered the response to make it a boolean value of "true"
+     * However do not this value will NEVER be false. To catch an error for this request you check if the caught error === 404, this will mean
+     * the provided API key was non existing.
+     *
+     * @param {Integer} nodeId the id of the node to delete the allocation on
+     * @param {Integer} allocationId the id of the allocation to delete
+     * @returns {Promise}
+     */
+    deleteNodeAllocation(nodeId, allocationId) {
+        return new Promise((res, rej) => {
+            Methods.deleteNodeAllocation(this.hostUrl, this.apiKey, nodeId, allocationId).then(() => {
+                return res(true);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
 
 }
 
