@@ -21,11 +21,8 @@ class NodeactylClient {
 
     getErrorCode(err) {
         err = err.message;
-        let str1 = err.charAt(err.length - 1);
-        let str2 = err.charAt(err.length - 2);
-        let str3 = err.charAt(err.length - 3);
+        let num = err.substr(err.length - 3);
 
-        let num = str1 + str2 + str3;
         try {
             return parseInt(num);
         } catch {
