@@ -14,9 +14,10 @@ module.exports = {
   },
   themeConfig: {
     repo: 'https://github.com/Nodeactyl/Nodeactyl',
-    editLinks: false,
-    docsDir: '',
-    editLinkText: '',
+    editLinks: true,
+    docsDir: 'docs',
+    docsBranch: 'main',
+    editLinkText: 'Edit page',
     lastUpdated: true,
     nav: [
       {
