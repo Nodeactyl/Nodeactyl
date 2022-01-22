@@ -30,7 +30,7 @@ module.exports = {
       },
       {
         text: 'Discord',
-        link: 'https://discord.nodeactyl.dev'
+        link: 'https://discord.com/invite/HvQ4JTqCvs'
       }
     ],
     sidebar: {
