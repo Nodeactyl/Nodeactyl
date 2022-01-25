@@ -176,6 +176,14 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_USAGES (contact a developer)");
             return `api/client/servers/${str[1]}/resources`;
 
+        } else if (request === ClientRequest.GET_SERVER_STARTUP_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SERVER_STARTUP (contact a developer)");
+            return `api/client/servers/${str[1]}/startup`;
+
+        } else if (request === ClientRequest.SET_SERVER_STARTUP_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using SET_SERVER_STARTUP (contact a developer)");
+            return `api/client/servers/${str[1]}/startup/variable`;
+
         } else if (request === ClientRequest.GET_CONSOLE_WEBSOCKET_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when usingGET_CONSOLE_WEBSOCKET (contact a developer)");
             return `api/client/servers/${str[1]}/websocket`;
