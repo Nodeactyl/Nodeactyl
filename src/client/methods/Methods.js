@@ -146,3 +146,14 @@ exports.updatePassword = (host, key, newPassword, password) => {
     let req = new NodeactylRequest(host, key);
     return req.executePut(ClientRequest.UPDATE_PASSWORD, data);
 };
+
+exports.getServerStartup = (host, key, serverId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ClientRequest.GET_SERVER_STARTUP(serverId));
+};
+
+exports.setServerStartup = (host, key, serverId, field, value) => {
+    let data = { key: field, value };
+    let req = new NodeactylRequest(host, key);
+    return req.executePut(ClientRequest.SET_SERVER_STARTUP(serverId), data);
+};

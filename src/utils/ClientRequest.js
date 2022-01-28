@@ -66,6 +66,20 @@ module.exports = {
     GET_SERVER_USAGES(serverId) {
         return `CLIENT_GET_USAGES:${serverId}`
     },
+    GET_SERVER_STARTUP_META: "CLIENT_GET_STARTUP",
+    /**
+     * @return {string}
+     */
+    GET_SERVER_STARTUP(serverId) {
+        return `CLIENT_GET_STARTUP:${serverId}`
+    },
+    SET_SERVER_STARTUP_META: "CLIENT_SET_STARTUP",
+    /**
+     * @return {string}
+     */
+    SET_SERVER_STARTUP(serverId) {
+        return `CLIENT_SET_STARTUP:${serverId}`
+    },
     GET_CONSOLE_WEBSOCKET_META: "CLIENT_GET_CONSOLE_WEBSOCKET",
     /**
      * @return {string}

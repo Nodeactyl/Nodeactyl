@@ -427,6 +427,35 @@ class NodeactylClient {
         });
     }
 
+    /**
+     * Gets the startup variables for a server
+     *
+     * @param {String} serverId id of the server to get startup
+     * @returns {Promise}
+     */
+    getServerStartup(serverId) {
+        return new Promise((res, rej) => {
+            Methods.getServerStartup(this.hostUrl, this.apiKey, serverId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
+
+    /**
+     * Sets the startup variables for a server
+     *
+     * @returns {Promise}
+     * @param {String} serverId id of the server to set startup
+     * @param {String} key the name of the startup variable
+     * @param {String} value what to set the startup variable to
+     */
+    setServerStartup(serverId, key, value) {
+        return new Promise((res, rej) => {
+            Methods.setServerStartup(this.hostUrl, this.apiKey, serverId, key, value).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        });
+    }
 
 }
 
