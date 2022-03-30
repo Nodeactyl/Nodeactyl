@@ -26,7 +26,7 @@ npm i nodeactyl
 
 ---
 
-## 📖 Documentation (coming soon)
+## 📖 Documentation
 
 The full docs can be found [here](https://docs.nodeactyl.dev)
 
