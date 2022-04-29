@@ -1,9 +1,75 @@
 class ServerBuilder {
+	
+    /**
+	 * Represents the possible options for Limits
+	 * @typedef {Object} LimitOptions
+	 * @property {number} memory The amount of RAM this server can have
+	 * @property {number} swap The amount of swap this server can have
+	 * @property {number} disk The disk size
+	 * @property {number} io  Sets the IO for this server to use in MB
+	 * @property {number} cpu Sets the max amount of CPU usage for this server, 100 = 1 core 200 = 2 cores etc etc
+    */
+
+    /**
+	 * Represents the possible options for Feature Limits
+	 * @typedef {Object} FeatureLimitOptions
+	 * @property {number} [databases] The amount of databases this server is allowed to have
+	 * @property {number} [allocations] The allocation limit of this server
+	 * @property {number} [backups] The max amount of backups this server is allowed to have
+    */
+
+    /**
+	 * Represents the possible options for Environment
+	 * @typedef {Object} EnvironmentOptions
+	 * @property {string} [DL_VERSION] Sets the environment version number
+	 * @property {string} [SERVER_JARFILE] Sets the environment version number
+	 * @property {string} [VANILLA_VERSION] Sets the environment version number
+	 * @property {string} [BUNGEE_VERSION] Sets the environment version number
+	 * @property {string} [MINECRAFT_VERSION] Sets the environment version number
+	 * @property {string} [MC_VERSION] Sets the environment version number
+	 * @property {string} [BUILD_NUMBER] Sets the environment version number
+	 * @property {string} [INSTALL_REPO] Sets the environment version number
+	 * @property {string} [STARTUP_CMD] If your using a NodeJS egg, set the startup command here
+	 * @property {string} [SECOND_CMD] Sets the environment version number
+    */
+
+    /**
+	 * Represents the possible options for Allocation
+	 * @typedef {Object} AllocationOptions
+	 * @property {number} default Sets the default servers allocation
+	 * @property {array} additional Allows you to add multiple allocations to this serer
+    */
+
+    /**
+	 * Represents the possible options for Feature Limits
+	 * @typedef {Object} DeployOptions
+	 * @property {number[]} locations Sets the locations of where to deploy this to
+	 * @property {boolean} dedicated_ip Sets wether or not this server should get its own dedicated IP
+	 * @property {number[]} port_range Sets a range of ports that this server can use
+    */
+
+    /**
+	 * Represents the possible options for a ServerObject
+	 * @typedef {Object} ServerOptions
+	 * @property {string} name The name of the server
+	 * @property {number} user The ownerId of the owner
+	 * @property {number} egg  The servers egg to use
+	 * @property {string} docker_image The docker image to use
+	 * @property {string} startup The startup command to use
+	 * @property {LimitOptions} limit Options for limits
+	 * @property {FeatureLimitOptions} feature_limits Options for feature limits
+	 * @property {EnvironmentOptions} environment Options for environment
+	 * @property {AllocationOptions} allocation Options for allocation
+	 * @property {DeployOptions} deploy Options for deploy
+	 * @property {boolean} [start_on_completion] Sets wether or not you want this server to start when it has finished creating
+	 * @property {boolean} [skip_scripts] Sets wether or not this server should skip scripts
+	 * @property {boolean} [oom_disabled] Sets wether or not you want OOM disabled
+    */
 
     /**
      * Object = server JSON data, leave blank if you dont have
      * and object and just want to use ServerBuilder
-     * @param {Object} object
+     * @param {ServerOptions} object
      */
     constructor(object = null) {
         this.default = {
@@ -77,6 +143,7 @@ class ServerBuilder {
      */
     setServerName(serverName) {
         this.object.name = serverName;
+        return this;
     }
 
     /**
@@ -85,6 +152,7 @@ class ServerBuilder {
      */
     setServerOwner(ownerId) {
         this.object.user = ownerId;
+        return this;
     }
 
     /**
@@ -96,6 +164,7 @@ class ServerBuilder {
      */
     setServerEgg(eggId) {
         this.object.egg = eggId;
+        return this;
     }
 
     /**
@@ -107,6 +176,7 @@ class ServerBuilder {
      */
     setServerDockerImage(dockerImage) {
         this.object.docker_image = dockerImage;
+        return this;
     }
 
     /**
@@ -118,6 +188,7 @@ class ServerBuilder {
      */
     setServerStartup(startupCmd) {
         this.object.startup = startupCmd;
+        return this;
     }
 
     /**
@@ -127,6 +198,7 @@ class ServerBuilder {
      */
     setServerLimitsJson(json) {
         this.object.limits = json;
+        return this;
     }
 
     /**
@@ -135,6 +207,7 @@ class ServerBuilder {
      */
     setServerRAM(ram) {
         this.object.limits.memory = ram;
+        return this;
     }
 
     /**
@@ -143,6 +216,7 @@ class ServerBuilder {
      */
     setServerSwap(swap) {
         this.object.limits.swap = swap;
+        return this;
     }
 
     /**
@@ -151,6 +225,7 @@ class ServerBuilder {
      */
     setServerIO(io) {
         this.object.limits.io = io;
+        return this;
     }
 
     /**
@@ -159,6 +234,7 @@ class ServerBuilder {
      */
     setServerCPU(cpu) {
         this.object.limits.cpu = cpu;
+        return this;
     }
 
     /**
@@ -167,6 +243,7 @@ class ServerBuilder {
      */
     setServerFeatureLimitsJson(json) {
         this.object.feature_limits = json;
+        return this;
     }
 
     /**
@@ -175,6 +252,7 @@ class ServerBuilder {
      */
     setServerDatabaseLimit(databaseLimit) {
         this.object.feature_limits.databases = databaseLimit;
+        return this;
     }
 
     /**
@@ -183,6 +261,7 @@ class ServerBuilder {
      */
     setServerAllocationLimit(allocationLimit) {
         this.object.feature_limits.allocations = allocationLimit;
+        return this;
     }
 
     /**
@@ -191,6 +270,7 @@ class ServerBuilder {
      */
     setServerBackupLimit(backupLimit) {
         this.object.feature_limits.backups = backupLimit;
+        return this;
     }
 
     /**
@@ -199,6 +279,7 @@ class ServerBuilder {
      */
     setServerEnvironmentJson(json) {
         this.object.environment = json;
+        return this;
     }
 
     /**
@@ -217,6 +298,7 @@ class ServerBuilder {
         this.object.environment.MC_VERSION = version;
         this.object.environment.MINECRAFT_VERSION = version;
         this.object.environment.VANILLA_VERSION = version;
+        return this;
     }
 
     /**
@@ -226,6 +308,7 @@ class ServerBuilder {
      */
     setServerNodeJSStartupCommand(command) {
         this.object.environment.STARTUP_CMD = command;
+        return this;
     }
 
     /**
@@ -234,6 +317,7 @@ class ServerBuilder {
      */
     setServerAllocationJson(json) {
         this.object.allocation = json;
+        return this;
     }
 
     /**
@@ -245,6 +329,7 @@ class ServerBuilder {
      */
     setServerDefaultAllocation(allocationId) {
         this.object.allocation.default = allocationId;
+        return this;
     }
 
     /**
@@ -256,6 +341,7 @@ class ServerBuilder {
      */
     setServerAdditionalAllocations(allocations) {
         this.object.allocation.additional = allocations;
+        return this;
     }
 
     /**
@@ -264,6 +350,7 @@ class ServerBuilder {
      */
     setServerDeployJson(json) {
         this.object.deploy = json;
+        return this;
     }
 
     /**
@@ -276,6 +363,7 @@ class ServerBuilder {
      */
     setServerDeployLocations(locations) {
         this.object.deploy.locations = locations;
+        return this;
     }
 
     /**
@@ -287,6 +375,7 @@ class ServerBuilder {
      */
     setServerUsesDedicatedIp(yesOrNo) {
         this.object.deploy.dedicated_ip = yesOrNo;
+        return this;
     }
 
     /**
@@ -298,6 +387,7 @@ class ServerBuilder {
      */
     setServerPortRange(portRange) {
         this.object.deploy.port_range = portRange;
+        return this;
     }
 
     /**
@@ -309,6 +399,7 @@ class ServerBuilder {
      */
     setServerStartsWhenCompleted(yesOrNo) {
         this.object.start_on_completion = yesOrNo;
+        return this;
     }
 
     /**
@@ -320,6 +411,7 @@ class ServerBuilder {
      */
     setServerSkipScripts(yesOrNo) {
         this.object.skip_scripts = yesOrNo;
+        return this;
     }
 
     /**
@@ -331,11 +423,12 @@ class ServerBuilder {
      */
     setServerOOMDisabled(isDisabled) {
         this.object.oom_disabled = isDisabled;
+        return this;
     }
 
     /**
      * Returns the servers JSON object
-     * @returns {Promise}
+     * @returns {ServerOptions}
      */
     getServerObject() {
         return this.object;
