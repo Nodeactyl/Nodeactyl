@@ -8,7 +8,7 @@
 
 ## 📌 What am I?
 
-Nodeactyl is a Library for node.js to communicate with the Pterodactyl Panel. You can control any server on your nodes with it (If you purchase a server from another host, no worry! The API works with your own server too!). This library's originally was to be used in Discord bots, however it can be used in any node.js project.
+Nodeactyl is a Library for Node.js to communicate with the Pterodactyl Panel. You can control any server on your nodes with it (If you purchase a server from another host, no worry! The API works with your own server too!). This library's originally was to be used in Discord bots, however it can be used in any Node.js project.
 
 ---
 
@@ -32,7 +32,7 @@ The full docs can be found [here](https://docs.nodeactyl.dev)
 
 ---
 
-## ✨ Contributers
+## ✨ Contributors
 
 Here are the people that make nodeactyl possible and keep the code working!
 
@@ -40,7 +40,7 @@ Here are the people that make nodeactyl possible and keep the code working!
   <img src="https://contrib.rocks/image?repo=nodeactyl/nodeactyl" />
 </a>
 
-Would you like to see your github profile pic here?
+Would you like to see your GitHub profile picture here?
 
 Simply open a pull request and improve or create code that makes Nodeactyl better!
 
@@ -48,11 +48,11 @@ Simply open a pull request and improve or create code that makes Nodeactyl bette
 
 ## 🚨 Disclaimer
 
-We \(The Nodeactyl team & contributers\) are not responsible for any damages that you cause to your servers/nodes by using this API.
+We \(The Nodeactyl team & contributors\) are not responsible for any damages that you cause to your servers/nodes by using this API.
 
-**Remember: This API can potentially be dangerous with the ability to Delete Servers/Nodes at an instant is extremely easy!**
+**Remember: This API can potentially be dangerous - it is extremely easy to delete servers/nodes at an instant!**
 
-It is **_NOT_** our fault if your API key is revealed to the public. When asking for help **_PLEASE DO NOT SEND THE FULL STACK ERROR._** This will reveal your **ENTIRE** Host/Application API key in the request, if someone asks you to show them the error it should only be trusted sources! \(Such as the Pterodactyl Team/Nodeactyl Team\). You should also have your API key changed every 1-3 days to prevent issues like this.
+It is **_NOT_** our fault if your API key is revealed to the public. When asking for help **_PLEASE DO NOT SEND THE FULL STACK ERROR._** This will reveal your **ENTIRE** Host/Application API key in the request, if someone asks you to show them the error it should only be trusted sources! \(such as the Pterodactyl Team/Nodeactyl Team\). You should also have your API key changed every 1-3 days to prevent issues like this.
 
 ---
 
