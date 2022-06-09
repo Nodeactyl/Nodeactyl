@@ -123,11 +123,12 @@ class NodeactylApplication {
      * @param {String} Username Users username
      * @param {String} FirstName Users first name
      * @param {String} LastName Users last name
+     * @param {String} Password Users password (optional)
      * @returns {Promise}
      */
-    createUser(Email,Username,FirstName,LastName) {
+    createUser(Email, Username, FirstName, LastName, Password = null) {
         return new Promise((res, rej) => {
-            Methods.createUser(this.hostUrl, this.apiKey, Email,Username,FirstName,LastName).then((response) => {
+            Methods.createUser(this.hostUrl, this.apiKey, Email, Username, FirstName, LastName, Password).then((response) => {
                 return res(response.data);
             }).catch(err => rej(this.processError(err)));
         })

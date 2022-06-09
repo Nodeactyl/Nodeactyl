@@ -21,12 +21,13 @@ exports.deleteUser = (host, key, userId) => {
     return req.executeDelete(ApplicationRequest.DELETE_USER(userId));
 }
 
-exports.createUser = (host, key, Email, Username, FirstName, LastName) => {
+exports.createUser = (host, key, Email, Username, FirstName, LastName, Password) => {
     let data = {
         email: Email,
         username: Username,
         first_name: FirstName,
-        last_name: LastName
+        last_name: LastName,
+        password: Password
     };
     let req = new NodeactylRequest(host, key);
     return req.executePost(ApplicationRequest.CREATE_USER, data);
