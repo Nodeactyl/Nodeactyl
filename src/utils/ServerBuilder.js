@@ -76,7 +76,7 @@ class ServerBuilder {
             'name': "Default",
             'user': null,
             'egg': 1,
-            'docker_image': "quay.io/pterodactyl/core:java",
+            'docker_image': "ghcr.io/pterodactyl/core:java",
             'startup': "java -Xms128M -Xmx128M -jar server.jar",
             'limits': {
                 'memory': 1024,
