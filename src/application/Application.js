@@ -8,7 +8,7 @@ class NodeactylApplication {
      * @param key
      */
     constructor(host, key) {
-        this.hostUrl = host;
+        this.hostUrl = host.includes("http") ? host : `http://${host}`;
         this.apiKey = key;
     }
 
