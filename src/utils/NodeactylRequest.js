@@ -227,7 +227,7 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using GET_SUBUSERS (contact a developer)");
             return `api/client/servers/${str[1]}/users`;
 
-        //Application part
+            //Application part
         } else if (request === ApplicationRequest.SUSPEND_SERVER_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using SUSPEND_SERVER (contact a developer)");
             return `api/application/servers/${str[1]}/suspend`;
@@ -282,9 +282,12 @@ class NodeactylRequest {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_SERVER (contact a developer)");
             return `api/application/servers/${str[1]}`;
 
-        } else if (request === ApplicationRequest.GET_NEST_INFO_META) {
-            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using DELETE_SERVER (contact a developer)");
-            return `api/application/nests/1/eggs/${str[1]}`;
+        } else if (request === ApplicationRequest.GET_ALL_EGGS_META) {
+            if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 3 when using GET_ALL_EGGS_META (contact a developer)");
+            return `api/application/nests/${str[1]}/eggs?include=nest,servers`;
+        } else if (request === ApplicationRequest.GET_EGG_INFO_META) {
+            if (str[1] === "" || str[1] === undefined || str[2] === "" || str[2] === undefined) throw new Error("Could not split enum to a length of 3 when using DELETE_NODE_ALLOCATION_META (contact a developer)");
+            return `api/application/nests/${str[1]}/eggs/${str[2]}`;
         } else if (request === ApplicationRequest.UPDATE_SERVER_STARTUP_META) {
             if (str[1] === "" || str[1] === undefined) throw new Error("Could not split enum to a length of 2 when using UPDATE_SERVER_STARUP (contact a developer)");
             return `api/application/servers/${str[1]}/startup`;
@@ -341,7 +344,6 @@ class NodeactylRequest {
         } else if (request === ApplicationRequest.DELETE_NODE_ALLOCATION_META) {
             if (str[1] === "" || str[1] === undefined || str[2] === "" || str[2] === undefined) throw new Error("Could not split enum to a length of 3 when using DELETE_NODE_ALLOCATION_META (contact a developer)");
             return `api/application/nodes/${str[1]}/allocations/${str[2]}`;
-
         }
 
     }

@@ -175,15 +175,15 @@ class NodeactylApplication {
      * @returns {Promise}
      */
     createServer(Version, NameOfServer, OwnerID, EggID, DockerImage,
-               StartupCmd, RAM, Swap, Disk, IO, CPU,
-               AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
+        StartupCmd, RAM, Swap, Disk, IO, CPU,
+        AmountOfDatabases, AmountOfBackups, AmountOfAllocations) {
         console.log("\x1b[31m" + "createServer() is deprecated, please use createRawServer() or use the ServerBuilder!")
         return new Promise((res, rej) => {
             Methods.createServer(this.hostUrl, this.apiKey, Version, NameOfServer, OwnerID, EggID, DockerImage,
                 StartupCmd, RAM, Swap, Disk, IO, CPU,
                 AmountOfDatabases, AmountOfBackups, AmountOfAllocations).then((response) => {
-                return res(response.data);
-            }).catch(err => rej(this.processError(err)));
+                    return res(response.data);
+                }).catch(err => rej(this.processError(err)));
         })
     }
 
@@ -222,8 +222,8 @@ class NodeactylApplication {
             Methods.createServer(this.hostUrl, this.apiKey, "latest", "Server", OwnerID, EggID, nest.data.attributes.docker_image,
                 nest.data.attributes.startup, RAM, 0, Disk, 500, CPU,
                 AmountOfDatabases, AmountOfBackups, AmountOfAllocations).then((response) => {
-                return res(response.data);
-            }).catch(err => rej(this.processError(err)));
+                    return res(response.data);
+                }).catch(err => rej(this.processError(err)));
         })
     }
 
@@ -421,14 +421,31 @@ class NodeactylApplication {
     }
 
     /**
-     * Gets details of a nest
+     * Get All Eggs with specified nest
+     * THIS FUNCTION NOT GETTING ALL OF THE EGGS, BUT GETTING ALL OF THE EGGS IN ONE NEST!!!
+     * 
+     * @returns {Promise}
+     * @param {Integer} nestId 
+     */
+    getAllEggs(nestId) {
+        return new Promise((res, rej) => {
+            Methods.getAllEggs(this.hostUrl, this.apiKey, nestId).then((response) => {
+                return res(response.data);
+            }).catch(err => rej(this.processError(err)));
+        })
+    }
+
+    /**
+     * Gets details of a egg
+     * ALSO INCLUDE THE Nest ID!!!
      *
      * @returns {Promise}
      * @param {Integer} nestId
+     * @param {Integer} eggID
      */
-    getNestDetails(nestId) {
+    getEggDetails(nestId, eggID) {
         return new Promise((res, rej) => {
-            Methods.getNest(this.hostUrl, this.apiKey, nestId).then((response) => {
+            Methods.getEgg(this.hostUrl, this.apiKey, nestId, eggID).then((response) => {
                 return res(response.data);
             }).catch(err => rej(this.processError(err)));
         })
@@ -622,14 +639,14 @@ class NodeactylApplication {
      * @returns {Promise}
      */
     updateNodeDetails(nodeId, name, description, locationId, fqdn, scheme,
-                      behindProxy, maintenanceMode, memory, memoryOver, disk,
-                      diskOver, uploadSize, daemonSftp, daemonListen) {
+        behindProxy, maintenanceMode, memory, memoryOver, disk,
+        diskOver, uploadSize, daemonSftp, daemonListen) {
         return new Promise((res, rej) => {
             Methods.updateNodeDetails(this.hostUrl, this.apiKey, nodeId, name, description, locationId, fqdn, scheme,
-                                         behindProxy, maintenanceMode, memory, memoryOver, disk,
-                                         diskOver, uploadSize, daemonSftp, daemonListen).then((response) => {
-                return res(response.data);
-            }).catch(err => rej(this.processError(err)));
+                behindProxy, maintenanceMode, memory, memoryOver, disk,
+                diskOver, uploadSize, daemonSftp, daemonListen).then((response) => {
+                    return res(response.data);
+                }).catch(err => rej(this.processError(err)));
         });
     }
 

@@ -111,10 +111,17 @@ module.exports = {
     /**
      * @return {string}
      */
-    GET_NEST_INFO(nestId) {
-        return `APPLICATION_GET_NEST_INFO:${nestId}`
+    GET_ALL_EGGS(nestId) {
+        return `APPLICATION_GET_ALL_EGGS:${nestId}`
     },
-    GET_NEST_INFO_META: "APPLICATION_GET_NEST_INFO",
+    GET_ALL_EGGS_META: "APPLICATION_GET_ALL_EGGS",
+    /**
+     * @return {string}
+     */
+    GET_EGG_INFO(nestId, eggId) {
+        return `APPLICATION_GET_EGG_INFO:${nestId}:${eggId}`
+    },
+    GET_EGG_INFO_META: "APPLICATION_GET_EGG_INFO",
     /**
      * @return {string}
      */
