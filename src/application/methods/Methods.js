@@ -47,8 +47,8 @@ exports.updateUserDetails = (host, key, userId, Email, Username, FirstName, Last
 };
 
 exports.createServer = (host, key, Version, NameOfServer, OwnerID, EggID, DockerImage,
-                        StartupCmd, RAM, Swap, Disk, IO, CPU,
-                        AmountOfDatabases, AmountOfBackups, AmountOfAllocations) => {
+    StartupCmd, RAM, Swap, Disk, IO, CPU,
+    AmountOfDatabases, AmountOfBackups, AmountOfAllocations) => {
 
     let data = {
         'name': NameOfServer,
@@ -184,9 +184,14 @@ exports.deleteServer = (host, key, serverId) => {
     return req.executeDelete(ApplicationRequest.DELETE_SERVER(serverId));
 }
 
-exports.getNest = (host, key, nestId) => {
+exports.getAllEggs = (host, key, nestId) => {
     let req = new NodeactylRequest(host, key);
-    return req.executeGet(ApplicationRequest.GET_NEST_INFO(nestId));
+    return req.executeGet(ApplicationRequest.GET_ALL_EGGS(nestId));
+};
+
+exports.getEgg = (host, key, nestId, eggId) => {
+    let req = new NodeactylRequest(host, key);
+    return req.executeGet(ApplicationRequest.GET_EGG_INFO(nestId, eggId));
 };
 
 exports.getLocations = (host, key,) => {
@@ -249,40 +254,40 @@ exports.getNodeConfig = (host, key, nodeId) => {
 
 exports.createNode = (host, key, name, locationId, fqdn, memory, disk) => {
     let data = {
-      "name": name,
-      "location_id": locationId,
-      "fqdn": fqdn,
-      "scheme": "https",
-      "memory": memory,
-      "memory_overallocate": 0,
-      "disk": disk,
-      "disk_overallocate": 0,
-      "upload_size": 100,
-      "daemon_sftp": 2022,
-      "daemon_listen": 8080
+        "name": name,
+        "location_id": locationId,
+        "fqdn": fqdn,
+        "scheme": "https",
+        "memory": memory,
+        "memory_overallocate": 0,
+        "disk": disk,
+        "disk_overallocate": 0,
+        "upload_size": 100,
+        "daemon_sftp": 2022,
+        "daemon_listen": 8080
     };
     let req = new NodeactylRequest(host, key);
     return req.executePost(ApplicationRequest.CREATE_NODE, data);
 };
 
 exports.updateNodeDetails = (host, key, nodeId, name, description, locationId, fqdn, scheme,
-                             behindProxy, maintenanceMode, memory, memoryOver, disk,
-                             diskOver, uploadSize, daemonSftp, daemonListen) => {
+    behindProxy, maintenanceMode, memory, memoryOver, disk,
+    diskOver, uploadSize, daemonSftp, daemonListen) => {
     let data = {
-      "name":  name,
-      "description": description,
-      "location_id": locationId,
-      "fqdn": fqdn,
-      "scheme": scheme,
-      "behind_proxy": behindProxy,
-      "maintenance_mode": maintenanceMode,
-      "memory": memory,
-      "memory_overallocate": memoryOver,
-      "disk": disk,
-      "disk_overallocate": diskOver,
-      "upload_size": uploadSize,
-      "daemon_sftp": daemonSftp,
-      "daemon_listen": daemonListen
+        "name": name,
+        "description": description,
+        "location_id": locationId,
+        "fqdn": fqdn,
+        "scheme": scheme,
+        "behind_proxy": behindProxy,
+        "maintenance_mode": maintenanceMode,
+        "memory": memory,
+        "memory_overallocate": memoryOver,
+        "disk": disk,
+        "disk_overallocate": diskOver,
+        "upload_size": uploadSize,
+        "daemon_sftp": daemonSftp,
+        "daemon_listen": daemonListen
     };
     let req = new NodeactylRequest(host, key);
     return req.executePatch(ApplicationRequest.UPDATE_NODE_DETAILS(nodeId), data);
@@ -300,8 +305,8 @@ exports.getNodeAllocations = (host, key, nodeId) => {
 
 exports.createNodeAllocations = (host, key, nodeId, ip, ports) => {
     let data = {
-      "ip": ip,
-      "ports": ports
+        "ip": ip,
+        "ports": ports
     }
     let req = new NodeactylRequest(host, key);
     return req.executePost(ApplicationRequest.CREATE_NODE_ALLOCACTIONS(nodeId), data);
