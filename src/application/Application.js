@@ -66,16 +66,23 @@ class NodeactylApplication {
      */
     getUserByUsername(username) {
         return new Promise(async (res, rej) => {
-            await Methods.getUsers(this.hostUrl, this.apiKey).then(async (response) => {
-                let user = false;
-                let pages = response.data.meta.pagination.total_pages
-                for (let i = 1; i <= pages; i++) {
-                    await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
-                        user = page.data.data.find(d => d.attributes.username === username)
-                    }).catch(err => rej(this.processError(err)));
+            try {
+                const response = await Methods.getUsers(this.hostUrl, this.apiKey);
+                const totalPages = response.data.meta.pagination.total_pages;
+    
+                for (let i = 1; i <= totalPages; i++) {
+                    const page = await Methods.getUserPage(this.hostUrl, this.apiKey, i);
+                    const user = page.data.data.find(d => d.attributes.username === username);
+    
+                    if (user) {
+                        return res(user); 
+                    }
                 }
-                return res(user);
-            }).catch(err => rej(this.processError(err)));
+    
+                res(undefined);
+            } catch (err) {
+                rej(this.processError(err)); 
+            };
         })
     }
 
@@ -87,16 +94,23 @@ class NodeactylApplication {
      */
     getUserByEmail(email) {
         return new Promise(async (res, rej) => {
-            await Methods.getUsers(this.hostUrl, this.apiKey).then(async (response) => {
-                let user = false;
-                let pages = response.data.meta.pagination.total_pages
-                for (let i = 1; i <= pages; i++) {
-                    await Methods.getUserPage(this.hostUrl, this.apiKey, i).then(page => {
-                        user = page.data.data.find(d => d.attributes.email === email)
-                    }).catch(err => rej(this.processError(err)));
+            try {
+                const response = await Methods.getUsers(this.hostUrl, this.apiKey);
+                const totalPages = response.data.meta.pagination.total_pages;
+    
+                for (let i = 1; i <= totalPages; i++) {
+                    const page = await Methods.getUserPage(this.hostUrl, this.apiKey, i);
+                    const user = page.data.data.find(d => d.attributes.email === email);
+    
+                    if (user) {
+                        return res(user); 
+                    }
                 }
-                return res(user);
-            }).catch(err => rej(this.processError(err)));
+    
+                res(undefined); 
+            } catch (err) {
+                rej(this.processError(err)); 
+            }
         })
     }
 
